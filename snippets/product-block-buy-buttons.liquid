@@ -1,0 +1,37 @@
+<div
+  class="product__quantity-error product__block product__block--medium hidden"
+  data-quantity-error
+  data-fallback-error-message="{{ 'products.product.quantity_error' | t }}"
+>
+  {{ 'products.product.quantity_error' | t }}
+</div>
+
+{% if section.settings.enable_gift_card_recipient and prod.gift_card? and template.suffix != 'quick-view' -%}
+  {% render 'gift-card-recipient-form', source: 'product-display', product: prod %}
+{%- endif %}
+
+{% render 'product-form',
+  block: block,
+  blocks: blocks,
+  prod: prod,
+  current_variant: current_variant,
+  featured_media: featured_media,
+  aspect_ratio: aspect_ratio,
+  show_dynamic_checkout: block.settings.show_dynamic_checkout,
+  is_quick: is_quick,
+  price_content_type: price_content_type,
+  custom_price_content: custom_price_content
+%}
+
+{%- unless is_quick -%}
+  {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+    <div class="product__policies rte" data-product-policies>
+      {%- if shop.taxes_included -%}
+        {{ 'products.product.include_taxes' | t }}
+      {%- endif -%}
+      {%- if shop.shipping_policy.body != blank -%}
+        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- endunless -%}

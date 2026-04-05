@@ -1,0 +1,66 @@
+{%- comment -%}
+  Pass these variables into snippet:
+
+  Required:
+
+  * block: Current block
+  * aspect_ratio: String
+  * label_style: String
+  * label_size: String
+  * overlay_text_color: Color_picker value
+  * overlay_text_background: Color_picker value
+  * overlay_text_background_style: String
+  * image_sizes: String (passed to image as sizes attribute)
+{%- endcomment -%}
+
+{%- liquid
+  assign label_is_overlay = false
+
+  if label_style == 'overlay'
+    assign label_is_overlay = true
+  endif
+-%}
+
+{% capture item_label %}
+  <div class="gallery-item__label {{ label_size }} ff-body">
+    {%- if block.settings.title != blank -%}
+      <h4 class="gallery-item__title fs-heading-5-base ff-heading">{{ block.settings.title }}</h4>
+    {% endif %}
+    {{ block.settings.text }}
+  </div>
+{% endcapture %}
+
+<div
+  class="
+    gallery-item
+    gallery-item--label-{{ label_style }}
+    gallery-item--label-background-{{ overlay_text_background_style }}
+    animation--item
+    {{ block.shopify_attributes }}
+  "
+  style="
+    --overlay-text-color: {{ overlay_text_color }};
+    --label-background: {{ overlay_text_background }};
+    --label-gradient-start: {{ overlay_text_background | color_modify: 'alpha', 0.4 }};
+    --label-gradient-mid: {{ overlay_text_background | color_modify: 'alpha', 0.2 }};
+    --label-gradient-end: {{ overlay_text_background | color_modify: 'alpha', 0 }};
+  "
+>
+  <div class="gallery-item__image-wrapper hover">
+    {% render 'image',
+      image: block.settings.image,
+      wrapper_class: 'gallery-item__image',
+      aspect_ratio: aspect_ratio,
+      focal_point: block.settings.focal_point,
+      include_placeholder: true,
+      sizes: image_sizes,
+      src_set_type: 'grid'
+    %}
+
+    {%- if label_is_overlay -%}
+      {{ item_label }}
+    {%- endif -%}
+  </div>
+
+  {{ item_label }}
+</div>

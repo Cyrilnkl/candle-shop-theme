@@ -1,0 +1,55 @@
+{% liquid
+  comment
+    Returns the product media gallery overflow aspect ratio.
+
+    Required parameters:
+
+    - product: [Product] The current product object
+    - media_show_limit: [Number] The number of media items to show
+    - media_per_row: [Number] The number of media items per row
+  endcomment
+
+  assign cumulative_height = 0
+
+  for media in product.media
+    if forloop.index > media_show_limit
+      break
+    endif
+
+    unless media_per_row == 1
+      assign remainder = forloop.index | modulo: media_per_row
+
+      if remainder == 0
+        continue
+      endif
+
+      assign next_inverse_aspect_ratio = 0
+      assign next_media = product.media[forloop.index]
+
+      unless next_media == blank
+        assign next_inverse_aspect_ratio = 1
+
+        unless next_media.type == 'model'
+          assign next_inverse_aspect_ratio = 1 | divided_by: next_media.aspect_ratio
+        endunless
+      endunless
+    endunless
+
+    assign inverse_aspect_ratio = 1
+
+    unless media.type == 'model'
+      assign inverse_aspect_ratio = 1 | divided_by: media.aspect_ratio
+    endunless
+
+    assign tallest_in_row = inverse_aspect_ratio | at_least: next_inverse_aspect_ratio
+
+    if forloop.index > media_limit
+      # Calculate tease row
+      assign tallest_in_row = 0.35 | times: media_per_row
+    endif
+
+    assign cumulative_height = cumulative_height | plus: tallest_in_row
+  endfor
+
+  echo 1 | divided_by: cumulative_height | times: media_per_row
+-%}

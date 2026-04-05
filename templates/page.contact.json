@@ -1,0 +1,292 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich-text-1": {
+      "type": "rich-text",
+      "blocks": {
+        "block-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Contact us",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-1-base"
+          }
+        },
+        "block-1": {
+          "type": "spacer",
+          "settings": {
+            "space": 12
+          }
+        },
+        "block-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re here to capture emotion and light through <strong>Nostalys’ memory orbs,</strong> luminous keepsakes that hold your most precious moments.<br/>Have a question or a story to share? We’d love to hear from you.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "text_km8i33": {
+          "type": "text",
+          "settings": {
+            "text": "<p>contact@nostalysmemory.com</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1",
+        "block-2",
+        "text_km8i33"
+      ],
+      "custom_css": [
+        ".rich-text__text p {line-height: 23px; color: grey;}"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "block-0": {
+          "type": "text",
+          "settings": {
+            "title": "Name",
+            "required": false,
+            "width": "full"
+          }
+        },
+        "block-1": {
+          "type": "email",
+          "settings": {
+            "title": "Email",
+            "width": "full"
+          }
+        },
+        "block-3": {
+          "type": "text_area",
+          "settings": {
+            "title": "Message",
+            "placeholder": "",
+            "required": true,
+            "height": 180,
+            "width": "full"
+          }
+        },
+        "block-4": {
+          "type": "submit",
+          "settings": {
+            "title": "Submit",
+            "size": "large",
+            "full_width": true
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "block-1",
+        "block-3",
+        "block-4"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "heading": "Contact us",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-2-base",
+        "text": "",
+        "show_recaptcha_terms": true,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 850
+      }
+    },
+    "rich-text-2": {
+      "type": "rich-text",
+      "blocks": {
+        "block-0": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQs",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        }
+      },
+      "block_order": [
+        "block-0"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "collapsible-row-list": {
+      "type": "collapsible-row-list",
+      "blocks": {
+        "block-0": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🌙 What is Nostalys?",
+            "text": "<p>Nostalys is a luminous memory sphere designed to hold your most heartfelt moments. Inside each crystal orb lives a built-in HD screen and gentle speakers, ready to bring your memories to life — glowing softly like captured starlight. Simply connect it to your computer, upload your personalized video, and watch your memories shine again.</p>"
+          }
+        },
+        "item_FDWgzU": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "This is an example of a question that a customer might ask",
+            "text": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
+          }
+        },
+        "block-1": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🔊 Does it play sound?",
+            "text": "<p>Yes, absolutely. Each Nostalys sphere has built-in speakers so your video plays with both image <strong>and</strong> sound — creating an immersive moment of warmth and emotion.</p>"
+          }
+        },
+        "block-2": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🎥 What video formats can I use?",
+            "text": "<p>Nostalys supports <strong>MP4</strong> and <strong>MOV</strong> files using the <strong>H.264 codec</strong>.<br/><br/>For the best fit inside the glowing sphere, we recommend resizing your video to <strong>480×480 px</strong>.<br/><br/>The recommended audio format is <strong>MP3</strong> (high quality).</p>"
+          }
+        },
+        "item_tmrmJV": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "💫 So you ship internationally?",
+            "text": "<p>Yes, we ship all over the world !</p>"
+          }
+        },
+        "block-3": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🔁 Can I change my video later?",
+            "text": "<p>Of course. Memories evolve, and so can your sphere.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block-0",
+        "item_FDWgzU",
+        "block-1",
+        "block-2",
+        "item_tmrmJV",
+        "block-3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-3-base",
+        "subheading": "",
+        "subheading_tag": "h3",
+        "subheading_font_class": "fs-heading-5-base",
+        "heading_alignment": "left",
+        "item_heading_font": "body",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-bottom-only",
+        "content_width": "custom",
+        "custom_content_width": 850
+      }
+    },
+    "newsletter_compact_ycXYLG": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "text_content_hHdn8J": {
+          "type": "text_content",
+          "settings": {
+            "width": "600",
+            "title": "Join our newsletter",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base",
+            "text": "<p><strong>Want 10% off?</strong> Enter your email to get your welcome discount code.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "newsletter_signup_BNMfie": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "JOIN NOSTALYS",
+            "footer_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_content_hHdn8J",
+        "newsletter_signup_BNMfie"
+      ],
+      "name": "t:sections.newsletter_compact.presets.name",
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#0a284c",
+        "text_color": "#ffffff",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text-1",
+    "contact-form",
+    "rich-text-2",
+    "collapsible-row-list",
+    "newsletter_compact_ycXYLG"
+  ]
+}

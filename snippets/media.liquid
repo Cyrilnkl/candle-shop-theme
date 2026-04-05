@@ -1,0 +1,109 @@
+{% comment %}
+  within_carousel: bool - will attempt to make iframes more usable within touch slider
+{% endcomment %}
+<div
+  class="
+    media
+    {% if enable_product_lightbox %}media--has-lightbox{% endif %}
+    {% if animate and media.media_type != 'image' %}animation animation--media{% endif %}
+  "
+  data-media-id="{{ media.id }}"
+  data-media-type="{{ media.media_type }}"
+  data-has-mobile-video-modal="{{ within_carousel | default: false, allow_false: true }}"
+  {% if media.media_type == 'video' %}
+    data-loop="{{ loop_video }}"
+    style="--video-aspect-ratio: {{ media.preview_image.width }} / {{ media.preview_image.height }};"
+  {% endif %}
+  {% if media.media_type != 'image' %}
+    data-interactive
+  {% endif %}
+>
+  {%- if media.media_type == 'image' -%}
+    {%- capture media_link_element -%}
+      {%- if enable_product_lightbox or link -%}
+        a
+      {%- else -%}
+        div
+      {%- endif -%}
+    {%- endcapture -%}
+
+    {%- capture media_atributes -%}
+      {% if enable_product_lightbox %}
+        href="{{ media.src | image_url }}" class="lightbox-image no-transition"
+        data-pswp-src="{{- media.src | image_url -}}"
+        data-pswp-width="{{- media.width -}}"
+        data-pswp-height="{{ media.height }}"
+        data-cropped="true"
+      {%- elsif link -%}
+        href="{{ link }}"
+      {%- endif -%}
+    {%- endcapture -%}
+
+    <{{ media_link_element }} {{ media_atributes }}>
+      {% render 'image',
+        image: media,
+        aspect_ratio: aspect_ratio,
+        sizes: sizes,
+        prioritize_loading: prioritize_loading,
+        fallback_alt: fallback_alt,
+        no_crop: enable_product_lightbox,
+        animate: animate
+      %}
+    </{{ media_link_element }}>
+
+  {%- elsif media.media_type == 'video' -%}
+    {{ media | video_tag: image_size: '1024x' }}
+
+  {%- elsif media.media_type == 'external_video' -%}
+    {% # external_video_tag will include the wrong origin parameter when viewing a shopify preview URL, the replace here is to work around that %}
+    {% assign shop_domain = shop.secure_url | replace: 'https://', '' %}
+
+    {%- liquid
+      if loop_video
+        assign loop_binary = '1'
+      else
+        assign loop_binary = '0'
+      endif
+    -%}
+
+    {% if within_carousel %}
+      <div class="mobile-media-carousel__external-video-modal pswp--product-video-modal">
+        {{
+          media
+          | external_video_url: playlist: media.external_id, loop: loop_binary, controls: true
+          | external_video_tag
+          | replace: shop_domain, request.host
+        }}
+      </div>
+
+      <div
+        class="mobile-media-carousel__poster"
+        style="background-image: url({{ media.preview_image | image_url }})"
+      >
+        <button class="mobile-media-carousel__play-icon" aria-label="{{ 'general.accessibility.open_modal' | t }}">
+          {% render 'icon', icon: 'play-badge' %}
+        </button>
+      </div>
+
+    {% else %}
+      {{
+        media
+        | external_video_url: playlist: media.external_id, loop: loop_binary
+        | external_video_tag
+        | replace: shop_domain, request.host
+      }}
+    {% endif %}
+  {%- elsif media.media_type == 'model' -%}
+    {{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}
+    <a
+      href="#"
+      class="model-poster"
+      style="background-image: url({{ media | image_url: width: 1000 }})"
+      title="{{ 'general.accessibility.view_3d_model' | t }}"
+    >
+      <span class="media-badge model in-poster">
+        {% render 'icon', icon: '3d-button-control' %}
+      </span>
+    </a>
+  {%- endif -%}
+</div>

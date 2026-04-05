@@ -1,0 +1,431 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "product_header": {
+          "type": "product_header",
+          "settings": {
+            "show_divider": true,
+            "show_vendor": false,
+            "show_sku": true,
+            "show_discount": false,
+            "discount_format": "save_amount",
+            "show_product_rating": false,
+            "show_sale_badge": true,
+            "show_custom_badges": true
+          }
+        },
+        "okendo_star_rating_Htd7WA": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_popup_option": "Size",
+            "variant_popup_icon": "measuring-tape",
+            "variant_popup_text": "Size guide",
+            "variant_popup_page": "",
+            "swatch_size": "medium",
+            "chip_layout": "3col"
+          }
+        },
+        "inventory_counter": {
+          "type": "inventory-counter",
+          "disabled": true,
+          "settings": {
+            "label": "Availability",
+            "inventory_max": "100",
+            "low_inventory_threshold": "40",
+            "show_status_bar": true,
+            "show_untracked_quantity": false
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_labels": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "enable_sticky_atc_bar_desktop": true,
+            "enable_sticky_atc_bar_mobile": true,
+            "divider_width": "none"
+          }
+        },
+        "product_callouts-1": {
+          "type": "product_callouts",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "add_box": false,
+            "add_dividers": true,
+            "icon_1": "package-closed",
+            "text_1": "<p>A welcome gift is included with your first order.</p>",
+            "icon_2": "leaf",
+            "text_2": "",
+            "icon_3": "none",
+            "text_3": "",
+            "icon_4": "none",
+            "text_4": "",
+            "icon_5": "none",
+            "text_5": "",
+            "icon_6": "none",
+            "text_6": "",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        },
+        "product_callouts-2": {
+          "type": "product_callouts",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "add_box": true,
+            "add_dividers": true,
+            "icon_1": "leaf",
+            "text_1": "",
+            "icon_2": "plant",
+            "text_2": "<p>Rechargeable & Eco-Friendly</p>",
+            "icon_3": "heart",
+            "text_3": "<p>Sleek & Modern Design</p>",
+            "icon_4": "chat",
+            "text_4": "<p>Have questions? <a href=\"/pages/contact\" title=\"Contact\">Contact us</a></p>",
+            "icon_5": "package-closed",
+            "text_5": "",
+            "icon_6": "none",
+            "text_6": "",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "title": "Product Details",
+            "title_tag": "h3",
+            "text_font_class": "fs-body-100",
+            "column_placement": "left",
+            "display_as_collapsible_row": true,
+            "expand_by_default": true
+          }
+        },
+        "accordion-1": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "left",
+            "heading": "Ingredients",
+            "heading_tag": "h3",
+            "content": "<p>Zephyra wax pearls are crafted from <strong>plant-based vegan wax</strong>, designed to burn cleanly with minimal smoke or soot. Made from sustainably sourced and purified ingredients, they are free from paraffin, soy, and common allergens. Our unscented pearls offer a neutral base for personalizing with your favorite <strong>phthalate-free fragrances</strong>.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion-2": {
+          "type": "accordion",
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "left",
+            "heading": "Frequently Asked Questions",
+            "heading_tag": "h3",
+            "content": "<p><strong>Q: Is the electric lighter rechargeable?</strong><br/><strong>A:</strong> Yes, our electric lighter is fully rechargeable and comes with a USB cable for easy charging. A single charge provides multiple uses, making it both convenient and eco-friendly.</p><p><strong>Q: Is it safe to use indoors?</strong><br/><strong>A:</strong> Absolutely! The lighter is designed with flameless arc technology, ensuring safe use indoors without the risk of open flames or harmful emissions.</p><p><strong>Q: How long does the battery last?</strong><br/><strong>A:</strong> On a full charge, the battery lasts for up to 300 uses. The LED indicators help you monitor the battery level so you're never caught off guard.</p><p><strong>Q: Can it light candles in windy conditions?</strong><br/><strong>A:</strong> Yes! The windproof design makes it perfect for outdoor use, whether it’s lighting candles, grills, or campfires.</p><p><strong>Q: How do I clean the lighter?<br/>A:</strong> Simply use a soft, dry cloth to wipe the surface. Avoid using water or cleaning agents to protect the electronic components.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "accordion-3": {
+          "type": "accordion",
+          "disabled": true,
+          "settings": {
+            "expand_by_default": false,
+            "column_placement": "left",
+            "heading": "Collapsible row",
+            "heading_tag": "h3",
+            "content": "<p>Add your collapsible row content here.</p>",
+            "page_for_content": "",
+            "custom_liquid": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text_font_class": "fs-body-100",
+            "text": "<p>Add some text to tell customers more about your product.</p>",
+            "column_placement": "left"
+          }
+        }
+      },
+      "block_order": [
+        "product_header",
+        "okendo_star_rating_Htd7WA",
+        "variant_picker",
+        "inventory_counter",
+        "quantity_selector",
+        "buy_buttons",
+        "product_callouts-1",
+        "product_callouts-2",
+        "share",
+        "description",
+        "accordion-1",
+        "accordion-2",
+        "accordion-3",
+        "text"
+      ],
+      "custom_css": [
+        ".product__policies {display: none;}",
+        ".product__callouts-item-text p {margin-top: 6px;}"
+      ],
+      "settings": {
+        "enable_sticky_product_details": true,
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": true,
+        "show_featured_media_first": false,
+        "gallery_style": "thumbnails",
+        "gallery_style_mobile": "carousel",
+        "gallery_size": "medium",
+        "gallery_overflow": "2",
+        "enable_video_looping": false,
+        "enable_product_lightbox": true,
+        "image_aspect_ratio": "square",
+        "enable_multiple_variant_media": false,
+        "enable_mobile_carousel_looping": false,
+        "show_mobile_carousel_images_full_width": false,
+        "hide_mobile_carousel_dots": true,
+        "enable_gift_card_recipient": true,
+        "enable_animation": true
+      }
+    },
+    "gallery_carousel_r3CKq7": {
+      "type": "gallery-carousel",
+      "blocks": {
+        "image_97J7bh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Candlera-6_729f01d0-f296-4253-ae1c-4f73b6094bb4.jpg",
+            "focal_point": "image_presentation",
+            "title": "1. Poor your creativity",
+            "text": "<p>Gently pour the Zephira pearl into your favorite container.</p>"
+          }
+        },
+        "image_kDxdmE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Candlera-14_d9f30184-21a7-473e-9c75-d9c68f4c2a47.jpg",
+            "focal_point": "image_presentation",
+            "title": "2. Insert & Light your Moment",
+            "text": "<p>Strike a match and bring your original and unique candle to life.</p>"
+          }
+        },
+        "image_HgpkpY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Candlera-9_d2337da2-1d05-41e2-954a-701df8898e2c.jpg",
+            "focal_point": "image_presentation",
+            "title": "3. Refresh & Renew",
+            "text": "<p>Replace the wick and add more pearl beads when needed.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_97J7bh",
+        "image_kDxdmE",
+        "image_HgpkpY"
+      ],
+      "settings": {
+        "heading": "How does it work ?",
+        "heading_tag": "h2",
+        "subheading": "<p>Super easy !</p>",
+        "link": "",
+        "link_text": "",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "video_hero_9e3FQN": {
+      "type": "video-hero",
+      "blocks": {
+        "heading_BrQFTm": {
+          "type": "heading",
+          "settings": {
+            "title": "Step-by-Step tutorial",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "text_Tzkjz9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Made with love 🤍</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "play_button_qekf6M": {
+          "type": "play-button",
+          "settings": {
+            "video_source": "external",
+            "video_url": "https://youtu.be/zmCEB2Eu4_w",
+            "aspect_ratio": "square",
+            "text": "",
+            "icon_style": "light"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BrQFTm",
+        "text_Tzkjz9",
+        "play_button_qekf6M"
+      ],
+      "custom_css": [
+        ".play-button-block__inner {border: none;}"
+      ],
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 60,
+        "mobile_height": 50,
+        "video": "shopify://files/videos/video1080p.mp4",
+        "media_link": "",
+        "focal_point": "center",
+        "focal_point_mobile": "center",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 60,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "recommendations": {
+      "type": "recommended-products",
+      "settings": {
+        "title": "Featured Products",
+        "subheading": "",
+        "maximum_products": 8,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "image_hero_AcTgrG": {
+      "type": "image-hero",
+      "settings": {
+        "image_aspect": "original",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "image": "shopify://shop_images/foot-banner_5c74e1c5-a110-4d00-8a01-206ec4732b43.png",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "media_link": "",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 40,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "featured_collection_grid_TBRkbM": {
+      "type": "featured-collection-grid",
+      "blocks": {
+        "collection_6TH4xH": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_6TH4xH"
+      ],
+      "settings": {
+        "heading": "Zephyra's accessories",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "maximum_collections": 4,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "1734083083941b1ea2": {
+      "type": "apps",
+      "blocks": {
+        "okendo_reviews_widget_Mgp3eW": {
+          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}",
+            "widget_type": "combined_widget"
+          }
+        }
+      },
+      "block_order": [
+        "okendo_reviews_widget_Mgp3eW"
+      ],
+      "custom_css": [
+        ".oke-poweredBy-image {display: none !important;}"
+      ],
+      "settings": {
+        "heading": "",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gallery_carousel_r3CKq7",
+    "video_hero_9e3FQN",
+    "recommendations",
+    "image_hero_AcTgrG",
+    "featured_collection_grid_TBRkbM",
+    "1734083083941b1ea2"
+  ]
+}

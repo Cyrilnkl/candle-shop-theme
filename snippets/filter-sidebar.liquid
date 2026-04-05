@@ -1,0 +1,56 @@
+{%- liquid
+  assign filters_valid = false
+  if results.filters != empty and show_filters
+    assign filters_valid = true
+  endif
+-%}
+
+{%- if filters_valid -%}
+  <form
+    class="filter-sidebar"
+    id="filter-sidebar"
+    data-filter-form
+    data-filter-sidebar
+    aria-expanded="{% if collapse_filter_bar %}false{% else %}true{% endif %}"
+  >
+    <div class="filter-sidebar-inner" data-sticky-container>
+      {%- if search.terms -%}
+        <input
+          type="hidden"
+          name="q"
+          id="SearchFilters--FilterDrawer"
+          value="{{ search.terms | escape }}"
+        >
+      {%- endif -%}
+
+      {%- comment -%} Keep search term within form {%- endcomment -%}
+      {%- if results.terms -%}
+        <input type="hidden" name="q" value="{{ results.terms | escape }}">
+        <input name="options[prefix]" type="hidden" value="last">
+      {%- endif -%}
+
+      {%- comment -%} Keep product type within form {%- endcomment -%}
+      {%- if results.current_type -%}
+        <input type="hidden" name="q" value="{{ results.current_type | escape }}">
+      {%- endif -%}
+
+      {%- comment -%} Keep product vendor within form {%- endcomment -%}
+      {%- if results.current_vendor -%}
+        <input type="hidden" name="q" value="{{ results.current_vendor | escape }}">
+      {%- endif -%}
+
+      {%- for filter in results.filters -%}
+        {% render 'filter-drawer-group',
+          filter: filter,
+          scope: 'sidebar',
+          collapse_filter_groups: collapse_filter_groups,
+          show_swatch_filters: show_swatch_filters,
+          swatch_options: swatch_options,
+          show_chip_filters: show_chip_filters,
+          chip_options: chip_options,
+          chip_layout: chip_layout
+        %}
+      {%- endfor -%}
+    </div>
+  </form>
+{%- endif -%}

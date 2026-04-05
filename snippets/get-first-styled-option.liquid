@@ -1,0 +1,32 @@
+{%- liquid
+  comment
+    This snippet returns the first matching option to styled option list.
+
+    Required parameters:
+      - prod: { Object } The product used to check the options.
+      - styled_options: { String } Comma-separated list of option names which enable either swatches or chips.
+
+    Returned parameters:
+      - found_option: { String } The first matching option name.
+  endcomment
+
+  assign found_option = blank
+  assign styled_options = styled_options | downcase | split: ', '
+
+  for option in prod.options
+    assign option_name = option | downcase
+
+    for styled_option in styled_options
+      if styled_option == option_name
+        assign found_option = option_name
+        break
+      endif
+    endfor
+
+    if found_option != blank
+      break
+    endif
+  endfor
+-%}
+
+{{- found_option | strip_newlines -}}

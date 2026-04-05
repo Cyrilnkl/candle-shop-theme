@@ -1,0 +1,146 @@
+<form action="{{ routes.cart_url }}" method="post" data-form novalidate data-scroll-lock-ignore>
+  <h3 class="purchase-confirmation-popup__heading ff-heading fs-heading-5-base animation--purchase-confirmation-item">
+    {{ 'cart.general.confirmation_popup_heading' | t }}
+  </h3>
+
+  {%- for item in cart.items -%}
+    <div
+      class="purchase-confirmation-popup__item hidden animation--purchase-confirmation-item"
+      data-product-key="{{ item.key }}"
+    >
+      <div class="purchase-confirmation-popup__product">
+        <div class="purchase-confirmation-popup__product-image">
+          {%- render 'image',
+            image: item.image,
+            sizes: '120px',
+            aspect_ratio: settings.cart_item_aspect_ratio,
+            include_placeholder: true
+          -%}
+        </div>
+        <div class="purchase-confirmation-popup__product-details">
+          <h4 class="purchase-confirmation-popup__product-title fs-product-card-title">
+            {{ item.product.title }}
+          </h4>
+
+          {% unless item.product.has_only_default_variant %}
+            <p class="purchase-confirmation-popup__product-variant fs-body-50 t-opacity-60">{{ item.variant.title }}</p>
+          {% endunless %}
+
+          {% if item.selling_plan_allocation %}
+            <p class="purchase-confirmation-popup__product-subscriptions fs-body-50 t-opacity-60">
+              {{ item.selling_plan_allocation.selling_plan.name }}
+            </p>
+          {% endif %}
+
+          {%- assign property_size = item.properties | size -%}
+
+          {% if property_size > 0 %}
+            <div class="purchase-confirmation-popup__item-properties fs-body-60 t-opacity-80">
+              {% for p in item.properties %}
+                {% # Don't show property if property name begins with an underscore, or if property is blank. %}
+                {% assign first_char = p.first | slice: 0 %}
+                {% unless p.last == blank or first_char == '_' %}
+                  <p>
+                    {{ p.first }}:
+
+                    {% if p.last contains '/uploads/' %}
+                      <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                    {% else %}
+                      {{ p.last }}
+                    {% endif %}
+                  </p>
+                {% endunless %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% liquid
+            assign show_price = true
+            assign price_content_type = 'price'
+
+            if item.original_price == 0 and item.variant.compare_at_price == blank
+              if settings.zero_dollar_product_price_display == 'hide'
+                assign show_price = false
+              elsif settings.zero_dollar_product_price_display == 'replace'
+                assign price_content_type = 'custom'
+              endif
+            endif
+
+            assign item_price = item.original_price
+            assign item_sale_price = blank
+            assign price_tag_type = 'span'
+
+            if item.original_line_price > item.final_line_price or item.variant.compare_at_price > item.variant.price
+              assign price_tag_type = 's'
+
+              if item.original_line_price > item.final_line_price
+                assign item_sale_price = item.final_price
+              else
+                assign item_price = item.variant.compare_at_price
+                assign item_sale_price = item.original_price
+              endif
+            endif
+          %}
+
+          {% if show_price %}
+            {% # Compare check allows for sale items to properly show instead of being replaced by text %}
+            {% if price_content_type == 'price' or item.variant.compare_at_price > item.original_price %}
+              <div class="purchase-confirmation-popup__product-price-wrapper fs-body-75">
+                <{{ price_tag_type }} class="purchase-confirmation-popup__product-title-price">
+                  {{- item_price | money -}}
+                </{{ price_tag_type }}>
+
+                {%- if item_sale_price != blank -%}
+                  <span class="purchase-confirmation-popup__product-title-price sale-price">
+                    {{- item_sale_price | money -}}
+                  </span>
+                {%- endif -%}
+
+                {% render 'unit-price', item: item %}
+              </div>
+
+            {% elsif price_content_type == 'custom' %}
+              <div class="purchase-confirmation-popup__product-price-wrapper fs-body-75">
+                <span class="purchase-confirmation-popup__product-title-price">
+                  {{ 'products.inventory.zero_price_custom_label' | t }}
+                </span>
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {%- endfor -%}
+
+  <div class="animation--purchase-confirmation-footer-item">
+    <a
+      href="{{ routes.cart_url }}"
+      class="purchase-confirmation-popup__view-cart btn btn--full btn--secondary btn--small no-transition"
+    >
+      {{- 'cart.general.view_cart' | t: cart_total: cart.item_count -}}
+    </a>
+  </div>
+  <div class="animation--purchase-confirmation-footer-item">
+    <button
+      type="submit"
+      name="checkout"
+      class="purchase-confirmation-popup__submit btn btn--full btn--primary btn--small"
+      aria-label="{{ 'cart.general.checkout' | t }}"
+    >
+      {{ 'cart.general.checkout' | t }}
+    </button>
+  </div>
+</form>
+
+<div class="animation--purchase-confirmation-footer-item">
+  {%- render 'free-shipping-bar' %}
+</div>
+
+<button
+  type="button"
+  data-confirmation-close
+  class="purchase-confirmation-popup__close"
+  aria-label="{{ 'general.accessibility.close_modal' | t }}"
+>
+  {% render 'icon-button', small: true, icon: 'close' %}
+</button>

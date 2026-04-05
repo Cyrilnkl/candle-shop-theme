@@ -1,0 +1,19 @@
+{% liquid
+  comment
+    Renders chips for the product-item hover display.
+
+    Required parameters:
+    	- prod: { Object } The product with chips to display.
+    	- option_name: { String } The first-found option name that enables chips.
+  endcomment
+%}
+
+<div class="product-chips-options">
+  <ul class="product-chips-options__list ff-body fs-body-50">
+    {%- for value in prod.options_by_name[option_name].values -%}
+      <li class="product-chips-options__item product-chips-options__item--chip">
+        {{ value }}
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

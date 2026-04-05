@@ -1,0 +1,248 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_q3TJUD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NGhjWp": {
+          "type": "heading",
+          "settings": {
+            "title": "Partner with Zephyra",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_GaE6RQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Together, we can bring sustainable elegance and creativity to more homes and businesses. Let’s create something extraordinary.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NGhjWp",
+        "text_GaE6RQ"
+      ],
+      "custom_css": [
+        ".rich-text__text p {margin-top: 20px; line-height: 23px; color: grey;}"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "image_with_text_TyjHY4": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_JfHnPG": {
+          "type": "heading",
+          "settings": {
+            "title": "Become a Zephyra Brand Representative",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "text_qFjEdy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Join us as a brand representative and share our mission of elegance and sustainability.</p><p><strong>Your Benefits:</strong></p><ul><li><strong>Exclusive Discounts:</strong> Enjoy special pricing to boost your profits.</li><li><strong>Complimentary Products:</strong> Receive samples to showcase or experience.</li><li><strong>Regional Exclusivity:</strong> Stand out as Zephyra’s local representative.</li></ul><p>Help us bring Zephyra’s candles into more homes and hearts.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JfHnPG",
+        "text_qFjEdy"
+      ],
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "left",
+        "image": "shopify://shop_images/Hand_poured_5_wick_Candle_-_beautiful_irregular_shaped_stoneware_bowl.jpg",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "image_presentation",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#FFFFFF",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "image_with_text_nmM9T8": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_L6yA7d": {
+          "type": "heading",
+          "settings": {
+            "title": "B2B Partnerships: Working Together",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "text_tmf9tm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Partnering with Zephyra gives you access to premium, eco-friendly products that stand out in the market.</p><p><strong>Why Work With Us:</strong></p><ul><li><strong>Competitive Pricing:</strong> Maximize your margins with our wholesale rates.</li><li><strong>Fast, Reliable Delivery:</strong> Ensure seamless operations with efficient shipping.</li><li><strong>Eco-Friendly Products:</strong> Offer your customers sustainable, high-quality candles designed to impress.</li></ul><p>Let’s create a partnership that’s as elegant and meaningful as our candles.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_L6yA7d",
+        "text_tmf9tm"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "left",
+        "image": "shopify://shop_images/Illuminate_Your_Creativity_with_Reusable_Sand_Candles.jpg",
+        "aspect_ratio": "square",
+        "focal_point": "bottom",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "image_presentation",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#FFFFFF",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "image_with_text_gzBA9K": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_FPbL38": {
+          "type": "heading",
+          "settings": {
+            "title": "Collaborations for Unique Creations",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "text_KNbqUH": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Zephyra, we’re passionate about creating meaningful partnerships that leave a lasting impression.</p><p><strong>Perfect for:</strong></p><ul><li><strong>Weddings:</strong> Elegant, personalized candles to light up the most special day.</li><li><strong>Corporate Events:</strong> Memorable, sustainable gifts that reflect your brand’s values.</li><li><strong>Boutique Experiences:</strong> Unique offerings tailored to captivate your customers.</li></ul><p>Let’s work together to craft candles that bring warmth, beauty, and purpose to every occasion.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FPbL38",
+        "text_KNbqUH"
+      ],
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "left",
+        "image": "shopify://shop_images/Romantische_Tischdeko_im_Freien_fur_eine_traumhafte_Gartenhochzeit.jpg",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "image_presentation",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#FFFFFF",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "contact_form_n3gjzw": {
+      "type": "contact-form",
+      "blocks": {
+        "text_wmeJk8": {
+          "type": "text",
+          "settings": {
+            "title": "Name",
+            "required": false,
+            "width": "full"
+          }
+        },
+        "email_eQRxUb": {
+          "type": "email",
+          "settings": {
+            "title": "Email",
+            "width": "full"
+          }
+        },
+        "text_area_jPHB4T": {
+          "type": "text_area",
+          "settings": {
+            "title": "Message",
+            "placeholder": "Your message",
+            "required": false,
+            "height": 180,
+            "width": "full"
+          }
+        },
+        "submit_tHxDXf": {
+          "type": "submit",
+          "settings": {
+            "title": "Submit",
+            "size": "normal",
+            "full_width": true
+          }
+        }
+      },
+      "block_order": [
+        "text_wmeJk8",
+        "email_eQRxUb",
+        "text_area_jPHB4T",
+        "submit_tHxDXf"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "heading": "For exclusive offers, please reach out to us.",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-3-base",
+        "text": "",
+        "show_recaptcha_terms": false,
+        "enable_animation": true,
+        "divider_style": "solid",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_q3TJUD",
+    "image_with_text_TyjHY4",
+    "image_with_text_nmM9T8",
+    "image_with_text_gzBA9K",
+    "contact_form_n3gjzw"
+  ]
+}

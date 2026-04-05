@@ -1,0 +1,35 @@
+{% liquid
+  comment
+    Renders images within the mobile menu if mobile menu image blocks are added in the header.
+
+    Required parameters:
+      - link: { Object } The link within a menu that has enabled the mobile menu images block.
+      - aspect_ratio: { String } The block setting's aspect ratio to apply to the image. Can be:
+        - Natural, Square, Portrait, Landscape
+      - thumbnail_width: { Number } The block setting's thumbnail width to apply to the image.
+  endcomment
+
+  assign resource = link.object
+
+  if resource.metafields.stiletto.mobile_menu_thumbnail != blank
+    assign thumbnail_image = resource.metafields.stiletto.mobile_menu_thumbnail.value
+  endif
+
+  unless thumbnail_image
+    case link.type
+      when 'collection_link'
+        assign thumbnail_image = resource.image | default: resource.products.first.featured_image
+      when 'product_link'
+        assign thumbnail_image = resource.featured_image
+    endcase
+  endunless
+%}
+
+{% if thumbnail_image %}
+  <div
+    class="drawer-menu__link-thumbnail"
+    style="--thumbnail-width:{{ thumbnail_width }}px"
+  >
+    {% render 'image', image: thumbnail_image, aspect_ratio: aspect_ratio, sizes: '200px', src_set_type: 'thumbnail' %}
+  </div>
+{% endif %}

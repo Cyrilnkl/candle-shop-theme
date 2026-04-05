@@ -1,0 +1,58 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_8ttBim": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RhCHXU": {
+          "type": "heading",
+          "settings": {
+            "title": "Terms of Service | Nostalys",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_myqpQp": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Effective date:</strong> October 9, 2025</p><p>Welcome to Nostalys. The terms “we”, “us” and “our” refer to Nostalys. By using our website or purchasing products from us you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree, do not use our services.</p><h2>1. Eligibility and account</h2><p>You must be of legal age in your jurisdiction to use our services. You are responsible for maintaining the confidentiality of any account credentials and all activity under your account. Accounts are personal and non-transferable.</p><h2>2. Products</h2><p>We attempt to display product information accurately. Colors, finishes or appearances may vary by screen or batch. We may modify, update or discontinue products at any time.</p><h2>3. Orders and formation of contract</h2><p>All orders are subject to acceptance and availability. An order is accepted when we send an order confirmation email and receive payment. We reserve the right to cancel or refuse orders for legitimate reasons (stock shortages, suspected fraud, incorrect pricing).</p><h2>4. Pricing and payment</h2><p>Prices are shown in the currency displayed on the site and exclude shipping and import duties unless stated. You authorize us to charge your selected payment method for the total order amount. We may update prices at any time; price changes do not affect confirmed orders.</p><h2>5. Shipping and delivery</h2><p>Delivery times are estimates. We are not liable for carrier delays, customs clearance, or other third-party delays. Risk of loss passes to you upon handover to the carrier. Inspect shipments on arrival and report visible damage or missing items to <a>contact@nostalys.com</a> within 48 hours.</p><h2>6. Returns and refunds</h2><p>Unless the product is defective or incorrectly shipped by us, return shipping costs are borne by the customer. Personalized or custom products (including spheres containing customer videos) are non-refundable except for manufacturing defects. Returns require prior authorization. Refunds, when approved, are issued to the original payment method within 10 business days of receipt and inspection of the returned item.</p><h2>7. Warranty and liability for defects</h2><p>Products are covered by statutory warranties applicable in the purchaser’s jurisdiction (e.g., conformity and hidden defects). Claims must be submitted to <a>contact@nostalys.com</a> with proof of purchase and documentation. Warranty does not cover misuse, accidental damage, unauthorized repairs or normal wear and tear.</p><h2>8. User content and representations</h2><p>By submitting content (videos, images, text) you represent and warrant that you own or have all necessary rights, consents and licences to allow us to use that content to produce your ordered product. You will not submit content that is illegal, infringing, defamatory, pornographic, hateful, or otherwise unlawful. We reserve the right to refuse or remove content that violates these requirements.</p><h2>9. Limited licence for production</h2><p>By providing user content you grant Nostalys a non-exclusive, worldwide, royalty-free licence limited to manufacturing, storing temporarily, shipping and otherwise processing your order. This licence does not permit other commercial exploitation unless we obtain your express written consent.</p><h2>10. Intellectual property</h2><p>All site content, design, logos and marks are our property or used under licence. You may not reproduce, modify or reuse our intellectual property without prior written permission.</p><h2>11. Third-party services and links</h2><p>We may include links, tools or integrations provided by third parties. Use of third-party services is at your own risk and subject to their terms.</p><h2>12. Prohibited conduct</h2><p>You may not use the services for unlawful purposes, to transmit malware, to infringe rights, or to abuse or harass others. We may suspend or terminate accounts engaging in prohibited conduct.</p><h2>13. Disclaimer of warranties</h2><p>To the maximum extent permitted by law, our services and products are provided “as is” and “as available” without warranties of any kind. Some jurisdictions do not allow certain disclaimers, so they may not apply to you.</p><h2>14. Limitation of liability</h2><p>To the extent permitted by law, our aggregate liability for direct damages arising from or related to any order or these Terms is limited to the amount paid by you for the relevant order. We are not liable for indirect, incidental, consequential or punitive damages, loss of profit, loss of data or business interruption.</p><h2>15. Indemnification</h2><p>You agree to indemnify and hold Nostalys and its affiliates harmless from claims, losses, liabilities, damages and costs (including reasonable attorneys’ fees) arising from your breach of these Terms, your submissions, or your misuse of the services.</p><h2>16. Force majeure</h2><p>Performance is suspended to the extent and for the duration of events beyond reasonable control, including strikes, natural disasters, acts of government, carrier failure, or shortage of materials.</p><h2>17. Governing law and jurisdiction</h2><p>These Terms are governed by French law. Any dispute not resolved amicably will be submitted to the exclusive jurisdiction of the courts of Nanterre, France.</p><h2>18. Severability and waiver</h2><p>If any provision is invalid or unenforceable it will be severed and the remainder will remain in force. Failure to enforce a provision is not a waiver of that provision.</p><h2>19. Changes to Terms</h2><p>We may update these Terms. Changes apply to orders placed after the revised Terms are published. The current Terms and effective date are displayed on the site.</p><h2>20. Contact</h2><p>For questions, claims or notices: <a>contact@nostalys.com</a></p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RhCHXU",
+        "text_myqpQp"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_8ttBim"
+  ]
+}

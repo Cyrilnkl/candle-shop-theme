@@ -1,0 +1,103 @@
+{%- liquid
+  assign max_products = block.settings.max_products
+  assign should_render_content = false
+
+  if block.settings.product_source == 'custom-product-list' and block.settings.product_list.count > 0
+    assign should_render_content = true
+  elsif block.settings.product_source == 'app-recommendations'
+    assign should_render_content = true
+  endif
+-%}
+
+{%- if should_render_content -%}
+  {% capture product_grid_classes %}
+    product__block-featured-products-grid
+    {% if block.settings.enable_swiper_mobile %}
+      product__block-featured-products-grid--has-mobile-swipe
+    {% else %}
+      product__block-featured-products-grid--has-mobile-grid
+    {% endif %}
+    {% if block.settings.display_as_collapsible_row %}
+      product__block-featured-products-grid--is-collapsible-row
+    {% endif %}
+    carousel__wrapper swiper-wrapper
+  {% endcapture %}
+
+  {% capture product_list_products %}
+    <div class="{{ product_grid_classes }}">
+      {%- for product_item in block.settings.product_list limit: max_products -%}
+        <div class="carousel__slide swiper-slide" data-slide>
+          {%
+            render 'product-item' with
+            prod: product_item,
+            aspect_ratio: settings.product_listing_aspect_ratio,
+            quick_view_is_beneath: true
+          %}
+        </div>
+      {%- endfor -%}
+    </div>
+  {% endcapture %}
+
+  {% capture app_recommended_products %}
+    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+      <div data-featured-products-content>
+        <div class="{{ product_grid_classes }}">
+          {%- if recommendations.products_count > 0 -%}
+            {%- for product_item in recommendations.products -%}
+              <div class="carousel__slide swiper-slide" data-slide>
+                {%
+                  render 'product-item' with
+                  prod: product_item,
+                  aspect_ratio: settings.product_listing_aspect_ratio,
+                  quick_view_is_beneath: true
+                %}
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {% endcapture %}
+
+  {% capture content %}
+    <div
+      class="carousel swiper"
+      data-featured-products
+      data-product-id="{{ product.id }}"
+      data-section-id="{{ section.id }}"
+      data-recommendations-type="{{ block.settings.product_source }}"
+      data-max-recommendations="{{ max_products }}"
+      data-enable-mobile-swiper="{{ block.settings.enable_swiper_mobile }}"
+    >
+      {%- if block.settings.product_source == 'custom-product-list' -%}
+        {{ product_list_products }}
+      {%- else -%}
+        {{ app_recommended_products }}
+      {%- endif -%}
+    </div>
+  {% endcapture %}
+
+  {% if block.settings.display_as_collapsible_row %}
+    {%-
+      render 'product-block-accordion' with
+      block: block,
+      block_settings: block.settings,
+      classes: 'product__block-featured-products',
+      heading: block.settings.heading,
+      disable_rte: true,
+      content: content,
+    -%}
+  {% else %}
+    <div
+      class="product__block product__block-featured-products{% if block.settings.product_source == 'app-recommendations' %} hidden{% endif %} product__block--medium"
+      {{ block.shopify_attributes }}
+    >
+      {%- unless block.settings.heading == blank -%}
+        <{{ block.settings.heading_tag }} class="product__block-featured-products__heading ff-heading fs-heading-5-base">
+          {{ block.settings.heading }}
+        </{{ block.settings.heading_tag }}>
+      {%- endunless -%}
+      {{ content }}
+    </div>
+  {% endif %}
+{%- endif -%}

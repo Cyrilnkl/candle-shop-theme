@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "t:groups.overlay_group.name",
+  "sections": {
+    "quick-cart": {
+      "type": "quick-cart",
+      "custom_css": [
+        ".quick-cart__footer-tax-note {display: none;}",
+        ".quick-cart__inventory-warning {margin-top: -15px;}"
+      ],
+      "settings": {
+        "enable_quick_cart": true,
+        "show_product_currency": true,
+        "promotion_text": "<p>Check out these collections.</p>",
+        "collection_list": [],
+        "collection_list_button_style": "btn--secondary"
+      }
+    },
+    "popup": {
+      "type": "popup",
+      "settings": {}
+    }
+  },
+  "order": [
+    "quick-cart",
+    "popup"
+  ]
+}

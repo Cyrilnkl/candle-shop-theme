@@ -1,0 +1,546 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "product_header": {
+          "type": "product_header",
+          "settings": {
+            "show_divider": false,
+            "show_vendor": false,
+            "show_sku": false,
+            "show_discount": false,
+            "discount_format": "percent_off",
+            "show_product_rating": false,
+            "show_sale_badge": false,
+            "show_custom_badges": false
+          }
+        },
+        "air_product_reviews_app_summary_block_nYbbBt": {
+          "type": "shopify://apps/air-product-reviews/blocks/app-summary-block/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {}
+        },
+        "description_FQXYie": {
+          "type": "description",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "text_font_class": "fs-body-100",
+            "column_placement": "right",
+            "display_as_collapsible_row": false,
+            "expand_by_default": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_popup_option": "Color",
+            "variant_popup_icon": "measuring-tape",
+            "variant_popup_text": "Size guide",
+            "variant_popup_page": "",
+            "swatch_size": "medium",
+            "chip_layout": "3col"
+          }
+        },
+        "inventory_counter_wgnLGb": {
+          "type": "inventory-counter",
+          "disabled": true,
+          "settings": {
+            "label": "Ou stock",
+            "inventory_max": "100",
+            "low_inventory_threshold": "20",
+            "show_status_bar": true,
+            "show_untracked_quantity": false
+          }
+        },
+        "bundler_custom_bundle_eyQPJV": {
+          "type": "shopify://apps/bundler/blocks/custom-bundle/7a6ae1b8-3b16-449b-8429-8bb89a62c664",
+          "settings": {
+            "shortcode": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "enable_sticky_atc_bar_desktop": true,
+            "enable_sticky_atc_bar_mobile": true,
+            "divider_width": "none"
+          }
+        }
+      },
+      "block_order": [
+        "product_header",
+        "air_product_reviews_app_summary_block_nYbbBt",
+        "description_FQXYie",
+        "variant_picker",
+        "inventory_counter_wgnLGb",
+        "bundler_custom_bundle_eyQPJV",
+        "buy_buttons"
+      ],
+      "custom_css": [
+        "h1 {font-size: 30px; font-weight: 600;}",
+        ".product__price-and-ratings {display: none;}",
+        ".product__policies.rte {display: none;}"
+      ],
+      "settings": {
+        "enable_sticky_product_details": true,
+        "show_breadcrumbs": false,
+        "show_navigation_buttons": false,
+        "show_featured_media_first": false,
+        "gallery_style": "thumbnails",
+        "gallery_style_mobile": "carousel",
+        "gallery_size": "medium",
+        "gallery_overflow": "3",
+        "enable_video_looping": true,
+        "enable_product_lightbox": true,
+        "image_aspect_ratio": "square",
+        "enable_multiple_variant_media": false,
+        "enable_mobile_carousel_looping": true,
+        "show_mobile_carousel_images_full_width": false,
+        "hide_mobile_carousel_dots": false,
+        "enable_gift_card_recipient": false,
+        "enable_animation": true
+      }
+    },
+    "product-tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "block-2": {
+          "type": "two_column_tab",
+          "settings": {
+            "tab_heading": "30 Day Money Back Guarantee",
+            "content_vertical_alignment": "top",
+            "column_spacing": 28,
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>Shop with total peace of mind. If your purchase doesn’t fully meet your expectations, you have 30 days to change your mind — no questions asked. Simply return your item in its original condition, and we’ll issue a full refund.<br/><br/><strong>Because your satisfaction isn’t optional — it’s guaranteed.</strong></p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text",
+            "heading_column_2": "",
+            "heading_font_class_column_2": "fs-heading-4-base",
+            "heading_tag_column_2": "h3",
+            "text_column_2": "",
+            "page_for_content_column_2": "",
+            "custom_liquid_column_2": "",
+            "text_font_class_column_2": "fs-body-100",
+            "image_width_column_2": 100,
+            "image_position_column_2": "above_text"
+          }
+        },
+        "block-1": {
+          "type": "one_column",
+          "settings": {
+            "tab_heading": "Shipping Worldwide",
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>All orders require 1-3 business day for processing and 4–12 business days to deliver to your address.</p><p><br/>If you have any questions regarding your order, please reach out to us at : <strong>nostalys.contact@gmail.com</strong></p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "content_width": "custom",
+            "text_max_width": 700,
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text"
+          }
+        },
+        "block-3": {
+          "type": "three_column_tab",
+          "settings": {
+            "tab_heading": "What's included?",
+            "content_vertical_alignment": "top",
+            "column_spacing": 28,
+            "heading_column_1": "",
+            "heading_font_class_column_1": "fs-heading-4-base",
+            "heading_tag_column_1": "h3",
+            "text_column_1": "<p>✨ 1× <strong>VideoGlow™ 3D Crystal Ball</strong> with built-in HD LCD screen<br/><br/>🔌 1× <strong>USB-C charging & data cable</strong> for fast transfer and easy recharge<br/><br/>📖 1× <strong>User manual</strong> with simple step-by-step setup<br/><br/>🎁 1× <strong>Gift-ready premium box</strong>, perfect for special occasions</p>",
+            "page_for_content_column_1": "",
+            "custom_liquid_column_1": "",
+            "text_font_class_column_1": "fs-body-100",
+            "image_width_column_1": 100,
+            "image_position_column_1": "above_text",
+            "heading_column_2": "",
+            "heading_font_class_column_2": "fs-heading-4-base",
+            "heading_tag_column_2": "h3",
+            "text_column_2": "",
+            "page_for_content_column_2": "",
+            "custom_liquid_column_2": "",
+            "text_font_class_column_2": "fs-body-100",
+            "image_width_column_2": 100,
+            "image_position_column_2": "above_text",
+            "heading_column_3": "",
+            "heading_font_class_column_3": "fs-heading-4-base",
+            "heading_tag_column_3": "h3",
+            "text_column_3": "",
+            "page_for_content_column_3": "",
+            "custom_liquid_column_3": "",
+            "text_font_class_column_3": "fs-body-100",
+            "image_width_column_3": 100,
+            "image_position_column_3": "above_text"
+          }
+        }
+      },
+      "block_order": [
+        "block-2",
+        "block-1",
+        "block-3"
+      ],
+      "settings": {
+        "tab_alignment": "left",
+        "tab_spacing": 40,
+        "font_choice": "ff-heading",
+        "tab_font_size": "fs-body-150",
+        "background_color": "",
+        "text_color": "#000000",
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "1759878415f390b1f9": {
+      "type": "apps",
+      "blocks": {
+        "vizup_shoppable_video_carousel_videos_block_zmHy7G": {
+          "type": "shopify://apps/vizup-shoppable-video-carousel/blocks/videos-block/eaecaa7b-ab6b-40ae-8ddf-50daa867f3eb",
+          "settings": {
+            "videoc_widget_id": "videos UGC"
+          }
+        }
+      },
+      "block_order": [
+        "vizup_shoppable_video_carousel_videos_block_zmHy7G"
+      ],
+      "custom_css": [
+        "@media (max-width: 767px) {.apps__heading.ff-heading.fs-heading-3-base.section-introduction__heading {display: block; margin-inline: auto; /* centre le bloc */ text-align: center; /* centre le texte */ max-width: 100%; }}"
+      ],
+      "settings": {
+        "heading": "Join 10,000+ Loving Customers",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "collapsible_row_list_CbQWLM": {
+      "type": "collapsible-row-list",
+      "blocks": {
+        "item_hHKHkd": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🌙 What is Nostalys?",
+            "text": "<p>Nostalys is a luminous memory sphere designed to hold your most heartfelt moments. Inside each crystal orb lives a built-in HD screen and gentle speakers, ready to bring your memories to life — glowing softly like captured starlight. Simply connect it to your computer, upload your personalized video, and watch your memories shine again.</p>"
+          }
+        },
+        "item_gFGBxr": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🔊 Does it play sound?",
+            "text": "<p>Yes, absolutely. Each Nostalys sphere has built-in speakers so your video plays with both image <strong>and</strong> sound — creating an immersive moment of warmth and emotion.</p>"
+          }
+        },
+        "item_pxhLiG": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🎥 What video formats can I use?",
+            "text": "<p>Nostalys supports <strong>MP4</strong> and <strong>MOV</strong> files using the <strong>H.264 codec</strong>.<br/><br/>For the best fit inside the glowing sphere, we recommend resizing your video to <strong>480×480 px</strong>.<br/><br/>The recommended audio format is <strong>MP3</strong> (high quality).</p>"
+          }
+        },
+        "item_7yQHeR": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "💫 How do I upload my video?",
+            "text": "<p>4 steps - 1 minutes :</p><ol><li>Connect your Nostalys sphere to your computer with the included <strong>USB-C cable</strong>.<br/></li><li>Open the drive that appears — it works just like a regular USB stick.<br/></li><li>Drag and drop your video file.<br/></li><li>Safely eject your device… and your memory is now part of the light. ✨<br/></li></ol><p></p>"
+          }
+        },
+        "item_J66VKK": {
+          "type": "item",
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "🔁 Can I change my video later?",
+            "text": "<p>Of course. Memories evolve, and so can your sphere.</p>"
+          }
+        },
+        "item_Mymwkt": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "expand_by_default": false,
+            "icon": "none",
+            "title": "💝 What’s included in the box?",
+            "text": "<p>✨ 1× <strong>Nostalys™ Memory Sphere</strong> with built-in HD screen & sound<br/></p><p>🔌 1× <strong>USB-C charging & data cable</strong><br/><br/>📖 1× <strong>User guide</strong> with illustrated steps<br/><br/>🎁 1× <strong>Gift-ready box</strong>, perfect for sharing light and emotion</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_hHKHkd",
+        "item_gFGBxr",
+        "item_pxhLiG",
+        "item_7yQHeR",
+        "item_J66VKK",
+        "item_Mymwkt"
+      ],
+      "custom_css": [
+        "* {background-color: #0a284c; color: white;}"
+      ],
+      "name": "t:sections.collapsible_row_list.presets.name",
+      "settings": {
+        "title": "FAQs",
+        "heading_tag": "h2",
+        "heading_font_class": "fs-heading-3-base",
+        "subheading": "",
+        "subheading_tag": "h3",
+        "subheading_font_class": "fs-heading-5-base",
+        "heading_alignment": "center",
+        "item_heading_font": "heading",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_kRwxX4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4Az8N9": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Choose Nostalys ?",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_mA4jmK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We created <strong>Nostalya</strong> to be more than a keepsake — a <strong>luminous treasure</strong> that keeps your <strong>most precious memories</strong> alive with <strong>warmth</strong>, <strong>beauty</strong>, and <strong>emotion</strong>.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4Az8N9",
+        "text_mA4jmK"
+      ],
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "1759927237bb0ddace": {
+      "type": "apps",
+      "blocks": {
+        "us_vs_them_app_block_ytNNpw": {
+          "type": "shopify://apps/us-vs-them/blocks/app-block/2973f47c-52ba-4fe7-a5d0-b1e6617bd662",
+          "settings": {
+            "container_max_width_unit": "px",
+            "container_max_width_desktop_value": 0,
+            "container_max_width_mobile_value": 0,
+            "header_font_size": 20,
+            "row_font_size": 16,
+            "icons_height": 28,
+            "cta_border_radius": 6,
+            "cta_font_size": 16,
+            "cta_padding_h": 12,
+            "cta_padding_v": 8
+          }
+        }
+      },
+      "block_order": [
+        "us_vs_them_app_block_ytNNpw"
+      ],
+      "custom_css": [
+        ".watermark-container {display: none !important;}"
+      ],
+      "settings": {
+        "heading": "",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "image_with_text_hcNhVR": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_dRW4X7": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Image with text",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "subheading_3NQNBQ": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Choose that special video and take it with you wherever you go. Capture what you love most and make it shine forever.",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base"
+          }
+        },
+        "button_EY7zR6": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "link_text": "Read more",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_dRW4X7",
+        "subheading_3NQNBQ",
+        "button_EY7zR6"
+      ],
+      "name": "t:sections.image_with_text.presets.name",
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "center",
+        "image": "shopify://shop_images/imgi_18_capvideo.png",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "image_presentation",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "17599308173a677d17": {
+      "type": "apps",
+      "blocks": {
+        "air_product_reviews_app_block_all_review_Q9fWW7": {
+          "type": "shopify://apps/air-product-reviews/blocks/app-block-all-review/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
+          "settings": {
+            "air_allReviewsBlock_heading": "All reviews page",
+            "air_allReviewsBlock_useSimpleSummary": false,
+            "air_allReviewsBlock_maxReview": 20,
+            "air_allReviewsBlock_summaryBgColor": "#F8F8F8",
+            "air_allReviewsBlock_bgColor": "#FFFFFF",
+            "air_allReviewsBlock_onlyMedia": false,
+            "air_allReviewsBlock_onlyPositive": false,
+            "air_allReviewsBlock_hideProductThumbnails": false,
+            "air_allReviewsBlock_selectedProduct": []
+          }
+        }
+      },
+      "block_order": [
+        "air_product_reviews_app_block_all_review_Q9fWW7"
+      ],
+      "settings": {
+        "heading": "",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "newsletter_compact_6V9EyK": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "text_content_WCRe4q": {
+          "type": "text_content",
+          "settings": {
+            "width": "600",
+            "title": "Join our newsletter",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base",
+            "text": "<p>Sign up and receive a coupon code to use on your next order.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "newsletter_signup_BRREMG": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "Sign up",
+            "footer_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_content_WCRe4q",
+        "newsletter_signup_BRREMG"
+      ],
+      "name": "t:sections.newsletter_compact.presets.name",
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#0a284c",
+        "text_color": "#ffffff",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    },
+    "recommendations": {
+      "type": "recommended-products",
+      "settings": {
+        "title": "Recommended Products",
+        "subheading": "",
+        "maximum_products": 8,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-tabs",
+    "1759878415f390b1f9",
+    "collapsible_row_list_CbQWLM",
+    "rich_text_kRwxX4",
+    "1759927237bb0ddace",
+    "image_with_text_hcNhVR",
+    "17599308173a677d17",
+    "newsletter_compact_6V9EyK",
+    "recommendations"
+  ]
+}

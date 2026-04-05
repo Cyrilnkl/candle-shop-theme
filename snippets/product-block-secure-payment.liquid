@@ -1,0 +1,64 @@
+{% capture content-text %}
+<div class="product-block-secure-payment__text
+  {% case block_settings.text_size %}
+    {% when 'small' %} fs-body-50
+    {% when 'large' %} fs-body-100
+    {% else %} fs-body-75
+  {% endcase %}"
+>{{ block_settings.optional_text }}</div>
+{% endcapture %}
+
+{% capture content %}
+<div class="product-block-secure-payment
+  product-block-secure-payment--{{ block_settings.text_alignment }}
+  {% if block_settings.add_box %}product-block-secure-payment--boxed{% endif %}"
+  {{ block.shopify_attributes }}
+    style="
+    --image-size: {{ block_settings.trust_image_size }}%;
+  "
+>
+  <div class="product__label-wrapper">
+    {%- if block_settings.heading_icon != 'none' -%}
+      {% render 'icon-editorial', icon: block_settings.heading_icon %}
+    {%- endif -%}
+    {%- if block_settings.heading_text -%}
+      <span class="product-block-secure-payment__label fs-body-150">{{ block_settings.heading_text }}</span>
+    {%- endif -%}
+  </div>
+  {%- if block_settings.optional_text and block_settings.text_position == 'above' -%}
+    {{ content-text }}
+  {%- endif -%}
+  {%- if block_settings.show_payment_icons -%}
+    {% render 'payment-icons' %}
+  {%- endif -%}
+  {%- if block_settings.optional_text and block_settings.text_position == 'below' -%}
+    {{ content-text }}
+  {%- endif -%}
+
+  {%- if block_settings.trust_image != blank -%}
+    {%-
+      render 'image-block',
+      wrapper_class: 'product-block-secure-payment__trust-image section-blocks__image',
+      image: block_settings.trust_image,
+      image_size: block_settings.trust_image_size,
+    -%}
+  {%- endif -%}
+</div>
+{% endcapture %}
+
+{% if block_settings.display_as_collapsible_row %}
+  {%-
+    render 'product-block-accordion' with
+    block: block,
+    block_settings: block_settings,
+    heading: block_settings.collapsible_row_title,
+    content: content,
+  -%}
+{% else %}
+  <div
+    class="product__block product__block--medium"
+    {{ block.shopify_attributes }}
+  >
+    {{ content }}
+  </div>
+{% endif %}

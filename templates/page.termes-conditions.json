@@ -1,0 +1,329 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_8ttBim": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RhCHXU": {
+          "type": "heading",
+          "settings": {
+            "title": "Terms and Conditions | Zephyra",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_myqpQp": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Last Updated: 12/10/2024</strong></p><p>Welcome to Zephyra. By accessing our website, you agree to comply with these terms and conditions. If you do not agree, please refrain from using our site.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RhCHXU",
+        "text_myqpQp"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_BtTeLQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ktBrRn": {
+          "type": "heading",
+          "settings": {
+            "title": "1. Use of Cookies",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_C4qQj9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our website uses cookies to enhance your browsing experience and improve our services. By using Zephyra, you consent to the use of cookies in accordance with our privacy policy. You can adjust your cookie preferences at any time in your browser settings.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ktBrRn",
+        "text_C4qQj9"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_7brwRF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xYNNPK": {
+          "type": "heading",
+          "settings": {
+            "title": "2. Intellectual Property",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_TXHhhp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All content on the Zephyra website (texts, images, designs, logos) is protected by copyright and is owned by Zephyra or its partners, unless otherwise stated.</p><p><strong>You may not:</strong></p><ul><li>Reproduce, copy, or use our content for commercial purposes without prior written consent.</li><li>Resell, rent, or publish our content on other platforms.</li></ul><p>You may view and print pages from the site for personal, non-commercial use only.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xYNNPK",
+        "text_TXHhhp"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_a7GfQ6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TREnrd": {
+          "type": "heading",
+          "settings": {
+            "title": "3. User Reviews and Content",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_YhqAPM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Users may post reviews or comments on certain parts of the site.</p><ul><li>Reviews reflect the opinions of the users and do not represent the values or opinions of Zephyra.</li><li>We reserve the right to remove any inappropriate or offensive content.</li></ul><p>Zephyra assumes no liability for user-generated content.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TREnrd",
+        "text_YhqAPM"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_fjhQeY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8yeHrD": {
+          "type": "heading",
+          "settings": {
+            "title": "4. Limitation of Liability",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_DLi9UG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Zephyra is not responsible for any direct or indirect damages resulting from the use or unavailability of the site.<br/>While we strive to provide accurate and up-to-date information, we do not guarantee the absence of errors or omissions.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8yeHrD",
+        "text_DLi9UG"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_dp93LJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TkKDrc": {
+          "type": "heading",
+          "settings": {
+            "title": "5. Sustainability Commitment",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_gbTRRc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Zephyra, we are committed to using environmentally friendly materials. However, we do not guarantee zero environmental impact and encourage our customers to recycle responsibly in accordance with local regulations.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TkKDrc",
+        "text_gbTRRc"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_YMJibR": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7CeTqp": {
+          "type": "heading",
+          "settings": {
+            "title": "6. Governing Law",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base"
+          }
+        },
+        "text_UCgBwQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>These terms are governed by the laws of France. In the event of a dispute, exclusive jurisdiction is granted to the courts of France.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7CeTqp",
+        "text_UCgBwQ"
+      ],
+      "settings": {
+        "alignment": "left_left",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "rich_text_bbY4Ma": {
+      "type": "rich-text",
+      "blocks": {
+        "text_NKpgwT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For any inquiries regarding these terms, please contact us at<strong> </strong><a><strong>hello@zephyra.com</strong></a>.</p><h5></h5>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "text_NKpgwT"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "newsletter_compact_nbEnje": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "text_content_XrHwfm": {
+          "type": "text_content",
+          "settings": {
+            "width": "600",
+            "title": "Join our newsletter",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base",
+            "text": "<p>Sign up and receive a coupon code to use on your next order.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "newsletter_signup_77GA4h": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "Sign up",
+            "footer_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_content_XrHwfm",
+        "newsletter_signup_77GA4h"
+      ],
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#f5f5f5",
+        "text_color": "#000000",
+        "input_color": "#000000",
+        "input_background": "#fff",
+        "button_background_color": "#000000",
+        "button_text_color": "#FFFFFF",
+        "color_overlay": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_8ttBim",
+    "rich_text_BtTeLQ",
+    "rich_text_7brwRF",
+    "rich_text_a7GfQ6",
+    "rich_text_fjhQeY",
+    "rich_text_dp93LJ",
+    "rich_text_YMJibR",
+    "rich_text_bbY4Ma",
+    "newsletter_compact_nbEnje"
+  ]
+}

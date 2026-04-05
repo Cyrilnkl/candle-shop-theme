@@ -1,0 +1,77 @@
+{%- liquid
+  comment
+    Renders swatches for the product-item hover display.
+
+    Required parameters:
+      - prod: { Object } The product that the swatches are associated with.
+      - option_name: { String } The option name whose values should display as swatches. Is downcased and has newlines stripped.
+
+    Optional parameters:
+      - show_sibling_swatches: { Boolean } Whether sibling swatches are enabled.
+      - sibling_products: { Object } A list of sibling products.
+  endcomment
+
+  case settings.product_card_swatch_size
+    when 'large'
+      assign max_items = 3
+      assign width_multiplier = 2
+    when 'medium'
+      assign max_items = 4
+      assign width_multiplier = 1.5
+    else
+      assign max_items = 5
+      assign width_multiplier = 1
+  endcase
+
+  case settings.swatch_shape
+    when 'rectangle'
+      assign swatch_width = 28 | times: width_multiplier
+    else
+      assign swatch_width = 16 | times: width_multiplier
+  endcase
+
+  assign swatch_image_width = swatch_width | times: 2
+
+  capture swatch_style
+    echo '--swatch-width: [[sw]]px;' | replace: '[[sw]]', swatch_width
+    echo '--swatch-image-fit: [[sif]];' | replace: '[[sif]]', settings.swatch_image_fit
+  endcapture
+-%}
+
+<div
+  class="product-swatches-options"
+  style="{{ swatch_style }}"
+>
+  <ul class="product-swatches-options__list ff-body fs-body-50">
+    {% if prod.has_only_default_variant == false and show_sibling_swatches == false %}
+      {% comment %} Regular swatches {% endcomment %}
+      {% assign option_values_count = prod.options_by_name[option_name].values.size %}
+
+      {%- for value in prod.options_by_name[option_name].values limit: max_items -%}
+        {% render 'product-swatch',
+          context: 'product-item',
+          prod: prod,
+          swatch_image_width: swatch_image_width,
+          option_index: prod.options_by_name[option_name].position,
+          option_name: option_name,
+          option_value: value
+        %}
+      {%- endfor -%}
+    {% else %}
+      {% comment %} Sibling swatches {% endcomment %}
+      {% assign option_values_count = sibling_products.size %}
+
+      {%- for sibling_product in sibling_products limit: max_items -%}
+        {% render 'product-swatch',
+          context: 'product-item',
+          swatch_image_width: swatch_image_width,
+          sibling_product: sibling_product,
+          option_name: settings.siblings_option_name,
+          option_value: sibling_product.metafields.stiletto.sibling_option_name
+        %}
+      {%- endfor -%}
+    {% endif %}
+
+    {% render 'product-item-swatches-overflow', option_values_count: option_values_count, max_items: max_items %}
+  </ul>
+</div>

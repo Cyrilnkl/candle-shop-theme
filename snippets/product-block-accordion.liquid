@@ -1,0 +1,70 @@
+{%- liquid
+  assign open = false
+  if block_settings.expand_by_default or expand_by_default
+    assign open = true
+  endif
+
+  # Note: these two classes must also be applied to the icon wrapper for vertical alignment
+
+  unless label_font
+    assign label_font = 'ff-heading'
+  endunless
+  unless label_font_size
+    assign label_font_size = 'fs-heading-5-base'
+  endunless
+
+  if block_settings.page_for_content
+    assign content_page = pages[block_settings.page_for_content]
+
+    if content_page and content_page != blank
+      assign content = content_page.content
+    endif
+  endif
+
+  if block_settings.custom_liquid != blank
+    assign content = block_settings.custom_liquid
+  endif
+-%}
+
+{% if content != blank or request.design_mode %}
+  <div class="accordion {{ classes }}" {{ block.shopify_attributes }}>
+    <div
+      class="accordion__inner"
+      data-index="{{ forloop.index0 }}"
+      data-open="{% if open %}true{% else %}false{% endif %}"
+      {{ block.shopify_attributes }}
+    >
+      <button
+        class="accordion__label"
+        aria-expanded="{% if open %}true{% else %}false{% endif %}"
+        aria-controls="{{ block.id }}"
+      >
+        {%- liquid
+          assign heading_tag = 'h3'
+          if block.settings.heading_tag
+            assign heading_tag = block.settings.heading_tag
+          elsif block.settings.title_tag
+            assign heading_tag = block.settings.title_tag
+          endif
+        -%}
+        <{{ heading_tag }} class="{{ label_font }} {{ label_font_size }}">
+          {{ heading }}
+        </{{ heading_tag }}>
+        <div class="accordion__label-icons">
+          {% render 'icon', icon: 'plus' %}
+          {% render 'icon', icon: 'minus' %}
+        </div>
+      </button>
+      <div
+        class="accordion__content fs-body-100{% unless disable_rte %} rte non-page-rte{% endunless %}"
+        aria-hidden="{% if open %}false{% else %}true{% endif %}"
+        {% unless open %}
+          style="display: none"
+        {% endunless %}
+        id="accordion-content-{{ block.id }}"
+      >
+        {{ content }}
+      </div>
+    </div>
+  </div>
+{% endif %}

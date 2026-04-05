@@ -1,0 +1,28 @@
+{% comment %}
+  Usage:
+  {% render 'free-shipping-bar' %}
+{% endcomment %}
+
+{%- if settings.enable_free_shipping_bar and settings.free_shipping_threshold != blank -%}
+  {%- liquid
+    assign free_shipping_success_message = 'cart.general.free_shipping' | t
+    assign free_shipping_pending_message = 'cart.general.free_shipping_remaining_html' | t
+  -%}
+
+  <div
+    class="free-shipping-bar"
+    data-free-shipping-bar
+    data-threshold="{{ settings.free_shipping_threshold }}"
+    data-cart-total="{{ cart.total_price }}"
+    data-free-shipping-success-message="{{ free_shipping_success_message }}"
+    data-free-shipping-pending-message="{{ free_shipping_pending_message }}"
+  >
+    <div class="inventory-counter__message-wrapper ff-body fs-body-75">
+      {%- render 'icon' with icon: 'package-closed' -%}
+      <h4 class="free-shipping-bar__message"></h4>
+    </div>
+    <div class="free-shipping-bar__bar">
+      <span class="free-shipping-bar__bar-progress"></span>
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,37 @@
+{% liquid
+  comment
+    This snippet renders a preset or custom icon within a 'block' container.
+
+    Required parameters:
+    	- icon: { String } The string that represents the icon name in icon-editorial.liquid.
+    	- custom_icon: { Object } The image to be rendered as a custom icon. Overrides the icon if present.
+      - width: { String or Number }: The rendered width of the block.
+      - mobile_width: { String or Number }: The rendered width of the block on mobile.
+    	- shopify_attributes: { Object } The block's attributes needed for the Theme Editor.
+  endcomment
+%}
+{%- unless icon == 'none' and custom_icon == blank -%}
+  <div
+    class="icon-block"
+    style="
+      --icon-width: {{ width }}px;
+      --icon-width-mobile: {{ mobile_width }}px;
+    "
+    aria-label="{{ custom_icon.alt | default: icon }}"
+    {{ shopify_attributes }}
+  >
+    {%- if icon != 'none' and custom_icon == blank -%}
+      {%- render 'icon-editorial', class: 'icon-block__icon', icon: icon -%}
+    {%- endif -%}
+
+    {%- if custom_icon != blank -%}
+      {%-
+        render 'image',
+        wrapper_class: "icon-block__icon",
+        image: custom_icon,
+        sizes_px: width,
+        aspect_ratio: "natural",
+      -%}
+    {%- endif -%}
+  </div>
+{%- endunless -%}

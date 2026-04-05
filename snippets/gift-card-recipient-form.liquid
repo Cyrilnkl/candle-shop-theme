@@ -1,0 +1,217 @@
+{%- comment -%}
+  Renders the gift card recipient form.
+
+  Required parameters:
+
+  - source: [String] A string noting where the form is being included. Can be:
+    - 'product-display': The main display
+    - 'product-form': Hidden version in the product form
+  - product: [Product] The product object
+  - form: [Form] The parent form object.
+    - Only required if the source is 'product-form'.
+{%- endcomment -%}
+
+{%- liquid
+  assign gcr_string = 'gift-card-recipient'
+
+  if source == 'product-display'
+    assign gcr_string = gcr_string | prepend: 'display-'
+  else
+    assign gcr_string = gcr_string | prepend: 'form-'
+  endif
+-%}
+
+<div class="product-form__gift-card-recipient" data-section-id="{{ section.id }}" data-source="{{ source }}">
+  {% if source == 'product-display' -%}
+    <div class="product__controls-group product__controls-group--checkbox product__block product__block--medium">
+      <div class="product__custom-option product__custom-option-type--checkbox">
+        <label class="product__custom-option-checkbox-content">
+          <input
+            type="checkbox"
+            id="{{ gcr_string }}-enable--{{ section.id }}"
+            class="product__custom-option-checkbox visually-hidden"
+          >
+          <div class="product__custom-option-content-inner">
+            <div class="product__custom-option-input">
+              {% render 'icon' with icon: 'checkmark' %}
+            </div>
+
+            <span class="product__custom-option-label fs-body-100">
+              {{ 'products.gift_card_recipient.enable' | t }}
+            </span>
+          </div>
+        </label>
+      </div>
+    </div>
+  {%- endif %}
+
+  <div class="gift-card-recipient-fields">
+    <div class="product__controls-group product__controls-group--text product__block product__block--medium">
+      <div class="product__label-wrapper">
+        <label for="{{ gcr_string }}-email--{{ section.id }}" class="product__label fs-body-100">
+          {% if source == 'product-display' -%}
+            {{ 'products.gift_card_recipient.email' | t }}:
+          {%- else -%}
+            {{ 'products.gift_card_recipient.email_optional' | t }}:
+          {%- endif %}
+        </label>
+      </div>
+
+      <div class="product__custom-option product__custom-option-type--text">
+        <input
+          id="{{ gcr_string }}-email--{{ section.id }}"
+          type="email"
+          class="input"
+          value="{{ form.email }}"
+          placeholder="{{ 'products.gift_card_recipient.email_placeholder' | t }}"
+          {% if source == 'product-form' -%}
+            name="properties[Recipient email]"
+            {% if form.errors contains 'email' -%}
+              aria-invalid="true"
+              aria-describedby="{{ gcr_string }}-email-error--{{ section.id }}"
+            {%- endif %}
+          {%- endif %}
+        >
+      </div>
+
+      <div
+        id="{{ gcr_string }}-email-error--{{ section.id }}"
+        class="
+          {{- 'product__gift-card-recipient-error gift-card-recipient-error--email product__block product__block--medium' }}
+          {%- unless form.errors contains 'email' %} hidden{%- endunless %}
+        "
+      >
+        {{ form.errors.messages.email }}
+      </div>
+    </div>
+
+    <div class="product__controls-group product__controls-group--text product__block product__block--medium">
+      <div class="product__label-wrapper">
+        <label for="{{ gcr_string }}-name--{{ section.id }}" class="product__label fs-body-100">
+          {{ 'products.gift_card_recipient.name' | t }}:
+        </label>
+      </div>
+
+      <div class="product__custom-option product__custom-option-type--text">
+        <input
+          id="{{ gcr_string }}-name--{{ section.id }}"
+          type="text"
+          class="input"
+          value="{{ form.name }}"
+          placeholder="{{ 'products.gift_card_recipient.name_placeholder' | t }}"
+          {% if source == 'product-form' -%}
+            name="properties[Recipient name]"
+            {% if form.errors contains 'name' -%}
+              aria-invalid="true"
+              aria-describedby="{{ gcr_string }}-name-error--{{ section.id }}"
+            {%- endif %}
+          {%- endif %}
+        >
+      </div>
+
+      <div
+        id="{{ gcr_string }}-name-error--{{ section.id }}"
+        class="
+          {{- 'product__gift-card-recipient-error product__block product__block--medium' }}
+          {%- unless form.errors contains 'name' %} hidden{%- endunless %}
+        "
+      >
+        {{ form.errors.messages.name }}
+      </div>
+    </div>
+
+    <div class="product__controls-group product__controls-group--textarea product__block product__block--medium">
+      <div class="product__label-wrapper">
+        <label for="{{ gcr_string }}-message--{{ section.id }}" class="product__label fs-body-100">
+          {{ 'products.gift_card_recipient.message' | t }}:
+        </label>
+      </div>
+
+      <div class="product__custom-option product__custom-option-type--textarea">
+        <textarea
+          id="{{ gcr_string }}-message--{{ section.id }}"
+          class="input"
+          maxlength="200"
+          rows="3"
+          placeholder="{{ 'products.gift_card_recipient.message_placeholder' | t }}"
+          {% if source == 'product-form' -%}
+            name="properties[Message]"
+            {% if form.errors contains 'message' -%}
+              aria-invalid="true"
+              aria-describedby="{{ gcr_string }}-message-error--{{ section.id }}"
+            {%- endif %}
+          {%- endif %}
+        >
+          {{- form.message -}}
+        </textarea>
+
+        <div class="textarea-note ff-body fs-body-50">
+          {{ 'products.gift_card_recipient.message_character_limit' | t }}
+        </div>
+      </div>
+
+      <div
+        id="{{ gcr_string }}-message-error--{{ section.id }}"
+        class="
+          {{- 'product__gift-card-recipient-error product__block product__block--medium' }}
+          {%- unless form.errors contains 'message' %} hidden{%- endunless %}
+        "
+      >
+        {{ form.errors.messages.message }}
+      </div>
+    </div>
+
+    <div class="product__controls-group product__controls-group--text product__block product__block--medium">
+      <div class="product__label-wrapper">
+        <label for="{{ gcr_string }}-send_on--{{ section.id }}" class="product__label fs-body-100">
+          {{ 'products.gift_card_recipient.send_on' | t }}:
+        </label>
+      </div>
+
+      <div class="product__custom-option product__custom-option-type--text">
+        <input
+          id="{{ gcr_string }}-send_on--{{ section.id }}"
+          type="date"
+          class="input"
+          value="{{ form.send_on }}"
+          pattern="\d{4}-\d{2}-\d{2}"
+          placeholder="{{ 'products.gift_card_recipient.send_on_placeholder' | t }}"
+          {% if source == 'product-form' -%}
+            name="properties[Send on]"
+            {% if form.errors contains 'send_on' -%}
+              aria-invalid="true"
+              aria-describedby="{{ gcr_string }}-send_on-error--{{ section.id }}"
+            {%- endif %}
+          {%- endif %}
+        >
+      </div>
+
+      <div
+        id="{{ gcr_string }}-send_on-error--{{ section.id }}"
+        class="
+          {{- 'product__gift-card-recipient-error product__block product__block--medium' }}
+          {%- unless form.errors contains 'send_on' %} hidden{%- endunless %}
+        "
+      >
+        {{ form.errors.messages.send_on }}
+      </div>
+    </div>
+
+    {% if source == 'product-form' -%}
+      <input
+        type="hidden"
+        id="{{ gcr_string }}-control--{{ section.id }}"
+        name="properties[__shopify_send_gift_card_to_recipient]"
+        value="if_present"
+      >
+
+      <input
+        type="hidden"
+        id="{{ gcr_string }}-timezone-offset--{{ section.id }}"
+        name="properties[__shopify_offset]"
+        value=""
+        disabled
+      >
+    {%- endif %}
+  </div>
+</div>

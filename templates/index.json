@@ -1,0 +1,425 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_c6fYP7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CNpDJ6": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_7aRwwa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CNpDJ6",
+        "text_7aRwwa"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich_text.presets.name",
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-bottom-only",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "video_with_text_dxFL7P": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_3UCcMX": {
+          "type": "heading",
+          "settings": {
+            "title": "Video with text",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "subheading_t4AXm9": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Use this section to promote a particular feature with editorial video.",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base"
+          }
+        },
+        "button_Deek4h": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Read more",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3UCcMX",
+        "subheading_t4AXm9",
+        "button_Deek4h"
+      ],
+      "disabled": true,
+      "name": "t:sections.video_with_text.presets.name",
+      "settings": {
+        "video_position": "right",
+        "video_position_mobile": "above-content",
+        "video": "shopify://files/videos/vizup-videos-ae965525.mp4",
+        "aspect_ratio": "landscape_ultrawide_alt",
+        "aspect_ratio_mobile": "natural",
+        "focal_point": "center",
+        "focal_point_mobile": "center",
+        "content_alignment": "center",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "full_width": false,
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "shoppable_image_YJRzTe": {
+      "type": "shoppable-image",
+      "blocks": {
+        "hotspot_aErycE": {
+          "type": "hotspot",
+          "disabled": true,
+          "settings": {
+            "product_item": "memory-orb-video-sphere",
+            "horizontal_position": 51,
+            "vertical_position": 55
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_aErycE"
+      ],
+      "custom_css": [
+        "* {max-width: 1400px;}",
+        "img {height: 500px;}"
+      ],
+      "name": "t:sections.shoppable_image.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/VidoSphere-MagicVideoSphere1-ezgif.com-video-to-gif-converter.gif",
+        "aspect_ratio": "landscape",
+        "heading": "Light Up Your Memories",
+        "heading_tag": "h2",
+        "subheading": "<p>A unique premium gift that transforms your cherished videos into a luminous, <strong>tactile keepsake</strong>.</p>",
+        "link": "",
+        "link_text": "",
+        "button_style": "btn--secondary",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "shoppable_feature_jCEedM": {
+      "type": "shoppable-feature",
+      "blocks": {
+        "hotspot_kxMF96": {
+          "type": "hotspot",
+          "disabled": true,
+          "settings": {
+            "product_item": "memory-orb-video-sphere",
+            "horizontal_position": 50,
+            "vertical_position": 56
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_kxMF96"
+      ],
+      "disabled": true,
+      "name": "t:sections.shoppable_feature.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/imgi_18_capvideo.png",
+        "image_position": "left",
+        "image_size": 55,
+        "aspect_ratio": "portrait_alt",
+        "heading": "Light Up Your Memories",
+        "heading_tag": "h2",
+        "subheading": "<p>A unique premium gift that transforms your cherished videos into a luminous, <strong>tactile keepsake</strong>.</p>",
+        "link": "shopify://products/memory-orb-video-sphere",
+        "link_text": "Get your memory",
+        "button_style": "btn--callout",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_position_desktop": "inside"
+      }
+    },
+    "video_hero_TzQJUw": {
+      "type": "video-hero",
+      "blocks": {
+        "heading_XKXVNW": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Video hero",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-2"
+          }
+        },
+        "text_m6jxTb": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Use this section to promote a particular feature with editorial video.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "play_button_HW3ELA": {
+          "type": "play-button",
+          "disabled": true,
+          "settings": {
+            "video_source": "external",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "aspect_ratio": "square",
+            "text": "Watch now",
+            "icon_style": "outline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XKXVNW",
+        "text_m6jxTb",
+        "play_button_HW3ELA"
+      ],
+      "disabled": true,
+      "name": "t:sections.video_hero.presets.name",
+      "settings": {
+        "image_aspect": "custom",
+        "desktop_height": 50,
+        "mobile_height": 100,
+        "video": "shopify://files/videos/TikDownloader.io_7530278211805105463_hd.mp4",
+        "media_link": "",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "rgba(0,0,0,0)",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 40,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-bottom-only"
+      }
+    },
+    "promotion_bar_8NUQtA": {
+      "type": "promotion-bar",
+      "name": "t:sections.promotion_bar.presets.name",
+      "settings": {
+        "min_height": 60,
+        "min_height_mobile": 60,
+        "heading": "Customize Your Sphere Now!",
+        "heading_tag": "h2",
+        "text": "<p>Last chance : Secure Your Sphere Today!</p>",
+        "link": "shopify://products/memory-orb-video-sphere",
+        "link_text": "SELECT YOUR SPHERE",
+        "button_style": "btn--secondary",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "background_color": "#0a284c",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "full_width": false,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "image_with_text_yFWEr9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_AKCKW6": {
+          "type": "heading",
+          "settings": {
+            "title": "Two Hearts, Endless Memories.",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-1-base"
+          }
+        },
+        "subheading_4AeqA4": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Gift the story of your love, illuminated and forever captured inside our handcrafted video sphere.",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base"
+          }
+        },
+        "button_dfEiWi": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/about-us",
+            "link_text": "About us",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AKCKW6",
+        "subheading_4AeqA4",
+        "button_dfEiWi"
+      ],
+      "name": "t:sections.image_with_text.presets.name",
+      "settings": {
+        "image_position": "right",
+        "text_alignment": "center",
+        "image": "shopify://shop_images/Capture_d_ecran_2025-10-07_a_17.41.58.png",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "image_small_aspect_ratio": "square",
+        "image_small_focal_point": "image_presentation",
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    },
+    "quote_WbEAAN": {
+      "type": "quote",
+      "blocks": {
+        "quote_maL4xK": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>“I gave the video sphere to my wife for our anniversary, featuring our wedding video. The quality of the sphere and the soft light are stunning. It truly <strong>brings the memory to life</strong> in our living room every day. Easy upload, premium result.”</p>",
+            "title": "Michael Salopard",
+            "quote_tag": "h4",
+            "font_size": "small"
+          }
+        },
+        "quote_8p9K8z": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>“The sphere itself is heavy and beautifully made, it feels like a true piece of <strong>art</strong>. The video playback is seamless, and the diffused light is just perfect. It’s elegant, not gimmicky. Worth every penny for the <strong>heirloom quality</strong>.”</p>",
+            "title": "Sarah Gerges",
+            "quote_tag": "h4",
+            "font_size": "small"
+          }
+        },
+        "quote_ihWU8f": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>“I was nervous about uploading my old footage, but the <strong>NOSTALYS platform was so easy and secure</strong>. They handled the encoding perfectly. The final product arrived quickly in beautiful premium packaging. Highly recommend for any major life event.”</p>",
+            "title": "Jason Hakim",
+            "quote_tag": "h4",
+            "font_size": "small"
+          }
+        },
+        "quote_zbhhKM": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>\"If you want a <strong>meaningful gift</strong> that stands out from everything else, this is it. The unboxing experience was fantastic, and the sphere works flawlessly. I will definitely be ordering another sphere for the holidays!\"</p>",
+            "title": "David Naon",
+            "quote_tag": "h4",
+            "font_size": "small"
+          }
+        }
+      },
+      "block_order": [
+        "quote_maL4xK",
+        "quote_8p9K8z",
+        "quote_ihWU8f",
+        "quote_zbhhKM"
+      ],
+      "name": "t:sections.quotes.presets.name",
+      "settings": {
+        "autoplay_enabled": true,
+        "autoplay_delay": 7,
+        "pagination_style": "dots",
+        "font_choice": "heading",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-bottom-only"
+      }
+    },
+    "newsletter_compact_9rLNDi": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "text_content_LyifXc": {
+          "type": "text_content",
+          "settings": {
+            "width": "600",
+            "title": "Join our newsletter",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-4-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-6-base",
+            "text": "<p><strong>Want 10% off?</strong> Enter your email to get your welcome discount code.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "newsletter_signup_LhewEH": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "JOIN NOSTALYS",
+            "footer_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_content_LyifXc",
+        "newsletter_signup_LhewEH"
+      ],
+      "name": "t:sections.newsletter_compact.presets.name",
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#0a284c",
+        "text_color": "#ffffff",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-only"
+      }
+    }
+  },
+  "order": [
+    "rich_text_c6fYP7",
+    "video_with_text_dxFL7P",
+    "shoppable_image_YJRzTe",
+    "shoppable_feature_jCEedM",
+    "video_hero_TzQJUw",
+    "promotion_bar_8NUQtA",
+    "image_with_text_yFWEr9",
+    "quote_WbEAAN",
+    "newsletter_compact_9rLNDi"
+  ]
+}

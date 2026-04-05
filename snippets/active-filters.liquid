@@ -1,0 +1,104 @@
+{%- liquid
+  assign file_extension = 'png'
+  assign swatch_options = settings.swatch_options | downcase | split: ', '
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+
+  # custom swatch colors
+  assign custom_colors = settings.custom_swatch_colors | newline_to_br | split: '<br />'
+  assign custom_color_key_map = ''
+  assign custom_color_value_map = ''
+
+  for color_value in custom_colors
+    assign custom_color_key = color_value | split: ':' | first | strip
+    assign custom_color_value = color_value | split: ':' | last | strip
+
+    assign custom_color_key_map = custom_color_key_map | append: ',' | append: custom_color_key
+    assign custom_color_value_map = custom_color_value_map | append: ',' | append: custom_color_value
+  endfor
+
+  assign custom_color_key_map = custom_color_key_map | remove_first: ',' | split: ','
+  assign custom_color_value_map = custom_color_value_map | remove_first: ',' | split: ','
+-%}
+
+<div class="active-filters" data-active-filters>
+  {%- for filter in results.filters -%}
+    {%- liquid
+      assign group_name = filter.label | handleize
+    -%}
+
+    {%- for value in filter.active_values -%}
+      {%- assign custom_swatch_image = value.label | handle | append: '.' | append: file_extension -%}
+      <a
+        href="{{ value.url_to_remove }}"
+        class="active-filters__active-filter fs-body-75 no-transition"
+        data-remove-filter
+        data-filter="filter-{{ value.label | handleize | escape }}"
+        data-name="{{ value.param_name }}"
+        data-value="{{ value.value }}"
+        data-value-escaped="{{ value.value | url_escape }}"
+      >
+        {%- if swatch_options contains group_name and show_swatch_filters == true -%}
+          <span
+            class="active-filters__swatch"
+            style="
+              {% if custom_color_key_map contains value.label %}
+                {% for color_name in custom_color_key_map %}
+                  {% if color_name == value.label %}
+                    background-color: {{ custom_color_value_map[forloop.index0] }};
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              {% else %}
+                background-color: {{ value.label | downcase | replace: ' ', '' }};
+              {% endif %}
+              {% if images[custom_swatch_image] != blank %}
+                background-image: url({{ custom_swatch_image | file_url }});
+              {% endif %}
+            "
+          >
+          </span>
+        {%- endif -%}
+
+        {%- if filter.type == 'boolean' -%}
+          {{ filter.label | escape }}
+        {%- else -%}
+          {{ value.label | escape }}
+        {%- endif -%}
+        {%- render 'icon' with icon: 'close-small' -%}
+      </a>
+    {%- endfor -%}
+
+    {% if filter.type == 'price_range' %}
+      {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+        <a
+          href="{{ value.url_to_remove }}"
+          class="active-filters__active-filter fs-body-75 no-transition"
+          data-remove-range
+        >
+          {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}
+          &nbsp;-&nbsp;
+          {%- if filter.max_value.value -%}
+            {{ filter.max_value.value | money }}
+          {%- else -%}
+            {{ filter.range_max | money }}
+          {%- endif -%}
+          {%- render 'icon' with icon: 'close-small' -%}
+        </a>
+      {%- endif -%}
+    {% endif %}
+  {%- endfor -%}
+
+  <a
+    href="{{ results_url }}"
+    class="active-filters__active-filter active-filters__clear no-transition btn btn--text-link fs-body-75"
+    data-clear-all-filters
+  >
+    <span>{{ 'filters.clear_filters' | t }}</span>
+  </a>
+</div>

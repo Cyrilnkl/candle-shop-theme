@@ -1,0 +1,220 @@
+{%- liquid
+  assign desktop_columns = 1
+  case block.type
+    when 'two_column_tab'
+      assign desktop_columns = 2
+    when 'three_column_tab'
+      assign desktop_columns = 3
+  endcase
+-%}
+
+<div
+  class="
+    product-tabs__tab-item-content
+    product-tabs__tab-item-content--vertical-alignment-{{ block.settings.content_vertical_alignment }}
+  "
+  style="
+    --grid-columns-desktop: {{ desktop_columns }};
+    --grid-gap-column-desktop: {{ block.settings.column_spacing | default: 28 }}px;
+    {%- if block.settings.text_max_width != blank and block.settings.content_width == 'custom' -%}
+      --text-max-width: {{ block.settings.text_max_width }}px;
+    {%- else -%}
+      --text-max-width: 100%;
+    {%- endif -%}
+  "
+>
+  {%- case block.type -%}
+    {%- when 'product_description' -%}
+      <div class="product-tabs__tab-column">
+        <div class="product-tabs__tab-text-container">
+          {%- unless block.settings.heading == blank -%}
+            <{{ block.settings.heading_tag }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class }}">
+              {{ block.settings.heading }}
+            </{{ block.settings.heading_tag }}>
+          {%- endunless -%}
+          <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class }} rte">
+            {{ product.description }}
+          </div>
+        </div>
+      </div>
+    {%- when 'one_column', 'two_column_tab', 'three_column_tab' -%}
+      <div class="product-tabs__tab-column">
+        {%- capture image_figure_column_1 -%}
+          <figure
+            class="product-tabs__tab-image-figure"
+            style="--image-max-width: {{ block.settings.image_width_column_1 }}%;"
+          >
+            <div class="product-tabs__tab-image-wrapper">
+              {%- capture image_sizes -%}
+                (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
+                {{ block.settings.image_width_column_1 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
+              {%- endcapture -%}
+              {%-
+                render 'image' with
+                wrapper_class: "product-tabs__tab-image",
+                image: block.settings.image_column_1,
+                sizes: image_sizes
+              -%}
+            </div>
+          </figure>
+        {%- endcapture -%}
+
+        {%- if block.settings.image_column_1 != blank and block.settings.image_position_column_1 == 'above_text' -%}
+          {{ image_figure_column_1 }}
+        {%- endif -%}
+
+        <div class="product-tabs__tab-text-container">
+          {%- capture content_column_1 -%}
+            {%- if block.settings.custom_liquid_column_1 != blank -%}
+              {{ block.settings.custom_liquid_column_1 }}
+            {%- elsif block.settings.page_for_content_column_1 != blank -%}
+              {%- assign content_page = pages[block.settings.page_for_content_column_1] -%}
+
+              {%- if content_page and content_page != blank -%}
+                {{ content_page.content }}
+              {%- else -%}
+                {{ block.settings.text_column_1 }}
+              {%- endif -%}
+            {%- else -%}
+              {{ block.settings.text_column_1 }}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- unless block.settings.heading_column_1 == blank -%}
+            <{{ block.settings.heading_tag_column_1 }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class_column_1 }}">
+              {{ block.settings.heading_column_1 }}
+            </{{ block.settings.heading_tag_column_1 }}>
+          {%- endunless -%}
+          {%- unless content_column_1 == blank -%}
+            <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class_column_1 }} rte">
+              {{ content_column_1 }}
+            </div>
+          {%- endunless -%}
+        </div>
+
+        {%- if block.settings.image_column_1 != blank and block.settings.image_position_column_1 == 'below_text' -%}
+          {{ image_figure_column_1 }}
+        {%- endif -%}
+      </div>
+    {%- when 'two_column_tab', 'three_column_tab' -%}
+      <div class="product-tabs__tab-column">
+        {%- capture image_figure_column_2 -%}
+          <figure
+            class="product-tabs__tab-image-figure"
+            style="--image-max-width: {{ block.settings.image_width_column_2 }}%;"
+          >
+            <div class="product-tabs__tab-image-wrapper">
+              {%- capture image_sizes -%}
+                (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
+                {{ block.settings.image_width_column_2 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
+              {%- endcapture -%}
+              {%-
+                render 'image' with
+                wrapper_class: "product-tabs__tab-image",
+                image: block.settings.image_column_2,
+                sizes: image_sizes,
+                include_placeholder: true
+              -%}
+            </div>
+          </figure>
+        {%- endcapture -%}
+
+        {%- if block.settings.image_column_2 != blank and block.settings.image_position_column_2 == 'above_text' -%}
+          {{ image_figure_column_2 }}
+        {%- endif -%}
+
+        <div class="product-tabs__tab-text-container">
+          {%- capture content_column_2 -%}
+            {%- if block.settings.custom_liquid_column_2 != blank -%}
+              {{ block.settings.custom_liquid_column_2 }}
+            {%- elsif block.settings.page_for_content_column_2 != blank -%}
+              {%- assign content_page = pages[block.settings.page_for_content_column_2] -%}
+
+              {%- if content_page and content_page != blank -%}
+                {{ content_page.content }}
+              {%- else -%}
+                {{ block.settings.text_column_2 }}
+              {%- endif -%}
+            {%- else -%}
+              {{ block.settings.text_column_2 }}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- unless block.settings.heading_column_2 == blank -%}
+            <{{ block.settings.heading_tag_column_2 }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class_column_2 }}">
+              {{ block.settings.heading_column_2 }}
+            </{{ block.settings.heading_tag_column_2 }}>
+          {%- endunless -%}
+          {%- unless content_column_2 == blank -%}
+            <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class_column_2 }} rte">
+              {{ content_column_2 }}
+            </div>
+          {%- endunless -%}
+        </div>
+
+        {%- if block.settings.image_column_2 != blank and block.settings.image_position_column_2 == 'below_text' -%}
+          {{ image_figure_column_2 }}
+        {%- endif -%}
+      </div>
+    {%- when 'three_column_tab' -%}
+      <div class="product-tabs__tab-column">
+        {%- capture image_figure_column_3 -%}
+          <figure
+            class="product-tabs__tab-image-figure"
+            style="--image-max-width: {{ block.settings.image_width_column_3 }}%;"
+          >
+            <div class="product-tabs__tab-image-wrapper">
+              {%- capture image_sizes -%}
+                (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
+                {{ block.settings.image_width_column_3 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
+              {%- endcapture -%}
+              {%-
+                render 'image' with
+                wrapper_class: "product-tabs__tab-image",
+                image: block.settings.image_column_3,
+                sizes: image_sizes,
+                include_placeholder: true
+              -%}
+            </div>
+          </figure>
+        {%- endcapture -%}
+
+        {%- if block.settings.image_column_3 != blank and block.settings.image_position_column_3 == 'above_text' -%}
+          {{ image_figure_column_3 }}
+        {%- endif -%}
+
+        <div class="product-tabs__tab-text-container">
+          {%- capture content_column_3 -%}
+            {%- if block.settings.custom_liquid_column_3 != blank -%}
+              {{ block.settings.custom_liquid_column_3 }}
+            {%- elsif block.settings.page_for_content_column_3 != blank -%}
+              {%- assign content_page = pages[block.settings.page_for_content_column_3] -%}
+
+              {%- if content_page and content_page != blank -%}
+                {{ content_page.content }}
+              {%- else -%}
+                {{ block.settings.text_column_3 }}
+              {%- endif -%}
+            {%- else -%}
+              {{ block.settings.text_column_3 }}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- unless block.settings.heading_column_3 == blank -%}
+            <{{ block.settings.heading_tag_column_3 }} class="product-tabs__tab-heading ff-heading {{ block.settings.heading_font_class_column_3 }}">
+              {{ block.settings.heading_column_3 }}
+            </{{ block.settings.heading_tag_column_3 }}>
+          {%- endunless -%}
+          {%- unless content_column_3 == blank -%}
+            <div class="product-tabs__tab-text ff-body {{ block.settings.text_font_class_column_3 }} rte">
+              {{ content_column_3 }}
+            </div>
+          {%- endunless -%}
+        </div>
+
+        {%- if block.settings.image_column_3 != blank and block.settings.image_position_column_3 == 'below_text' -%}
+          {{ image_figure_column_3 }}
+        {%- endif -%}
+      </div>
+  {%- endcase -%}
+</div>

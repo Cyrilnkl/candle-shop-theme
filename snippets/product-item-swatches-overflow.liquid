@@ -1,0 +1,22 @@
+{%- liquid
+  comment
+    Renders the overflow count for a single option for product-item hover display.
+
+    Required parameters:
+    	- option_values_count: { Number } The count of values within a given option.
+    	- max_items: { Number } The max number of values that are displayed.
+  endcomment
+
+  assign overflows = false
+
+  if option_values_count > max_items
+    assign overflows = true
+    assign overflow_amount = option_values_count | minus: max_items
+  endif
+-%}
+
+{% if overflows %}
+  <li class="product-swatches-options__item-overflow-note fs-body-25">
+    {{ 'products.product.swatch_overflow' | t: overflow_amount: overflow_amount }}
+  </li>
+{% endif %}

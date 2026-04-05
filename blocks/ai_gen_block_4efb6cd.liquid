@@ -1,0 +1,717 @@
+{% doc %}
+  @prompt
+    scroll component of videos, Ok but I want to put videos from my gallery not link, parfait mets les un peu plus grandes et enlève les boutons droite gauche l'uitlisateur doit pouvoir scroller horizontalement avec le doigts en le faisant glisser
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-scroll-{{ ai_gen_id }} {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-video-scroll-container-{{ ai_gen_id }} {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-video-scroll-header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-video-scroll-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  .ai-video-scroll-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+  }
+
+  .ai-video-scroll-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    cursor: grab;
+  }
+
+  .ai-video-scroll-wrapper-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-video-scroll-wrapper-{{ ai_gen_id }}:active {
+    cursor: grabbing;
+  }
+
+  .ai-video-scroll-track-{{ ai_gen_id }} {
+    display: flex;
+    gap: {{ block.settings.video_gap }}px;
+    padding-bottom: 10px;
+    width: max-content;
+  }
+
+  .ai-video-scroll-item-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.video_width }}px;
+    position: relative;
+    border-radius: {{ block.settings.border_radius }}px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    user-select: none;
+  }
+
+  .ai-video-scroll-video-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.video_height }}px;
+    object-fit: cover;
+    display: block;
+    border-radius: {{ block.settings.border_radius }}px;
+    pointer-events: none;
+  }
+
+  .ai-video-scroll-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.video_height }}px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: {{ block.settings.border_radius }}px;
+    position: relative;
+  }
+
+  .ai-video-scroll-placeholder-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    color: #999;
+  }
+
+  .ai-video-scroll-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .ai-video-scroll-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    padding: 25px 20px 20px;
+    color: white;
+    border-radius: 0 0 {{ block.settings.border_radius }}px {{ block.settings.border_radius }}px;
+  }
+
+  .ai-video-scroll-video-title-{{ ai_gen_id }} {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    line-height: 1.2;
+  }
+
+  .ai-video-scroll-video-description-{{ ai_gen_id }} {
+    font-size: 15px;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.4;
+  }
+
+  .ai-video-scroll-dots-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: {{ block.settings.controls_spacing }}px;
+  }
+
+  .ai-video-scroll-dot-{{ ai_gen_id }} {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: {{ block.settings.controls_color }};
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+  }
+
+  .ai-video-scroll-dot-{{ ai_gen_id }}.active {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-video-scroll-item-{{ ai_gen_id }} {
+      flex: 0 0 {{ block.settings.video_width | times: 0.85 }}px;
+    }
+
+    .ai-video-scroll-video-{{ ai_gen_id }},
+    .ai-video-scroll-placeholder-{{ ai_gen_id }} {
+      height: {{ block.settings.video_height | times: 0.85 }}px;
+    }
+
+    .ai-video-scroll-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-video-scroll-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .ai-video-scroll-container-{{ ai_gen_id }} {
+      padding: 0 15px;
+    }
+  }
+{% endstyle %}
+
+<video-scroll-{{ ai_gen_id }}
+  class="ai-video-scroll-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-video-scroll-container-{{ ai_gen_id }}">
+    {% if block.settings.title != blank or block.settings.subtitle != blank %}
+      <div class="ai-video-scroll-header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-video-scroll-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-video-scroll-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-video-scroll-wrapper-{{ ai_gen_id }}" data-wrapper>
+      <div class="ai-video-scroll-track-{{ ai_gen_id }}" data-track>
+        {% for i in (1..6) %}
+          {% liquid
+            assign video_key = 'video_' | append: i
+            assign title_key = 'video_' | append: i | append: '_title'
+            assign description_key = 'video_' | append: i | append: '_description'
+            assign video_file = block.settings[video_key]
+            assign video_title = block.settings[title_key]
+            assign video_description = block.settings[description_key]
+          %}
+
+          <div class="ai-video-scroll-item-{{ ai_gen_id }}" data-video-item="{{ i }}">
+            {% if video_file != blank %}
+              {% assign video_url = video_file | file_url %}
+              <video
+                class="ai-video-scroll-video-{{ ai_gen_id }}"
+                {% if block.settings.autoplay %}autoplay{% endif %}
+                {% if block.settings.loop %}loop{% endif %}
+                {% if block.settings.muted %}muted{% endif %}
+                {% if block.settings.controls %}controls{% endif %}
+                playsinline
+                preload="metadata"
+              >
+                <source src="{{ video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+              {% if video_title != blank or video_description != blank %}
+                <div class="ai-video-scroll-overlay-{{ ai_gen_id }}">
+                  {% if video_title != blank %}
+                    <h3 class="ai-video-scroll-video-title-{{ ai_gen_id }}">{{ video_title }}</h3>
+                  {% endif %}
+                  {% if video_description != blank %}
+                    <p class="ai-video-scroll-video-description-{{ ai_gen_id }}">{{ video_description }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% else %}
+              <div class="ai-video-scroll-placeholder-{{ ai_gen_id }}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+                <div class="ai-video-scroll-empty-state-{{ ai_gen_id }}">
+                  Ajouter la vidéo {{ i }}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if block.settings.show_dots %}
+      <div class="ai-video-scroll-dots-{{ ai_gen_id }}" data-dots></div>
+    {% endif %}
+  </div>
+</video-scroll-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoScroll{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentIndex = 0;
+        this.isDragging = false;
+        this.startX = 0;
+        this.scrollLeft = 0;
+      }
+
+      connectedCallback() {
+        this.wrapper = this.querySelector('[data-wrapper]');
+        this.track = this.querySelector('[data-track]');
+        this.dotsContainer = this.querySelector('[data-dots]');
+        this.items = this.querySelectorAll('.ai-video-scroll-item-{{ ai_gen_id }}');
+        this.videos = this.querySelectorAll('.ai-video-scroll-video-{{ ai_gen_id }}');
+
+        this.setupDragScroll();
+        this.setupDots();
+        this.setupVideoEvents();
+        this.setupScrollObserver();
+
+        window.addEventListener('resize', () => this.handleResize());
+      }
+
+      setupDragScroll() {
+        if (!this.wrapper) return;
+
+        this.wrapper.addEventListener('mousedown', (e) => this.startDrag(e));
+        this.wrapper.addEventListener('touchstart', (e) => this.startDrag(e), { passive: false });
+        
+        document.addEventListener('mousemove', (e) => this.drag(e));
+        document.addEventListener('touchmove', (e) => this.drag(e), { passive: false });
+        
+        document.addEventListener('mouseup', () => this.endDrag());
+        document.addEventListener('touchend', () => this.endDrag());
+      }
+
+      startDrag(e) {
+        this.isDragging = true;
+        this.startX = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
+        this.scrollLeft = this.wrapper.scrollLeft;
+        this.wrapper.style.cursor = 'grabbing';
+        
+        this.videos.forEach(video => {
+          video.style.pointerEvents = 'none';
+        });
+      }
+
+      drag(e) {
+        if (!this.isDragging) return;
+        
+        e.preventDefault();
+        const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
+        const walk = (x - this.startX) * 2;
+        this.wrapper.scrollLeft = this.scrollLeft - walk;
+      }
+
+      endDrag() {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        this.wrapper.style.cursor = 'grab';
+        
+        setTimeout(() => {
+          this.videos.forEach(video => {
+            video.style.pointerEvents = 'auto';
+          });
+        }, 100);
+      }
+
+      setupDots() {
+        if (!this.dotsContainer) return;
+
+        const visibleItems = Math.floor(this.wrapper.offsetWidth / ({{ block.settings.video_width }} + {{ block.settings.video_gap }}));
+        const totalDots = Math.max(1, this.items.length - visibleItems + 1);
+
+        this.dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalDots; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'ai-video-scroll-dot-{{ ai_gen_id }}';
+          dot.setAttribute('aria-label', `Aller à la section ${i + 1}`);
+          dot.addEventListener('click', () => this.scrollToSection(i));
+          this.dotsContainer.appendChild(dot);
+        }
+      }
+
+      scrollToSection(index) {
+        const itemWidth = {{ block.settings.video_width }} + {{ block.settings.video_gap }};
+        const scrollPosition = index * itemWidth;
+        this.wrapper.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      setupScrollObserver() {
+        if (!this.wrapper) return;
+
+        this.wrapper.addEventListener('scroll', () => {
+          this.updateActiveDot();
+        });
+      }
+
+      updateActiveDot() {
+        const dots = this.querySelectorAll('.ai-video-scroll-dot-{{ ai_gen_id }}');
+        if (dots.length === 0) return;
+
+        const itemWidth = {{ block.settings.video_width }} + {{ block.settings.video_gap }};
+        const scrollPosition = this.wrapper.scrollLeft;
+        const activeIndex = Math.round(scrollPosition / itemWidth);
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === activeIndex);
+        });
+      }
+
+      setupVideoEvents() {
+        this.videos.forEach((video) => {
+          video.addEventListener('click', (e) => {
+            if (!this.isDragging) {
+              if (video.paused) {
+                this.pauseAllVideos();
+                video.play();
+              } else {
+                video.pause();
+              }
+            }
+          });
+        });
+      }
+
+      pauseAllVideos() {
+        this.videos.forEach(video => {
+          if (!video.paused) {
+            video.pause();
+          }
+        });
+      }
+
+      handleResize() {
+        this.setupDots();
+        this.updateActiveDot();
+      }
+    }
+
+    customElements.define('video-scroll-{{ ai_gen_id }}', VideoScroll{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Video scroll",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured videos"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Discover our latest video content"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Videos"
+    },
+    {
+      "type": "video",
+      "id": "video_1",
+      "label": "Video 1"
+    },
+    {
+      "type": "text",
+      "id": "video_1_title",
+      "label": "Video 1 title"
+    },
+    {
+      "type": "textarea",
+      "id": "video_1_description",
+      "label": "Video 1 description"
+    },
+    {
+      "type": "video",
+      "id": "video_2",
+      "label": "Video 2"
+    },
+    {
+      "type": "text",
+      "id": "video_2_title",
+      "label": "Video 2 title"
+    },
+    {
+      "type": "textarea",
+      "id": "video_2_description",
+      "label": "Video 2 description"
+    },
+    {
+      "type": "video",
+      "id": "video_3",
+      "label": "Video 3"
+    },
+    {
+      "type": "text",
+      "id": "video_3_title",
+      "label": "Video 3 title"
+    },
+    {
+      "type": "textarea",
+      "id": "video_3_description",
+      "label": "Video 3 description"
+    },
+    {
+      "type": "video",
+      "id": "video_4",
+      "label": "Video 4"
+    },
+    {
+      "type": "text",
+      "id": "video_4_title",
+      "label": "Video 4 title"
+    },
+    {
+      "type": "textarea",
+      "id": "video_4_description",
+      "label": "Video 4 description"
+    },
+    {
+      "type": "video",
+      "id": "video_5",
+      "label": "Video 5"
+    },
+    {
+      "type": "text",
+      "id": "video_5_title",
+      "label": "Video 5 title"
+    },
+    {
+      "type": "textarea",
+      "id": "video_5_description",
+      "label": "Video 5 description"
+    },
+    {
+      "type": "video",
+      "id": "video_6",
+      "label": "Video 6"
+    },
+    {
+      "type": "text",
+      "id": "video_6_title",
+      "label": "Video 6 title"
+    },
+    {
+      "type": "textarea",
+      "id": "video_6_description",
+      "label": "Video 6 description"
+    },
+    {
+      "type": "header",
+      "content": "Video settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay videos",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop videos",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "muted",
+      "label": "Mute videos",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "controls",
+      "label": "Show video controls",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "video_width",
+      "min": 300,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Video width",
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "video_height",
+      "min": 300,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Video height",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "video_gap",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between videos",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show navigation dots",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "controls_color",
+      "label": "Dots color",
+      "default": "#0a284c"
+    },
+    {
+      "type": "range",
+      "id": "controls_spacing",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Dots spacing",
+      "default": 35
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 24,
+      "max": 70,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 16,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 30,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "min": 25,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Header spacing",
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video scroll"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,25 @@
+{%- liquid
+  assign reviews = prod.metafields.reviews
+  assign rating_count = 0
+
+  if reviews.rating_count != blank
+    assign rating_count = reviews.rating_count
+  endif
+
+  assign rating = 0
+  if reviews.rating.value != blank and reviews.rating.value.scale_max != blank
+    # normalize on a 0-5 scale
+    assign rating = reviews.rating.value.rating | times: 5.0 | divided_by: reviews.rating.value.scale_max | ceil
+  endif
+-%}
+
+  <div class="product-rating {{ variant }}">
+    <div class="product-rating__stars">
+      {%- render 'star-rating', rating: rating -%}
+    </div>
+    {%- if rating_count > 0 -%}
+      <div class="product-rating__count t-opacity-60 fs-body-50">
+        <span>{{ rating }}</span> <span>({{ rating_count }})</span>
+      </div>
+    {%- endif -%}
+  </div>

@@ -1,0 +1,171 @@
+:root{
+  --media-below-480:(max-width: 479px);
+  --media-above-480:(min-width: 480px);
+  --media-below-720:(max-width: 719px);
+  --media-above-720:(min-width: 720px);
+  --media-below-960:(max-width: 959px);
+  --media-above-960:(min-width: 960px);
+  --media-below-1200:(max-width: 1199px);
+  --media-above-1200:(min-width: 1200px);
+  --media-below-1400:(max-width: 1399px);
+  --media-above-1400:(min-width: 1400px);
+  --max-width:1400px;
+  --max-width-narrow:747px;
+  --flyout-mobile-gap:var(--spacing-9);
+  --flyout-width:calc(375px + var(--flyout-mobile-gap));
+}
+  @media (min-width: 720px){:root{
+    --flyout-width:460px;
+}
+  }
+  :root{
+
+  --spacing-unit:4px;
+  --spacing-unit-half:2px;
+
+  --spacing-1:calc(var(--spacing-unit) * 1);
+  --spacing-2:calc(var(--spacing-unit) * 2);
+  --spacing-3:calc(var(--spacing-unit) * 3);
+  --spacing-4:calc(var(--spacing-unit) * 4);
+  --spacing-5:calc(var(--spacing-unit) * 5);
+  --spacing-6:calc(var(--spacing-unit) * 6);
+  --spacing-7:calc(var(--spacing-unit) * 7);
+  --spacing-8:calc(var(--spacing-unit) * 8);
+  --spacing-9:calc(var(--spacing-unit) * 9);
+  --spacing-10:calc(var(--spacing-unit) * 10);
+  --spacing-11:calc(var(--spacing-unit) * 11);
+  --spacing-12:calc(var(--spacing-unit) * 12);
+  --spacing-15:calc(var(--spacing-unit) * 15);
+  --spacing-16:calc(var(--spacing-unit) * 16);
+  --spacing-17:calc(var(--spacing-unit) * 17);
+  --spacing-18:calc(var(--spacing-unit) * 18);
+  --spacing-20:calc(var(--spacing-unit) * 20);
+  --spacing-25:calc(var(--spacing-unit) * 25);
+  --spacing-30:calc(var(--spacing-unit) * 30);
+
+  --box-shadow:0px 4px 6px rgba(0, 0, 0, 0.06);
+  --box-shadow-darker:0px 4px 6px rgba(0, 0, 0, 0.15);
+  --box-shadow-double:0px 1px 2px rgba(0, 0, 0, 0.09), 0px 3px 8px rgba(0, 0, 0, 0.14);
+  --box-shadow-offset-bottom:4px;
+
+  --z-index-bar:300;
+  --z-index-header:500;
+  --z-index-announcement-bar:510;
+  --z-index-drawers:520;
+  --z-index-filter-bar-wash:400;
+  --z-index-filter-bar:450;
+  --z-index-popup:400;
+  --z-index-modal-wash:1200;
+  --z-index-modal:1300;
+  --z-index-theme-editor-offset:2000;
+  --z-index-page-transition-overlay:2100;
+  --z-index-quick-search:480;
+}
+  @media (min-width: 960px){:root{
+    --z-index-quick-search:520;
+}
+  }
+  :root{
+
+  --space-outer:3.3vw;
+}
+  @supports (padding: 0 clamp(18px, 3.3vw, 3.3vw)){
+    @media (max-width: 719px){:root{
+      --space-outer:max(18px, min(3.3vw, 3.3vw));
+}
+    }
+  }
+  :root{
+
+  --height-input:48px;
+  --quick-buy-button-height:60px;
+  --easing:cubic-bezier(0.33, 0, 0, 1);
+  --duration-ultra-fast:100ms;
+  --duration-fast:300ms;
+  --duration-normal:500ms;
+  --duration-slow:1200ms;
+  --delay-small:33ms;
+  --delay-normal:67ms;
+  --delay-long:133ms;
+  --aspect-ratio-square:1;
+  --aspect-ratio-portrait:2 / 3;
+  --aspect-ratio-portrait-alt:4 / 5;
+  --aspect-ratio-landscape:3 / 2;
+  --aspect-ratio-landscape-alt:5 / 4;
+  --aspect-ratio-widescreen:16 / 9;
+  --aspect-ratio-ultrawide:21 / 9;
+}
+.gift-card{
+  padding:calc(4px * 5);
+  padding:var(--spacing-5);
+  text-align:center;
+}
+@media (min-width: 480px){
+.gift-card{
+    padding:calc(4px * 10);
+    padding:var(--spacing-10)
+}
+  }
+.gift-card__title{
+  margin-top:0;
+  margin-bottom:calc(4px * 5);
+  margin-bottom:var(--spacing-5);
+}
+.gift-card__container{
+  max-width:560px;
+  background-color:var(--color-bg);
+  color:var(--color-text);
+  margin:0 auto;
+  padding:calc(4px * 5);
+  padding:var(--spacing-5);
+}
+@media (min-width: 480px){
+.gift-card__container{
+    padding:calc(4px * 10);
+    padding:var(--spacing-10)
+}
+  }
+.gift-card__graphic img{
+    width:100%;
+    display:block;
+  }
+.gift-card__initial-balance{
+  margin-top:calc(4px * 5);
+  margin-top:var(--spacing-5);
+}
+.gift-card__shopping-link{
+  margin-top:calc(4px * 5);
+  margin-top:var(--spacing-5);
+}
+#qr-code{
+  margin-top:calc(4px * 5);
+  margin-top:var(--spacing-5);
+  display:flex;
+  justify-content:center;
+}
+@media (min-width: 480px){
+#qr-code{
+    margin-top:calc(4px * 10);
+    margin-top:var(--spacing-10)
+}
+  }
+.apple-wallet-image{
+  display:block;
+  margin:0 auto;
+}
+@media print{
+  @page{
+    margin:0.5cm;
+  }
+
+  p{
+    orphans:3;
+    widows:3;
+  }
+
+  .print-giftcard,
+  .apple-wallet,
+  .gift-card__shopping-link{
+    display:none;
+  }
+}

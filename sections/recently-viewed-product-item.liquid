@@ -1,0 +1,17 @@
+{%- if product -%}
+  <div
+    data-section-type="recently-viewed-item"
+    data-recently-viewed-item
+  >
+    <div
+      class="recently-viewed__product-item recently-viewed-products__slide carousel__slide swiper-slide"
+      data-slide
+    >
+      {% render 'product-item',
+        prod: product,
+        aspect_ratio: settings.product_listing_aspect_ratio,
+        product_columns_desktop: '3'
+      %}
+    </div>
+  </div>
+{%- endif -%}

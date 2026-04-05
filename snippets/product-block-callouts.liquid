@@ -1,0 +1,65 @@
+{% capture content %}
+  <div
+    class="product__callouts-items"
+    data-with-box="{{ block_settings.add_box }}"
+    data-with-dividers="{{ block_settings.add_dividers }}"
+  >
+    {%
+      render 'product-block-callouts-item' with
+      text: block_settings.text_1,
+      icon: block_settings.icon_1,
+      custom_icon_image: block_settings.custom_icon_image_1
+    %}
+    {%
+      render 'product-block-callouts-item' with
+      text: block_settings.text_2,
+      icon: block_settings.icon_2,
+      custom_icon_image: block_settings.custom_icon_image_2
+    %}
+    {%
+      render 'product-block-callouts-item' with
+      text: block_settings.text_3,
+      icon: block_settings.icon_3,
+      custom_icon_image: block_settings.custom_icon_image_3
+    %}
+    {%
+      render 'product-block-callouts-item' with
+      text: block_settings.text_4,
+      icon: block_settings.icon_4,
+      custom_icon_image: block_settings.custom_icon_image_4
+    %}
+    {%
+      render 'product-block-callouts-item' with
+      text: block_settings.text_5,
+      icon: block_settings.icon_5,
+      custom_icon_image: block_settings.custom_icon_image_5
+    %}
+    {%
+      render 'product-block-callouts-item' with
+      text: block_settings.text_6,
+      icon: block_settings.icon_6,
+      custom_icon_image: block_settings.custom_icon_image_6
+    %}
+  </div>
+{% endcapture %}
+
+{% if block_settings.display_as_collapsible_row %}
+  {% assign heading = block.settings.title | default: block.settings.collapsible_row_title %}
+  {%-
+    render 'product-block-accordion',
+    block: block,
+    block_settings: block.settings,
+    heading: heading,
+    content: content,
+  -%}
+{% else %}
+  <div
+    class="product__block product__block-callouts product__callouts product__block--medium"
+    {{ block.shopify_attributes }}
+  >
+    {%- if block.settings.title != blank -%}
+    <{{ block.settings.title_tag }} class="ff-heading fs-heading-5-base">{{ block.settings.title }}</{{ block.settings.title_tag }}>
+    {%- endif -%}
+    {{ content }}
+  </div>
+{% endif %}

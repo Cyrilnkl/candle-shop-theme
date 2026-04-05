@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "enable_animation": true,
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "rich_text_q3TJUD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NGhjWp": {
+          "type": "heading",
+          "settings": {
+            "title": "Who's Behind Zephyra?",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_GaE6RQ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Behind Zephyra is a couple driven by a shared passion for creativity, sustainability, and the magic of candlelight. What started as our dream to craft elegant, eco-friendly candles has grown into a mission to inspire others to create their own. Zephyra is about connection, imagination, and making eco-friendly living simple, offering candles that light up both your space and your future.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NGhjWp",
+        "text_GaE6RQ"
+      ],
+      "custom_css": [
+        ".rich-text__text p {margin-top: 20px; line-height: 23px; color: grey;}"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 1000
+      }
+    },
+    "image_with_text_split_b6EqfF": {
+      "type": "image-with-text-split",
+      "blocks": {
+        "heading_tRekAN": {
+          "type": "heading",
+          "settings": {
+            "title": "Zephyra's Founders",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "spacer_BXD7ya": {
+          "type": "spacer",
+          "settings": {
+            "space": 16
+          }
+        },
+        "subheading_JBbihm": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Meet Emma and Lucas",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base"
+          }
+        },
+        "text_YnANcW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are Emma and Lucas, a couple united by our passion for crafting candles that inspire creativity and bring a little extra light into your world.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "spacer_aWjY4F": {
+          "type": "spacer",
+          "settings": {
+            "space": 8
+          }
+        },
+        "subheading_JnYCVT": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Emma – The Creative Visionary",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base"
+          }
+        },
+        "text_GzPGDn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With a background in eco-design, Emma brings elegance and sustainability to every Zephyra creation. Her love for thoughtful design ensures that each candle is as beautiful as it is meaningful.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "spacer_hHzGED": {
+          "type": "spacer",
+          "settings": {
+            "space": 4
+          }
+        },
+        "subheading_AtyzQK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Lucas – The Eco-Innovator",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base"
+          }
+        },
+        "text_mWadBk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lucas’s entrepreneurial spirit and dedication to sustainability fuel the heart of Zephyra. He’s passionate about creating products that are not only eco-friendly but also simple and accessible for everyone.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tRekAN",
+        "spacer_BXD7ya",
+        "subheading_JBbihm",
+        "text_YnANcW",
+        "spacer_aWjY4F",
+        "subheading_JnYCVT",
+        "text_GzPGDn",
+        "spacer_hHzGED",
+        "subheading_AtyzQK",
+        "text_mWadBk"
+      ],
+      "settings": {
+        "image_position": "right",
+        "image_mobile_position": "above-content",
+        "image_padding": "none",
+        "image": "shopify://shop_images/43417336225.png",
+        "aspect_ratio": "square",
+        "focal_point": "left",
+        "content_alignment": "left",
+        "background_color": "#ffffff",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#FFFFFF",
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "quote_GAM6pf": {
+      "type": "quote",
+      "blocks": {
+        "quote_UMWpwR": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>\"Thank you for letting Zephyra be a part of your moments. Your support means the world to us and inspires everything we create.\"</p>",
+            "title": "Emma -",
+            "quote_tag": "h4",
+            "font_size": "small"
+          }
+        },
+        "quote_eD6Ubg": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>“Your support is more than a purchase – it’s a partnership in building a brighter, greener future. We’re endlessly grateful for the trust you place in us and our mission.”</p>",
+            "title": "Lucas -",
+            "quote_tag": "h4",
+            "font_size": "small"
+          }
+        }
+      },
+      "block_order": [
+        "quote_UMWpwR",
+        "quote_eD6Ubg"
+      ],
+      "custom_css": [
+        ".quote__item {margin-top: -40px;}",
+        ".swiper-fade {margin-top: -0px; margin-bottom: -20px;}"
+      ],
+      "settings": {
+        "autoplay_enabled": true,
+        "autoplay_delay": 7,
+        "pagination_style": "dots",
+        "font_choice": "heading",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_q3TJUD",
+    "image_with_text_split_b6EqfF",
+    "quote_GAM6pf"
+  ]
+}

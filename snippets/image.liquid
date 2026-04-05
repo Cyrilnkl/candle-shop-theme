@@ -1,0 +1,101 @@
+{%- liquid
+  comment
+    Renders an image, with an optional placeholder.
+
+    Optional parameters:
+      - image: { Object } The image to be rendered.
+      - One of the following:
+        - sizes: { String } A list of responsive image sizes (for the 'sizes' attributes).
+        - sizes_px: { Number } A width (in pixels) for the image.
+      - aspect_ratio: { String } The aspect ratio of the image.
+      - focal_point: { String } The source of the focal point of the image. Can be:
+        - 'image_presentation': The focal point comes from the image itself.
+        - 'center'
+        - 'top'
+        - 'right'
+        - 'bottom'
+        - 'left'
+      - focal_alignment: { String } The focal alignment ('object-position') of the image (based on the focal point
+        source). Used for cropping.
+      - wrapper_class: { String } A custom class to be applied to the image wrapper.
+      - prioritize_loading: { Boolean } If 'true', the `loading="lazy"` attribute won't be added to the image.
+      - animate: { Boolean } Whether the image should be animated.
+      - include_placeholder: { Boolean } Whether a placeholder should be rendered if no image is provided.
+      - placeholder_name: { String } The name of the Shopify placeholder SVG to used.
+      - placeholder_natural_fallback_ratio: { String } The aspect ratio of the placeholder, if not already set.
+      - fallback_alt: { String } Alt text to use if the image doesn't have any.
+      - no_crop: { Boolean } If 'true', the image will be loaded in full, and then cropped in CSS (rather than
+        letting Shopify serve a cropped image).
+      - object_fit: { String } The 'object-fit' CSS property to use for the image.
+      - no_lazy_load: { Boolean } If 'true', no lazy load animations are applied.
+      - src_set_type: { String } A string noting the kind of environment the image is being rendered in to help
+        with more performant srcset generation. If this parameter isn't specified, a comprehensive srcset range
+        will be used. Can be:
+        - 'grid'
+        - 'full-width'
+        - 'thumbnail'
+  endcomment
+
+  if image != image.preview_image and image.preview_image
+    comment
+      hack - nicer way?
+    endcomment
+    assign image = image.preview_image
+  endif
+
+  if sizes_px
+    assign sizes = sizes_px | append: 'px'
+  endif
+
+  if focal_point == 'image_presentation' and image.presentation.focal_point == '50.0% 50.0%'
+    assign focal_point = 'center'
+  endif
+
+  if focal_point
+    if focal_point == 'image_presentation'
+      assign focal_alignment = image.presentation.focal_point
+    else
+      assign focal_alignment = focal_point | replace: '_', ' '
+    endif
+  endif
+-%}
+
+{%- if image != blank -%}
+  <div
+    class="
+      image
+      {{ wrapper_class }}
+      {% if aspect_ratio != blank and aspect_ratio != 'natural' %}aspect-ratio--{{ aspect_ratio }}{% endif %}
+      {% if animate %}image--animate{% endif %}
+      {% unless no_lazy_load %}animation--lazy-load{% endunless %}
+    "
+    style="
+      {%- if focal_alignment -%}--focal-alignment: {{ focal_alignment }};{%- endif -%}
+      {%- if object_fit != blank and aspect_ratio != 'natural' -%}--object-fit: {{ object_fit }};{%- endif -%}
+    "
+  >
+    {%
+      render 'responsive-image' with
+      image: image,
+      sizes: sizes,
+      prioritize_loading: prioritize_loading,
+      aspect_ratio: aspect_ratio,
+      focal_point: focal_point,
+      focal_alignment: focal_alignment,
+      no_crop: no_crop,
+      object_fit: object_fit,
+      fallback_alt: fallback_alt,
+      src_set_type: src_set_type
+    %}
+  </div>
+{%- elsif include_placeholder -%}
+  {%- assign natural_fallback = placeholder_natural_fallback_ratio | default: 'square' -%}
+
+  {%-
+    render 'placeholder-image' with
+    wrapper_class: wrapper_class,
+    placeholder_name: placeholder_name,
+    aspect_ratio: aspect_ratio,
+    natural_fallback_ratio: natural_fallback
+  -%}
+{%- endif -%}

@@ -1,0 +1,1067 @@
+.flag-icon{
+  width:20px;
+  height:20px;
+  display:block;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+.flag-icon.flag-icon-ad{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ad.svg");
+}
+
+.flag-icon.flag-icon-ae{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ae.svg");
+}
+
+.flag-icon.flag-icon-af{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/af.svg");
+}
+
+.flag-icon.flag-icon-ag{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ag.svg");
+}
+
+.flag-icon.flag-icon-ai{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ai.svg");
+}
+
+.flag-icon.flag-icon-al{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/al.svg");
+}
+
+.flag-icon.flag-icon-am{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/am.svg");
+}
+
+.flag-icon.flag-icon-ao{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ao.svg");
+}
+
+.flag-icon.flag-icon-aq{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/aq.svg");
+}
+
+.flag-icon.flag-icon-ar{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ar.svg");
+}
+
+.flag-icon.flag-icon-as{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/as.svg");
+}
+
+.flag-icon.flag-icon-at{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/at.svg");
+}
+
+.flag-icon.flag-icon-au{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/au.svg");
+}
+
+.flag-icon.flag-icon-aw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/aw.svg");
+}
+
+.flag-icon.flag-icon-ax{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ax.svg");
+}
+
+.flag-icon.flag-icon-az{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/az.svg");
+}
+
+.flag-icon.flag-icon-ba{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ba.svg");
+}
+
+.flag-icon.flag-icon-bb{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bb.svg");
+}
+
+.flag-icon.flag-icon-bd{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bd.svg");
+}
+
+.flag-icon.flag-icon-be{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/be.svg");
+}
+
+.flag-icon.flag-icon-bf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bf.svg");
+}
+
+.flag-icon.flag-icon-bg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bg.svg");
+}
+
+.flag-icon.flag-icon-bh{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bh.svg");
+}
+
+.flag-icon.flag-icon-bi{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bi.svg");
+}
+
+.flag-icon.flag-icon-bj{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bj.svg");
+}
+
+.flag-icon.flag-icon-bl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bl.svg");
+}
+
+.flag-icon.flag-icon-bm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bm.svg");
+}
+
+.flag-icon.flag-icon-bn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bn.svg");
+}
+
+.flag-icon.flag-icon-bo{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bo.svg");
+}
+
+.flag-icon.flag-icon-bq{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bq.svg");
+}
+
+.flag-icon.flag-icon-br{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/br.svg");
+}
+
+.flag-icon.flag-icon-bs{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bs.svg");
+}
+
+.flag-icon.flag-icon-bt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bt.svg");
+}
+
+.flag-icon.flag-icon-bv{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bv.svg");
+}
+
+.flag-icon.flag-icon-bw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bw.svg");
+}
+
+.flag-icon.flag-icon-by{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/by.svg");
+}
+
+.flag-icon.flag-icon-bz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/bz.svg");
+}
+
+.flag-icon.flag-icon-ca{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ca.svg");
+}
+
+.flag-icon.flag-icon-cc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cc.svg");
+}
+
+.flag-icon.flag-icon-cd{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cd.svg");
+}
+
+.flag-icon.flag-icon-cf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cf.svg");
+}
+
+.flag-icon.flag-icon-cg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cg.svg");
+}
+
+.flag-icon.flag-icon-ch{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ch.svg");
+}
+
+.flag-icon.flag-icon-ci{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ci.svg");
+}
+
+.flag-icon.flag-icon-ck{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ck.svg");
+}
+
+.flag-icon.flag-icon-cl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cl.svg");
+}
+
+.flag-icon.flag-icon-cm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cm.svg");
+}
+
+.flag-icon.flag-icon-cn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cn.svg");
+}
+
+.flag-icon.flag-icon-co{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/co.svg");
+}
+
+.flag-icon.flag-icon-cr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cr.svg");
+}
+
+.flag-icon.flag-icon-cu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cu.svg");
+}
+
+.flag-icon.flag-icon-cv{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cv.svg");
+}
+
+.flag-icon.flag-icon-cw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cw.svg");
+}
+
+.flag-icon.flag-icon-cx{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cx.svg");
+}
+
+.flag-icon.flag-icon-cy{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cy.svg");
+}
+
+.flag-icon.flag-icon-cz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cz.svg");
+}
+
+.flag-icon.flag-icon-de{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/de.svg");
+}
+
+.flag-icon.flag-icon-dj{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/dj.svg");
+}
+
+.flag-icon.flag-icon-dk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/dk.svg");
+}
+
+.flag-icon.flag-icon-dm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/dm.svg");
+}
+
+.flag-icon.flag-icon-do{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/do.svg");
+}
+
+.flag-icon.flag-icon-dz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/dz.svg");
+}
+
+.flag-icon.flag-icon-ec{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ec.svg");
+}
+
+.flag-icon.flag-icon-ee{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ee.svg");
+}
+
+.flag-icon.flag-icon-eg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/eg.svg");
+}
+
+.flag-icon.flag-icon-eh{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/eh.svg");
+}
+
+.flag-icon.flag-icon-er{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/er.svg");
+}
+
+.flag-icon.flag-icon-es{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/es.svg");
+}
+
+.flag-icon.flag-icon-et{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/et.svg");
+}
+
+.flag-icon.flag-icon-fi{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/fi.svg");
+}
+
+.flag-icon.flag-icon-fj{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/fj.svg");
+}
+
+.flag-icon.flag-icon-fk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/fk.svg");
+}
+
+.flag-icon.flag-icon-fm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/fm.svg");
+}
+
+.flag-icon.flag-icon-fo{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/fo.svg");
+}
+
+.flag-icon.flag-icon-fr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/fr.svg");
+}
+
+.flag-icon.flag-icon-ga{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ga.svg");
+}
+
+.flag-icon.flag-icon-gb{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gb.svg");
+}
+
+.flag-icon.flag-icon-gd{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gd.svg");
+}
+
+.flag-icon.flag-icon-ge{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ge.svg");
+}
+
+.flag-icon.flag-icon-gf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gf.svg");
+}
+
+.flag-icon.flag-icon-gg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gg.svg");
+}
+
+.flag-icon.flag-icon-gh{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gh.svg");
+}
+
+.flag-icon.flag-icon-gi{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gi.svg");
+}
+
+.flag-icon.flag-icon-gl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gl.svg");
+}
+
+.flag-icon.flag-icon-gm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gm.svg");
+}
+
+.flag-icon.flag-icon-gn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gn.svg");
+}
+
+.flag-icon.flag-icon-gp{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gp.svg");
+}
+
+.flag-icon.flag-icon-gq{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gq.svg");
+}
+
+.flag-icon.flag-icon-gr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gr.svg");
+}
+
+.flag-icon.flag-icon-gs{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gs.svg");
+}
+
+.flag-icon.flag-icon-gt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gt.svg");
+}
+
+.flag-icon.flag-icon-gu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gu.svg");
+}
+
+.flag-icon.flag-icon-gw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gw.svg");
+}
+
+.flag-icon.flag-icon-gy{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gy.svg");
+}
+
+.flag-icon.flag-icon-hk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/hk.svg");
+}
+
+.flag-icon.flag-icon-hm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/hm.svg");
+}
+
+.flag-icon.flag-icon-hn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/hn.svg");
+}
+
+.flag-icon.flag-icon-hr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/hr.svg");
+}
+
+.flag-icon.flag-icon-ht{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ht.svg");
+}
+
+.flag-icon.flag-icon-hu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/hu.svg");
+}
+
+.flag-icon.flag-icon-id{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/id.svg");
+}
+
+.flag-icon.flag-icon-ie{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ie.svg");
+}
+
+.flag-icon.flag-icon-il{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/il.svg");
+}
+
+.flag-icon.flag-icon-im{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/im.svg");
+}
+
+.flag-icon.flag-icon-in{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/in.svg");
+}
+
+.flag-icon.flag-icon-io{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/io.svg");
+}
+
+.flag-icon.flag-icon-iq{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/iq.svg");
+}
+
+.flag-icon.flag-icon-ir{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ir.svg");
+}
+
+.flag-icon.flag-icon-is{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/is.svg");
+}
+
+.flag-icon.flag-icon-it{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/it.svg");
+}
+
+.flag-icon.flag-icon-je{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/je.svg");
+}
+
+.flag-icon.flag-icon-jm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/jm.svg");
+}
+
+.flag-icon.flag-icon-jo{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/jo.svg");
+}
+
+.flag-icon.flag-icon-jp{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/jp.svg");
+}
+
+.flag-icon.flag-icon-ke{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ke.svg");
+}
+
+.flag-icon.flag-icon-kg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kg.svg");
+}
+
+.flag-icon.flag-icon-kh{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kh.svg");
+}
+
+.flag-icon.flag-icon-ki{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ki.svg");
+}
+
+.flag-icon.flag-icon-km{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/km.svg");
+}
+
+.flag-icon.flag-icon-kn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kn.svg");
+}
+
+.flag-icon.flag-icon-kp{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kp.svg");
+}
+
+.flag-icon.flag-icon-kr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kr.svg");
+}
+
+.flag-icon.flag-icon-kw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kw.svg");
+}
+
+.flag-icon.flag-icon-ky{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ky.svg");
+}
+
+.flag-icon.flag-icon-kz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/kz.svg");
+}
+
+.flag-icon.flag-icon-la{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/la.svg");
+}
+
+.flag-icon.flag-icon-lb{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lb.svg");
+}
+
+.flag-icon.flag-icon-lc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lc.svg");
+}
+
+.flag-icon.flag-icon-li{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/li.svg");
+}
+
+.flag-icon.flag-icon-lk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lk.svg");
+}
+
+.flag-icon.flag-icon-lr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lr.svg");
+}
+
+.flag-icon.flag-icon-ls{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ls.svg");
+}
+
+.flag-icon.flag-icon-lt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lt.svg");
+}
+
+.flag-icon.flag-icon-lu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lu.svg");
+}
+
+.flag-icon.flag-icon-lv{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/lv.svg");
+}
+
+.flag-icon.flag-icon-ly{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ly.svg");
+}
+
+.flag-icon.flag-icon-ma{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ma.svg");
+}
+
+.flag-icon.flag-icon-mc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mc.svg");
+}
+
+.flag-icon.flag-icon-md{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/md.svg");
+}
+
+.flag-icon.flag-icon-me{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/me.svg");
+}
+
+.flag-icon.flag-icon-mf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mf.svg");
+}
+
+.flag-icon.flag-icon-mg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mg.svg");
+}
+
+.flag-icon.flag-icon-mh{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mh.svg");
+}
+
+.flag-icon.flag-icon-mk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mk.svg");
+}
+
+.flag-icon.flag-icon-ml{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ml.svg");
+}
+
+.flag-icon.flag-icon-mm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mm.svg");
+}
+
+.flag-icon.flag-icon-mn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mn.svg");
+}
+
+.flag-icon.flag-icon-mo{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mo.svg");
+}
+
+.flag-icon.flag-icon-mp{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mp.svg");
+}
+
+.flag-icon.flag-icon-mq{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mq.svg");
+}
+
+.flag-icon.flag-icon-mr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mr.svg");
+}
+
+.flag-icon.flag-icon-ms{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ms.svg");
+}
+
+.flag-icon.flag-icon-mt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mt.svg");
+}
+
+.flag-icon.flag-icon-mu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mu.svg");
+}
+
+.flag-icon.flag-icon-mv{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mv.svg");
+}
+
+.flag-icon.flag-icon-mw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mw.svg");
+}
+
+.flag-icon.flag-icon-mx{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mx.svg");
+}
+
+.flag-icon.flag-icon-my{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/my.svg");
+}
+
+.flag-icon.flag-icon-mz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/mz.svg");
+}
+
+.flag-icon.flag-icon-na{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/na.svg");
+}
+
+.flag-icon.flag-icon-nc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/nc.svg");
+}
+
+.flag-icon.flag-icon-ne{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ne.svg");
+}
+
+.flag-icon.flag-icon-nf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/nf.svg");
+}
+
+.flag-icon.flag-icon-ng{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ng.svg");
+}
+
+.flag-icon.flag-icon-ni{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ni.svg");
+}
+
+.flag-icon.flag-icon-nl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/nl.svg");
+}
+
+.flag-icon.flag-icon-no{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/no.svg");
+}
+
+.flag-icon.flag-icon-np{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/np.svg");
+}
+
+.flag-icon.flag-icon-nr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/nr.svg");
+}
+
+.flag-icon.flag-icon-nu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/nu.svg");
+}
+
+.flag-icon.flag-icon-nz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/nz.svg");
+}
+
+.flag-icon.flag-icon-om{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/om.svg");
+}
+
+.flag-icon.flag-icon-pa{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pa.svg");
+}
+
+.flag-icon.flag-icon-pe{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pe.svg");
+}
+
+.flag-icon.flag-icon-pf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pf.svg");
+}
+
+.flag-icon.flag-icon-pg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pg.svg");
+}
+
+.flag-icon.flag-icon-ph{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ph.svg");
+}
+
+.flag-icon.flag-icon-pk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pk.svg");
+}
+
+.flag-icon.flag-icon-pl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pl.svg");
+}
+
+.flag-icon.flag-icon-pm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pm.svg");
+}
+
+.flag-icon.flag-icon-pn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pn.svg");
+}
+
+.flag-icon.flag-icon-pr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pr.svg");
+}
+
+.flag-icon.flag-icon-ps{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ps.svg");
+}
+
+.flag-icon.flag-icon-pt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pt.svg");
+}
+
+.flag-icon.flag-icon-pw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/pw.svg");
+}
+
+.flag-icon.flag-icon-py{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/py.svg");
+}
+
+.flag-icon.flag-icon-qa{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/qa.svg");
+}
+
+.flag-icon.flag-icon-re{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/re.svg");
+}
+
+.flag-icon.flag-icon-ro{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ro.svg");
+}
+
+.flag-icon.flag-icon-rs{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/rs.svg");
+}
+
+.flag-icon.flag-icon-ru{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ru.svg");
+}
+
+.flag-icon.flag-icon-rw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/rw.svg");
+}
+
+.flag-icon.flag-icon-sa{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sa.svg");
+}
+
+.flag-icon.flag-icon-sb{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sb.svg");
+}
+
+.flag-icon.flag-icon-sc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sc.svg");
+}
+
+.flag-icon.flag-icon-sd{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sd.svg");
+}
+
+.flag-icon.flag-icon-se{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/se.svg");
+}
+
+.flag-icon.flag-icon-sg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sg.svg");
+}
+
+.flag-icon.flag-icon-sh{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sh.svg");
+}
+
+.flag-icon.flag-icon-si{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/si.svg");
+}
+
+.flag-icon.flag-icon-sj{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sj.svg");
+}
+
+.flag-icon.flag-icon-sk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sk.svg");
+}
+
+.flag-icon.flag-icon-sl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sl.svg");
+}
+
+.flag-icon.flag-icon-sm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sm.svg");
+}
+
+.flag-icon.flag-icon-sn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sn.svg");
+}
+
+.flag-icon.flag-icon-so{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/so.svg");
+}
+
+.flag-icon.flag-icon-sr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sr.svg");
+}
+
+.flag-icon.flag-icon-ss{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ss.svg");
+}
+
+.flag-icon.flag-icon-st{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/st.svg");
+}
+
+.flag-icon.flag-icon-sv{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sv.svg");
+}
+
+.flag-icon.flag-icon-sx{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sx.svg");
+}
+
+.flag-icon.flag-icon-sy{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sy.svg");
+}
+
+.flag-icon.flag-icon-sz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/sz.svg");
+}
+
+.flag-icon.flag-icon-tc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tc.svg");
+}
+
+.flag-icon.flag-icon-td{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/td.svg");
+}
+
+.flag-icon.flag-icon-tf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tf.svg");
+}
+
+.flag-icon.flag-icon-tg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tg.svg");
+}
+
+.flag-icon.flag-icon-th{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/th.svg");
+}
+
+.flag-icon.flag-icon-tj{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tj.svg");
+}
+
+.flag-icon.flag-icon-tk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tk.svg");
+}
+
+.flag-icon.flag-icon-tl{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tl.svg");
+}
+
+.flag-icon.flag-icon-tm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tm.svg");
+}
+
+.flag-icon.flag-icon-tn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tn.svg");
+}
+
+.flag-icon.flag-icon-to{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/to.svg");
+}
+
+.flag-icon.flag-icon-tr{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tr.svg");
+}
+
+.flag-icon.flag-icon-tt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tt.svg");
+}
+
+.flag-icon.flag-icon-tv{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tv.svg");
+}
+
+.flag-icon.flag-icon-tw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tw.svg");
+}
+
+.flag-icon.flag-icon-tz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/tz.svg");
+}
+
+.flag-icon.flag-icon-ua{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ua.svg");
+}
+
+.flag-icon.flag-icon-ug{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ug.svg");
+}
+
+.flag-icon.flag-icon-um{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/um.svg");
+}
+
+.flag-icon.flag-icon-us{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/us.svg");
+}
+
+.flag-icon.flag-icon-uy{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/uy.svg");
+}
+
+.flag-icon.flag-icon-uz{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/uz.svg");
+}
+
+.flag-icon.flag-icon-va{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/va.svg");
+}
+
+.flag-icon.flag-icon-vc{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/vc.svg");
+}
+
+.flag-icon.flag-icon-ve{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ve.svg");
+}
+
+.flag-icon.flag-icon-vg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/vg.svg");
+}
+
+.flag-icon.flag-icon-vi{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/vi.svg");
+}
+
+.flag-icon.flag-icon-vn{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/vn.svg");
+}
+
+.flag-icon.flag-icon-vu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/vu.svg");
+}
+
+.flag-icon.flag-icon-wf{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/wf.svg");
+}
+
+.flag-icon.flag-icon-ws{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ws.svg");
+}
+
+.flag-icon.flag-icon-ye{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ye.svg");
+}
+
+.flag-icon.flag-icon-yt{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/yt.svg");
+}
+
+.flag-icon.flag-icon-za{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/za.svg");
+}
+
+.flag-icon.flag-icon-zm{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/zm.svg");
+}
+
+.flag-icon.flag-icon-zw{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/zw.svg");
+}
+
+.flag-icon.flag-icon-ac{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ac.svg");
+}
+
+.flag-icon.flag-icon-cp{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/cp.svg");
+}
+
+.flag-icon.flag-icon-dg{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/dg.svg");
+}
+
+.flag-icon.flag-icon-ea{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ea.svg");
+}
+
+.flag-icon.flag-icon-es-ct{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/es-ct.svg");
+}
+
+.flag-icon.flag-icon-es-ga{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/es-ga.svg");
+}
+
+.flag-icon.flag-icon-eu{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/eu.svg");
+}
+
+.flag-icon.flag-icon-gb-eng{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gb-eng.svg");
+}
+
+.flag-icon.flag-icon-gb-nir{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gb-nir.svg");
+}
+
+.flag-icon.flag-icon-gb-sct{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gb-sct.svg");
+}
+
+.flag-icon.flag-icon-gb-wls{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/gb-wls.svg");
+}
+
+.flag-icon.flag-icon-ic{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ic.svg");
+}
+
+.flag-icon.flag-icon-ta{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/ta.svg");
+}
+
+.flag-icon.flag-icon-un{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/un.svg");
+}
+
+.flag-icon.flag-icon-xk{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/xk.svg");
+}
+
+.flag-icon.flag-icon-xx{
+  background-image:url("https://fluorescent.github.io/country-flags/flags/xx.svg");
+}

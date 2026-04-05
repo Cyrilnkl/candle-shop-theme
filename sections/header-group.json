@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:groups.header_group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "title": "<p>Free Worldwide Shipping</p>",
+            "title_mobile": "",
+            "link": ""
+          }
+        },
+        "announcement_TEezJh": {
+          "type": "announcement",
+          "settings": {
+            "title": "<p>Join the Nostalys newsletter and unlock 10% off today.</p>",
+            "title_mobile": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_TEezJh"
+      ],
+      "custom_css": [
+        "p {padding-top: 5px;}"
+      ],
+      "settings": {
+        "enable_sticky_announcement_bar": "never",
+        "autoplay_enabled": true,
+        "autoplay_delay": 4,
+        "color_background": "#0a284c",
+        "color_text": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "meganav-0": {
+          "type": "full_width_meganav",
+          "settings": {
+            "dropdown_parent_link": "",
+            "column_count": 2,
+            "show_column_borders": true,
+            "show_promo": true,
+            "promo_width": 700,
+            "promo_height": 400,
+            "secondary_position": "right",
+            "focal_point": "image_presentation",
+            "promo_text": "Newest Releases",
+            "link": "shopify://collections/all",
+            "link_text": "Discover",
+            "text_position": "flex-start_flex-end",
+            "text_color": "#ffffff",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1) 22%, rgba(0, 0, 0, 1) 96%)",
+            "overlay_opacity": 33
+          }
+        },
+        "meganav-1": {
+          "type": "compact_meganav",
+          "settings": {
+            "dropdown_parent_link": "Dresses",
+            "columns_width": 270,
+            "column_count": 1,
+            "show_column_borders": false,
+            "show_promo": true,
+            "promo_width": 550,
+            "promo_height": 350,
+            "secondary_position": "right",
+            "focal_point": "image_presentation",
+            "promo_text": "Newest Releases",
+            "link": "shopify://collections/all",
+            "link_text": "Discover",
+            "text_position": "flex-start_flex-end",
+            "text_color": "#ffffff",
+            "color_overlay": "#000000",
+            "color_overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.15) 22%, rgba(0, 0, 0, 1) 96%)",
+            "overlay_opacity": 50
+          }
+        }
+      },
+      "block_order": [
+        "meganav-0",
+        "meganav-1"
+      ],
+      "custom_css": [
+        ".header__icon-touch.header__icon-touch--search {display: none;}"
+      ],
+      "settings": {
+        "layout": "logo-left_nav-center",
+        "enable_sticky_header": true,
+        "cart_icon": "bag",
+        "divider_width": "0px",
+        "enable_locale_selector": true,
+        "enable_country_selector": true,
+        "show_social_media": false,
+        "show_social_media_mobile": false,
+        "logo_width": 120,
+        "mobile_logo_width": 90,
+        "menu": "main-menu",
+        "secondary_menu": "",
+        "enable_transparent_on_home": false,
+        "enable_transparent_template_list": "",
+        "color_text_transparent": "#ffffff",
+        "color_count_transparent": "#0a284c"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

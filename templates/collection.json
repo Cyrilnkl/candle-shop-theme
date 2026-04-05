@@ -1,0 +1,174 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_qWTTJG": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YBbdG4": {
+          "type": "heading",
+          "settings": {
+            "title": "Candle Sand by Zephyra",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-2-base"
+          }
+        },
+        "text_jbmRxq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Transform any space with Zephyra Candle Sand! This eco-friendly sand and wick set lets you easily create beautiful candles in glass, ceramic, or any container. Simple, stylish, and sustainable.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YBbdG4",
+        "text_jbmRxq"
+      ],
+      "custom_css": [
+        ".rich-text__text p {color: grey; margin-top: 20px;}"
+      ],
+      "settings": {
+        "alignment": "center_center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom",
+        "content_width": "custom",
+        "custom_content_width": 700
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_breadcrumbs": true,
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "image_aspect": "custom",
+        "desktop_height": 100,
+        "mobile_height": 100,
+        "focal_point": "image_presentation",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 30,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".product-item__swatch-count {display: none;}",
+        ".product-rating__count span:first-child {display: none;}"
+      ],
+      "settings": {
+        "columns_desktop": "3",
+        "columns_mobile": "2",
+        "rows": "4",
+        "show_item_count": false,
+        "show_sort": false,
+        "show_filters": true,
+        "enable_sticky_filter_bar": true,
+        "desktop_filter_location": "filter_bar",
+        "collapse_filter_bar": true,
+        "enable_sticky_filter_sidebar": true,
+        "collapse_filter_groups_desktop": true,
+        "collapse_filter_groups_mobile": true,
+        "show_swatch_filters": true,
+        "show_chip_filters": true,
+        "chip_layout": "3col",
+        "pagination": "paginated",
+        "enable_animation": true,
+        "divider_style": "none"
+      }
+    },
+    "image_hero_HAc36G": {
+      "type": "image-hero",
+      "settings": {
+        "image_aspect": "original",
+        "desktop_height": 50,
+        "mobile_height": 100,
+        "image": "shopify://shop_images/foot-banner_5c74e1c5-a110-4d00-8a01-206ec4732b43.png",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "media_link": "",
+        "text_position": "center_center",
+        "text_position_mobile": "center_center",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "newsletter_compact_Dggjt8": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "text_content_TEmgwP": {
+          "type": "text_content",
+          "settings": {
+            "width": "600",
+            "title": "Subscribe to our newsletter",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base",
+            "subheading": "",
+            "subheading_tag": "h3",
+            "subheading_font_class": "fs-heading-5-base",
+            "text": "<p>Sign up and receive a coupon code for a free delivery.</p>",
+            "text_font_class": "fs-body-75"
+          }
+        },
+        "newsletter_signup_UrpTDH": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "Sign up",
+            "footer_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_content_TEmgwP",
+        "newsletter_signup_UrpTDH"
+      ],
+      "custom_css": [],
+      "settings": {
+        "spacing_mode": "between",
+        "alignment": "left",
+        "focal_point": "image_presentation",
+        "focal_point_mobile": "image_presentation",
+        "background_color": "#f5f5f5",
+        "text_color": "#000000",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    }
+  },
+  "order": [
+    "rich_text_qWTTJG",
+    "banner",
+    "product-grid",
+    "image_hero_HAc36G",
+    "newsletter_compact_Dggjt8"
+  ]
+}

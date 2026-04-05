@@ -1,0 +1,145 @@
+{%- liquid
+  comment
+    Renders the mobile drawer navigation and nests further mobile drawers as needed.
+    Can show menu images up to the 2nd level if the mobile menu image block is included in the header.
+
+    Required parameters:
+      - links: { Object } The linklists[menu].linkslinks or linklists[secondary_menu].links passed through from the header.
+
+    Optional parameters:
+      - parents_only: { Boolean } Will not show nested menus if true, ex. in secondary links in the drawer-menu.
+      - depth: { Number } Tracking menu depth per iteration of the drawer-menu-list snippet.
+      - has_mobile_menu_images: { Boolean } If true, links within the verified menu handle will show images.
+      - mobile_menu_image_blocks: { Object } Passing in only the blocks that enable menu images to iterate over.
+      - second_level_mobile_menu_image_link_handles: { Object } All second level menu handles to iterate and apply specific block settings.
+      - mobile_menu_image_aspect_ratio: { String } Passes the specific block style settings. Can be:
+        - Natural, Square, Portrait, Landscape
+      - mobile_menu_image_width: { Number } Passes the specific block style settings.
+  endcomment
+
+  assign menu_depth = depth | plus: 1 | default: 1
+
+  assign children_allowed = true
+  if parents_only
+    assign children_allowed = false
+  endif
+-%}
+
+{%- for link in links -%}
+  {%- liquid
+    assign child_has_mobile_menu_images = false
+    assign child_mobile_menu_image_aspect_ratio = blank
+    assign child_mobile_menu_image_width = blank
+
+    if menu_depth == 1 and second_level_mobile_menu_image_link_handles contains link.handle
+      assign child_has_mobile_menu_images = true
+
+      for block in mobile_menu_image_blocks
+        assign current_menu_handle = block.settings.menu_name | handle
+
+        if current_menu_handle == link.handle
+          assign child_mobile_menu_image_aspect_ratio = block.settings.aspect_ratio
+          assign child_mobile_menu_image_width = block.settings.thumbnail_width
+          break
+        endif
+      endfor
+    endif
+
+    assign has_children = false
+    if link.levels > 0 and children_allowed
+      assign has_children = true
+    endif
+
+    assign child_is_active = false
+    for link in link.links
+      if link.active
+        assign child_is_active = true
+        break
+      elsif link.links.size > 0
+        for link in link.links
+          if link.active
+            assign child_is_active = true
+            break
+          endif
+        endfor
+      endif
+    endfor
+  -%}
+
+  <li
+    class="
+      drawer-menu__item
+      {% if emphasized -%}
+        drawer-menu__item--emphasized
+      {%- endif %}
+      {% if emphasized and forloop.last -%}
+        drawer-menu__item--emphasized-last
+      {%- endif %}
+    "
+    data-list-item
+  >
+    <a
+      data-item="{% if has_children %}parent{% else %}link{% endif %}"
+      class="drawer-menu__link {% if has_children %}no-transition{% endif %} {% if link.active or child_is_active %}active{% endif %}"
+      href="{{ link.url }}"
+      {% if has_children %}
+        data-link="primary"
+        aria-haspopup="true"
+        aria-expanded="false"
+      {% endif %}
+    >
+      <div class="drawer-menu__link-title">
+        {% # Render mobile product or collection images if enabled %}
+        {% if has_mobile_menu_images %}
+          {% render 'mobile-menu-image-thumbnail',
+            link: link,
+            aspect_ratio: mobile_menu_image_aspect_ratio,
+            thumbnail_width: mobile_menu_image_width
+          %}
+        {% endif %}
+
+        <span class="">
+          {{ link.title }}
+        </span>
+      </div>
+      {%- if has_children -%}
+        {% render 'icon', icon: 'chevron', class: 'menu-icon' %}
+      {%- endif -%}
+    </a>
+
+    {% # Render sub navigation %}
+    {%- if link.links.size > 0 -%}
+      <ul class="drawer-menu__list drawer-menu__list--sub drawer-menu-list--{{ menu_depth }}" aria-hidden="true">
+        {% assign header_has_link = false %}
+        {% if link.url != '#nolink' %}
+          {% assign header_has_link = true %}
+        {% endif %}
+        <li class="drawer-menu__item drawer-menu__item--heading">
+          <span
+            class="drawer-menu__item--heading-back-link"
+            data-item="back"
+            aria-label="{{ 'general.accessibility.back' | t }}"
+          >
+            {% render 'icon', icon: 'arrow-long', class: 'back-link-icon' %}
+          </span>
+          <a
+            class="drawer-menu__link"
+            data-heading="true"
+            {% if header_has_link %}
+              href="{{ link.url }}"
+            {% endif %}
+          >
+            <span class="fs-body-300">{{ link.title }}</span>
+          </a>
+        </li>
+        {% render 'drawer-menu-list',
+          links: link.links,
+          depth: menu_depth,
+          has_mobile_menu_images: child_has_mobile_menu_images,
+          mobile_menu_image_aspect_ratio: child_mobile_menu_image_aspect_ratio,
+          mobile_menu_image_width: child_mobile_menu_image_width
+        %}
+      </ul>
+    {%- endif -%}
+  </li>
+{%- endfor -%}

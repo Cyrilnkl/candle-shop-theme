@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:groups.footer_group.name",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_zECzej": {
+          "type": "text",
+          "settings": {
+            "desktop_width": 35,
+            "desktop_padding": 2,
+            "collapse_on_mobile": true,
+            "title": "Our goal",
+            "show_title_on_desktop": true,
+            "text": "<p>Nostalys – Capturing emotion, light, and memories in every sphere. Crafted with heart, made to keep your most precious moments alive.</p>",
+            "image_max_width": 200,
+            "image_placement": "below_text",
+            "show_social_icons": false,
+            "enable_follow_on_shop": false
+          }
+        },
+        "spacer_h9fy7L": {
+          "type": "spacer",
+          "settings": {
+            "desktop_width": 10
+          }
+        },
+        "footer-2": {
+          "type": "links",
+          "settings": {
+            "desktop_width": 20,
+            "desktop_padding": 4,
+            "collapse_on_mobile": true,
+            "title": "Information",
+            "show_title_on_desktop": true,
+            "link_list": "footer-information"
+          }
+        },
+        "footer-1": {
+          "type": "spacer",
+          "settings": {
+            "desktop_width": 10
+          }
+        },
+        "footer-3": {
+          "type": "links",
+          "settings": {
+            "desktop_width": 15,
+            "desktop_padding": 4,
+            "collapse_on_mobile": true,
+            "title": "About",
+            "show_title_on_desktop": true,
+            "link_list": "footer-about"
+          }
+        }
+      },
+      "block_order": [
+        "text_zECzej",
+        "spacer_h9fy7L",
+        "footer-2",
+        "footer-1",
+        "footer-3"
+      ],
+      "custom_css": [
+        ".footer__credits p a {display: none;}"
+      ],
+      "settings": {
+        "enable_locale_selector": true,
+        "enable_country_selector": true,
+        "show_payment_icons": true,
+        "additional_copyright_text": ""
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

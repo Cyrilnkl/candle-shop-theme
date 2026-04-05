@@ -1,0 +1,128 @@
+{%- comment -%}
+  Renders the sticky add to cart bar on the product page.
+  Must be rendered within a product form.
+
+  Required parameters:
+
+  * local_settings: { Object } The bar's settings, taken from the buy button block on the product page.
+  * prod: { Object } The product to render with.
+  * current_variant: { Object } The selected_or_first_available_variant of the product.
+  * featured_media: { Object } The initial media shown.
+  * aspect_ratio: { String } The value which determines the aspect ratio of the media.
+  * price_content_type: { String } "price" or "custom" or "hide" after checking both $0 and sold out pricing display settings
+  * custom_price_content: { String } The translation to populate price if sold out or free, depending on logic checks and settings
+{%- endcomment -%}
+
+{%- liquid
+  assign product_available_label = 'products.product.add_to_cart' | t
+  assign product_unavailable_label = 'products.product.sold_out' | t
+
+  if template.suffix == 'preorder'
+    assign product_available_label = 'products.product.preorder' | t
+  endif
+
+  capture options_csl
+    for option in current_variant.options
+      echo option
+      unless forloop.last
+        echo ', '
+      endunless
+    endfor
+  endcapture
+-%}
+
+<div
+  class="sticky-atc-bar hidden"
+  {{ divider_style }}
+  data-divider-style="{{ local_settings.divider_width }}"
+  data-show-desktop="{{ local_settings.enable_sticky_atc_bar_desktop }}"
+  data-show-mobile="{{ local_settings.enable_sticky_atc_bar_mobile }}"
+>
+  <div class="sticky-atc-bar__inner">
+    <div class="sticky-atc-bar__details">
+      <div class="sticky-atc-bar__media product__media">
+        {%- for media in prod.media -%}
+          <div
+            class="product__media-item {% unless media.id == featured_media.id %} hidden{% endunless %}"
+            data-media-item-id="{{ media.id }}"
+            data-media-type="{{ media.media_type }}"
+            data-product-media-wrapper
+          >
+            {% render 'image',
+              image: media,
+              id: media.id,
+              wrapper_class: 'sticky-atc-bar__image',
+              aspect_ratio: aspect_ratio
+            %}
+          </div>
+        {% endfor -%}
+      </div>
+
+      <div class="sticky-atc-bar__meta">
+        <h5 class="ff-heading fs-heading-5-base">{{ prod.title }}</h5>
+
+        {%- unless prod.has_only_default_variant %}
+          <span class="sticky-atc-bar__meta-options fs-body-75 t-opacity-60">{{ options_csl }}</span>
+          <button
+            type="button"
+            class="sticky-atc-bar__meta-change-option-trigger fs-body-75"
+            data-change-option-trigger
+          >
+            {{ 'products.product.change_option' | t }}
+          </button>
+        {% endunless %}
+      </div>
+
+      <div class="sticky-atc-bar__price product__price fs-body-100">
+        {%- if prod != blank -%}
+          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+          <s class="t-subdued" data-compare-price>
+            {%- if price_content_type == 'price' and current_variant.compare_at_price > current_variant.price -%}
+              {{- current_variant.compare_at_price | money -}}
+            {%- endif -%}
+          </s>
+
+          <span data-price>
+            {% if price_content_type == 'price' %}
+              {{ current_variant.price | money }}
+            {%- elsif price_content_type == 'custom' -%}
+              {{- custom_price_content }}
+            {% endif %}
+          </span>
+        {%- else -%}
+          <span>{{ 9999 | money }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="sticky-atc-bar__button">
+      <button
+        type="submit"
+        name="add"
+        {% unless current_variant.available %}
+          aria-disabled="true" disabled
+        {% endunless %}
+        aria-label="{% unless current_variant.available %}{{ product_unavailable_label }}{% else %}{{ product_available_label }}{% endunless %}"
+        class="product-form__cart-submit btn btn--medium btn--full btn--primary"
+        data-add-to-cart
+        data-lang-available="{{ product_available_label }}"
+        data-lang-unavailable="{{ 'product.unavailable' | t }}"
+        data-lang-sold-out="{{ 'product.sold_out' | t }}"
+      >
+        <span data-add-to-cart-text>
+          {%- unless current_variant.available -%}
+            {{ product_unavailable_label }}
+          {%- else -%}
+            {{ product_available_label }}
+          {%- endunless -%}
+        </span>
+
+        <div class="btn__loading-wrap">
+          <div class="btn__loading-bar"></div>
+        </div>
+
+        {% render 'icon', icon: 'checkmark' %}
+      </button>
+    </div>
+  </div>
+</div>

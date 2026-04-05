@@ -1,0 +1,41 @@
+{%- comment -%}
+  inline video element essentially video 'image'
+
+  Pass in:
+  video: URL
+  controls: Bool (optional)
+  loop: Bool (optional)
+  wrapper_class: String
+  aspect_ratio: String
+  focal_alignment: String
+  animate: Bool (optional)
+{%- endcomment -%}
+{%- liquid
+  if focal_point
+    assign focal_alignment = focal_point | replace: '_', ' '
+  endif
+
+  assign video_should_loop = true
+  unless loop
+    assign video_should_loop = false
+  endunless
+-%}
+
+<div
+  class="
+    video-wrapper {{ wrapper_class }}
+    {% if aspect_ratio != blank and aspect_ratio != 'natural' %}aspect-ratio--{{ aspect_ratio }}{% endif %}
+    {% if animate %}video-wrapper--animate{% endif %}
+  "
+  {%- if focal_alignment -%}
+    style="--focal-alignment: {{ focal_alignment }};"
+  {%- endif -%}
+>
+  {% liquid
+    assign video_html = video | video_tag: image_size: '1800x', class: 'video', autoplay: true, loop: video_should_loop, muted: true, controls: controls
+    assign video_poster_alt = '<img alt="' | append: video.title | append: '"'
+    assign video_html = video_html | replace: '<img ', video_poster_alt
+  %}
+  {{ video_html }}
+  {% render 'video-pause' %}
+</div>

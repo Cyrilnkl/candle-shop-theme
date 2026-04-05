@@ -1,0 +1,211 @@
+<div
+  class="
+    recently-viewed-products
+    carousel--mobile-per-view-{{ section.settings.mobile_columns }}
+    carousel--per-view-{{ section.settings.mobile_columns }}
+    section
+    section--includes-product-items
+    section--divider-{{ section.settings.divider_style }}
+    {{ section.settings.section_padding }}
+    {% if settings.enable_section_animations and section.settings.enable_animation %}
+      animation
+      animation--list-slider
+    {% endif %}
+  "
+  data-section-id="{{ section.id }}"
+  data-section-type="recently-viewed-products"
+  data-product-handle="{{ product.handle }}"
+  data-limit="{{ section.settings.maximum_products }}"
+  data-products-per-view="{{ section.settings.columns }}"
+  data-mobile-products-per-view="{{ section.settings.mobile_columns }}"
+>
+  <div class="section__inner" data-recently-viewed>
+    <div class="carousel__navigation-wrapper">
+      <div class="section-introduction animation--section-introduction">
+        {%- unless section.settings.title == blank -%}
+          <{{ section.settings.heading_tag }} class="recently-viewed-products__heading ff-heading fs-heading-3-base section-introduction__heading">
+            {{ section.settings.title }}
+          </{{ section.settings.heading_tag }}>
+        {%- endunless -%}
+
+        {%- unless section.settings.subheading == blank -%}
+          <div class="recently-viewed-products__subheading ff-body fs-body-100 rte section-introduction__subheading">
+            {{ section.settings.subheading }}
+          </div>
+        {%- endunless -%}
+      </div>
+
+      {%- render 'carousel-navigation', wrapper_class: 'animation--controls' %}
+    </div>
+
+    <div class="recently-viewed-products__content carousel swiper">
+      <div class="recently-viewed-products__slider-wrapper carousel__wrapper swiper-wrapper"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.recently_viewed_products.name",
+  "tag": "section",
+  "limit": 1,
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"],
+    "templates": ["password"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.recently_viewed_products.settings.paragraph__intro.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.collection_sections_shared.settings.title.label",
+      "default": "Recently viewed"
+    },
+    {
+      "id": "heading_tag",
+      "type": "select",
+      "label": "t:shared.section_blocks.heading.settings.heading_tag.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h4"
+        },
+        {
+          "value": "h5",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h5"
+        },
+        {
+          "value": "h6",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h6"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "t:shared.section_blocks.heading.settings.heading_tag.info"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.collection_sections_shared.settings.subheading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.collection_sections_shared.settings.header_product_list.content"
+    },
+    {
+      "type": "range",
+      "id": "maximum_products",
+      "label": "t:sections.collection_sections_shared.settings.maximum_products.label",
+      "min": 3,
+      "max": 15,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "t:shared.settings.column_count.desktop.label",
+      "default": "4",
+      "options": [
+        {
+          "value": "3",
+          "label": "t:shared.settings.column_count.columns.option_3"
+        },
+        {
+          "value": "4",
+          "label": "t:shared.settings.column_count.columns.option_4"
+        },
+        {
+          "value": "5",
+          "label": "t:shared.settings.column_count.columns.option_5"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "t:shared.settings.column_count.mobile.label",
+      "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:shared.settings.column_count.columns.option_1"
+        },
+        {
+          "value": "2",
+          "label": "t:shared.settings.column_count.columns.option_2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "divider_style",
+      "label": "t:shared.settings.section_style.divider_style.label",
+      "default": "none",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.divider_style.option_none",
+          "value": "none"
+        },
+        {
+          "label": "t:shared.settings.section_style.divider_style.option_solid",
+          "value": "solid"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.recently_viewed_products.presets.name"
+    }
+  ]
+}
+{% endschema %}

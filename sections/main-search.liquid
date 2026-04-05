@@ -1,0 +1,469 @@
+{%- liquid
+  assign paginated = false
+  if section.settings.pagination == 'paginated'
+    assign paginated = true
+  endif
+
+  assign per_page = section.settings.rows | times: section.settings.columns_desktop
+  assign filter_bar_enabled = false
+  if section.settings.show_item_count or section.settings.show_sort or section.settings.show_filters
+    assign filter_bar_enabled = true
+  endif
+-%}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="search"
+  data-layout-type="grid"
+  data-collection-columns-desktop="{{ section.settings.columns_desktop }}"
+  data-search-term="{{ search.term }}"
+  data-pagination-type="{{ section.settings.pagination }}"
+  data-search-item-count="{{ search.results_count }}"
+>
+  <header
+    class="
+      search-header
+      {% if settings.enable_section_animations and section.settings.enable_animation %}
+        animation
+        animation--search-banner
+      {% endif %}
+    "
+  >
+    <div class="search-header__inner section-blocks animation--section-blocks">
+      <h1 class="search-header__title ff-heading fs-heading-2-base fs-heading-1-base-ns section-blocks__heading">
+        {%- if search.performed -%}
+          {{ 'search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+        {%- else -%}
+          {{ 'search.title' | t }}
+        {%- endif -%}
+      </h1>
+
+      <form
+        class="search-form"
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+      >
+        <div class="search-form__input-wrapper">
+          <label for="Search" class="visually-hidden">{{ 'search.placeholder' | t }}</label>
+          <input
+            data-search-input
+            type="search"
+            name="q"
+            id="Search"
+            class="search-form__input input"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ 'search.placeholder' | t }}"
+            autocomplete="off"
+          >
+          <input type="hidden" name="options[prefix]" value="last">
+          <button type="submit" class="search-form__submit" aria-label="{{ 'search.search' | t }}">
+            {% render 'icon' with icon: 'search' %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </header>
+
+  <div
+    class="
+      section
+      section--full-width
+      search
+      search--pagination-{{ section.settings.pagination }}
+      {% if filter_bar_enabled %}search--has-filter-bar{% endif %}
+      {% if settings.enable_section_animations and section.settings.enable_animation %}
+        animation
+        animation--search
+      {% endif %}
+    "
+
+    data-enable-sticky-filter-sidebar="{{ section.settings.enable_sticky_filter_sidebar }}"
+
+    style="
+      --search-columns-desktop: {{ section.settings.columns_desktop }};
+      --search-columns-mobile: {{ section.settings.columns_mobile }};
+    "
+  >
+    {% if search.results_count > 0 %}
+      <div class="search__divider"></div>
+    {%- endif -%}
+    <div class="search__inner">
+      {% paginate search.results by per_page %}
+        <div class="search__container">
+          <div class="search__content">
+            {%- if search.results_count > 0 -%}
+              {%
+                render 'filter-bar' with
+                results: search,
+                show_item_count: section.settings.show_item_count,
+                show_sort: section.settings.show_sort,
+                show_filters: section.settings.show_filters,
+                filter_location: section.settings.desktop_filter_location,
+                show_swatch_filters: section.settings.show_swatch_filters,
+                show_chip_filters: section.settings.show_chip_filters,
+                enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar,
+                collapse_filter_bar: section.settings.collapse_filter_bar,
+                chip_layout: section.settings.chip_layout
+              %}
+
+              {%
+                render 'mobile-filters' with
+                results: search,
+                show_sort: section.settings.show_sort,
+                show_filters: section.settings.show_filters,
+                enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar
+              %}
+            {%- endif -%}
+
+            <div class="search__main-area">
+              {%- if section.settings.desktop_filter_location == 'sidebar' -%}
+                {% render 'filter-sidebar',
+                  results: search,
+                  show_filters: section.settings.show_filters,
+                  collapse_filter_bar: section.settings.collapse_filter_bar,
+                  collapse_filter_groups: section.settings.collapse_filter_groups_desktop
+                %}
+              {%- endif -%}
+
+              <div class="search__window">
+                <div class="search__loading" data-loading>
+                  {% render 'loader' %}
+                </div>
+
+                <div
+                  id="root"
+                  class="animation--search-items"
+                  data-partial
+                  data-search-results-count="{{ search.results_count }}"
+                >
+                  <div
+                    class="
+                      search__results
+                      search__infinite-container
+                      {% if search.results_count == 0 %}
+                        search__results--no-products
+                      {% endif %}
+                    "
+                  >
+                    {%- if search.performed -%}
+                      {%- for item in search.results -%}
+                        {%- case item.object_type -%}
+                          {%- when 'product' -%}
+                            {%
+                              render 'product-item' with
+                              prod: item,
+                              product_columns_desktop: section.settings.columns_desktop,
+                              product_columns_mobile: section.settings.columns_mobile,
+                              aspect_ratio: settings.product_listing_aspect_ratio,
+                              has_grid_reveal: true
+                            %}
+                          {%- else -%}
+                            {%
+                              render 'search-item' with
+                              item: item,
+                              columns_desktop: section.settings.columns_desktop,
+                              columns_mobile: section.settings.columns_mobile,
+                              forloop: forloop,
+                              has_grid_reveal: true
+                            %}
+                        {%- endcase -%}
+                      {% else %}
+                        <div class="search__empty">
+                          <div>{{ 'search.no_results' | t }}</div>
+                        </div>
+                      {%- endfor -%}
+                    {%- endif -%}
+                  </div>
+
+                  {%- if search.performed -%}
+                    {%- if search.results_count > 0 -%}
+                      {% unless paginated %}
+                        <div>
+                          {%
+                            render 'pagination' with
+                            paginate: paginate,
+                            type: 'general.pagination.results',
+                            display_paginate_item_count_only: true
+                          %}
+                          <div class="search__infinite-trigger">
+                            {% if paginate.next %}
+                              <a href="{{ paginate.next.url }}" class="btn btn--secondary no-transition">
+                                {{- 'general.pagination.load_more' | t -}}
+                              </a>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endunless %}
+
+                      {% if paginated %}
+                        <div>
+                          {% if paginate.pages > 1 %}
+                            {%
+                              render 'pagination' with
+                              paginate: paginate,
+                              type: 'general.pagination.results',
+                              show_item_count: true
+                            %}
+                          {% else %}
+                            {%
+                              render 'pagination' with
+                              paginate: paginate,
+                              type: 'general.pagination.results',
+                              display_paginate_item_count_only: true
+                            %}
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endpaginate %}
+
+      {%
+        render 'filter-drawer' with
+        results: search,
+        show_sort: section.settings.show_sort,
+        show_filters: section.settings.show_filters,
+        show_swatch_filters: section.settings.show_swatch_filters,
+        show_chip_filters: section.settings.show_chip_filters,
+        collapse_filter_groups: section.settings.collapse_filter_groups_mobile,
+        chip_layout: section.settings.chip_layout
+      %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_search.name",
+  "class": "search-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main_search.settings.search__header.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "t:shared.settings.column_count.desktop.label",
+      "default": "4",
+      "options": [
+        {
+          "value": "3",
+          "label": "t:shared.settings.column_count.columns.option_3"
+        },
+        {
+          "value": "4",
+          "label": "t:shared.settings.column_count.columns.option_4"
+        },
+        {
+          "value": "5",
+          "label": "t:shared.settings.column_count.columns.option_5"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "t:shared.settings.column_count.mobile.label",
+      "default": "2",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:shared.settings.column_count.columns.option_1"
+        },
+        {
+          "value": "2",
+          "label": "t:shared.settings.column_count.columns.option_2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "rows",
+      "label": "t:sections.collection_sections_shared.settings.rows.label",
+      "default": "4",
+      "options": [
+        {
+          "value": "3",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_3"
+        },
+        {
+          "value": "4",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_4"
+        },
+        {
+          "value": "5",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_5"
+        },
+        {
+          "value": "6",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_6"
+        },
+        {
+          "value": "7",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_7"
+        },
+        {
+          "value": "8",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_8"
+        },
+        {
+          "value": "9",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_9"
+        },
+        {
+          "value": "10",
+          "label": "t:sections.collection_sections_shared.settings.rows.option_10"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_item_count",
+      "label": "t:shared.settings.show_item_count.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.filtering__header.content"
+    },
+    {
+      "id": "show_sort",
+      "type": "checkbox",
+      "label": "t:shared.settings.show_sort.label",
+      "default": true
+    },
+    {
+      "id": "show_filters",
+      "type": "checkbox",
+      "label": "t:shared.settings.show_filters.label",
+      "info": "t:shared.settings.show_filters.info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_filter_bar",
+      "label": "t:shared.settings.enable_sticky_filter_bar.label",
+      "info": "t:shared.settings.enable_sticky_filter_bar.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "desktop_filter_location",
+      "label": "t:shared.settings.desktop_filter_location.label",
+      "options": [
+        {
+          "value": "filter_bar",
+          "label": "t:shared.settings.desktop_filter_location.options.filter_bar"
+        },
+        {
+          "value": "sidebar",
+          "label": "t:shared.settings.desktop_filter_location.options.sidebar"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_filter_bar",
+      "label": "t:shared.settings.collapse_filter_bar.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_filter_sidebar",
+      "label": "t:shared.settings.enable_sticky_filter_sidebar.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_filter_groups_desktop",
+      "label": "t:shared.settings.collapse_filter_groups_desktop.label",
+      "default": true,
+      "info": "t:shared.settings.collapse_filter_groups_desktop.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_filter_groups_mobile",
+      "label": "t:shared.settings.collapse_filter_groups_mobile.label",
+      "default": true
+    },
+    {
+      "id": "show_swatch_filters",
+      "type": "checkbox",
+      "label": "t:shared.settings.swatches.default_swatches.show_swatch_filters.label",
+      "info": "t:shared.settings.swatches.default_swatches.show_swatch_filters.info",
+      "default": true
+    },
+    {
+      "id": "show_chip_filters",
+      "type": "checkbox",
+      "label": "t:shared.settings.show_chip_filters.label",
+      "info": "t:shared.settings.show_chip_filters.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "chip_layout",
+      "label": "t:shared.settings.chip_layout.label",
+      "default": "3col",
+      "options": [
+        {
+          "value": "3col",
+          "label": "t:shared.settings.chip_layout.option_3col"
+        },
+        {
+          "value": "2col",
+          "label": "t:shared.settings.chip_layout.option_2col"
+        },
+        {
+          "value": "natural",
+          "label": "t:shared.settings.chip_layout.option_natural"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.pagination__header.content"
+    },
+    {
+      "type": "select",
+      "id": "pagination",
+      "label": "t:shared.settings.pagination.label",
+      "default": "paginated",
+      "options": [
+        {
+          "value": "infinite",
+          "label": "t:shared.settings.pagination.options__1"
+        },
+        {
+          "value": "click",
+          "label": "t:shared.settings.pagination.options__2"
+        },
+        {
+          "value": "paginated",
+          "label": "t:shared.settings.pagination.options__3"
+        }
+      ],
+      "info": "t:sections.main_search.settings.pagination.info"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,572 @@
+
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="image-compare"
+  class="
+    image-compare
+    image-compare--{{ section.settings.aspect_ratio }}
+    image-compare--{{ section.settings.reveal_direction }}
+    image-compare--image-{{ section.settings.image_position }}
+    image-compare--justify-{{ section.settings.text_alignment }}
+    section
+    section--divider-{{ section.settings.divider_style }}
+    {{ section.settings.section_padding }}
+    {% if settings.enable_section_animations and section.settings.enable_animation %}
+      animation
+      animation--image-compare
+    {% endif %}
+  "
+  style="
+    --slider-color: {{ section.settings.slider_color }};
+    --slider-arrows-color: {{ section.settings.slider_arrows_color }};
+    --image-max-width: {{ section.settings.image_max_width }}px;
+    --text-alignment: {{ section.settings.text_alignment }};
+  ";
+>
+  <div class="image-compare__inner">
+    <div class="image-compare__text-container">
+      <div class="image-compare__text-container-inner">
+        <div class="section-introduction animation--section-introduction">
+          {%- unless section.settings.heading == blank -%}
+            <{{ section.settings.heading_tag }} class="ff-heading {{ section.settings.heading_font_class }} section-introduction__heading">
+              {{ section.settings.heading }}
+            </{{ section.settings.heading_tag }}>
+          {%- endunless -%}
+
+          {%- unless section.settings.subheading == blank -%}
+            <div class="ff-body fs-body-100 rte section-introduction__subheading">
+              {{ section.settings.subheading }}
+            </div>
+          {%- endunless -%}
+
+          {%-
+            render 'button-block',
+            wrapper_class: "section-introduction__button",
+            link: section.settings.link,
+            label: section.settings.link_text,
+            button_style: section.settings.button_style,
+            button_alignment: section.settings.text_alignment,
+          -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="image-compare__image-container">
+      <div class="image-compare__image-container-inner">
+        {% for block in section.blocks %}
+          {% liquid
+            assign overlay_opacity = block.settings.overlay_opacity | divided_by: 100.0
+            assign text_position = block.settings.text_position | split: "_"
+            assign horizontal_position = text_position | first
+            assign vertical_position = text_position | last
+
+            case block.settings.filter_effect
+              when 'blur'
+                assign filter_amount = block.settings.filter_amount | divided_by: 25.0 | append: 'px'
+              when 'brightness' or 'contrast' or 'saturate'
+                assign filter_amount = block.settings.filter_amount | divided_by: 50.0
+              when 'grayscale' or 'invert' or 'sepia'
+                assign filter_amount = block.settings.filter_amount | divided_by: 100.0
+            endcase
+          %}
+          <div
+            class="
+              image-compare__image-wrapper
+              {% if block.settings.filter_effect != 'none' -%}
+                image-compare__image--{{ block.settings.filter_effect }}
+              {%- endif -%}
+            "
+            style="
+              --overlay-background: {{ block.settings.color_overlay }};
+              {% if block.settings.color_overlay_gradient != blank -%}
+                --overlay-background-gradient: {{ block.settings.color_overlay_gradient }};
+              {%- endif %}
+              --overlay-opacity: {{ overlay_opacity }};
+              --filter-amount: {{ filter_amount }};
+              --text-horizontal-position: {{ horizontal_position }};
+              --text-vertical-position: {{ vertical_position }};
+              --color-text: {{ block.settings.text_color }};
+              --color-text-container: {{ block.settings.text_container_color }};
+            "
+          >
+            {%- if forloop.first -%}
+              {% assign placeholder_name = 'collection-1' %}
+              <div class="image-compare__image-before" {{ block.shopify_attributes }}>
+            {%- else -%}
+              {% assign placeholder_name = 'collection-4' %}
+              <div class="image-compare__image-after" {{ block.shopify_attributes }}>
+            {%- endif -%}
+              {%
+                render 'image' with
+                image: block.settings.image,
+                wrapper_class: 'image-compare__image',
+                aspect_ratio: section.settings.aspect_ratio,
+                focal_point: block.settings.focal_point,
+                placeholder_name: placeholder_name,
+                include_placeholder: true,
+                placeholder_natural_fallback_ratio: 'landscape'
+                sizes: "(min-width: 960px) calc(100vw - calc(2 * 3.3vw)), calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw)))",
+                animate: true
+              %}
+                <div class="image-compare__overlay"></div>
+                {%- if block.settings.show_label -%}
+                  <div class="image-compare__label-container-wrapper animation--label">
+                    <div class="image-compare__label-container">
+                      <div class="image-compare__label-container-inner section-blocks animation--section-blocks">
+                        {%- unless block.settings.text == blank -%}
+                          <div class="image-compare__label-container-text ff-body fs-body-75 fs-body-100-ns {{ block.settings.text_font_class }} section-blocks__text">
+                            {{ block.settings.text }}
+                          </div>
+                        {%- endunless -%}
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+              </div>
+          </div>
+        {% endfor %}
+      </div>
+      {%- if section.blocks.size > 0 -%}
+        <input
+          type="range"
+          value="50"
+          step="any"
+          aria-label="Percentage of after photo shown"
+          class="image-compare__slider"
+          orient="{% # for Firefox %}{{ section.settings.reveal_direction }}"
+        >
+        <div class="image-compare__slider-line" aria-hidden="true"></div>
+        <div class="image-compare__slider-button" aria-hidden="true">
+          <div class="image-compare__slider-button-arrows">
+            <div class="image-compare__slider-button-arrow image-compare__slider-button-arrow-before">{% render 'icon' with icon: 'chevron-small' %}</div>
+            <div class="image-compare__slider-button-arrow image-compare__slider-button-arrow-after">{% render 'icon' with icon: 'chevron-small' %}</div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.image_compare.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:sections.image_compare.settings.image_position.label",
+      "default": "below",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.image_compare.settings.image_position.option_left"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.image_compare.settings.image_position.option_right"
+        },
+        {
+          "value": "below",
+          "label": "t:sections.image_compare.settings.image_position.option_below"
+        }
+      ]
+    },
+    {
+      "id": "aspect_ratio",
+      "type": "select",
+      "label": "t:shared.settings.aspect_ratio.label",
+      "options": [
+        {
+          "label": "t:shared.settings.aspect_ratio.option_square",
+          "value": "square"
+        },
+        {
+          "label": "t:shared.settings.aspect_ratio.option_landscape",
+          "value": "landscape"
+        },
+        {
+          "label": "t:shared.settings.aspect_ratio.option_portrait",
+          "value": "portrait"
+        }
+      ],
+      "default": "landscape"
+    },
+    {
+      "id": "reveal_direction",
+      "type": "select",
+      "label": "t:sections.image_compare.settings.reveal_direction.label",
+      "options": [
+        {
+          "label": "t:sections.image_compare.settings.reveal_direction.option_horizontal",
+          "value": "horizontal"
+        },
+        {
+          "label": "t:sections.image_compare.settings.reveal_direction.option_vertical",
+          "value": "vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "id": "image_max_width",
+      "type": "range",
+      "min": 300,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "label": "t:sections.image_compare.settings.image_max_width.label",
+      "default": 1400
+    },
+    {
+      "id": "slider_color",
+      "type": "color",
+      "label": "t:sections.image_compare.settings.slider_color.label",
+      "default": "#000"
+    },
+    {
+      "id": "slider_arrows_color",
+      "type": "color",
+      "label": "t:sections.image_compare.settings.slider_arrows_color.label",
+      "default": "#FFF"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image_compare.settings.text__header.content"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "t:sections.image_compare.settings.text_alignment.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:shared.settings.alignment_horizontal.option_left"
+        },
+        {
+          "value": "center",
+          "label": "t:shared.settings.alignment_horizontal.option_center"
+        },
+        {
+          "value": "right",
+          "label": "t:shared.settings.alignment_horizontal.option_right"
+        }
+      ]
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "t:sections.image_compare.settings.heading.label",
+      "default": "Image compare"
+    },
+    {
+      "id": "heading_tag",
+      "type": "select",
+      "label": "t:shared.section_blocks.heading.settings.heading_tag.label",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h4"
+        },
+        {
+          "value": "h5",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h5"
+        },
+        {
+          "value": "h6",
+          "label": "t:shared.section_blocks.heading.settings.heading_tag.options.h6"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "t:shared.section_blocks.heading.settings.heading_tag.info"
+    },
+    {
+      "type": "select",
+      "id": "heading_font_class",
+      "label": "t:shared.settings.heading_font_class.label",
+      "default": "fs-heading-3-base",
+      "options": [
+        {
+          "value": "fs-heading-3-base",
+          "label": "t:shared.settings.heading_font_class.option_small"
+        },
+        {
+          "value": "fs-heading-2-base",
+          "label": "t:shared.settings.heading_font_class.option_medium"
+        },
+        {
+          "value": "fs-heading-1-base",
+          "label": "t:shared.settings.heading_font_class.option_large"
+        }
+      ]
+    },
+    {
+      "id": "subheading",
+      "type": "richtext",
+      "label": "t:sections.image_compare.settings.subheading.label",
+      "default": "<p>Use this section to highlight differences between two like images.</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image_compare.settings.cta_header.content"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "t:sections.image_compare.settings.link.label"
+    },
+    {
+      "id": "link_text",
+      "type": "text",
+      "label": "t:sections.image_compare.settings.link_text.label"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:shared.settings.button_style.label",
+      "default": "btn--secondary",
+      "options": [
+        {
+          "value": "btn--primary",
+          "label": "t:shared.settings.button_style.option_solid"
+        },
+        {
+          "value": "btn--secondary",
+          "label": "t:shared.settings.button_style.option_outline"
+        },
+        {
+          "value": "btn--callout",
+          "label": "t:shared.settings.button_style.option_text"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "divider_style",
+      "label": "t:shared.settings.section_style.divider_style.label",
+      "default": "none",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.divider_style.option_none",
+          "value": "none"
+        },
+        {
+          "label": "t:shared.settings.section_style.divider_style.option_solid",
+          "value": "solid"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.image_compare.blocks.image.name",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "t:sections.image_compare.blocks.image.settings.image.label"
+        },
+        {
+          "id": "focal_point",
+          "type": "select",
+          "label": "t:shared.settings.focal_point.label",
+          "options": [{"label":"t:shared.settings.focal_point.option_image","value":"image_presentation"},{"label":"t:shared.settings.focal_point.option_center","value":"center"},{"label":"t:shared.settings.focal_point.option_top","value":"top"},{"label":"t:shared.settings.focal_point.option_bottom","value":"bottom"},{"label":"t:shared.settings.focal_point.option_left","value":"left"},{"label":"t:shared.settings.focal_point.option_right","value":"right"}],
+          "default": "image_presentation"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image_compare.blocks.image.settings.graphics__header.content"
+        },
+        {
+          "id": "filter_effect",
+          "type": "select",
+          "label": "t:sections.image_compare.blocks.image.settings.filter_effect.label",
+          "default": "none",
+          "options": [
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_none",
+              "value": "none"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_blur",
+              "value": "blur"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_brightness",
+              "value": "brightness"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_contrast",
+              "value": "contrast"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_grayscale",
+              "value": "grayscale"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_invert",
+              "value": "invert"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_saturate",
+              "value": "saturate"
+            },
+            {
+              "label": "t:sections.image_compare.blocks.image.settings.filter_effect.option_sepia",
+              "value": "sepia"
+            }
+          ]
+        },
+        {
+          "id": "filter_amount",
+          "type": "range",
+          "label": "t:sections.image_compare.blocks.image.settings.filter_amount.label",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 100
+        },
+        {
+          "id": "color_overlay",
+          "type": "color",
+          "label": "t:shared.settings.color_overlay.label",
+          "default": "#000"
+        },
+        {
+          "id": "color_overlay_gradient",
+          "type": "color_background",
+          "label": "t:shared.settings.color_overlay_gradient.label"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "t:shared.settings.overlay_opacity.label",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 40
+        },
+        {
+          "type": "header",
+          "content": "t:sections.image_compare.blocks.image.settings.text__header.content"
+        },
+        {
+          "id": "show_label",
+          "type": "checkbox",
+          "label": "t:sections.image_compare.blocks.image.settings.show_label.label",
+          "default": true
+        },
+        {
+          "id": "text",
+          "type": "text",
+          "label": "t:sections.image_compare.blocks.image.settings.text.label"
+        },
+        {
+          "id": "text_position",
+          "type": "select",
+          "label": "t:sections.image_compare.blocks.image.settings.text_position.label",
+          "default": "flex-start_flex-start",
+          "options": [
+            { "label": "t:shared.settings.alignment_matrix.option_top_left", "value": "flex-start_flex-start" },
+            { "label": "t:shared.settings.alignment_matrix.option_top_center", "value": "center_flex-start" },
+            { "label": "t:shared.settings.alignment_matrix.option_top_right", "value": "flex-end_flex-start" },
+            { "label": "t:shared.settings.alignment_matrix.option_middle_left", "value": "flex-start_center" },
+            { "label": "t:shared.settings.alignment_matrix.option_middle_right", "value": "flex-end_center" },
+            { "label": "t:shared.settings.alignment_matrix.option_bottom_left", "value": "flex-start_flex-end" },
+            { "label": "t:shared.settings.alignment_matrix.option_bottom_center", "value": "center_flex-end" },
+            { "label": "t:shared.settings.alignment_matrix.option_bottom_right", "value": "flex-end_flex-end" }
+          ]
+        },
+        {
+          "id": "text_color",
+          "type": "color",
+          "label": "t:sections.image_compare.blocks.image.settings.text_color.label",
+          "default": "#000"
+        },
+        {
+          "id": "text_container_color",
+          "type": "color",
+          "label": "t:sections.image_compare.blocks.image.settings.text_container_color.label",
+          "default": "#FFF"
+        }
+      ],
+      "limit": 2
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image_compare.presets.name",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "text": "Before",
+            "text_position": "flex-start_flex-start"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "text": "After",
+            "text_position": "flex-end_flex-end"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
