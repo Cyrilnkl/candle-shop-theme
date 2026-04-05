@@ -1,57 +1,27 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "enable_animation": true,
-        "content_width": "custom",
-        "custom_content_width": 700
-      }
-    },
-    "rich-text-1": {
+    "faq_heading": {
       "type": "rich-text",
       "blocks": {
-        "block-0": {
+        "faq_title": {
           "type": "heading",
           "settings": {
-            "title": "FAQ",
-            "heading_font_class": "fs-heading-1-base"
+            "title": "Frequently Asked Questions",
+            "heading_tag": "h1",
+            "heading_font_class": "fs-heading-display-3"
           }
         },
-        "block-1": {
-          "type": "spacer",
-          "settings": {
-            "space": 12
-          }
-        },
-        "block-2": {
+        "faq_subtitle": {
           "type": "text",
           "settings": {
+            "text": "<p>Everything you need to know about Lumea Candle Sand. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us</a>.</p>",
             "text_font_class": "fs-body-100"
-          }
-        },
-        "block-3": {
-          "type": "spacer",
-          "settings": {
-            "space": 12
           }
         }
       },
       "block_order": [
-        "block-0",
-        "block-1",
-        "block-2",
-        "block-3"
+        "faq_title",
+        "faq_subtitle"
       ],
       "settings": {
         "alignment": "center_center",
@@ -59,308 +29,186 @@
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom",
         "content_width": "custom",
-        "custom_content_width": 700
+        "custom_content_width": 800
       }
     },
-    "rich-text-2": {
-      "type": "rich-text",
-      "blocks": {
-        "block-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Orders",
-            "heading_font_class": "fs-heading-3-base"
-          }
-        },
-        "block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Below are some of are common questions about orders</p>",
-            "text_font_class": "fs-body-100"
-          }
-        }
-      },
-      "block_order": [
-        "block-0",
-        "block-1"
-      ],
-      "settings": {
-        "alignment": "center_center",
-        "enable_animation": false,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom",
-        "content_width": "custom",
-        "custom_content_width": 700
-      }
-    },
-    "collapsible-row-list-1": {
+    "faq_product": {
       "type": "collapsible-row-list",
       "blocks": {
-        "block-0": {
-          "type": "item",
+        "q1": {
+          "type": "collapsible_row",
           "settings": {
-            "expand_by_default": false,
-            "icon": "none"
+            "heading": "What is Candle Sand?",
+            "heading_tag": "h3",
+            "row_content": "<p>Candle Sand is a granulated, plant-based wax that you pour into any heat-resistant container to create an instant candle. Just add a wick, light it, and enjoy. It's 100% natural, non-toxic, vegan, and reusable.</p>",
+            "page_for_content": ""
           }
         },
-        "block-1": {
-          "type": "item",
+        "q2": {
+          "type": "collapsible_row",
           "settings": {
-            "expand_by_default": false,
-            "icon": "none"
+            "heading": "Is Lumea Candle Sand scented?",
+            "heading_tag": "h3",
+            "row_content": "<p>Our candle sand is intentionally <strong>unscented</strong>, giving you the freedom to personalize your candle's aroma. Simply add a few drops of your favorite essential oil or candle fragrance oil close to the wick before lighting.</p><p><em>Important: Never add oil to an already burning candle — oils are highly flammable.</em></p>",
+            "page_for_content": ""
           }
         },
-        "block-2": {
-          "type": "item",
+        "q3": {
+          "type": "collapsible_row",
           "settings": {
-            "expand_by_default": false,
-            "icon": "none"
+            "heading": "How long does a candle sand candle last?",
+            "heading_tag": "h3",
+            "row_content": "<p>Each 650g pouch delivers <strong>80+ hours of burn time</strong>, depending on usage. Each individual wick burns for approximately 8-10 hours. When the wick burns down, simply replace it and keep enjoying your candle.</p>",
+            "page_for_content": ""
           }
         },
-        "block-3": {
-          "type": "item",
+        "q4": {
+          "type": "collapsible_row",
           "settings": {
-            "expand_by_default": false,
-            "icon": "none"
+            "heading": "Do I need to use a new wick every time?",
+            "heading_tag": "h3",
+            "row_content": "<p>Not necessarily! You can reuse a wick by flipping it upside down and relighting the unburnt end. When it's fully used, simply replace it with a fresh wick from your pack.</p>",
+            "page_for_content": ""
+          }
+        },
+        "q5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is candle sand safe for pets and children?",
+            "heading_tag": "h3",
+            "row_content": "<p>Yes! Our candle sand is made from <strong>non-toxic, plant-based ingredients</strong> with no harmful chemicals. It's unscented and produces minimal smoke. However, as with any candle, please keep lit candles out of reach of children and pets.</p>",
+            "page_for_content": ""
+          }
+        },
+        "q6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What containers can I use?",
+            "heading_tag": "h3",
+            "row_content": "<p>Any <strong>heat-resistant container</strong> works! Ceramic bowls, glass jars, vintage vases, teacups, mason jars — get creative. Just make sure the container can handle heat and isn't flammable.</p>",
+            "page_for_content": ""
+          }
+        },
+        "q7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What are the ingredients?",
+            "heading_tag": "h3",
+            "row_content": "<p>Our candle sand is crafted from <strong>sustainably sourced, plant-based wax</strong>. It contains no paraffin, parabens, soy, synthetic additives, or artificial fragrances. The wicks are made from natural waxed cotton.</p>",
+            "page_for_content": ""
           }
         }
       },
       "block_order": [
-        "block-0",
-        "block-1",
-        "block-2",
-        "block-3"
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
       ],
       "settings": {
-        "title": "",
-        "heading_font_class": "fs-heading-3-base",
-        "heading_alignment": "left",
-        "item_heading_font": "body",
-        "enable_animation": false,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-bottom-only",
-        "content_width": "custom",
-        "custom_content_width": 850
-      }
-    },
-    "rich-text-3": {
-      "type": "rich-text",
-      "blocks": {
-        "block-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Shipping & Returns",
-            "heading_font_class": "fs-heading-3-base"
-          }
-        },
-        "block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Below are some common questions about shipping, returns, and exchanges</p>",
-            "text_font_class": "fs-body-100"
-          }
-        }
-      },
-      "block_order": [
-        "block-0",
-        "block-1"
-      ],
-      "settings": {
-        "alignment": "center_center",
-        "enable_animation": false,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom",
-        "content_width": "custom",
-        "custom_content_width": 700
-      }
-    },
-    "collapsible-row-list-2": {
-      "type": "collapsible-row-list",
-      "blocks": {
-        "block-0": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        },
-        "block-1": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        },
-        "block-2": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        },
-        "block-3": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "block-0",
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_font_class": "fs-heading-3-base",
-        "heading_alignment": "left",
-        "item_heading_font": "body",
-        "enable_animation": false,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-bottom-only",
-        "content_width": "custom",
-        "custom_content_width": 850
-      }
-    },
-    "rich-text-4": {
-      "type": "rich-text",
-      "blocks": {
-        "block-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Products",
-            "heading_font_class": "fs-heading-3-base"
-          }
-        },
-        "block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Below are some common questions about our products</p>",
-            "text_font_class": "fs-body-100"
-          }
-        }
-      },
-      "block_order": [
-        "block-0",
-        "block-1"
-      ],
-      "settings": {
-        "alignment": "center_center",
-        "enable_animation": false,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom",
-        "content_width": "custom",
-        "custom_content_width": 700
-      }
-    },
-    "collapsible-row-list-3": {
-      "type": "collapsible-row-list",
-      "blocks": {
-        "block-0": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        },
-        "block-1": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        },
-        "block-2": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        },
-        "block-3": {
-          "type": "item",
-          "settings": {
-            "expand_by_default": false,
-            "icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "block-0",
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_font_class": "fs-heading-3-base",
-        "heading_alignment": "left",
-        "item_heading_font": "body",
-        "enable_animation": false,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-bottom-only",
-        "content_width": "custom",
-        "custom_content_width": 850
-      }
-    },
-    "rich-text-5": {
-      "type": "rich-text",
-      "blocks": {
-        "block-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Didn't find your answer?",
-            "heading_font_class": "fs-heading-3-base"
-          }
-        },
-        "block-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Don't hesitate to contact us</p>",
-            "text_font_class": "fs-body-100"
-          }
-        },
-        "block-2": {
-          "type": "button",
-          "settings": {
-            "link_text": "Contact us",
-            "button_style": "btn--primary"
-          }
-        },
-        "block-3": {
-          "type": "spacer",
-          "settings": {
-            "space": 12
-          }
-        }
-      },
-      "block_order": [
-        "block-0",
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "alignment": "center_center",
+        "heading": "About Candle Sand",
+        "heading_tag": "h2",
+        "icon_style": "plus",
+        "open_first_row": true,
         "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom",
-        "content_width": "custom",
-        "custom_content_width": 700
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "faq_shipping": {
+      "type": "collapsible-row-list",
+      "blocks": {
+        "s1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How fast is shipping?",
+            "heading_tag": "h3",
+            "row_content": "<p>We ship with <strong>FedEx Express</strong> from Europe. Delivery times:<br/>• Europe: 2-5 business days<br/>• USA / UK: 2-5 business days<br/>• Australia / NZ: 3-7 business days<br/>• Rest of World: 3-8 business days</p>",
+            "page_for_content": ""
+          }
+        },
+        "s2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer free shipping?",
+            "heading_tag": "h3",
+            "row_content": "<p>We offer free shipping on orders over a certain threshold (varies by region). Check the cart for your specific free shipping minimum.</p>",
+            "page_for_content": ""
+          }
+        },
+        "s3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your return policy?",
+            "heading_tag": "h3",
+            "row_content": "<p>We offer <strong>30-day hassle-free returns</strong>. If you're not completely satisfied with your purchase, simply contact us within 30 days for a refund or exchange. Items must be unused and in their original packaging.</p>",
+            "page_for_content": ""
+          }
+        },
+        "s4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer wholesale or bulk options?",
+            "heading_tag": "h3",
+            "row_content": "<p>Yes! We offer wholesale pricing for businesses, event planners, hotels, and restaurants. Please visit our <a href=\"/pages/contact\">Contact page</a> to inquire about bulk orders and partnerships.</p>",
+            "page_for_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "settings": {
+        "heading": "Shipping & Returns",
+        "heading_tag": "h2",
+        "icon_style": "plus",
+        "open_first_row": false,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "faq_cta": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "collection": "candle-sand",
+        "heading": "Ready to Try?",
+        "heading_tag": "h2",
+        "subheading": "<p>Start your candle sand experience today.</p>",
+        "link_text": "Shop All",
+        "limit": 4,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "contact_form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Still Have Questions?",
+        "heading_tag": "h2",
+        "subheading": "Send us a message and we'll get back to you within 24 hours.",
+        "subheading_tag": "h3",
+        "show_phone": true,
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     }
   },
   "order": [
-    "main",
-    "rich-text-1",
-    "rich-text-2",
-    "collapsible-row-list-1",
-    "rich-text-3",
-    "collapsible-row-list-2",
-    "rich-text-4",
-    "collapsible-row-list-3",
-    "rich-text-5"
+    "faq_heading",
+    "faq_product",
+    "faq_shipping",
+    "faq_cta",
+    "contact_form"
   ]
 }

@@ -1,1 +1,64 @@
+/* ============================================
+   LUMEA CANDLE SAND — Custom Brand Styles
+   ============================================ */
+
+/* Warm, off-white background for a cozy feel */
+:root {
+  --color-brand-bg: #faf9f6;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-warm: #c9a96e;
+  --color-brand-accent: #2c2c2c;
+  --color-brand-light: #f5f0e8;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle warm tint on product cards */
+.product-card:hover {
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Trust bar / promotion bar — slight letter spacing */
+.promotion-bar__heading p {
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+/* Badge styles — warm gold for bestseller */
+.badge--custom-2 {
+  background-color: var(--color-brand-warm) !important;
+  color: #fff !important;
+}
+
+/* Newsletter section — warm dark background */
+.newsletter-compact {
+  border-radius: 0;
+}
+
+/* Testimonial quotes — italic style */
+.quote__text blockquote p {
+  font-style: italic;
+}
+
+/* Sticky ATC bar — branded look */
+.product-bar {
+  background-color: var(--color-brand-dark);
+}
+
+/* Gallery carousel step numbers — warm accent */
+.gallery-carousel .image-caption__title {
+  letter-spacing: 0.3px;
+}
+
+/* Mobile-first improvements */
+@media (max-width: 768px) {
+  .promotion-bar__heading p {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+}
 

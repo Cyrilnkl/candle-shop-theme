@@ -1,294 +1,196 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "rich_text_c6fYP7": {
-      "type": "rich-text",
+    "image_hero_main": {
+      "type": "image-hero",
       "blocks": {
-        "heading_CNpDJ6": {
+        "heading_hero": {
           "type": "heading",
           "settings": {
-            "title": "Rich text",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-2-base"
-          }
-        },
-        "text_7aRwwa": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Use this text area to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
-            "text_font_class": "fs-body-100"
-          }
-        }
-      },
-      "block_order": [
-        "heading_CNpDJ6",
-        "text_7aRwwa"
-      ],
-      "disabled": true,
-      "name": "t:sections.rich_text.presets.name",
-      "settings": {
-        "alignment": "center_center",
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-bottom-only",
-        "content_width": "custom",
-        "custom_content_width": 700
-      }
-    },
-    "video_with_text_dxFL7P": {
-      "type": "video-with-text",
-      "blocks": {
-        "heading_3UCcMX": {
-          "type": "heading",
-          "settings": {
-            "title": "Video with text",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-display-3"
-          }
-        },
-        "subheading_t4AXm9": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Use this section to promote a particular feature with editorial video.",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-5-base"
-          }
-        },
-        "button_Deek4h": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": "Read more",
-            "button_style": "btn--primary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_3UCcMX",
-        "subheading_t4AXm9",
-        "button_Deek4h"
-      ],
-      "disabled": true,
-      "name": "t:sections.video_with_text.presets.name",
-      "settings": {
-        "video_position": "right",
-        "video_position_mobile": "above-content",
-        "video": "shopify://files/videos/vizup-videos-ae965525.mp4",
-        "aspect_ratio": "landscape_ultrawide_alt",
-        "aspect_ratio_mobile": "natural",
-        "focal_point": "center",
-        "focal_point_mobile": "center",
-        "content_alignment": "center",
-        "background_color": "#ffffff",
-        "text_color": "#000000",
-        "button_background_color": "#000000",
-        "button_text_color": "#ffffff",
-        "enable_animation": true,
-        "full_width": false,
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "shoppable_image_YJRzTe": {
-      "type": "shoppable-image",
-      "blocks": {
-        "hotspot_aErycE": {
-          "type": "hotspot",
-          "disabled": true,
-          "settings": {
-            "product_item": "memory-orb-video-sphere",
-            "horizontal_position": 51,
-            "vertical_position": 55
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_aErycE"
-      ],
-      "custom_css": [
-        "* {max-width: 1400px;}",
-        "img {height: 500px;}"
-      ],
-      "name": "t:sections.shoppable_image.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/VidoSphere-MagicVideoSphere1-ezgif.com-video-to-gif-converter.gif",
-        "aspect_ratio": "landscape",
-        "heading": "Light Up Your Memories",
-        "heading_tag": "h2",
-        "subheading": "<p>A unique premium gift that transforms your cherished videos into a luminous, <strong>tactile keepsake</strong>.</p>",
-        "link": "",
-        "link_text": "",
-        "button_style": "btn--secondary",
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "shoppable_feature_jCEedM": {
-      "type": "shoppable-feature",
-      "blocks": {
-        "hotspot_kxMF96": {
-          "type": "hotspot",
-          "disabled": true,
-          "settings": {
-            "product_item": "memory-orb-video-sphere",
-            "horizontal_position": 50,
-            "vertical_position": 56
-          }
-        }
-      },
-      "block_order": [
-        "hotspot_kxMF96"
-      ],
-      "disabled": true,
-      "name": "t:sections.shoppable_feature.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/imgi_18_capvideo.png",
-        "image_position": "left",
-        "image_size": 55,
-        "aspect_ratio": "portrait_alt",
-        "heading": "Light Up Your Memories",
-        "heading_tag": "h2",
-        "subheading": "<p>A unique premium gift that transforms your cherished videos into a luminous, <strong>tactile keepsake</strong>.</p>",
-        "link": "shopify://products/memory-orb-video-sphere",
-        "link_text": "Get your memory",
-        "button_style": "btn--callout",
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom",
-        "content_position_desktop": "inside"
-      }
-    },
-    "video_hero_TzQJUw": {
-      "type": "video-hero",
-      "blocks": {
-        "heading_XKXVNW": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "title": "Video hero",
-            "heading_tag": "h2",
+            "title": "Create Candles In Any Bowl",
+            "heading_tag": "h1",
             "heading_font_class": "fs-heading-display-2"
           }
         },
-        "text_m6jxTb": {
-          "type": "text",
-          "disabled": true,
+        "subheading_hero": {
+          "type": "subheading",
           "settings": {
-            "text": "<p>Use this section to promote a particular feature with editorial video.</p>",
-            "text_font_class": "fs-body-100"
+            "subheading": "Just pour, insert the wick, and light it up — 100% natural, reusable, and mess-free.",
+            "subheading_tag": "h2",
+            "subheading_font_class": "fs-heading-5-base"
           }
         },
-        "play_button_HW3ELA": {
-          "type": "play-button",
-          "disabled": true,
+        "button_hero": {
+          "type": "button",
           "settings": {
-            "video_source": "external",
-            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-            "aspect_ratio": "square",
-            "text": "Watch now",
-            "icon_style": "outline"
+            "link": "shopify://collections/candle-sand",
+            "link_text": "SHOP BESTSELLERS",
+            "button_style": "btn--primary"
+          }
+        },
+        "button_hero_2": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/how-it-works",
+            "link_text": "HOW IT WORKS",
+            "button_style": "btn--secondary"
           }
         }
       },
       "block_order": [
-        "heading_XKXVNW",
-        "text_m6jxTb",
-        "play_button_HW3ELA"
+        "heading_hero",
+        "subheading_hero",
+        "button_hero",
+        "button_hero_2"
       ],
-      "disabled": true,
-      "name": "t:sections.video_hero.presets.name",
       "settings": {
         "image_aspect": "custom",
-        "desktop_height": 50,
+        "desktop_height": 80,
         "mobile_height": 100,
-        "video": "shopify://files/videos/TikDownloader.io_7530278211805105463_hd.mp4",
+        "focal_point": "center",
+        "mobile_focal_point": "center",
         "media_link": "",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
         "text_position": "center_center",
         "text_position_mobile": "center_center",
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "rgba(0,0,0,0)",
-        "color_overlay_gradient": "",
+        "button_text_color": "#1a1a1a",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.55) 100%)",
         "overlay_opacity": 40,
         "enable_animation": true,
-        "section_padding": "section--vertical-padding-bottom-only"
+        "section_padding": "section--vertical-padding-none"
       }
     },
-    "promotion_bar_8NUQtA": {
+    "promotion_bar_trust": {
       "type": "promotion-bar",
-      "name": "t:sections.promotion_bar.presets.name",
       "settings": {
-        "min_height": 60,
-        "min_height_mobile": 60,
-        "heading": "Customize Your Sphere Now!",
-        "heading_tag": "h2",
-        "text": "<p>Last chance : Secure Your Sphere Today!</p>",
-        "link": "shopify://products/memory-orb-video-sphere",
-        "link_text": "SELECT YOUR SPHERE",
+        "min_height": 50,
+        "min_height_mobile": 50,
+        "heading": "🌿 100% Natural  ·  🔥 80+ Hours Burn  ·  ♻️ Reusable  ·  🚚 Fast Delivery",
+        "heading_tag": "p",
+        "text": "",
+        "link": "",
+        "link_text": "",
         "button_style": "btn--secondary",
         "focal_point": "image_presentation",
         "mobile_focal_point": "image_presentation",
         "text_color": "#ffffff",
         "button_background_color": "#ffffff",
         "button_text_color": "#000000",
-        "background_color": "#0a284c",
+        "background_color": "#2c2c2c",
         "color_overlay": "#000000",
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
-        "full_width": false,
+        "full_width": true,
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "image_with_text_yFWEr9": {
+    "featured_bestsellers": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "collection": "candle-sand",
+        "heading": "Bestsellers",
+        "heading_tag": "h2",
+        "subheading": "<p>Our most-loved candle sand sets — trusted by thousands.</p>",
+        "link_text": "Shop All",
+        "limit": 8,
+        "columns": "4",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "how_it_works": {
+      "type": "gallery-carousel",
+      "blocks": {
+        "step_1": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "1. Pour",
+            "text": "<p>Pour the Candle Sand into any heat-resistant container — a bowl, a vase, a jar.</p>"
+          }
+        },
+        "step_2": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "2. Insert & Light",
+            "text": "<p>Place the cotton wick in the center and light it up for a warm, inviting glow.</p>"
+          }
+        },
+        "step_3": {
+          "type": "image",
+          "settings": {
+            "focal_point": "image_presentation",
+            "title": "3. Refresh",
+            "text": "<p>When the wick burns down, simply replace it. Your candle is brand new again.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "heading": "How Does It Work?",
+        "heading_tag": "h2",
+        "subheading": "<p>It's super easy — just 3 steps!</p>",
+        "link": "",
+        "link_text": "Full Tutorial",
+        "columns": "3",
+        "mobile_columns": "1",
+        "loop_carousel": false,
+        "aspect_ratio": "square",
+        "image_caption_style": "overlay",
+        "image_caption_size": "fs-body-100",
+        "overlay_text_background_style": "gradient",
+        "overlay_text_color": "#ffffff",
+        "overlay_text_background": "#000000",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "why_lumea": {
       "type": "image-with-text",
       "blocks": {
-        "heading_AKCKW6": {
+        "heading_why": {
           "type": "heading",
           "settings": {
-            "title": "Two Hearts, Endless Memories.",
+            "title": "Why Choose Lumea?",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-1-base"
           }
         },
-        "subheading_4AeqA4": {
+        "subheading_why": {
           "type": "subheading",
           "settings": {
-            "subheading": "Gift the story of your love, illuminated and forever captured inside our handcrafted video sphere.",
-            "subheading_tag": "h3",
+            "subheading": "A safer, smarter way to enjoy candlelight. Our candle sand is made from 100% natural plant-based wax — no paraffin, no toxins, no synthetic additives. Clean-burning, reusable, and designed for any container you love.",
+            "subheading_tag": "p",
             "subheading_font_class": "fs-heading-6-base"
           }
         },
-        "button_dfEiWi": {
+        "button_why": {
           "type": "button",
           "settings": {
             "link": "shopify://pages/about-us",
-            "link_text": "About us",
+            "link_text": "Our Story",
             "button_style": "btn--primary"
           }
         }
       },
       "block_order": [
-        "heading_AKCKW6",
-        "subheading_4AeqA4",
-        "button_dfEiWi"
+        "heading_why",
+        "subheading_why",
+        "button_why"
       ],
-      "name": "t:sections.image_with_text.presets.name",
       "settings": {
         "image_position": "right",
         "text_alignment": "center",
-        "image": "shopify://shop_images/Capture_d_ecran_2025-10-07_a_17.41.58.png",
         "aspect_ratio": "square",
         "focal_point": "image_presentation",
         "image_caption": "",
@@ -304,99 +206,238 @@
         "section_padding": "section--vertical-padding-top-only"
       }
     },
-    "quote_WbEAAN": {
+    "featured_bundles": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "collection": "bundles",
+        "heading": "Bundle & Save",
+        "heading_tag": "h2",
+        "subheading": "<p>Curated sets with everything you need — save up to 20%.</p>",
+        "link_text": "View All Bundles",
+        "limit": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "usp_section": {
+      "type": "multi-column",
+      "blocks": {
+        "usp_1": {
+          "type": "text_column",
+          "settings": {
+            "icon": "leaf",
+            "title": "100% Natural & Vegan",
+            "heading_tag": "h3",
+            "text": "<p>Premium plant-based wax with no synthetic additives or harmful chemicals. Safe for you and your family.</p>",
+            "link": "",
+            "link_text": ""
+          }
+        },
+        "usp_2": {
+          "type": "text_column",
+          "settings": {
+            "icon": "stopwatch",
+            "title": "80+ Hours of Burn",
+            "heading_tag": "h3",
+            "text": "<p>One 650g pouch delivers extended glow for your home or events. Just replace the wick and keep going.</p>",
+            "link": "",
+            "link_text": ""
+          }
+        },
+        "usp_3": {
+          "type": "text_column",
+          "settings": {
+            "icon": "package-closed",
+            "title": "Reusable & Mess-Free",
+            "heading_tag": "h3",
+            "text": "<p>No melted wax pooling. No cleanup. Just pour, light, and enjoy. Refill when needed.</p>",
+            "link": "",
+            "link_text": ""
+          }
+        },
+        "usp_4": {
+          "type": "text_column",
+          "settings": {
+            "icon": "chat",
+            "title": "Works In Any Container",
+            "heading_tag": "h3",
+            "text": "<p>From ceramic bowls to glass jars to vintage vases — it's candlelight, your way.</p>",
+            "link": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4"
+      ],
+      "settings": {
+        "heading": "Why Customers Love Us",
+        "heading_tag": "h2",
+        "subheading": "",
+        "link": "",
+        "link_text": "",
+        "columns": "4",
+        "mobile_columns": "2",
+        "alignment": "center",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "testimonials_section": {
       "type": "quote",
       "blocks": {
-        "quote_maL4xK": {
+        "quote_1": {
           "type": "quote",
           "settings": {
-            "quote": "<p>“I gave the video sphere to my wife for our anniversary, featuring our wedding video. The quality of the sphere and the soft light are stunning. It truly <strong>brings the memory to life</strong> in our living room every day. Easy upload, premium result.”</p>",
-            "title": "Michael Salopard",
+            "quote": "<p>\"Honestly, I didn't know what to expect. Never heard of candle sand before, but this stuff is genius. I poured it into an old ceramic bowl and boom — <strong>instant candle</strong>. Looks amazing.\"</p>",
+            "title": "Emily R. — Verified Buyer ★★★★★",
             "quote_tag": "h4",
             "font_size": "small"
           }
         },
-        "quote_8p9K8z": {
+        "quote_2": {
           "type": "quote",
           "settings": {
-            "quote": "<p>“The sphere itself is heavy and beautifully made, it feels like a true piece of <strong>art</strong>. The video playback is seamless, and the diffused light is just perfect. It’s elegant, not gimmicky. Worth every penny for the <strong>heirloom quality</strong>.”</p>",
-            "title": "Sarah Gerges",
+            "quote": "<p>\"I used an old mug I was about to throw away and turned it into the cutest little candle. Didn't think it would look this good. <strong>I'm obsessed.</strong>\"</p>",
+            "title": "Sarah L. — Verified Buyer ★★★★★",
             "quote_tag": "h4",
             "font_size": "small"
           }
         },
-        "quote_ihWU8f": {
+        "quote_3": {
           "type": "quote",
           "settings": {
-            "quote": "<p>“I was nervous about uploading my old footage, but the <strong>NOSTALYS platform was so easy and secure</strong>. They handled the encoding perfectly. The final product arrived quickly in beautiful premium packaging. Highly recommend for any major life event.”</p>",
-            "title": "Jason Hakim",
+            "quote": "<p>\"As an event planner, candle sand is the best invention I've come across — <strong>incredibly easy, versatile, and sustainable</strong>. My clients love it.\"</p>",
+            "title": "Jessica M. — Verified Buyer ★★★★★",
             "quote_tag": "h4",
             "font_size": "small"
           }
         },
-        "quote_zbhhKM": {
+        "quote_4": {
           "type": "quote",
           "settings": {
-            "quote": "<p>\"If you want a <strong>meaningful gift</strong> that stands out from everything else, this is it. The unboxing experience was fantastic, and the sphere works flawlessly. I will definitely be ordering another sphere for the holidays!\"</p>",
-            "title": "David Naon",
+            "quote": "<p>\"Poured it in a glass jar, added a wick — instant cozy candle. <strong>Looks designer. Lasts way longer than I thought.</strong> Already ordered 3 more packs.\"</p>",
+            "title": "Michael B. — Verified Buyer ★★★★★",
             "quote_tag": "h4",
             "font_size": "small"
           }
         }
       },
       "block_order": [
-        "quote_maL4xK",
-        "quote_8p9K8z",
-        "quote_ihWU8f",
-        "quote_zbhhKM"
+        "quote_1",
+        "quote_2",
+        "quote_3",
+        "quote_4"
       ],
-      "name": "t:sections.quotes.presets.name",
       "settings": {
         "autoplay_enabled": true,
-        "autoplay_delay": 7,
+        "autoplay_delay": 6,
         "pagination_style": "dots",
         "font_choice": "heading",
         "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-bottom-only"
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "newsletter_compact_9rLNDi": {
+    "featured_bowls": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "collection": "ceramic-bowls",
+        "heading": "Ceramic Bowls & Vases",
+        "heading_tag": "h2",
+        "subheading": "<p>Handpicked containers designed to complement your candle sand.</p>",
+        "link_text": "Shop Bowls",
+        "limit": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "gift_ideas": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "collection": "gift-ideas",
+        "heading": "Gift Ideas",
+        "heading_tag": "h2",
+        "subheading": "<p>Perfect gifts for candle lovers — beautifully packaged and ready to give.</p>",
+        "link_text": "Shop Gifts",
+        "limit": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "wholesale_banner": {
+      "type": "promotion-bar",
+      "settings": {
+        "min_height": 70,
+        "min_height_mobile": 70,
+        "heading": "Wholesale & Partnerships",
+        "heading_tag": "h2",
+        "text": "<p>Exceptional candle sand, tailored for your business. Hotels, restaurants, event planners — let's talk.</p>",
+        "link": "shopify://pages/contact",
+        "link_text": "ENQUIRE NOW",
+        "button_style": "btn--secondary",
+        "focal_point": "image_presentation",
+        "mobile_focal_point": "image_presentation",
+        "text_color": "#ffffff",
+        "button_background_color": "#ffffff",
+        "button_text_color": "#000000",
+        "background_color": "#1a1a1a",
+        "color_overlay": "#000000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 0,
+        "enable_animation": true,
+        "full_width": true,
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "newsletter_section": {
       "type": "newsletter-compact",
       "blocks": {
-        "text_content_LyifXc": {
+        "text_content_nl": {
           "type": "text_content",
           "settings": {
             "width": "600",
-            "title": "Join our newsletter",
+            "title": "Join Our Newsletter",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-4-base",
             "subheading": "",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base",
-            "text": "<p><strong>Want 10% off?</strong> Enter your email to get your welcome discount code.</p>",
+            "text": "<p><strong>Want 10% off?</strong> Sign up and receive a coupon code to use on your next order.</p>",
             "text_font_class": "fs-body-75"
           }
         },
-        "newsletter_signup_LhewEH": {
+        "newsletter_signup_nl": {
           "type": "newsletter_signup",
           "settings": {
-            "signup_link_text": "JOIN NOSTALYS",
+            "signup_link_text": "SUBSCRIBE",
             "footer_text": ""
           }
         }
       },
       "block_order": [
-        "text_content_LyifXc",
-        "newsletter_signup_LhewEH"
+        "text_content_nl",
+        "newsletter_signup_nl"
       ],
-      "name": "t:sections.newsletter_compact.presets.name",
       "settings": {
         "spacing_mode": "between",
         "alignment": "left",
         "focal_point": "image_presentation",
         "focal_point_mobile": "image_presentation",
-        "background_color": "#0a284c",
+        "background_color": "#2c2c2c",
         "text_color": "#ffffff",
         "input_color": "#000000",
         "input_background": "#ffffff",
@@ -412,14 +453,17 @@
     }
   },
   "order": [
-    "rich_text_c6fYP7",
-    "video_with_text_dxFL7P",
-    "shoppable_image_YJRzTe",
-    "shoppable_feature_jCEedM",
-    "video_hero_TzQJUw",
-    "promotion_bar_8NUQtA",
-    "image_with_text_yFWEr9",
-    "quote_WbEAAN",
-    "newsletter_compact_9rLNDi"
+    "image_hero_main",
+    "promotion_bar_trust",
+    "featured_bestsellers",
+    "how_it_works",
+    "why_lumea",
+    "featured_bundles",
+    "usp_section",
+    "testimonials_section",
+    "featured_bowls",
+    "gift_ideas",
+    "wholesale_banner",
+    "newsletter_section"
   ]
 }

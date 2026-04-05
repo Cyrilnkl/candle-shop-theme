@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "title": "<p>Free Worldwide Shipping</p>",
+            "title": "<p>Express Delivery from Europe · Trusted Across the EU, UK & US</p>",
             "title_mobile": "",
             "link": ""
           }
@@ -25,7 +25,7 @@
         "announcement_TEezJh": {
           "type": "announcement",
           "settings": {
-            "title": "<p>Join the Nostalys newsletter and unlock 10% off today.</p>",
+            "title": "<p>Join the Lumea newsletter and get 10% off your first order.</p>",
             "title_mobile": "",
             "link": ""
           }
@@ -42,7 +42,7 @@
         "enable_sticky_announcement_bar": "never",
         "autoplay_enabled": true,
         "autoplay_delay": 4,
-        "color_background": "#0a284c",
+        "color_background": "#2c2c2c",
         "color_text": "#ffffff"
       }
     },

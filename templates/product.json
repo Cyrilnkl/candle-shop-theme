@@ -76,7 +76,7 @@
             "add_box": false,
             "add_dividers": true,
             "icon_1": "package-closed",
-            "text_1": "<p>A welcome gift is included with your first order.</p>",
+            "text_1": "<p>Free wicks included with every order.</p>",
             "icon_2": "leaf",
             "text_2": "",
             "icon_3": "none",
@@ -137,7 +137,7 @@
             "column_placement": "left",
             "heading": "Ingredients",
             "heading_tag": "h3",
-            "content": "<p>Zephyra wax pearls are crafted from <strong>plant-based vegan wax</strong>, designed to burn cleanly with minimal smoke or soot. Made from sustainably sourced and purified ingredients, they are free from paraffin, soy, and common allergens. Our unscented pearls offer a neutral base for personalizing with your favorite <strong>phthalate-free fragrances</strong>.</p>",
+            "content": "<p>Lumea candle sand is crafted from <strong>plant-based vegan wax</strong>, designed to burn cleanly with minimal smoke or soot. Made from sustainably sourced and purified ingredients, it is free from paraffin, soy, and common allergens. Our unscented candle sand offers a neutral base for personalizing with your favorite <strong>phthalate-free fragrances</strong>.</p>",
             "page_for_content": "",
             "custom_liquid": ""
           }
@@ -149,7 +149,7 @@
             "column_placement": "left",
             "heading": "Frequently Asked Questions",
             "heading_tag": "h3",
-            "content": "<p><strong>Q: Are Zephyra pearls scented?</strong><br/>A: No, Zephyra pearls are unscented, allowing you to add your own essential or fragrance oils before lighting to create a personalized aroma. Always do this before igniting the candle for safety.</p><p><strong>Q: Are Zephyra pearls safe for pets?</strong><br/>A: Yes, they are made from non-toxic, plant-based ingredients. However, we recommend keeping them out of reach of pets, especially when lit.</p><p><strong>Q: Can I reuse the wicks?</strong><br/>A: Absolutely! The cotton wicks provided are reusable. Simply trim the wick or flip it to use the unburnt portion, and refresh your setup whenever needed.</p><p><strong>Q: What are Zephyra pearls made of?</strong><br/>A: They are crafted from sustainably sourced, plant-based materials, free from paraffin, parabens, and artificial additives, ensuring a clean and eco-friendly burn.</p><p><strong>Q: Do I need special containers to use Zephyra pearls?</strong><br/>A: Not at all! Any heat-resistant container works, so you can repurpose jars, glasses, or other vessels to match your style.</p>",
+            "content": "<p><strong>Q: Is Lumea Candle Sand scented?</strong><br/>A: No, our candle sand is unscented, allowing you to add your own essential or fragrance oils before lighting to create a personalized aroma. Always do this before igniting the candle for safety.</p><p><strong>Q: Is it safe for pets?</strong><br/>A: Yes, it is made from non-toxic, plant-based ingredients. However, we recommend keeping it out of reach of pets, especially when lit.</p><p><strong>Q: Can I reuse the wicks?</strong><br/>A: Absolutely! The cotton wicks provided are reusable. Simply trim the wick or flip it to use the unburnt portion, and refresh your setup whenever needed.</p><p><strong>Q: What is candle sand made of?</strong><br/>A: It is crafted from sustainably sourced, plant-based materials, free from paraffin, parabens, and artificial additives, ensuring a clean and eco-friendly burn.</p><p><strong>Q: Do I need special containers?</strong><br/>A: Not at all! Any heat-resistant container works — bowls, jars, glasses, vases — match your style.</p>",
             "page_for_content": "",
             "custom_liquid": ""
           }
@@ -225,8 +225,8 @@
           "settings": {
             "image": "shopify://shop_images/Candlera-6_729f01d0-f296-4253-ae1c-4f73b6094bb4.jpg",
             "focal_point": "image_presentation",
-            "title": "1. Poor your creativity",
-            "text": "<p>Gently pour the Zephira pearl into your favorite container.</p>"
+            "title": "1. Pour",
+            "text": "<p>Gently pour the candle sand into your favorite container.</p>"
           }
         },
         "image_kDxdmE": {
@@ -234,8 +234,8 @@
           "settings": {
             "image": "shopify://shop_images/Candlera-14_d9f30184-21a7-473e-9c75-d9c68f4c2a47.jpg",
             "focal_point": "image_presentation",
-            "title": "2. Insert & Light your Moment",
-            "text": "<p>Strike a match and bring your original and unique candle to life.</p>"
+            "title": "2. Insert & Light",
+            "text": "<p>Place the wick, strike a match, and bring your candle to life.</p>"
           }
         },
         "image_HgpkpY": {
@@ -243,8 +243,8 @@
           "settings": {
             "image": "shopify://shop_images/Candlera-9_d2337da2-1d05-41e2-954a-701df8898e2c.jpg",
             "focal_point": "image_presentation",
-            "title": "3. Refresh & Renew",
-            "text": "<p>Replace the wick and add more pearl beads when needed.</p>"
+            "title": "3. Refresh",
+            "text": "<p>Replace the wick and add more candle sand when needed. Brand new candle.</p>"
           }
         }
       },
@@ -379,7 +379,7 @@
         "collection_6TH4xH"
       ],
       "settings": {
-        "heading": "Zephyra's accessories",
+        "heading": "You May Also Like",
         "heading_tag": "h2",
         "subheading": "",
         "link": "",
