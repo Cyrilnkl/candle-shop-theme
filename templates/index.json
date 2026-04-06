@@ -9,88 +9,368 @@
  */
 {
   "sections": {
-    "vael_hero": {
+    "hero": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"vael-hero\">\n  <img src=\"{{ 'vael-hero.jpg' | asset_url }}\" alt=\"Candle sand glowing warmly in a ceramic bowl\" class=\"vael-hero__img\" loading=\"eager\">\n  <div class=\"vael-hero__overlay\"></div>\n  <div class=\"vael-hero__content\">\n    <span class=\"vael-hero__badge\">Vael Candle</span>\n    <h1 class=\"vael-hero__title\">Create Candles<br>In Any Bowl</h1>\n    <p class=\"vael-hero__subtitle\">Pour. Light. Enjoy. Our 100% natural candle sand transforms any container into a beautiful, long-lasting candle. No mess. No waste. Just warmth.</p>\n    <div>\n      <a href=\"/collections/all\" class=\"vael-hero__cta\">Shop Now &rarr;</a>\n      <a href=\"#vael-how\" class=\"vael-hero__cta-secondary\">How It Works</a>\n    </div>\n  </div>\n</div>",
+        "custom_liquid": "<div class=\"vael-hero\">\n  <img src=\"{{ 'vael-hero.jpg' | asset_url }}\" alt=\"Candle sand in a beautiful ceramic bowl\" class=\"vael-hero__img\" loading=\"eager\">\n  <div class=\"vael-hero__overlay\"></div>\n  <div class=\"vael-hero__content\">\n    <h1 class=\"vael-hero__title\">Create Candles<br>In Any Bowl</h1>\n    <p class=\"vael-hero__subtitle\">Just pour Candle Sand, insert the wick, and light it up &mdash; a 100% natural, unscented, and non-toxic candle.</p>\n    <div class=\"vael-hero__buttons\">\n      <a href=\"/collections/candle-sand\" class=\"vael-hero__cta\">SHOP BESTSELLERS &rarr;</a>\n      <a href=\"/pages/instructions\" class=\"vael-hero__cta-secondary\">HOW TO USE &rarr;</a>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "vael_trust": {
+    "bestsellers": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "bestsellers_col": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": true,
+            "collection_name": "Bestsellers"
+          }
+        }
+      },
+      "block_order": [
+        "bestsellers_col"
+      ],
+      "settings": {
+        "heading": "Bestsellers",
+        "heading_tag": "h2",
+        "link_text": "Shop all",
+        "maximum_products": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "bundles": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "bundles_col": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": true,
+            "collection_name": "Bundles"
+          }
+        }
+      },
+      "block_order": [
+        "bundles_col"
+      ],
+      "settings": {
+        "heading": "Bundles",
+        "heading_tag": "h2",
+        "link_text": "Shop all",
+        "maximum_products": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "how_it_works": {
+      "type": "multi-column",
+      "blocks": {
+        "step_1": {
+          "type": "image_column",
+          "settings": {
+            "image_width": 100,
+            "aspect_ratio": "square",
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "small_caption": "Step 1",
+            "heading": "Pour",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "text": "<p>Pour the Candle Sand into a heat-resistant container or a vase.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "step_2": {
+          "type": "image_column",
+          "settings": {
+            "image_width": 100,
+            "aspect_ratio": "square",
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "small_caption": "Step 2",
+            "heading": "Insert & Light the Wick",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "text": "<p>Easily insert the wick, then light it up for a warm and inviting glow.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "step_3": {
+          "type": "image_column",
+          "settings": {
+            "image_width": 100,
+            "aspect_ratio": "square",
+            "focal_point": "image_presentation",
+            "image_position": "above_text",
+            "small_caption": "Step 3",
+            "heading": "Refresh",
+            "heading_tag": "h3",
+            "heading_font_class": "fs-heading-3-base",
+            "text": "<p>Replace the wick for a brand new candle. Reuse forever.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "heading_tag": "h2",
+        "subheading": "<p>It's super easy!</p>",
+        "columns": "3",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "ceramic_bowls": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "ceramic_col": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": true,
+            "collection_name": "Ceramic Bowls"
+          }
+        }
+      },
+      "block_order": [
+        "ceramic_col"
+      ],
+      "settings": {
+        "heading": "Ceramic Bowls",
+        "heading_tag": "h2",
+        "link_text": "Shop all",
+        "maximum_products": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "gift_ideas": {
+      "type": "featured-collection-slider",
+      "blocks": {
+        "gifts_col": {
+          "type": "collection",
+          "settings": {
+            "show_view_all": true,
+            "collection_name": "Gift Ideas"
+          }
+        }
+      },
+      "block_order": [
+        "gifts_col"
+      ],
+      "settings": {
+        "heading": "Gift Ideas",
+        "heading_tag": "h2",
+        "link_text": "Shop all",
+        "maximum_products": 6,
+        "columns": "3",
+        "mobile_columns": "2",
+        "enable_animation": true,
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
+      }
+    },
+    "video_tutorial": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"vael-trust\">\n  <div class=\"vael-trust__inner\">\n    <span class=\"vael-trust__item\">&#10003; 100% Natural</span>\n    <span class=\"vael-trust__item\">&#10003; 80+ Hours Burn Time</span>\n    <span class=\"vael-trust__item\">&#10003; Reusable &amp; Mess-Free</span>\n    <span class=\"vael-trust__item\">&#10003; Fast EU Delivery</span>\n    <span class=\"vael-trust__item\">&#10003; 15,000+ Happy Customers</span>\n  </div>\n</div>",
+        "custom_liquid": "<div class=\"vael-video-section\">\n  <div class=\"vael-video-section__inner\">\n    <img src=\"{{ 'vael-lifestyle.jpg' | asset_url }}\" alt=\"Vael Candle in action\" class=\"vael-video-section__bg\" loading=\"lazy\">\n    <div class=\"vael-video-section__overlay\"></div>\n    <div class=\"vael-video-section__content\">\n      <h2 class=\"vael-video-section__title\">Learn How to Use Candle Sand</h2>\n      <p class=\"vael-video-section__subtitle\">Step-by-Step Tutorial</p>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "vael_how": {
-      "type": "custom-liquid",
+    "wholesale": {
+      "type": "image-with-text",
+      "blocks": {
+        "wholesale_accent": {
+          "type": "accent",
+          "settings": {
+            "accent": "WANT TO BECOME A B2B PARTNER?"
+          }
+        },
+        "wholesale_heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Wholesale Options",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-display-3"
+          }
+        },
+        "wholesale_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Exceptional candles, tailored for your business. Hotels, restaurants, event planners — we offer competitive wholesale pricing and dedicated support.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "wholesale_button": {
+          "type": "button",
+          "settings": {
+            "link": "/pages/contact",
+            "link_text": "Enquire Now",
+            "button_style": "btn--primary"
+          }
+        }
+      },
+      "block_order": [
+        "wholesale_accent",
+        "wholesale_heading",
+        "wholesale_text",
+        "wholesale_button"
+      ],
       "settings": {
-        "custom_liquid": "<div id=\"vael-how\" class=\"vael-section\">\n  <div class=\"vael-section__header\">\n    <div class=\"vael-section__eyebrow\">Simple as 1-2-3</div>\n    <h2 class=\"vael-section__title\">How Does It Work?</h2>\n    <p class=\"vael-section__desc\">No wax melting. No complicated setup. Just three effortless steps to create your perfect candle.</p>\n  </div>\n  <div class=\"vael-steps\">\n    <div class=\"vael-step\">\n      <div class=\"vael-step__img-wrap\">\n        <img src=\"{{ 'vael-step-pour.jpg' | asset_url }}\" alt=\"Pouring candle sand into a bowl\" class=\"vael-step__img\" loading=\"lazy\">\n        <span class=\"vael-step__number\">1</span>\n      </div>\n      <h3 class=\"vael-step__title\">Pour</h3>\n      <p class=\"vael-step__text\">Fill any heat-resistant container with Vael candle sand. A bowl, a vase, a jar - you choose the shape.</p>\n    </div>\n    <div class=\"vael-step\">\n      <div class=\"vael-step__img-wrap\">\n        <img src=\"{{ 'vael-step-wick.jpg' | asset_url }}\" alt=\"Inserting a cotton wick into candle sand\" class=\"vael-step__img\" loading=\"lazy\">\n        <span class=\"vael-step__number\">2</span>\n      </div>\n      <h3 class=\"vael-step__title\">Insert the Wick</h3>\n      <p class=\"vael-step__text\">Place a pre-waxed cotton wick into the center. It stays upright on its own - no tools needed.</p>\n    </div>\n    <div class=\"vael-step\">\n      <div class=\"vael-step__img-wrap\">\n        <img src=\"{{ 'vael-step-light.jpg' | asset_url }}\" alt=\"Lit candle glowing warmly in a ceramic bowl\" class=\"vael-step__img\" loading=\"lazy\">\n        <span class=\"vael-step__number\">3</span>\n      </div>\n      <h3 class=\"vael-step__title\">Light &amp; Enjoy</h3>\n      <p class=\"vael-step__text\">Strike a match and watch your room fill with a warm, gentle glow. When the wick burns down, just replace it.</p>\n    </div>\n  </div>\n</div>",
+        "image_position": "left",
+        "text_alignment": "center",
+        "aspect_ratio": "square",
+        "focal_point": "image_presentation",
+        "image_caption": "",
+        "show_small_image": false,
+        "background_color": "",
+        "text_color": "#000000",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "vael_why": {
-      "type": "custom-liquid",
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "review_1": {
+          "type": "testimonial",
+          "settings": {
+            "image_position": "right",
+            "aspect_ratio": "square",
+            "focal_point": "image_presentation",
+            "show_rating": true,
+            "rating": 5,
+            "quote": "Unique and easy to use! As someone who loves candles but isn't crafty, Candle Sand was perfect for me. It's simple to use, and the instructions are straightforward. I love how I can change the look of my candles anytime!",
+            "author": "– Gabby G."
+          }
+        },
+        "review_2": {
+          "type": "testimonial",
+          "settings": {
+            "image_position": "right",
+            "aspect_ratio": "square",
+            "focal_point": "image_presentation",
+            "show_rating": true,
+            "rating": 5,
+            "quote": "I bought this for my wife as a gift and she absolutely loved it. The candle sand is so easy to use and looks beautiful in our ceramic bowl. Will be ordering more for other rooms!",
+            "author": "– Thomas R."
+          }
+        },
+        "review_3": {
+          "type": "testimonial",
+          "settings": {
+            "image_position": "right",
+            "aspect_ratio": "square",
+            "focal_point": "image_presentation",
+            "show_rating": true,
+            "rating": 5,
+            "quote": "Finally a candle that doesn't leave a mess! The candle sand is incredible — no soot, no dripping wax, and I love that it's completely natural. My whole family feels safer using these.",
+            "author": "– Sarah M."
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
       "settings": {
-        "custom_liquid": "<div class=\"vael-split vael-split--reverse\">\n  <div class=\"vael-split__img-wrap\">\n    <img src=\"{{ 'vael-about.jpg' | asset_url }}\" alt=\"Aesthetic candle on warm fabric\" class=\"vael-split__img\" loading=\"lazy\">\n  </div>\n  <div class=\"vael-split__content\">\n    <span class=\"vael-split__eyebrow\">Why Vael?</span>\n    <h2 class=\"vael-split__title\">A Smarter Way to Enjoy Candlelight</h2>\n    <p class=\"vael-split__text\">Traditional candles burn unevenly, leave wax residue, and can't be reused. Vael candle sand changes everything. Made from 100% plant-based wax granules, it burns cleaner, lasts longer, and fits any container you love. No paraffin. No toxins. No synthetic scents. Just pure, natural warmth that you control.</p>\n    <a href=\"/pages/about\" class=\"vael-split__link\">Our Story &rarr;</a>\n  </div>\n</div>",
+        "image_size": "small",
+        "quote_font": "heading",
+        "text_color": "#000000",
+        "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "vael_usps": {
-      "type": "custom-liquid",
+    "blog": {
+      "type": "blog-posts",
       "settings": {
-        "custom_liquid": "<div class=\"vael-section\">\n  <div class=\"vael-section__header\">\n    <div class=\"vael-section__eyebrow\">The Vael Difference</div>\n    <h2 class=\"vael-section__title\">Why Customers Love Us</h2>\n  </div>\n  <div class=\"vael-usps\">\n    <div class=\"vael-usp\">\n      <span class=\"vael-usp__icon\">&#127807;</span>\n      <h3 class=\"vael-usp__title\">100% Natural</h3>\n      <p class=\"vael-usp__text\">Plant-based wax granules with zero synthetic additives. Safe for your home, your pets, and the planet.</p>\n    </div>\n    <div class=\"vael-usp\">\n      <span class=\"vael-usp__icon\">&#9201;</span>\n      <h3 class=\"vael-usp__title\">80+ Hours of Burn</h3>\n      <p class=\"vael-usp__text\">A single 650g pouch delivers more burn time than three traditional candles combined.</p>\n    </div>\n    <div class=\"vael-usp\">\n      <span class=\"vael-usp__icon\">&#9851;</span>\n      <h3 class=\"vael-usp__title\">Endlessly Reusable</h3>\n      <p class=\"vael-usp__text\">The sand never evaporates. Replace the wick and your candle is brand new again. Zero waste.</p>\n    </div>\n    <div class=\"vael-usp\">\n      <span class=\"vael-usp__icon\">&#127912;</span>\n      <h3 class=\"vael-usp__title\">Any Container</h3>\n      <p class=\"vael-usp__text\">Ceramic bowls, glass jars, vintage teacups. If it's heat-resistant, it's a candle. Your style, your rules.</p>\n    </div>\n  </div>\n</div>",
+        "heading": "Candle Sand Blog",
+        "link_text": "View all posts",
+        "display_type": "all",
+        "max_articles": 3,
+        "show_tags": true,
+        "show_author": false,
+        "show_date": true,
+        "show_excerpt": true,
+        "show_featured_image": true,
+        "aspect_ratio": "landscape",
+        "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "vael_lifestyle": {
-      "type": "custom-liquid",
+    "newsletter": {
+      "type": "newsletter-compact",
+      "blocks": {
+        "nl_text": {
+          "type": "text_content",
+          "settings": {
+            "width": "600",
+            "title": "Join Our Newsletter",
+            "heading_tag": "h2",
+            "heading_font_class": "fs-heading-3-base",
+            "text": "<p>Sign up and receive a coupon code to use on your next order.</p>",
+            "text_font_class": "fs-body-100"
+          }
+        },
+        "nl_signup": {
+          "type": "newsletter_signup",
+          "settings": {
+            "signup_link_text": "SUBSCRIBE"
+          }
+        }
+      },
+      "block_order": [
+        "nl_text",
+        "nl_signup"
+      ],
       "settings": {
-        "custom_liquid": "<div class=\"vael-split\">\n  <div class=\"vael-split__img-wrap\">\n    <img src=\"{{ 'vael-lifestyle.jpg' | asset_url }}\" alt=\"Cozy candle arrangement with flowers\" class=\"vael-split__img\" loading=\"lazy\">\n  </div>\n  <div class=\"vael-split__content\">\n    <span class=\"vael-split__eyebrow\">For Every Moment</span>\n    <h2 class=\"vael-split__title\">Designed for the Way You Live</h2>\n    <p class=\"vael-split__text\">A quiet evening at home. A dinner party with friends. A relaxing bath after a long day. Vael candle sand sets the mood for every occasion. Create centrepieces, decorate shelves, or bring warmth to your bedroom - the possibilities are limitless.</p>\n    <a href=\"/collections/all\" class=\"vael-split__link\">Browse Collection &rarr;</a>\n  </div>\n</div>",
+        "spacing_mode": "between",
+        "alignment": "left",
+        "background_color": "#2c2c2c",
+        "text_color": "#ffffff",
+        "input_color": "#000000",
+        "input_background": "#ffffff",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "overlay_opacity": 0,
+        "enable_animation": true,
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "vael_testimonials": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"vael-section\">\n  <div class=\"vael-section__header\">\n    <div class=\"vael-section__eyebrow\">Reviews</div>\n    <h2 class=\"vael-section__title\">What Our Customers Say</h2>\n    <p class=\"vael-section__desc\">Thousands of happy customers across Europe. Here's what they think.</p>\n  </div>\n  <div class=\"vael-testimonials\">\n    <div class=\"vael-testimonial\">\n      <div class=\"vael-testimonial__stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-testimonial__quote\">\"I poured it into an old ceramic bowl and it instantly became the centrepiece of my living room. Genius product.\"</p>\n      <span class=\"vael-testimonial__author\">Emily R. &mdash; London, UK</span>\n    </div>\n    <div class=\"vael-testimonial\">\n      <div class=\"vael-testimonial__stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-testimonial__quote\">\"As an event planner, this is a game-changer. Versatile, safe, looks incredible on tables. My clients are obsessed.\"</p>\n      <span class=\"vael-testimonial__author\">Jessica M. &mdash; Paris, FR</span>\n    </div>\n    <div class=\"vael-testimonial\">\n      <div class=\"vael-testimonial__stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-testimonial__quote\">\"Finally a candle that doesn't leave wax everywhere. Lasts forever, looks designer, and the scent is subtle and natural.\"</p>\n      <span class=\"vael-testimonial__author\">Michael B. &mdash; Berlin, DE</span>\n    </div>\n  </div>\n</div>",
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "vael_banner": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"vael-banner\">\n  <img src=\"{{ 'vael-cozy.jpg' | asset_url }}\" alt=\"Warm cozy candle ambiance\" class=\"vael-banner__img\" loading=\"lazy\">\n  <div class=\"vael-banner__overlay\"></div>\n  <div class=\"vael-banner__content\">\n    <h2 class=\"vael-banner__title\">Gift the Warmth</h2>\n    <p class=\"vael-banner__text\">Looking for a unique gift? Our curated sets come beautifully packaged and ready to give. Perfect for birthdays, housewarmings, or just because.</p>\n    <a href=\"/collections/all\" class=\"vael-banner__cta\">Shop Gift Sets &rarr;</a>\n  </div>\n</div>",
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
-      }
-    },
-    "vael_newsletter": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"vael-newsletter\">\n  <h2 class=\"vael-newsletter__title\">Join the Vael Family</h2>\n  <p class=\"vael-newsletter__text\">Subscribe and get 10% off your first order, plus early access to new arrivals.</p>\n  {% form 'customer', id: 'vael-nl-form' %}\n  <div class=\"vael-newsletter__form\">\n    <input type=\"email\" name=\"contact[email]\" class=\"vael-newsletter__input\" placeholder=\"Your email address\" required aria-label=\"Email address\">\n    <input type=\"hidden\" name=\"contact[tags]\" value=\"newsletter\">\n    <button type=\"submit\" class=\"vael-newsletter__btn\">Subscribe</button>\n  </div>\n  {% endform %}\n</div>",
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-none"
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     }
   },
   "order": [
-    "vael_hero",
-    "vael_trust",
-    "vael_how",
-    "vael_why",
-    "vael_usps",
-    "vael_lifestyle",
-    "vael_testimonials",
-    "vael_banner",
-    "vael_newsletter"
+    "hero",
+    "bestsellers",
+    "bundles",
+    "how_it_works",
+    "ceramic_bowls",
+    "gift_ideas",
+    "video_tutorial",
+    "wholesale",
+    "testimonials",
+    "blog",
+    "newsletter"
   ]
 }
