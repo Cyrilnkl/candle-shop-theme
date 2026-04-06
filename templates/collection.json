@@ -9,39 +9,20 @@
  */
 {
   "sections": {
-    "rich_text_qWTTJG": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_YBbdG4": {
-          "type": "heading",
-          "settings": {
-            "title": "Candle Sand by Zephyra",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-2-base"
-          }
-        },
-        "text_jbmRxq": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Transform any space with Zephyra Candle Sand! This eco-friendly sand and wick set lets you easily create beautiful candles in glass, ceramic, or any container. Simple, stylish, and sustainable.</p>",
-            "text_font_class": "fs-body-75"
-          }
-        }
-      },
-      "block_order": [
-        "heading_YBbdG4",
-        "text_jbmRxq"
-      ],
-      "custom_css": [
-        ".rich-text__text p {color: grey; margin-top: 20px;}"
-      ],
+    "urgency_bar": {
+      "type": "custom-liquid",
       "settings": {
-        "alignment": "center_center",
-        "enable_animation": true,
+        "custom_liquid": "<div class=\"vael-urgency\">\n  <div class=\"vael-urgency__inner\">\n    <div class=\"vael-urgency__left\">\n      <span class=\"vael-urgency__badge\">LIMITED OFFER</span>\n      <span class=\"vael-urgency__text\">Free shipping on orders over &euro;50 + free wicks with every order</span>\n    </div>\n    <div class=\"vael-urgency__timer\">\n      <span class=\"vael-urgency__timer-label\">Ends in:</span>\n      <div class=\"vael-urgency__countdown\" id=\"vael-countdown\">\n        <div class=\"vael-urgency__time-block\"><span id=\"vael-hours\">02</span><small>hrs</small></div>\n        <span class=\"vael-urgency__sep\">:</span>\n        <div class=\"vael-urgency__time-block\"><span id=\"vael-mins\">47</span><small>min</small></div>\n        <span class=\"vael-urgency__sep\">:</span>\n        <div class=\"vael-urgency__time-block\"><span id=\"vael-secs\">33</span><small>sec</small></div>\n      </div>\n    </div>\n  </div>\n</div>\n<script>\n(function(){\n  var end=new Date();end.setHours(23,59,59,0);\n  function tick(){\n    var now=new Date(),d=end-now;\n    if(d<0){end.setDate(end.getDate()+1);d=end-now;}\n    var h=Math.floor(d/36e5),m=Math.floor((d%36e5)/6e4),s=Math.floor((d%6e4)/1e3);\n    var eh=document.getElementById('vael-hours'),em=document.getElementById('vael-mins'),es=document.getElementById('vael-secs');\n    if(eh){eh.textContent=String(h).padStart(2,'0');em.textContent=String(m).padStart(2,'0');es.textContent=String(s).padStart(2,'0');}\n  }\n  tick();setInterval(tick,1000);\n})();\n</script>",
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom",
-        "content_width": "custom",
-        "custom_content_width": 700
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
+    "collection_header": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"vael-coll-header\">\n  <h1 class=\"vael-coll-header__title\">{{ collection.title | default: 'All Products' }}</h1>\n  <p class=\"vael-coll-header__count\">{{ collection.products_count | default: '0' }} products</p>\n  <div class=\"vael-coll-header__badges\">\n    <span class=\"vael-coll-badge\">&#x1f331; 100% Natural</span>\n    <span class=\"vael-coll-badge\">&#x267b;&#xfe0f; Reusable Forever</span>\n    <span class=\"vael-coll-badge\">&#x1f69a; Free EU Shipping 50&euro;+</span>\n  </div>\n</div>",
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "banner": {
@@ -67,16 +48,12 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "custom_css": [
-        ".product-item__swatch-count {display: none;}",
-        ".product-rating__count span:first-child {display: none;}"
-      ],
       "settings": {
         "columns_desktop": "3",
         "columns_mobile": "2",
         "rows": "4",
         "show_item_count": false,
-        "show_sort": false,
+        "show_sort": true,
         "show_filters": true,
         "enable_sticky_filter_bar": true,
         "desktop_filter_location": "filter_bar",
@@ -92,71 +69,48 @@
         "divider_style": "none"
       }
     },
-    "image_hero_HAc36G": {
-      "type": "image-hero",
+    "social_proof": {
+      "type": "custom-liquid",
       "settings": {
-        "image_aspect": "original",
-        "desktop_height": 50,
-        "mobile_height": 100,
-        "image": "shopify://shop_images/foot-banner_5c74e1c5-a110-4d00-8a01-206ec4732b43.png",
-        "focal_point": "image_presentation",
-        "mobile_focal_point": "image_presentation",
-        "media_link": "",
-        "text_position": "center_center",
-        "text_position_mobile": "center_center",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true,
-        "section_padding": "section--vertical-padding-none"
+        "custom_liquid": "<div class=\"vael-social-proof\">\n  <div class=\"vael-social-proof__inner\">\n    <div class=\"vael-social-proof__item\">\n      <span class=\"vael-social-proof__number\">15,000+</span>\n      <span class=\"vael-social-proof__label\">Happy Customers</span>\n    </div>\n    <div class=\"vael-social-proof__divider\"></div>\n    <div class=\"vael-social-proof__item\">\n      <span class=\"vael-social-proof__number\">4.9/5</span>\n      <span class=\"vael-social-proof__label\">Average Rating</span>\n    </div>\n    <div class=\"vael-social-proof__divider\"></div>\n    <div class=\"vael-social-proof__item\">\n      <span class=\"vael-social-proof__number\">48h</span>\n      <span class=\"vael-social-proof__label\">EU Express Delivery</span>\n    </div>\n  </div>\n</div>",
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "newsletter_compact_Dggjt8": {
+    "newsletter_compact": {
       "type": "newsletter-compact",
       "blocks": {
-        "text_content_TEmgwP": {
+        "text_nl": {
           "type": "text_content",
           "settings": {
             "width": "600",
-            "title": "Subscribe to our newsletter",
+            "title": "Get 10% Off Your First Order",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base",
-            "subheading": "",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-5-base",
-            "text": "<p>Sign up and receive a coupon code for a free delivery.</p>",
-            "text_font_class": "fs-body-75"
+            "text": "<p>Join the Vael family and be the first to know about new drops, limited editions, and exclusive offers.</p>",
+            "text_font_class": "fs-body-100"
           }
         },
-        "newsletter_signup_UrpTDH": {
+        "signup_nl": {
           "type": "newsletter_signup",
           "settings": {
-            "signup_link_text": "Sign up",
-            "footer_text": ""
+            "signup_link_text": "SUBSCRIBE"
           }
         }
       },
       "block_order": [
-        "text_content_TEmgwP",
-        "newsletter_signup_UrpTDH"
+        "text_nl",
+        "signup_nl"
       ],
-      "custom_css": [],
       "settings": {
         "spacing_mode": "between",
         "alignment": "left",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
-        "background_color": "#f5f5f5",
-        "text_color": "#000000",
+        "background_color": "#2c2c2c",
+        "text_color": "#ffffff",
         "input_color": "#000000",
         "input_background": "#ffffff",
         "button_background_color": "#000000",
         "button_text_color": "#ffffff",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
         "overlay_opacity": 0,
         "enable_animation": true,
         "divider_style": "none",
@@ -165,10 +119,11 @@
     }
   },
   "order": [
-    "rich_text_qWTTJG",
+    "urgency_bar",
+    "collection_header",
     "banner",
     "product-grid",
-    "image_hero_HAc36G",
-    "newsletter_compact_Dggjt8"
+    "social_proof",
+    "newsletter_compact"
   ]
 }
