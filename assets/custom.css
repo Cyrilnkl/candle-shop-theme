@@ -232,6 +232,61 @@ html { scroll-behavior: smooth; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ── HOW IT WORKS STEPS ────────────────────── */
+.vael-steps { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.vael-steps__header { text-align: center; margin-bottom: 48px; }
+.vael-steps__title {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--vael-dark, #1a1a1a);
+  margin: 0 0 8px;
+}
+.vael-steps__subtitle {
+  font-size: 16px;
+  color: var(--vael-muted, #8a8578);
+  margin: 0;
+}
+.vael-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.vael-steps__item { text-align: center; }
+.vael-steps__img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  aspect-ratio: 1 / 1;
+}
+.vael-steps__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vael-steps__number {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vael-warm, #c9a96e);
+  margin-bottom: 8px;
+}
+.vael-steps__name {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--vael-dark, #1a1a1a);
+  margin: 0 0 8px;
+}
+.vael-steps__desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--vael-muted, #8a8578);
+  margin: 0;
+}
+
 /* ── RESPONSIVE ────────────────────────────── */
 @media (max-width: 768px) {
   .vael-hero {
@@ -308,5 +363,7 @@ html { scroll-behavior: smooth; }
   }
 
   .vael-video-section__inner { min-height: 320px; }
+
+  .vael-steps__grid { grid-template-columns: 1fr; gap: 32px; }
 }
 

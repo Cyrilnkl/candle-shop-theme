@@ -78,64 +78,9 @@
       }
     },
     "how_it_works": {
-      "type": "multi-column",
-      "blocks": {
-        "step_1": {
-          "type": "image_column",
-          "settings": {
-            "image_width": 100,
-            "aspect_ratio": "square",
-            "focal_point": "image_presentation",
-            "image_position": "above_text",
-            "small_caption": "Step 1",
-            "heading": "Pour",
-            "heading_tag": "h3",
-            "heading_font_class": "fs-heading-3-base",
-            "text": "<p>Pour the Candle Sand into a heat-resistant container or a vase.</p>",
-            "text_font_class": "fs-body-100"
-          }
-        },
-        "step_2": {
-          "type": "image_column",
-          "settings": {
-            "image_width": 100,
-            "aspect_ratio": "square",
-            "focal_point": "image_presentation",
-            "image_position": "above_text",
-            "small_caption": "Step 2",
-            "heading": "Insert & Light the Wick",
-            "heading_tag": "h3",
-            "heading_font_class": "fs-heading-3-base",
-            "text": "<p>Easily insert the wick, then light it up for a warm and inviting glow.</p>",
-            "text_font_class": "fs-body-100"
-          }
-        },
-        "step_3": {
-          "type": "image_column",
-          "settings": {
-            "image_width": 100,
-            "aspect_ratio": "square",
-            "focal_point": "image_presentation",
-            "image_position": "above_text",
-            "small_caption": "Step 3",
-            "heading": "Refresh",
-            "heading_tag": "h3",
-            "heading_font_class": "fs-heading-3-base",
-            "text": "<p>Replace the wick for a brand new candle. Reuse forever.</p>",
-            "text_font_class": "fs-body-100"
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
+      "type": "custom-liquid",
       "settings": {
-        "heading_tag": "h2",
-        "subheading": "<p>It's super easy!</p>",
-        "columns": "3",
-        "enable_animation": true,
+        "custom_liquid": "<div class=\"vael-steps\">\n  <div class=\"vael-steps__header\">\n    <h2 class=\"vael-steps__title\">How does it work?</h2>\n    <p class=\"vael-steps__subtitle\">It's super easy!</p>\n  </div>\n  <div class=\"vael-steps__grid\">\n    <div class=\"vael-steps__item\">\n      <div class=\"vael-steps__img-wrap\">\n        <img src=\"{{ 'vael-step-pour-new.jpg' | asset_url }}\" alt=\"Pouring candle sand into a glass container\" class=\"vael-steps__img\" loading=\"lazy\">\n      </div>\n      <span class=\"vael-steps__number\">Step 1</span>\n      <h3 class=\"vael-steps__name\">Pour</h3>\n      <p class=\"vael-steps__desc\">Pour the Candle Sand into a heat-resistant container or a vase.</p>\n    </div>\n    <div class=\"vael-steps__item\">\n      <div class=\"vael-steps__img-wrap\">\n        <img src=\"{{ 'vael-step-wick-new.jpg' | asset_url }}\" alt=\"Inserting a wick into candle sand\" class=\"vael-steps__img\" loading=\"lazy\">\n      </div>\n      <span class=\"vael-steps__number\">Step 2</span>\n      <h3 class=\"vael-steps__name\">Insert &amp; Light the Wick</h3>\n      <p class=\"vael-steps__desc\">Easily insert the wick, then light it up for a warm and inviting glow.</p>\n    </div>\n    <div class=\"vael-steps__item\">\n      <div class=\"vael-steps__img-wrap\">\n        <img src=\"{{ 'vael-step-light-new.jpg' | asset_url }}\" alt=\"Lit candle sand in a glass cylinder\" class=\"vael-steps__img\" loading=\"lazy\">\n      </div>\n      <span class=\"vael-steps__number\">Step 3</span>\n      <h3 class=\"vael-steps__name\">Refresh</h3>\n      <p class=\"vael-steps__desc\">Replace the wick for a brand new candle. Reuse forever.</p>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
       }
