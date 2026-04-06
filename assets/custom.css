@@ -424,9 +424,18 @@ html { scroll-behavior: smooth; }
 }
 .vael-about-content__block {
   margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--vael-border, #e8e4dc);
 }
 .vael-about-content__block:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.vael-about-content__block:first-child p:first-of-type {
+  font-size: 18px;
+  color: var(--vael-dark, #1a1a1a);
+  line-height: 1.7;
 }
 .vael-about-content__heading {
   font-family: var(--vael-serif, 'Cormorant Garamond', serif);
@@ -575,9 +584,22 @@ html { scroll-behavior: smooth; }
   .vael-about__text { text-align: center; }
 
   /* About page */
-  .vael-about-hero { height: 40vh; }
-  .vael-about-hero__title { font-size: 36px; }
-  .vael-about-content__heading { font-size: 24px; }
+  .vael-about-hero { height: 30vh; }
+  .vael-about-hero__title { font-size: 32px; }
+  .vael-about-content { padding: 0 20px; }
+  .vael-about-content__block {
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+  }
+  .vael-about-content__heading { font-size: 22px; }
+  .vael-about-content p { font-size: 15px; }
+  .vael-about-content__block:first-child p:first-of-type { font-size: 16px; }
+  .vael-about-content__btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+  }
 
   /* Reviews — horizontal scroll */
   .vael-reviews__grid {
