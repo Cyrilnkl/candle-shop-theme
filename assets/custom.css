@@ -258,7 +258,7 @@ html { scroll-behavior: smooth; }
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 20px;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
 }
 .vael-steps__img {
   width: 100%;
