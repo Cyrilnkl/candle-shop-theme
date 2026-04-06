@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "faq_heading": {
@@ -36,66 +45,52 @@
       "type": "collapsible-row-list",
       "blocks": {
         "q1": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "What is Candle Sand?",
-            "heading_tag": "h3",
-            "row_content": "<p>Candle Sand is a granulated, plant-based wax that you pour into any heat-resistant container to create an instant candle. Just add a wick, light it, and enjoy. It's 100% natural, non-toxic, vegan, and reusable.</p>",
-            "page_for_content": ""
+            "title": "What is Candle Sand?",
+            "text": "<p>Candle Sand is a granulated, plant-based wax that you pour into any heat-resistant container to create an instant candle. Just add a wick, light it, and enjoy. It's 100% natural, non-toxic, vegan, and reusable.</p>"
           }
         },
         "q2": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "Is Vael Candle Sand scented?",
-            "heading_tag": "h3",
-            "row_content": "<p>Our candle sand is intentionally <strong>unscented</strong>, giving you the freedom to personalize your candle's aroma. Simply add a few drops of your favorite essential oil or candle fragrance oil close to the wick before lighting.</p><p><em>Important: Never add oil to an already burning candle — oils are highly flammable.</em></p>",
-            "page_for_content": ""
+            "title": "Is Vael Candle Sand scented?",
+            "text": "<p>Our candle sand is intentionally <strong>unscented</strong>, giving you the freedom to personalize your candle's aroma. Simply add a few drops of your favorite essential oil or candle fragrance oil close to the wick before lighting.</p><p><em>Important: Never add oil to an already burning candle — oils are highly flammable.</em></p>"
           }
         },
         "q3": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "How long does a candle sand candle last?",
-            "heading_tag": "h3",
-            "row_content": "<p>Each 650g pouch delivers <strong>80+ hours of burn time</strong>, depending on usage. Each individual wick burns for approximately 8-10 hours. When the wick burns down, simply replace it and keep enjoying your candle.</p>",
-            "page_for_content": ""
+            "title": "How long does a candle sand candle last?",
+            "text": "<p>Each 650g pouch delivers <strong>80+ hours of burn time</strong>, depending on usage. Each individual wick burns for approximately 8-10 hours. When the wick burns down, simply replace it and keep enjoying your candle.</p>"
           }
         },
         "q4": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "Do I need to use a new wick every time?",
-            "heading_tag": "h3",
-            "row_content": "<p>Not necessarily! You can reuse a wick by flipping it upside down and relighting the unburnt end. When it's fully used, simply replace it with a fresh wick from your pack.</p>",
-            "page_for_content": ""
+            "title": "Do I need to use a new wick every time?",
+            "text": "<p>Not necessarily! You can reuse a wick by flipping it upside down and relighting the unburnt end. When it's fully used, simply replace it with a fresh wick from your pack.</p>"
           }
         },
         "q5": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "Is candle sand safe for pets and children?",
-            "heading_tag": "h3",
-            "row_content": "<p>Yes! Our candle sand is made from <strong>non-toxic, plant-based ingredients</strong> with no harmful chemicals. It's unscented and produces minimal smoke. However, as with any candle, please keep lit candles out of reach of children and pets.</p>",
-            "page_for_content": ""
+            "title": "Is candle sand safe for pets and children?",
+            "text": "<p>Yes! Our candle sand is made from <strong>non-toxic, plant-based ingredients</strong> with no harmful chemicals. It's unscented and produces minimal smoke. However, as with any candle, please keep lit candles out of reach of children and pets.</p>"
           }
         },
         "q6": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "What containers can I use?",
-            "heading_tag": "h3",
-            "row_content": "<p>Any <strong>heat-resistant container</strong> works! Ceramic bowls, glass jars, vintage vases, teacups, mason jars — get creative. Just make sure the container can handle heat and isn't flammable.</p>",
-            "page_for_content": ""
+            "title": "What containers can I use?",
+            "text": "<p>Any <strong>heat-resistant container</strong> works! Ceramic bowls, glass jars, vintage vases, teacups, mason jars — get creative. Just make sure the container can handle heat and isn't flammable.</p>"
           }
         },
         "q7": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "What are the ingredients?",
-            "heading_tag": "h3",
-            "row_content": "<p>Our candle sand is crafted from <strong>sustainably sourced, plant-based wax</strong>. It contains no paraffin, parabens, soy, synthetic additives, or artificial fragrances. The wicks are made from natural waxed cotton.</p>",
-            "page_for_content": ""
+            "title": "What are the ingredients?",
+            "text": "<p>Our candle sand is crafted from <strong>sustainably sourced, plant-based wax</strong>. It contains no paraffin, parabens, soy, synthetic additives, or artificial fragrances. The wicks are made from natural waxed cotton.</p>"
           }
         }
       },
@@ -109,10 +104,7 @@
         "q7"
       ],
       "settings": {
-        "heading": "About Candle Sand",
         "heading_tag": "h2",
-        "icon_style": "plus",
-        "open_first_row": true,
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
@@ -122,39 +114,31 @@
       "type": "collapsible-row-list",
       "blocks": {
         "s1": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "How fast is shipping?",
-            "heading_tag": "h3",
-            "row_content": "<p>We ship with <strong>FedEx Express</strong> from Europe. Delivery times:<br/>• Europe: 2-5 business days<br/>• USA / UK: 2-5 business days<br/>• Australia / NZ: 3-7 business days<br/>• Rest of World: 3-8 business days</p>",
-            "page_for_content": ""
+            "title": "How fast is shipping?",
+            "text": "<p>We ship with <strong>FedEx Express</strong> from Europe. Delivery times:<br/>• Europe: 2-5 business days<br/>• USA / UK: 2-5 business days<br/>• Australia / NZ: 3-7 business days<br/>• Rest of World: 3-8 business days</p>"
           }
         },
         "s2": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "Do you offer free shipping?",
-            "heading_tag": "h3",
-            "row_content": "<p>We offer free shipping on orders over a certain threshold (varies by region). Check the cart for your specific free shipping minimum.</p>",
-            "page_for_content": ""
+            "title": "Do you offer free shipping?",
+            "text": "<p>We offer free shipping on orders over a certain threshold (varies by region). Check the cart for your specific free shipping minimum.</p>"
           }
         },
         "s3": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "What is your return policy?",
-            "heading_tag": "h3",
-            "row_content": "<p>We offer <strong>30-day hassle-free returns</strong>. If you're not completely satisfied with your purchase, simply contact us within 30 days for a refund or exchange. Items must be unused and in their original packaging.</p>",
-            "page_for_content": ""
+            "title": "What is your return policy?",
+            "text": "<p>We offer <strong>30-day hassle-free returns</strong>. If you're not completely satisfied with your purchase, simply contact us within 30 days for a refund or exchange. Items must be unused and in their original packaging.</p>"
           }
         },
         "s4": {
-          "type": "collapsible_row",
+          "type": "item",
           "settings": {
-            "heading": "Do you offer wholesale or bulk options?",
-            "heading_tag": "h3",
-            "row_content": "<p>Yes! We offer wholesale pricing for businesses, event planners, hotels, and restaurants. Please visit our <a href=\"/pages/contact\">Contact page</a> to inquire about bulk orders and partnerships.</p>",
-            "page_for_content": ""
+            "title": "Do you offer wholesale or bulk options?",
+            "text": "<p>Yes! We offer wholesale pricing for businesses, event planners, hotels, and restaurants. Please visit our <a href=\"/pages/contact\">Contact page</a> to inquire about bulk orders and partnerships.</p>"
           }
         }
       },
@@ -165,10 +149,7 @@
         "s4"
       ],
       "settings": {
-        "heading": "Shipping & Returns",
         "heading_tag": "h2",
-        "icon_style": "plus",
-        "open_first_row": false,
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
@@ -177,12 +158,10 @@
     "faq_cta": {
       "type": "featured-collection-slider",
       "settings": {
-        "collection": "candle-sand",
         "heading": "Ready to Try?",
         "heading_tag": "h2",
         "subheading": "<p>Start your candle sand experience today.</p>",
         "link_text": "Shop All",
-        "limit": 4,
         "columns": "4",
         "mobile_columns": "2",
         "enable_animation": true,
@@ -195,9 +174,6 @@
       "settings": {
         "heading": "Still Have Questions?",
         "heading_tag": "h2",
-        "subheading": "Send us a message and we'll get back to you within 24 hours.",
-        "subheading_tag": "h3",
-        "show_phone": true,
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"

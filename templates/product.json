@@ -25,12 +25,6 @@
             "show_custom_badges": true
           }
         },
-        "okendo_star_rating_zeXdip": {
-          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{product}}"
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -149,7 +143,7 @@
             "column_placement": "left",
             "heading": "Frequently Asked Questions",
             "heading_tag": "h3",
-            "content": "<p><strong>Q: Is Lumea Candle Sand scented?</strong><br/>A: No, our candle sand is unscented, allowing you to add your own essential or fragrance oils before lighting to create a personalized aroma. Always do this before igniting the candle for safety.</p><p><strong>Q: Is it safe for pets?</strong><br/>A: Yes, it is made from non-toxic, plant-based ingredients. However, we recommend keeping it out of reach of pets, especially when lit.</p><p><strong>Q: Can I reuse the wicks?</strong><br/>A: Absolutely! The cotton wicks provided are reusable. Simply trim the wick or flip it to use the unburnt portion, and refresh your setup whenever needed.</p><p><strong>Q: What is candle sand made of?</strong><br/>A: It is crafted from sustainably sourced, plant-based materials, free from paraffin, parabens, and artificial additives, ensuring a clean and eco-friendly burn.</p><p><strong>Q: Do I need special containers?</strong><br/>A: Not at all! Any heat-resistant container works — bowls, jars, glasses, vases — match your style.</p>",
+            "content": "<p><strong>Q: Is Vael Candle Sand scented?</strong><br/>A: No, our candle sand is unscented, allowing you to add your own essential or fragrance oils before lighting to create a personalized aroma. Always do this before igniting the candle for safety.</p><p><strong>Q: Is it safe for pets?</strong><br/>A: Yes, it is made from non-toxic, plant-based ingredients. However, we recommend keeping it out of reach of pets, especially when lit.</p><p><strong>Q: Can I reuse the wicks?</strong><br/>A: Absolutely! The cotton wicks provided are reusable. Simply trim the wick or flip it to use the unburnt portion, and refresh your setup whenever needed.</p><p><strong>Q: What is candle sand made of?</strong><br/>A: It is crafted from sustainably sourced, plant-based materials, free from paraffin, parabens, and artificial additives, ensuring a clean and eco-friendly burn.</p><p><strong>Q: Do I need special containers?</strong><br/>A: Not at all! Any heat-resistant container works — bowls, jars, glasses, vases — match your style.</p>",
             "page_for_content": "",
             "custom_liquid": ""
           }
@@ -179,7 +173,6 @@
       },
       "block_order": [
         "product_header",
-        "okendo_star_rating_zeXdip",
         "variant_picker",
         "inventory_counter",
         "quantity_selector",
@@ -314,7 +307,6 @@
         "image_aspect": "custom",
         "desktop_height": 60,
         "mobile_height": 50,
-        "video": "shopify://files/videos/video1080p.mp4",
         "media_link": "",
         "focal_point": "center",
         "focal_point_mobile": "center",
@@ -394,18 +386,6 @@
     },
     "1734083083941b1ea2": {
       "type": "apps",
-      "blocks": {
-        "okendo_reviews_widget_Mgp3eW": {
-          "type": "shopify://apps/okendo/blocks/reviews-widget/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "product": "{{product}}",
-            "widget_type": "combined_widget"
-          }
-        }
-      },
-      "block_order": [
-        "okendo_reviews_widget_Mgp3eW"
-      ],
       "custom_css": [
         ".oke-poweredBy-image {display: none !important;}"
       ],

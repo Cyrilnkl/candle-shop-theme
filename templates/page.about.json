@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_hero_about": {
@@ -57,7 +66,7 @@
         "text_story": {
           "type": "subheading",
           "settings": {
-            "subheading": "Our journey started with a simple frustration: the lack of truly natural, safe candle options. Traditional candles are full of paraffin, toxins, and leave a mess. We knew there had to be a better way. That's how Lumea was born — a modern, reusable alternative to traditional candles. 100% natural, unscented, and toxin-free. Today, we help thousands of people bring warmth, ambiance, and natural light into their homes with our premium candle sand.",
+            "subheading": "Our journey started with a simple frustration: the lack of truly natural, safe candle options. Traditional candles are full of paraffin, toxins, and leave a mess. We knew there had to be a better way. That's how Vael Candle was born — a modern, reusable alternative to traditional candles. 100% natural, unscented, and toxin-free. Today, we help thousands of people bring warmth, ambiance, and natural light into their homes with our premium candle sand.",
             "subheading_tag": "p",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -98,10 +107,10 @@
       "type": "multi-column",
       "blocks": {
         "value_1": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "leaf",
-            "title": "100% Natural Ingredients",
+            "heading": "100% Natural Ingredients",
             "heading_tag": "h3",
             "text": "<p>Premium plant-based wax with no synthetic additives or harmful chemicals. Safe for you and your family.</p>",
             "link": "",
@@ -109,10 +118,10 @@
           }
         },
         "value_2": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "cotton",
-            "title": "Sustainable & Refillable",
+            "heading": "Sustainable & Refillable",
             "heading_tag": "h3",
             "text": "<p>Reduce waste with our refillable candle sand system. Better for your home and the planet.</p>",
             "link": "",
@@ -120,10 +129,10 @@
           }
         },
         "value_3": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "package-closed",
-            "title": "Quality You Can Trust",
+            "heading": "Quality You Can Trust",
             "heading_tag": "h3",
             "text": "<p>Every batch is crafted with strict quality controls, ensuring you receive only the finest, most natural product.</p>",
             "link": "",
@@ -137,14 +146,9 @@
         "value_3"
       ],
       "settings": {
-        "heading": "What Makes Us Different",
         "heading_tag": "h2",
         "subheading": "",
-        "link": "",
-        "link_text": "",
         "columns": "3",
-        "mobile_columns": "1",
-        "alignment": "center",
         "enable_animation": true,
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
