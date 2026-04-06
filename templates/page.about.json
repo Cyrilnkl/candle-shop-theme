@@ -9,247 +9,25 @@
  */
 {
   "sections": {
-    "image_hero_about": {
-      "type": "image-hero",
-      "blocks": {
-        "heading_about": {
-          "type": "heading",
-          "settings": {
-            "title": "Our Story",
-            "heading_tag": "h1",
-            "heading_font_class": "fs-heading-display-2"
-          }
-        },
-        "subheading_about": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Born from a love of cozy living and a passion for sustainability.",
-            "subheading_tag": "h2",
-            "subheading_font_class": "fs-heading-5-base"
-          }
-        }
-      },
-      "block_order": [
-        "heading_about",
-        "subheading_about"
-      ],
+    "about_hero": {
+      "type": "custom-liquid",
       "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 50,
-        "mobile_height": 60,
-        "focal_point": "center",
-        "mobile_focal_point": "center",
-        "media_link": "",
-        "text_position": "center_center",
-        "text_position_mobile": "center_center",
-        "text_color": "#ffffff",
-        "button_background_color": "#ffffff",
-        "button_text_color": "#000000",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 45,
-        "enable_animation": true,
+        "custom_liquid": "<div class=\"vael-about-hero\">\n  <img src=\"{{ 'vael-founder.jpg' | asset_url }}\" alt=\"Vael preparing candle wicks\" class=\"vael-about-hero__img\" loading=\"eager\">\n  <div class=\"vael-about-hero__overlay\"></div>\n  <div class=\"vael-about-hero__content\">\n    <h1 class=\"vael-about-hero__title\">My Story</h1>\n  </div>\n</div>",
+        "divider_style": "none",
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "about_story": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_story": {
-          "type": "heading",
-          "settings": {
-            "title": "How It All Started",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-1-base"
-          }
-        },
-        "text_story": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "Our journey started with a simple frustration: the lack of truly natural, safe candle options. Traditional candles are full of paraffin, toxins, and leave a mess. We knew there had to be a better way. That's how Vael Candle was born — a modern, reusable alternative to traditional candles. 100% natural, unscented, and toxin-free. Today, we help thousands of people bring warmth, ambiance, and natural light into their homes with our premium candle sand.",
-            "subheading_tag": "p",
-            "subheading_font_class": "fs-heading-6-base"
-          }
-        },
-        "button_story": {
-          "type": "button",
-          "settings": {
-            "link": "shopify://collections/candle-sand",
-            "link_text": "Shop Candle Sand",
-            "button_style": "btn--primary"
-          }
-        }
-      },
-      "block_order": [
-        "heading_story",
-        "text_story",
-        "button_story"
-      ],
+    "about_intro": {
+      "type": "custom-liquid",
       "settings": {
-        "image_position": "left",
-        "text_alignment": "center",
-        "aspect_ratio": "square",
-        "focal_point": "image_presentation",
-        "image_caption": "",
-        "show_small_image": false,
-        "image_small_aspect_ratio": "square",
-        "image_small_focal_point": "image_presentation",
-        "background_color": "",
-        "text_color": "#000000",
-        "button_background_color": "#000000",
-        "button_text_color": "#ffffff",
-        "enable_animation": true,
+        "custom_liquid": "<div class=\"vael-about-content\">\n  <div class=\"vael-about-content__block\">\n    <h2 class=\"vael-about-content__heading\">It started with a candle</h2>\n    <p>I've been obsessed with candles for as long as I can remember. When I was 15, I used to spend my pocket money on scented candles and line them up on my windowsill. My mum thought I was crazy. Maybe I was.</p>\n    <p>There was something about that little flame that made everything feel better. A bad day at school, a messy room, winter evenings when it got dark at 5pm. Light a candle and suddenly the world feels a bit more okay.</p>\n  </div>\n  <div class=\"vael-about-content__block\">\n    <h2 class=\"vael-about-content__heading\">Then I found candle sand</h2>\n    <p>A couple of years ago, I came across candle sand completely by accident. I was scrolling through Instagram late at night (like you do) and I saw someone pour these tiny wax pearls into a bowl, stick a wick in, and light it. That was it. No jar, no mess, no wasted wax at the bottom that you can never get out.</p>\n    <p>I ordered some straight away. When it arrived, I poured it into an old ceramic bowl I had lying around and lit it up. And honestly? I just sat there staring at it for like 20 minutes thinking \"why doesn't everyone know about this?\"</p>\n  </div>\n  <div class=\"vael-about-content__block\">\n    <h2 class=\"vael-about-content__heading\">So I started Vael</h2>\n    <p>I didn't have a business plan. I didn't have investors or a warehouse. I had my kitchen table, a laptop, and a genuine conviction that candle sand could change the way people think about candles.</p>\n    <p>The first orders I packed myself, between uni assignments and cups of tea. I remember the rush of seeing that first \"You have a new order\" notification. I screamed. My flatmate thought something was wrong.</p>\n    <p>That was not so long ago. And now here we are. Thousands of orders later, I still get that same little buzz every single time.</p>\n  </div>\n  <div class=\"vael-about-content__block\">\n    <h2 class=\"vael-about-content__heading\">What I believe in</h2>\n    <p>I believe candles shouldn't be complicated. You shouldn't need to worry about toxic chemicals, or soot covering your ceiling, or burning yourself trying to light a wick at the bottom of a jar.</p>\n    <p>Candle sand is 100% natural, non-toxic, and you can reuse it forever. When the wick burns out, you just pop in a new one. Same sand, brand new candle. Zero waste, zero stress.</p>\n    <p>Every product I sell is something I'd use myself. Actually, I do use it myself. Every single day.</p>\n  </div>\n  <div class=\"vael-about-content__block vael-about-content__block--cta\">\n    <p>Thanks for being here. It really does mean the world.</p>\n    <p class=\"vael-about-content__signature\">- Vael x</p>\n    <a href=\"/collections/all\" class=\"vael-about-content__btn\">SHOP THE COLLECTION</a>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "values_section": {
-      "type": "multi-column",
-      "blocks": {
-        "value_1": {
-          "type": "icon_column",
-          "settings": {
-            "icon": "leaf",
-            "heading": "100% Natural Ingredients",
-            "heading_tag": "h3",
-            "text": "<p>Premium plant-based wax with no synthetic additives or harmful chemicals. Safe for you and your family.</p>",
-            "link": "",
-            "link_text": ""
-          }
-        },
-        "value_2": {
-          "type": "icon_column",
-          "settings": {
-            "icon": "cotton",
-            "heading": "Sustainable & Refillable",
-            "heading_tag": "h3",
-            "text": "<p>Reduce waste with our refillable candle sand system. Better for your home and the planet.</p>",
-            "link": "",
-            "link_text": ""
-          }
-        },
-        "value_3": {
-          "type": "icon_column",
-          "settings": {
-            "icon": "package-closed",
-            "heading": "Quality You Can Trust",
-            "heading_tag": "h3",
-            "text": "<p>Every batch is crafted with strict quality controls, ensuring you receive only the finest, most natural product.</p>",
-            "link": "",
-            "link_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "value_1",
-        "value_2",
-        "value_3"
-      ],
-      "settings": {
-        "heading_tag": "h2",
-        "subheading": "",
-        "columns": "3",
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "mission_section": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_mission": {
-          "type": "heading",
-          "settings": {
-            "title": "Our Mission",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-1-base"
-          }
-        },
-        "text_mission": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "We're not just selling candle sand — we're bringing a safer, more sustainable way to enjoy candlelight into your home. Our candle sand is made from 100% natural wax, contains no fragrances or artificial additives, and meets all safety standards. Experience the difference that truly natural, refillable candles can make.",
-            "subheading_tag": "p",
-            "subheading_font_class": "fs-heading-6-base"
-          }
-        }
-      },
-      "block_order": [
-        "heading_mission",
-        "text_mission"
-      ],
-      "settings": {
-        "image_position": "right",
-        "text_alignment": "center",
-        "aspect_ratio": "square",
-        "focal_point": "image_presentation",
-        "image_caption": "",
-        "show_small_image": false,
-        "image_small_aspect_ratio": "square",
-        "image_small_focal_point": "image_presentation",
-        "background_color": "",
-        "text_color": "#000000",
-        "button_background_color": "#000000",
-        "button_text_color": "#ffffff",
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "newsletter_about": {
-      "type": "newsletter-compact",
-      "blocks": {
-        "text_about_nl": {
-          "type": "text_content",
-          "settings": {
-            "width": "600",
-            "title": "Join the Vael Family",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-4-base",
-            "subheading": "",
-            "subheading_tag": "h3",
-            "subheading_font_class": "fs-heading-6-base",
-            "text": "<p>Get <strong>10% off</strong> your first order + exclusive tips, new arrivals, and candle inspiration.</p>",
-            "text_font_class": "fs-body-75"
-          }
-        },
-        "signup_about_nl": {
-          "type": "newsletter_signup",
-          "settings": {
-            "signup_link_text": "SUBSCRIBE",
-            "footer_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_about_nl",
-        "signup_about_nl"
-      ],
-      "settings": {
-        "spacing_mode": "between",
-        "alignment": "left",
-        "focal_point": "image_presentation",
-        "focal_point_mobile": "image_presentation",
-        "background_color": "#2c2c2c",
-        "text_color": "#ffffff",
-        "input_color": "#000000",
-        "input_background": "#ffffff",
-        "button_background_color": "#000000",
-        "button_text_color": "#ffffff",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-only"
       }
     }
   },
   "order": [
-    "image_hero_about",
-    "about_story",
-    "values_section",
-    "mission_section",
-    "newsletter_about"
+    "about_hero",
+    "about_intro"
   ]
 }

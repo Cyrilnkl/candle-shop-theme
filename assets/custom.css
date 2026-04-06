@@ -386,6 +386,92 @@ html { scroll-behavior: smooth; }
   font-weight: 500;
 }
 
+/* ── ABOUT PAGE ────────────────────────────── */
+.vael-about-hero {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+}
+.vael-about-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vael-about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.45);
+}
+.vael-about-hero__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vael-about-hero__title {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 52px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+.vael-about-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.vael-about-content__block {
+  margin-bottom: 48px;
+}
+.vael-about-content__block:last-child {
+  margin-bottom: 0;
+}
+.vael-about-content__heading {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--vael-dark, #1a1a1a);
+  margin: 0 0 16px;
+}
+.vael-about-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--vael-muted, #8a8578);
+  margin: 0 0 14px;
+}
+.vael-about-content p:last-child {
+  margin-bottom: 0;
+}
+.vael-about-content__block--cta {
+  text-align: center;
+  padding-top: 16px;
+}
+.vael-about-content__signature {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 22px;
+  font-style: italic;
+  color: var(--vael-dark, #1a1a1a) !important;
+  margin-bottom: 28px !important;
+}
+.vael-about-content__btn {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--vael-dark, #1a1a1a);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  border-radius: 0;
+  transition: background 0.2s;
+}
+.vael-about-content__btn:hover {
+  background: var(--vael-warm, #c9a96e);
+  color: #fff;
+}
+
 /* ── RESPONSIVE ────────────────────────────── */
 @media (max-width: 768px) {
   .vael-hero {
@@ -487,6 +573,11 @@ html { scroll-behavior: smooth; }
   .vael-about__img-wrap { aspect-ratio: 16 / 10; }
   .vael-about__title { font-size: 26px; }
   .vael-about__text { text-align: center; }
+
+  /* About page */
+  .vael-about-hero { height: 40vh; }
+  .vael-about-hero__title { font-size: 36px; }
+  .vael-about-content__heading { font-size: 24px; }
 
   /* Reviews — horizontal scroll */
   .vael-reviews__grid {
