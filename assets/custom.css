@@ -291,7 +291,7 @@ html { scroll-behavior: smooth; }
 .vael-about__img-wrap {
   border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
 }
 .vael-about__img {
   width: 100%;
