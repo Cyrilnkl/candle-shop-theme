@@ -17,6 +17,14 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
+    "trust_bar": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"vael-trust\">\n  <div class=\"vael-trust__inner\">\n    <div class=\"vael-trust__item\">\n      <svg class=\"vael-trust__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M12 2L3 7v6c0 5.25 3.85 10.13 9 11 5.15-.87 9-5.75 9-11V7l-9-5z\"/><path d=\"M9 12l2 2 4-4\"/></svg>\n      <span class=\"vael-trust__text\">100% Natural &amp; Non-Toxic</span>\n    </div>\n    <div class=\"vael-trust__divider\"></div>\n    <div class=\"vael-trust__item\">\n      <svg class=\"vael-trust__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z\"/></svg>\n      <span class=\"vael-trust__text\">15,000+ Happy Customers</span>\n    </div>\n    <div class=\"vael-trust__divider\"></div>\n    <div class=\"vael-trust__item\">\n      <svg class=\"vael-trust__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>\n      <span class=\"vael-trust__text\">Express EU Delivery</span>\n    </div>\n    <div class=\"vael-trust__divider\"></div>\n    <div class=\"vael-trust__item\">\n      <svg class=\"vael-trust__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\"/><polyline points=\"17 6 23 6 23 12\"/></svg>\n      <span class=\"vael-trust__text\">Reusable &amp; Zero Waste</span>\n    </div>\n  </div>\n</div>",
+        "divider_style": "none",
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
     "bestsellers": {
       "type": "featured-collection-slider",
       "blocks": {
@@ -362,6 +370,7 @@
   },
   "order": [
     "hero",
+    "trust_bar",
     "bestsellers",
     "bundles",
     "how_it_works",
