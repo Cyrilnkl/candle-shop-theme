@@ -9,10 +9,10 @@
  */
 {
   "sections": {
-    "urgency_bar": {
+    "announcement": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"vael-urgency\">\n  <div class=\"vael-urgency__inner\">\n    <div class=\"vael-urgency__left\">\n      <span class=\"vael-urgency__badge\">LIMITED OFFER</span>\n      <span class=\"vael-urgency__text\">Free shipping on orders over &euro;50 + free wicks with every order</span>\n    </div>\n    <div class=\"vael-urgency__timer\">\n      <span class=\"vael-urgency__timer-label\">Ends in:</span>\n      <div class=\"vael-urgency__countdown\" id=\"vael-countdown\">\n        <div class=\"vael-urgency__time-block\"><span id=\"vael-hours\">02</span><small>hrs</small></div>\n        <span class=\"vael-urgency__sep\">:</span>\n        <div class=\"vael-urgency__time-block\"><span id=\"vael-mins\">47</span><small>min</small></div>\n        <span class=\"vael-urgency__sep\">:</span>\n        <div class=\"vael-urgency__time-block\"><span id=\"vael-secs\">33</span><small>sec</small></div>\n      </div>\n    </div>\n  </div>\n</div>\n<script>\n(function(){\n  var end=new Date();end.setHours(23,59,59,0);\n  function tick(){\n    var now=new Date(),d=end-now;\n    if(d<0){end.setDate(end.getDate()+1);d=end-now;}\n    var h=Math.floor(d/36e5),m=Math.floor((d%36e5)/6e4),s=Math.floor((d%6e4)/1e3);\n    var eh=document.getElementById('vael-hours'),em=document.getElementById('vael-mins'),es=document.getElementById('vael-secs');\n    if(eh){eh.textContent=String(h).padStart(2,'0');em.textContent=String(m).padStart(2,'0');es.textContent=String(s).padStart(2,'0');}\n  }\n  tick();setInterval(tick,1000);\n})();\n</script>",
+        "custom_liquid": "<div class=\"vc-marquee\">\n  <div class=\"vc-marquee__track\">\n    <span class=\"vc-marquee__item\">Free EU Shipping on Orders Over &euro;50</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">Free Wicks Included with Every Order</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">100% Natural &middot; Reusable &middot; Zero Waste</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">Trusted by 15,000+ Customers Across Europe</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">Free EU Shipping on Orders Over &euro;50</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">Free Wicks Included with Every Order</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">100% Natural &middot; Reusable &middot; Zero Waste</span>\n    <span class=\"vc-marquee__dot\"></span>\n    <span class=\"vc-marquee__item\">Trusted by 15,000+ Customers Across Europe</span>\n    <span class=\"vc-marquee__dot\"></span>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-none"
       }
@@ -20,7 +20,7 @@
     "collection_header": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"vael-coll-header\">\n  <h1 class=\"vael-coll-header__title\">{{ collection.title | default: 'All Products' }}</h1>\n  <p class=\"vael-coll-header__count\">{{ collection.products_count | default: '0' }} products</p>\n  <div class=\"vael-coll-header__badges\">\n    <span class=\"vael-coll-badge\">&#x1f331; 100% Natural</span>\n    <span class=\"vael-coll-badge\">&#x267b;&#xfe0f; Reusable Forever</span>\n    <span class=\"vael-coll-badge\">&#x1f69a; Free EU Shipping 50&euro;+</span>\n  </div>\n</div>",
+        "custom_liquid": "<div class=\"vc-header\">\n  <div class=\"vc-header__inner\">\n    <p class=\"vc-header__eyebrow\">The Collection</p>\n    <h1 class=\"vc-header__title\">{{ collection.title | default: 'Our Products' }}</h1>\n    <p class=\"vc-header__desc\">{{ collection.description | default: 'Pour, place a wick, light. Transform any bowl into a beautiful candle in seconds.' }}</p>\n    <div class=\"vc-header__promises\">\n      <div class=\"vc-header__promise\">\n        <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z\"/></svg>\n        <span>Natural Ingredients</span>\n      </div>\n      <div class=\"vc-header__promise\">\n        <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"1\" y=\"3\" width=\"15\" height=\"13\"/><polygon points=\"16 8 20 8 23 11 23 16 16 16 16 8\"/><circle cx=\"5.5\" cy=\"18.5\" r=\"2.5\"/><circle cx=\"18.5\" cy=\"18.5\" r=\"2.5\"/></svg>\n        <span>Free Shipping &euro;50+</span>\n      </div>\n      <div class=\"vc-header__promise\">\n        <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"/></svg>\n        <span>15,000+ Happy Customers</span>\n      </div>\n      <div class=\"vc-header__promise\">\n        <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"23 4 23 10 17 10\"/><path d=\"M20.49 15a9 9 0 1 1-2.12-9.36L23 10\"/></svg>\n        <span>Reusable Forever</span>\n      </div>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-none"
       }
@@ -69,12 +69,12 @@
         "divider_style": "none"
       }
     },
-    "social_proof": {
+    "testimonial": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"vael-social-proof\">\n  <div class=\"vael-social-proof__inner\">\n    <div class=\"vael-social-proof__item\">\n      <span class=\"vael-social-proof__number\">15,000+</span>\n      <span class=\"vael-social-proof__label\">Happy Customers</span>\n    </div>\n    <div class=\"vael-social-proof__divider\"></div>\n    <div class=\"vael-social-proof__item\">\n      <span class=\"vael-social-proof__number\">4.9/5</span>\n      <span class=\"vael-social-proof__label\">Average Rating</span>\n    </div>\n    <div class=\"vael-social-proof__divider\"></div>\n    <div class=\"vael-social-proof__item\">\n      <span class=\"vael-social-proof__number\">48h</span>\n      <span class=\"vael-social-proof__label\">EU Express Delivery</span>\n    </div>\n  </div>\n</div>",
+        "custom_liquid": "<div class=\"vc-testimonial\">\n  <div class=\"vc-testimonial__inner\">\n    <div class=\"vc-testimonial__stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n    <blockquote class=\"vc-testimonial__quote\">&ldquo;I poured it into a vintage bowl I thrifted and it looks SO beautiful. I light it every night now &mdash; the whole room feels peaceful.&rdquo;</blockquote>\n    <cite class=\"vc-testimonial__author\">&mdash; Emma, verified buyer</cite>\n    <div class=\"vc-testimonial__rating\">4.9 out of 5 &middot; Based on 847 reviews</div>\n  </div>\n</div>",
         "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
+        "section_padding": "section--vertical-padding-none"
       }
     },
     "newsletter_compact": {
@@ -84,10 +84,10 @@
           "type": "text_content",
           "settings": {
             "width": "600",
-            "title": "Get 10% Off Your First Order",
+            "title": "Join the Vael Family",
             "heading_tag": "h2",
             "heading_font_class": "fs-heading-3-base",
-            "text": "<p>Join the Vael family and be the first to know about new drops, limited editions, and exclusive offers.</p>",
+            "text": "<p>Sign up for 10% off your first order, plus early access to new collections and exclusive offers.</p>",
             "text_font_class": "fs-body-100"
           }
         },
@@ -105,12 +105,12 @@
       "settings": {
         "spacing_mode": "between",
         "alignment": "left",
-        "background_color": "#2c2c2c",
-        "text_color": "#ffffff",
-        "input_color": "#000000",
+        "background_color": "#1a1a1a",
+        "text_color": "#faf8f5",
+        "input_color": "#1a1a1a",
         "input_background": "#ffffff",
-        "button_background_color": "#000000",
-        "button_text_color": "#ffffff",
+        "button_background_color": "#c9a96e",
+        "button_text_color": "#1a1a1a",
         "overlay_opacity": 0,
         "enable_animation": true,
         "divider_style": "none",
@@ -119,11 +119,11 @@
     }
   },
   "order": [
-    "urgency_bar",
+    "announcement",
     "collection_header",
     "banner",
     "product-grid",
-    "social_proof",
+    "testimonial",
     "newsletter_compact"
   ]
 }
