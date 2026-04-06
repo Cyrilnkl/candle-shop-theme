@@ -21,6 +21,19 @@
 
 html { scroll-behavior: smooth; }
 
+/* ── ANNOUNCEMENT BAR ──────────────────────── */
+.announcement-bar p,
+.announcement-bar a,
+.announcement-bar span,
+.announcement-bar__slide,
+.announcement-bar__content {
+  font-family: var(--vael-sans) !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+}
+
 /* ── HERO SECTION ──────────────────────────── */
 .vael-hero {
   position: relative;
