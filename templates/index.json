@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_hero_main": {
@@ -14,7 +23,7 @@
         "subheading_hero": {
           "type": "subheading",
           "settings": {
-            "subheading": "Just pour, insert the wick, and light it up — 100% natural, reusable, and mess-free.",
+            "subheading": "Just pour, insert the wick, and light it up. 100% natural, reusable, and mess-free.",
             "subheading_tag": "h2",
             "subheading_font_class": "fs-heading-5-base"
           }
@@ -22,7 +31,7 @@
         "button_hero": {
           "type": "button",
           "settings": {
-            "link": "shopify://collections/candle-sand",
+            "link": "/collections/all",
             "link_text": "SHOP BESTSELLERS",
             "button_style": "btn--primary"
           }
@@ -30,7 +39,7 @@
         "button_hero_2": {
           "type": "button",
           "settings": {
-            "link": "shopify://pages/how-it-works",
+            "link": "/pages/faq",
             "link_text": "HOW IT WORKS",
             "button_style": "btn--secondary"
           }
@@ -66,7 +75,7 @@
       "settings": {
         "min_height": 50,
         "min_height_mobile": 50,
-        "heading": "🌿 100% Natural  ·  🔥 80+ Hours Burn  ·  ♻️ Reusable  ·  🚚 Fast Delivery",
+        "heading": "100% Natural  |  80+ Hours Burn  |  Reusable  |  Fast Delivery",
         "heading_tag": "p",
         "text": "",
         "link": "",
@@ -89,10 +98,10 @@
     "featured_bestsellers": {
       "type": "featured-collection-slider",
       "settings": {
-        "collection": "candle-sand",
+        "collection": "",
         "heading": "Bestsellers",
         "heading_tag": "h2",
-        "subheading": "<p>Our most-loved candle sand sets — trusted by thousands.</p>",
+        "subheading": "<p>Our most-loved candle sand sets - trusted by thousands.</p>",
         "link_text": "Shop All",
         "limit": 8,
         "columns": "4",
@@ -110,15 +119,15 @@
           "settings": {
             "focal_point": "image_presentation",
             "title": "1. Pour",
-            "text": "<p>Pour the Candle Sand into any heat-resistant container — a bowl, a vase, a jar.</p>"
+            "text": "<p>Pour the Candle Sand into any heat-resistant container.</p>"
           }
         },
         "step_2": {
           "type": "image",
           "settings": {
             "focal_point": "image_presentation",
-            "title": "2. Insert & Light",
-            "text": "<p>Place the cotton wick in the center and light it up for a warm, inviting glow.</p>"
+            "title": "2. Insert and Light",
+            "text": "<p>Place the cotton wick in the center and light it up.</p>"
           }
         },
         "step_3": {
@@ -126,7 +135,7 @@
           "settings": {
             "focal_point": "image_presentation",
             "title": "3. Refresh",
-            "text": "<p>When the wick burns down, simply replace it. Your candle is brand new again.</p>"
+            "text": "<p>When the wick burns down, simply replace it.</p>"
           }
         }
       },
@@ -138,9 +147,9 @@
       "settings": {
         "heading": "How Does It Work?",
         "heading_tag": "h2",
-        "subheading": "<p>It's super easy — just 3 steps!</p>",
+        "subheading": "<p>Just 3 simple steps!</p>",
         "link": "",
-        "link_text": "Full Tutorial",
+        "link_text": "",
         "columns": "3",
         "mobile_columns": "1",
         "loop_carousel": false,
@@ -155,7 +164,7 @@
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "why_lumea": {
+    "why_vael": {
       "type": "image-with-text",
       "blocks": {
         "heading_why": {
@@ -169,7 +178,7 @@
         "subheading_why": {
           "type": "subheading",
           "settings": {
-            "subheading": "A safer, smarter way to enjoy candlelight. Our candle sand is made from 100% natural plant-based wax — no paraffin, no toxins, no synthetic additives. Clean-burning, reusable, and designed for any container you love.",
+            "subheading": "A safer, smarter way to enjoy candlelight. Our candle sand is made from 100% natural plant-based wax. No paraffin, no toxins, no synthetic additives. Clean-burning, reusable, and designed for any container you love.",
             "subheading_tag": "p",
             "subheading_font_class": "fs-heading-6-base"
           }
@@ -177,7 +186,7 @@
         "button_why": {
           "type": "button",
           "settings": {
-            "link": "shopify://pages/about-us",
+            "link": "/pages/about",
             "link_text": "Our Story",
             "button_style": "btn--primary"
           }
@@ -209,10 +218,10 @@
     "featured_bundles": {
       "type": "featured-collection-slider",
       "settings": {
-        "collection": "bundles",
-        "heading": "Bundle & Save",
+        "collection": "",
+        "heading": "Bundle and Save",
         "heading_tag": "h2",
-        "subheading": "<p>Curated sets with everything you need — save up to 20%.</p>",
+        "subheading": "<p>Curated sets with everything you need - save up to 20%.</p>",
         "link_text": "View All Bundles",
         "limit": 6,
         "columns": "3",
@@ -226,10 +235,10 @@
       "type": "multi-column",
       "blocks": {
         "usp_1": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "leaf",
-            "title": "100% Natural & Vegan",
+            "heading": "100% Natural and Vegan",
             "heading_tag": "h3",
             "text": "<p>Premium plant-based wax with no synthetic additives or harmful chemicals. Safe for you and your family.</p>",
             "link": "",
@@ -237,10 +246,10 @@
           }
         },
         "usp_2": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "stopwatch",
-            "title": "80+ Hours of Burn",
+            "heading": "80+ Hours of Burn",
             "heading_tag": "h3",
             "text": "<p>One 650g pouch delivers extended glow for your home or events. Just replace the wick and keep going.</p>",
             "link": "",
@@ -248,10 +257,10 @@
           }
         },
         "usp_3": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "package-closed",
-            "title": "Reusable & Mess-Free",
+            "heading": "Reusable and Mess-Free",
             "heading_tag": "h3",
             "text": "<p>No melted wax pooling. No cleanup. Just pour, light, and enjoy. Refill when needed.</p>",
             "link": "",
@@ -259,12 +268,12 @@
           }
         },
         "usp_4": {
-          "type": "text_column",
+          "type": "icon_column",
           "settings": {
             "icon": "chat",
-            "title": "Works In Any Container",
+            "heading": "Works In Any Container",
             "heading_tag": "h3",
-            "text": "<p>From ceramic bowls to glass jars to vintage vases — it's candlelight, your way.</p>",
+            "text": "<p>From ceramic bowls to glass jars to vintage vases - candlelight, your way.</p>",
             "link": "",
             "link_text": ""
           }
@@ -296,8 +305,8 @@
         "quote_1": {
           "type": "quote",
           "settings": {
-            "quote": "<p>\"Honestly, I didn't know what to expect. Never heard of candle sand before, but this stuff is genius. I poured it into an old ceramic bowl and boom — <strong>instant candle</strong>. Looks amazing.\"</p>",
-            "title": "Emily R. — Verified Buyer ★★★★★",
+            "quote": "<p>Honestly, I did not know what to expect. Never heard of candle sand before, but this stuff is genius. I poured it into an old ceramic bowl and it looks amazing.</p>",
+            "title": "Emily R. - Verified Buyer",
             "quote_tag": "h4",
             "font_size": "small"
           }
@@ -305,8 +314,8 @@
         "quote_2": {
           "type": "quote",
           "settings": {
-            "quote": "<p>\"I used an old mug I was about to throw away and turned it into the cutest little candle. Didn't think it would look this good. <strong>I'm obsessed.</strong>\"</p>",
-            "title": "Sarah L. — Verified Buyer ★★★★★",
+            "quote": "<p>I used an old mug I was about to throw away and turned it into the cutest little candle. I am obsessed.</p>",
+            "title": "Sarah L. - Verified Buyer",
             "quote_tag": "h4",
             "font_size": "small"
           }
@@ -314,8 +323,8 @@
         "quote_3": {
           "type": "quote",
           "settings": {
-            "quote": "<p>\"As an event planner, candle sand is the best invention I've come across — <strong>incredibly easy, versatile, and sustainable</strong>. My clients love it.\"</p>",
-            "title": "Jessica M. — Verified Buyer ★★★★★",
+            "quote": "<p>As an event planner, candle sand is the best invention I have come across. Incredibly easy, versatile, and sustainable. My clients love it.</p>",
+            "title": "Jessica M. - Verified Buyer",
             "quote_tag": "h4",
             "font_size": "small"
           }
@@ -323,8 +332,8 @@
         "quote_4": {
           "type": "quote",
           "settings": {
-            "quote": "<p>\"Poured it in a glass jar, added a wick — instant cozy candle. <strong>Looks designer. Lasts way longer than I thought.</strong> Already ordered 3 more packs.\"</p>",
-            "title": "Michael B. — Verified Buyer ★★★★★",
+            "quote": "<p>Poured it in a glass jar, added a wick - instant cozy candle. Looks designer. Lasts way longer than I thought. Already ordered 3 more packs.</p>",
+            "title": "Michael B. - Verified Buyer",
             "quote_tag": "h4",
             "font_size": "small"
           }
@@ -349,8 +358,8 @@
     "featured_bowls": {
       "type": "featured-collection-slider",
       "settings": {
-        "collection": "ceramic-bowls",
-        "heading": "Ceramic Bowls & Vases",
+        "collection": "",
+        "heading": "Ceramic Bowls and Vases",
         "heading_tag": "h2",
         "subheading": "<p>Handpicked containers designed to complement your candle sand.</p>",
         "link_text": "Shop Bowls",
@@ -365,10 +374,10 @@
     "gift_ideas": {
       "type": "featured-collection-slider",
       "settings": {
-        "collection": "gift-ideas",
+        "collection": "",
         "heading": "Gift Ideas",
         "heading_tag": "h2",
-        "subheading": "<p>Perfect gifts for candle lovers — beautifully packaged and ready to give.</p>",
+        "subheading": "<p>Perfect gifts for candle lovers - beautifully packaged and ready to give.</p>",
         "link_text": "Shop Gifts",
         "limit": 6,
         "columns": "3",
@@ -383,10 +392,10 @@
       "settings": {
         "min_height": 70,
         "min_height_mobile": 70,
-        "heading": "Wholesale & Partnerships",
+        "heading": "Wholesale and Partnerships",
         "heading_tag": "h2",
-        "text": "<p>Exceptional candle sand, tailored for your business. Hotels, restaurants, event planners — let's talk.</p>",
-        "link": "shopify://pages/contact",
+        "text": "<p>Exceptional candle sand, tailored for your business. Hotels, restaurants, event planners - let us talk.</p>",
+        "link": "/pages/contact",
         "link_text": "ENQUIRE NOW",
         "button_style": "btn--secondary",
         "focal_point": "image_presentation",
@@ -416,7 +425,7 @@
             "subheading": "",
             "subheading_tag": "h3",
             "subheading_font_class": "fs-heading-6-base",
-            "text": "<p><strong>Want 10% off?</strong> Sign up and receive a coupon code to use on your next order.</p>",
+            "text": "<p>Want 10% off? Sign up and receive a coupon code to use on your next order.</p>",
             "text_font_class": "fs-body-75"
           }
         },
@@ -457,7 +466,7 @@
     "promotion_bar_trust",
     "featured_bestsellers",
     "how_it_works",
-    "why_lumea",
+    "why_vael",
     "featured_bundles",
     "usp_section",
     "testimonials_section",
