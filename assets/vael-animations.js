@@ -1,6 +1,17 @@
-/* Vael Candle — Scroll animations */
+/* Vael Candle — Scroll animations + header height */
 (function() {
   'use strict';
+
+  /* Dynamically set --header-height so hero fills exactly one screen */
+  function setHeaderHeight() {
+    var header = document.querySelector('.header-group') || document.querySelector('header');
+    if (header) {
+      document.documentElement.style.setProperty('--header-height', header.offsetHeight + 'px');
+    }
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
