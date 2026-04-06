@@ -63,6 +63,7 @@
     {%- render 'theme-globals' -%}
 
     {{ content_for_header }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body class="template-{{ request.page_type | handle }}">
@@ -100,6 +101,7 @@
 
     {{ '//www.youtube.com/iframe_api' | script_tag }}
     {{ '//cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css' | stylesheet_tag }}
+    <script src="{{ 'vael-animations.js' | asset_url }}" defer></script>
   </body>
   <link
     rel="preload"
