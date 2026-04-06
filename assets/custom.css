@@ -25,7 +25,7 @@ html { scroll-behavior: smooth; }
 .vael-hero {
   position: relative;
   width: 100%;
-  height: calc(100dvh - var(--header-height, 110px));
+  height: calc(85dvh - var(--header-height, 110px));
   min-height: 0;
   display: flex;
   align-items: center;
