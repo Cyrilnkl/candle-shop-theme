@@ -280,6 +280,112 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 
+/* ── ABOUT US ──────────────────────────────── */
+.vael-about { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.vael-about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.vael-about__img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+.vael-about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.vael-about__label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vael-warm, #c9a96e);
+  display: block;
+  margin-bottom: 12px;
+}
+.vael-about__title {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--vael-dark, #1a1a1a);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+.vael-about__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--vael-muted, #8a8578);
+  margin: 0 0 16px;
+}
+.vael-about__link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vael-dark, #1a1a1a);
+  text-decoration: none;
+  border-bottom: 1px solid var(--vael-dark, #1a1a1a);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.vael-about__link:hover {
+  color: var(--vael-warm, #c9a96e);
+  border-color: var(--vael-warm, #c9a96e);
+}
+
+/* ── REVIEWS ───────────────────────────────── */
+.vael-reviews { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.vael-reviews__header { text-align: center; margin-bottom: 48px; }
+.vael-reviews__title {
+  font-family: var(--vael-serif, 'Cormorant Garamond', serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--vael-dark, #1a1a1a);
+  margin: 0 0 12px;
+}
+.vael-reviews__stars {
+  font-size: 20px;
+  color: var(--vael-warm, #c9a96e);
+}
+.vael-reviews__rating {
+  font-size: 14px;
+  color: var(--vael-muted, #8a8578);
+  margin-left: 6px;
+}
+.vael-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.vael-reviews__card {
+  background: var(--vael-cream, #f5f0e8);
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.vael-reviews__card-stars {
+  font-size: 16px;
+  color: var(--vael-warm, #c9a96e);
+  margin-bottom: 14px;
+}
+.vael-reviews__quote {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--vael-dark, #1a1a1a);
+  margin: 0 0 16px;
+  flex: 1;
+}
+.vael-reviews__author {
+  font-size: 13px;
+  color: var(--vael-muted, #8a8578);
+  font-weight: 500;
+}
+
 /* ── RESPONSIVE ────────────────────────────── */
 @media (max-width: 768px) {
   .vael-hero {
@@ -372,5 +478,31 @@ html { scroll-behavior: smooth; }
     scroll-snap-align: start;
   }
   .vael-steps__header { margin-bottom: 32px; }
+
+  /* About */
+  .vael-about__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .vael-about__img-wrap { aspect-ratio: 16 / 10; }
+  .vael-about__title { font-size: 26px; }
+  .vael-about__text { text-align: center; }
+
+  /* Reviews — horizontal scroll */
+  .vael-reviews__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .vael-reviews__grid::-webkit-scrollbar { display: none; }
+  .vael-reviews__card {
+    flex: 0 0 80vw;
+    scroll-snap-align: start;
+  }
+  .vael-reviews__header { margin-bottom: 32px; }
 }
 

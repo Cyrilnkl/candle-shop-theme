@@ -145,129 +145,18 @@
         "section_padding": "section--vertical-padding-none"
       }
     },
-    "wholesale": {
-      "type": "image-with-text",
-      "blocks": {
-        "wholesale_accent": {
-          "type": "accent",
-          "settings": {
-            "accent": "WANT TO BECOME A B2B PARTNER?"
-          }
-        },
-        "wholesale_heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Wholesale Options",
-            "heading_tag": "h2",
-            "heading_font_class": "fs-heading-display-3"
-          }
-        },
-        "wholesale_text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Exceptional candles, tailored for your business. Hotels, restaurants, event planners — we offer competitive wholesale pricing and dedicated support.</p>",
-            "text_font_class": "fs-body-100"
-          }
-        },
-        "wholesale_button": {
-          "type": "button",
-          "settings": {
-            "link": "/pages/contact",
-            "link_text": "Enquire Now",
-            "button_style": "btn--primary"
-          }
-        }
-      },
-      "block_order": [
-        "wholesale_accent",
-        "wholesale_heading",
-        "wholesale_text",
-        "wholesale_button"
-      ],
+    "about_us": {
+      "type": "custom-liquid",
       "settings": {
-        "image_position": "left",
-        "text_alignment": "center",
-        "aspect_ratio": "square",
-        "focal_point": "image_presentation",
-        "image_caption": "",
-        "show_small_image": false,
-        "background_color": "",
-        "text_color": "#000000",
-        "button_background_color": "#000000",
-        "button_text_color": "#ffffff",
-        "enable_animation": true,
+        "custom_liquid": "<div class=\"vael-about\">\n  <div class=\"vael-about__inner\">\n    <div class=\"vael-about__img-wrap\">\n      <img src=\"{{ 'vael-founder.jpg' | asset_url }}\" alt=\"Clara, fondatrice de Vael Candle\" class=\"vael-about__img\" loading=\"lazy\">\n    </div>\n    <div class=\"vael-about__text\">\n      <span class=\"vael-about__label\">Our Story</span>\n      <h2 class=\"vael-about__title\">Born from a Passion for Candles</h2>\n      <p class=\"vael-about__desc\">It all started in my tiny Parisian apartment, surrounded by jars of wax and wicks. I've been obsessed with candles since I was a teenager &mdash; the soft glow, the warmth, the way they turn any space into a sanctuary.</p>\n      <p class=\"vael-about__desc\">When I discovered candle sand, everything changed. No more mess, no more wasted wax, just pure creativity. I knew I had to share this with the world. Vael Candle was born from that spark &mdash; a one-woman brand built on love, simplicity, and the belief that everyone deserves a little light in their day.</p>\n      <a href=\"/pages/about\" class=\"vael-about__link\">Read the full story &rarr;</a>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
       }
     },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "review_1": {
-          "type": "testimonial",
-          "settings": {
-            "image_position": "right",
-            "aspect_ratio": "square",
-            "focal_point": "image_presentation",
-            "show_rating": true,
-            "rating": 5,
-            "quote": "Unique and easy to use! As someone who loves candles but isn't crafty, Candle Sand was perfect for me. It's simple to use, and the instructions are straightforward. I love how I can change the look of my candles anytime!",
-            "author": "– Gabby G."
-          }
-        },
-        "review_2": {
-          "type": "testimonial",
-          "settings": {
-            "image_position": "right",
-            "aspect_ratio": "square",
-            "focal_point": "image_presentation",
-            "show_rating": true,
-            "rating": 5,
-            "quote": "I bought this for my wife as a gift and she absolutely loved it. The candle sand is so easy to use and looks beautiful in our ceramic bowl. Will be ordering more for other rooms!",
-            "author": "– Thomas R."
-          }
-        },
-        "review_3": {
-          "type": "testimonial",
-          "settings": {
-            "image_position": "right",
-            "aspect_ratio": "square",
-            "focal_point": "image_presentation",
-            "show_rating": true,
-            "rating": 5,
-            "quote": "Finally a candle that doesn't leave a mess! The candle sand is incredible — no soot, no dripping wax, and I love that it's completely natural. My whole family feels safer using these.",
-            "author": "– Sarah M."
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
+    "reviews": {
+      "type": "custom-liquid",
       "settings": {
-        "image_size": "small",
-        "quote_font": "heading",
-        "text_color": "#000000",
-        "enable_animation": true,
-        "divider_style": "none",
-        "section_padding": "section--vertical-padding-top-bottom"
-      }
-    },
-    "blog": {
-      "type": "blog-posts",
-      "settings": {
-        "heading": "Candle Sand Blog",
-        "link_text": "View all posts",
-        "display_type": "all",
-        "max_articles": 3,
-        "show_tags": true,
-        "show_author": false,
-        "show_date": true,
-        "show_excerpt": true,
-        "show_featured_image": true,
-        "aspect_ratio": "landscape",
-        "enable_animation": true,
+        "custom_liquid": "<div class=\"vael-reviews\">\n  <div class=\"vael-reviews__header\">\n    <h2 class=\"vael-reviews__title\">What Our Customers Say</h2>\n    <div class=\"vael-reviews__stars\">&#9733;&#9733;&#9733;&#9733;&#9733; <span class=\"vael-reviews__rating\">4.9/5 &mdash; 2,400+ reviews</span></div>\n  </div>\n  <div class=\"vael-reviews__grid\">\n    <div class=\"vael-reviews__card\">\n      <div class=\"vael-reviews__card-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-reviews__quote\">&ldquo;Unique and easy to use! As someone who loves candles but isn't crafty, Candle Sand was perfect for me. I can change the look of my candles anytime!&rdquo;</p>\n      <span class=\"vael-reviews__author\">&mdash; Gabby G.</span>\n    </div>\n    <div class=\"vael-reviews__card\">\n      <div class=\"vael-reviews__card-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-reviews__quote\">&ldquo;I bought this for my wife and she absolutely loved it. The candle sand is so easy to use and looks beautiful in our ceramic bowl. Ordering more!&rdquo;</p>\n      <span class=\"vael-reviews__author\">&mdash; Thomas R.</span>\n    </div>\n    <div class=\"vael-reviews__card\">\n      <div class=\"vael-reviews__card-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-reviews__quote\">&ldquo;No soot, no dripping wax, and completely natural. My whole family feels safer using these. The best candle alternative I've ever tried.&rdquo;</p>\n      <span class=\"vael-reviews__author\">&mdash; Sarah M.</span>\n    </div>\n    <div class=\"vael-reviews__card\">\n      <div class=\"vael-reviews__card-stars\">&#9733;&#9733;&#9733;&#9733;&#9733;</div>\n      <p class=\"vael-reviews__quote\">&ldquo;I'm obsessed! The pearl texture is gorgeous and it burns so cleanly. Already gifted three sets to friends. They all want more.&rdquo;</p>\n      <span class=\"vael-reviews__author\">&mdash; Emma L.</span>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-top-bottom"
       }
@@ -322,9 +211,8 @@
     "ceramic_bowls",
     "gift_ideas",
     "video_tutorial",
-    "wholesale",
-    "testimonials",
-    "blog",
+    "about_us",
+    "reviews",
     "newsletter"
   ]
 }
