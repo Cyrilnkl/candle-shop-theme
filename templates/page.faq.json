@@ -14,7 +14,7 @@
         "faq_subtitle": {
           "type": "text",
           "settings": {
-            "text": "<p>Everything you need to know about Lumea Candle Sand. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us</a>.</p>",
+            "text": "<p>Everything you need to know about Vael Candle Sand. Can't find what you're looking for? <a href=\"/pages/contact\">Contact us</a>.</p>",
             "text_font_class": "fs-body-100"
           }
         }
@@ -47,7 +47,7 @@
         "q2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is Lumea Candle Sand scented?",
+            "heading": "Is Vael Candle Sand scented?",
             "heading_tag": "h3",
             "row_content": "<p>Our candle sand is intentionally <strong>unscented</strong>, giving you the freedom to personalize your candle's aroma. Simply add a few drops of your favorite essential oil or candle fragrance oil close to the wick before lighting.</p><p><em>Important: Never add oil to an already burning candle — oils are highly flammable.</em></p>",
             "page_for_content": ""
