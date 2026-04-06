@@ -49,9 +49,9 @@ html { scroll-behavior: smooth; }
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(26,26,26,0.15) 0%,
-    rgba(26,26,26,0.5) 60%,
-    rgba(26,26,26,0.75) 100%);
+    rgba(26,26,26,0.45) 0%,
+    rgba(26,26,26,0.65) 50%,
+    rgba(26,26,26,0.8) 100%);
 }
 .vael-hero__content {
   position: relative;

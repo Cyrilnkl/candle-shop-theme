@@ -12,7 +12,7 @@
     "hero": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"vael-hero\">\n  <img src=\"{{ 'vael-hero.jpg' | asset_url }}\" alt=\"Candle sand in a beautiful ceramic bowl\" class=\"vael-hero__img\" loading=\"eager\">\n  <div class=\"vael-hero__overlay\"></div>\n  <div class=\"vael-hero__content\">\n    <h1 class=\"vael-hero__title\">Create Candles<br>In Any Bowl</h1>\n    <p class=\"vael-hero__subtitle\">Just pour Candle Sand, insert the wick, and light it up &mdash; a 100% natural, unscented, and non-toxic candle.</p>\n    <div class=\"vael-hero__buttons\">\n      <a href=\"/collections/candle-sand\" class=\"vael-hero__cta\">SHOP BESTSELLERS &rarr;</a>\n      <a href=\"/pages/instructions\" class=\"vael-hero__cta-secondary\">HOW TO USE &rarr;</a>\n    </div>\n  </div>\n</div>",
+        "custom_liquid": "<div class=\"vael-hero\">\n  <img src=\"{{ 'vael-hero-new.jpg' | asset_url }}\" alt=\"Candle sand pearl wax beads in glass jars with wicks\" class=\"vael-hero__img\" loading=\"eager\">\n  <div class=\"vael-hero__overlay\"></div>\n  <div class=\"vael-hero__content\">\n    <h1 class=\"vael-hero__title\">Create Candles<br>In Any Bowl</h1>\n    <p class=\"vael-hero__subtitle\">Just pour Candle Sand, insert the wick, and light it up &mdash; a 100% natural, unscented, and non-toxic candle.</p>\n    <div class=\"vael-hero__buttons\">\n      <a href=\"/collections/candle-sand\" class=\"vael-hero__cta\">SHOP BESTSELLERS &rarr;</a>\n      <a href=\"/pages/instructions\" class=\"vael-hero__cta-secondary\">HOW TO USE &rarr;</a>\n    </div>\n  </div>\n</div>",
         "divider_style": "none",
         "section_padding": "section--vertical-padding-none"
       }
