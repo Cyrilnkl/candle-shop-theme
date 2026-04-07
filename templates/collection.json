@@ -9,11 +9,19 @@
  */
 {
   "sections": {
+    "collection_header": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"vc-collection-header\">\n  <div class=\"vc-collection-header__inner\">\n    <p class=\"vc-collection-header__eyebrow\">Vael Candle</p>\n    <h1 class=\"vc-collection-header__title\">{{ collection.title }}</h1>\n    <p class=\"vc-collection-header__desc\">Candle sand, mèches, bols en céramique et kits complets — tout ce qu'il faut pour créer des bougies uniques dans n'importe quel récipient. Simple, réutilisable, à l'infini.</p>\n    <div class=\"vc-collection-header__usps\">\n      <span class=\"vc-collection-header__usp\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><polyline points=\"22 4 12 14.01 9 11.01\"/></svg> Livraison express</span>\n      <span class=\"vc-collection-header__usp\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><polyline points=\"22 4 12 14.01 9 11.01\"/></svg> Eco-friendly & réutilisable</span>\n      <span class=\"vc-collection-header__usp\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><polyline points=\"22 4 12 14.01 9 11.01\"/></svg> Satisfait ou remboursé</span>\n    </div>\n  </div>\n</div>",
+        "section_padding": "section--vertical-padding-none"
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
-        "show_breadcrumbs": true,
-        "show_collection_description": true,
+        "show_breadcrumbs": false,
+        "show_collection_description": false,
         "show_collection_image": false,
         "image_aspect": "custom",
         "desktop_height": 100,
@@ -54,6 +62,7 @@
     }
   },
   "order": [
+    "collection_header",
     "banner",
     "product-grid"
   ]
