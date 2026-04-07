@@ -397,10 +397,70 @@
       }
     },
     "vael_reviews": {
-      "type": "custom-liquid",
+      "type": "vael-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "author": "Emily R.",
+            "rating": 5,
+            "text": "I poured it into an old ceramic bowl and it looked absolutely stunning. So easy to set up — literally took 30 seconds. The flame is calm and clean, no smoke at all.",
+            "verified": true
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "author": "Sarah L.",
+            "rating": 5,
+            "text": "Bought this as a gift for my sister and she was obsessed. The candle sand concept is genius — you can reuse the same bowl forever. Way better than regular candles.",
+            "verified": true
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "author": "Tom K.",
+            "rating": 5,
+            "text": "Used it in a glass jar on my dinner table. Looks designer-level honestly. Burns clean, lasts long, and you can just add more sand when it runs low. Will buy again.",
+            "verified": true
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "author": "Jessica M.",
+            "rating": 4,
+            "text": "Really cool concept. I love that it's eco-friendly and unscented so I can add my own oils. Shipping was fast too. Only wish the bag was a bit bigger!",
+            "verified": true
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "author": "Anna G.",
+            "rating": 5,
+            "text": "I've reused 4 containers already — old mugs, a vase, a coconut shell. This stuff just works. Clean burn, no mess, and it feels so satisfying to make your own candle.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5"
+      ],
       "settings": {
-        "custom_liquid": "<div class=\"vael-product-reviews\">\n  <div class=\"vael-product-reviews__inner\">\n    {% render 'vael-reviews-data' %}\n\n    <div class=\"vael-product-reviews__form-wrap\">\n      <button class=\"vael-product-reviews__toggle-btn\" onclick=\"this.parentElement.classList.toggle('is-open')\">Write a Review</button>\n      <div class=\"vael-product-reviews__form-container\">\n        {% form 'contact' %}\n          <input type=\"hidden\" name=\"contact[product_title]\" value=\"{{ product.title }}\">\n          <input type=\"hidden\" name=\"contact[product_handle]\" value=\"{{ product.handle }}\">\n          <input type=\"hidden\" name=\"contact[subject]\" value=\"New Review: {{ product.title }}\">\n          <div class=\"vael-product-reviews__form-grid\">\n            <div class=\"vael-product-reviews__field\">\n              <label for=\"review-name\">Name</label>\n              <input type=\"text\" id=\"review-name\" name=\"contact[name]\" required placeholder=\"Your name\">\n            </div>\n            <div class=\"vael-product-reviews__field\">\n              <label for=\"review-email\">Email</label>\n              <input type=\"email\" id=\"review-email\" name=\"contact[email]\" required placeholder=\"your@email.com\">\n            </div>\n          </div>\n          <div class=\"vael-product-reviews__field\">\n            <label>Rating</label>\n            <div class=\"vael-product-reviews__star-input\" id=\"star-input\">\n              {% for i in (1..5) %}\n                <button type=\"button\" class=\"vael-star-btn\" data-rating=\"{{ i }}\" onclick=\"document.querySelectorAll('.vael-star-btn').forEach(function(b,idx){b.classList.toggle('active',idx<{{ i }})});document.getElementById('review-rating-val').value='{{ i }}'\">\n                  <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/></svg>\n                </button>\n              {% endfor %}\n              <input type=\"hidden\" id=\"review-rating-val\" name=\"contact[rating]\" value=\"5\" required>\n            </div>\n          </div>\n          <div class=\"vael-product-reviews__field\">\n            <label for=\"review-body\">Your Review</label>\n            <textarea id=\"review-body\" name=\"contact[body]\" rows=\"4\" required placeholder=\"Tell us about your experience...\"></textarea>\n          </div>\n          <button type=\"submit\" class=\"vael-product-reviews__submit\">Submit Review</button>\n        {% endform %}\n      </div>\n    </div>\n  </div>\n</div>",
-        "section_padding": "section--vertical-padding-top-bottom"
+        "average_rating": "4.9",
+        "total_reviews": "47",
+        "bar_5": 82,
+        "bar_4": 12,
+        "bar_3": 4,
+        "bar_2": 1,
+        "bar_1": 1,
+        "show_form": true
       }
     }
   },

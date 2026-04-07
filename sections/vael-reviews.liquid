@@ -1,0 +1,245 @@
+<div class="vael-product-reviews">
+  <div class="vael-product-reviews__inner">
+
+    {%- comment -%} ── RATING SUMMARY HEADER ── {%- endcomment -%}
+    <div class="vael-product-reviews__header">
+      <div class="vael-product-reviews__header-left">
+        <span class="vael-product-reviews__big-number">{{ section.settings.average_rating }}</span>
+        <div class="vael-product-reviews__header-meta">
+          <div class="vael-product-reviews__stars-big">{% render 'star-rating', rating: 5 %}</div>
+          <span class="vael-product-reviews__count">Based on {{ section.settings.total_reviews }} reviews</span>
+        </div>
+      </div>
+      <div class="vael-product-reviews__bars">
+        <div class="vael-product-reviews__bar-row">
+          <span class="vael-product-reviews__bar-label">5 ★</span>
+          <div class="vael-product-reviews__bar-track"><div class="vael-product-reviews__bar-fill" style="width:{{ section.settings.bar_5 }}%"></div></div>
+        </div>
+        <div class="vael-product-reviews__bar-row">
+          <span class="vael-product-reviews__bar-label">4 ★</span>
+          <div class="vael-product-reviews__bar-track"><div class="vael-product-reviews__bar-fill" style="width:{{ section.settings.bar_4 }}%"></div></div>
+        </div>
+        <div class="vael-product-reviews__bar-row">
+          <span class="vael-product-reviews__bar-label">3 ★</span>
+          <div class="vael-product-reviews__bar-track"><div class="vael-product-reviews__bar-fill" style="width:{{ section.settings.bar_3 }}%"></div></div>
+        </div>
+        <div class="vael-product-reviews__bar-row">
+          <span class="vael-product-reviews__bar-label">2 ★</span>
+          <div class="vael-product-reviews__bar-track"><div class="vael-product-reviews__bar-fill" style="width:{{ section.settings.bar_2 }}%"></div></div>
+        </div>
+        <div class="vael-product-reviews__bar-row">
+          <span class="vael-product-reviews__bar-label">1 ★</span>
+          <div class="vael-product-reviews__bar-track"><div class="vael-product-reviews__bar-fill" style="width:{{ section.settings.bar_1 }}%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%} ── REVIEW CARDS ── {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="vael-product-reviews__list">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'review' -%}
+            <div class="vael-product-reviews__card" {{ block.shopify_attributes }}>
+              <div class="vael-product-reviews__card-top">
+                <div class="vael-product-reviews__avatar">{{ block.settings.author | slice: 0 | upcase }}</div>
+                <div class="vael-product-reviews__card-info">
+                  <p class="vael-product-reviews__card-author">{{ block.settings.author }}</p>
+                  {%- if block.settings.verified -%}
+                    <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+                  {%- endif -%}
+                </div>
+                <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: block.settings.rating %}</div>
+              </div>
+              <p class="vael-product-reviews__card-text">"{{ block.settings.text }}"</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} ── REVIEW FORM ── {%- endcomment -%}
+    {%- if section.settings.show_form -%}
+      <div class="vael-product-reviews__form-wrap">
+        <button class="vael-product-reviews__toggle-btn" onclick="this.parentElement.classList.toggle('is-open')">Write a Review</button>
+        <div class="vael-product-reviews__form-container">
+          {% form 'contact' %}
+            <input type="hidden" name="contact[product_title]" value="{{ product.title }}">
+            <input type="hidden" name="contact[product_handle]" value="{{ product.handle }}">
+            <input type="hidden" name="contact[subject]" value="New Review: {{ product.title }}">
+            <div class="vael-product-reviews__form-grid">
+              <div class="vael-product-reviews__field">
+                <label for="review-name">Name</label>
+                <input type="text" id="review-name" name="contact[name]" required placeholder="Your name">
+              </div>
+              <div class="vael-product-reviews__field">
+                <label for="review-email">Email</label>
+                <input type="email" id="review-email" name="contact[email]" required placeholder="your@email.com">
+              </div>
+            </div>
+            <div class="vael-product-reviews__field">
+              <label>Rating</label>
+              <div class="vael-product-reviews__star-input" id="star-input">
+                {%- for i in (1..5) -%}
+                  <button type="button" class="vael-star-btn" data-rating="{{ i }}" onclick="document.querySelectorAll('.vael-star-btn').forEach(function(b,idx){b.classList.toggle('active',idx<{{ i }})});document.getElementById('review-rating-val').value='{{ i }}'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </button>
+                {%- endfor -%}
+                <input type="hidden" id="review-rating-val" name="contact[rating]" value="5" required>
+              </div>
+            </div>
+            <div class="vael-product-reviews__field">
+              <label for="review-body">Your Review</label>
+              <textarea id="review-body" name="contact[body]" rows="4" required placeholder="Tell us about your experience..."></textarea>
+            </div>
+            <button type="submit" class="vael-product-reviews__submit">Submit Review</button>
+          {% endform %}
+        </div>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "⭐ Reviews Manager",
+  "tag": "section",
+  "class": "vael-reviews-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "📊 Rating Summary"
+    },
+    {
+      "type": "text",
+      "id": "average_rating",
+      "label": "Average Rating",
+      "default": "4.9",
+      "info": "Displayed as the big number (e.g. 4.9)"
+    },
+    {
+      "type": "text",
+      "id": "total_reviews",
+      "label": "Total Reviews",
+      "default": "47",
+      "info": "Total number of reviews to display"
+    },
+    {
+      "type": "header",
+      "content": "📈 Rating Distribution"
+    },
+    {
+      "type": "range",
+      "id": "bar_5",
+      "label": "5 Stars %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 82,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "bar_4",
+      "label": "4 Stars %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 12,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "bar_3",
+      "label": "3 Stars %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 4,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "bar_2",
+      "label": "2 Stars %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "bar_1",
+      "label": "1 Star %",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "⚙️ Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_form",
+      "label": "Show review submission form",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Jane D."
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review Text",
+          "default": "Amazing product! Would definitely recommend."
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verified Buyer",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "⭐ Reviews Manager",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "author": "Emily R.",
+            "rating": 5,
+            "text": "I poured it into an old ceramic bowl and it looked absolutely stunning. So easy to set up — literally took 30 seconds. The flame is calm and clean, no smoke at all.",
+            "verified": true
+          }
+        }
+      ]
+    }
+  ],
+  "templates": ["product"]
+}
+{% endschema %}
