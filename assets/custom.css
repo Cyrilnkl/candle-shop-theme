@@ -621,7 +621,7 @@ html { scroll-behavior: smooth; }
 
 /* ── COLLECTION HEADER ─────────────────────── */
 .vc-collection-header {
-  background: var(--vael-cream);
+  background: transparent;
   padding: 60px 24px 48px;
   text-align: center;
 }
