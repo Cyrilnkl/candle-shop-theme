@@ -1,0 +1,102 @@
+{% comment %}
+  ============================================
+  VAEL CANDLE — Reviews Manager
+  ============================================
+  
+  TO ADD A REVIEW:
+  Copy a review block below and fill in the details.
+  
+  TO DELETE A REVIEW:
+  Remove the entire <div class="vael-product-reviews__card"> block.
+  
+  Then push with:
+  shopify theme push --store vael-candle.myshopify.com --theme 196882104668 --allow-live --only snippets/vael-reviews-data.liquid
+  
+  FIELDS:
+  - rating: number 1-5 (used in star-rating)
+  - verified: add the <span> line or remove it
+  - text: the review content in quotes
+  - author: reviewer name
+  ============================================
+{% endcomment %}
+
+{% comment %} — SUMMARY (edit the numbers here) — {% endcomment %}
+{% assign vael_review_avg = "4.9" %}
+{% assign vael_review_total = 47 %}
+
+<div class="vael-product-reviews__header">
+  <h2 class="vael-product-reviews__title">Customer Reviews</h2>
+  <div class="vael-product-reviews__summary">
+    <div class="vael-product-reviews__stars-big">{% render 'star-rating', rating: 5 %}</div>
+    <span class="vael-product-reviews__avg">{{ vael_review_avg }}/5</span>
+    <span class="vael-product-reviews__count">Based on {{ vael_review_total }} reviews</span>
+  </div>
+</div>
+
+<div class="vael-product-reviews__list">
+
+  {% comment %} ——— REVIEW 1 ——— {% endcomment %}
+  <div class="vael-product-reviews__card">
+    <div class="vael-product-reviews__card-top">
+      <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: 5 %}</div>
+      <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+    </div>
+    <p class="vael-product-reviews__card-text">"I poured it into an old ceramic bowl and it looked absolutely stunning. So easy to set up — literally took 30 seconds. The flame is calm and clean, no smoke at all."</p>
+    <p class="vael-product-reviews__card-author">— Emily R.</p>
+  </div>
+
+  {% comment %} ——— REVIEW 2 ——— {% endcomment %}
+  <div class="vael-product-reviews__card">
+    <div class="vael-product-reviews__card-top">
+      <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: 5 %}</div>
+      <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+    </div>
+    <p class="vael-product-reviews__card-text">"Bought this as a gift for my sister and she was obsessed. The candle sand concept is genius — you can reuse the same bowl forever. Way better than regular candles."</p>
+    <p class="vael-product-reviews__card-author">— Sarah L.</p>
+  </div>
+
+  {% comment %} ——— REVIEW 3 ——— {% endcomment %}
+  <div class="vael-product-reviews__card">
+    <div class="vael-product-reviews__card-top">
+      <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: 5 %}</div>
+      <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+    </div>
+    <p class="vael-product-reviews__card-text">"Used it in a glass jar on my dinner table. Looks designer-level honestly. Burns clean, lasts long, and you can just add more sand when it runs low. Will buy again."</p>
+    <p class="vael-product-reviews__card-author">— Tom K.</p>
+  </div>
+
+  {% comment %} ——— REVIEW 4 ——— {% endcomment %}
+  <div class="vael-product-reviews__card">
+    <div class="vael-product-reviews__card-top">
+      <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: 4 %}</div>
+      <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+    </div>
+    <p class="vael-product-reviews__card-text">"Really cool concept. I love that it's eco-friendly and unscented so I can add my own oils. Shipping was fast too. Only wish the bag was a bit bigger!"</p>
+    <p class="vael-product-reviews__card-author">— Jessica M.</p>
+  </div>
+
+  {% comment %} ——— REVIEW 5 ——— {% endcomment %}
+  <div class="vael-product-reviews__card">
+    <div class="vael-product-reviews__card-top">
+      <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: 5 %}</div>
+      <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+    </div>
+    <p class="vael-product-reviews__card-text">"I've reused 4 containers already — old mugs, a vase, a coconut shell. This stuff just works. Clean burn, no mess, and it feels so satisfying to make your own candle."</p>
+    <p class="vael-product-reviews__card-author">— Anna G.</p>
+  </div>
+
+  {% comment %} ——— ADD NEW REVIEWS BELOW ——— {% endcomment %}
+  {% comment %}
+  TEMPLATE — copy this block and fill in:
+  
+  <div class="vael-product-reviews__card">
+    <div class="vael-product-reviews__card-top">
+      <div class="vael-product-reviews__card-stars">{% render 'star-rating', rating: 5 %}</div>
+      <span class="vael-product-reviews__verified">✓ Verified Buyer</span>
+    </div>
+    <p class="vael-product-reviews__card-text">"YOUR REVIEW TEXT HERE"</p>
+    <p class="vael-product-reviews__card-author">— NAME HERE</p>
+  </div>
+  {% endcomment %}
+
+</div>
