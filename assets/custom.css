@@ -622,7 +622,7 @@ html { scroll-behavior: smooth; }
 /* ── COLLECTION HEADER ─────────────────────── */
 .vc-collection-header {
   background: transparent;
-  padding: 60px 24px 48px;
+  padding: 32px 24px 40px;
   text-align: center;
 }
 .vc-collection-header__inner {
@@ -668,7 +668,7 @@ html { scroll-behavior: smooth; }
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: var(--vael-dark);
+  color: var(--vael-muted);
 }
 .vc-collection-header__usp svg {
   color: var(--vael-warm);
@@ -677,7 +677,7 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 768px) {
   .vc-collection-header {
-    padding: 40px 20px 32px;
+    padding: 20px 20px 28px;
   }
   .vc-collection-header__usps {
     flex-direction: column;
