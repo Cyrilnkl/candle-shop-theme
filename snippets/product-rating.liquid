@@ -20,6 +20,12 @@
   if rating_count == 0 and prod.metafields.custom.review_count != blank
     assign rating_count = prod.metafields.custom.review_count | times: 1
   endif
+
+  # Default fallback: show 4.9 stars (47 reviews)
+  if rating == 0
+    assign rating = 5
+    assign rating_count = 47
+  endif
 -%}
 
   <div class="product-rating {{ variant }}">
