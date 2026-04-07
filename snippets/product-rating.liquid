@@ -1,15 +1,24 @@
 {%- liquid
   assign reviews = prod.metafields.reviews
   assign rating_count = 0
+  assign rating = 0
 
+  # Try standard reviews metafields first (from apps)
   if reviews.rating_count != blank
     assign rating_count = reviews.rating_count
   endif
 
-  assign rating = 0
   if reviews.rating.value != blank and reviews.rating.value.scale_max != blank
-    # normalize on a 0-5 scale
     assign rating = reviews.rating.value.rating | times: 5.0 | divided_by: reviews.rating.value.scale_max | ceil
+  endif
+
+  # Fallback to custom metafields (manual control)
+  if rating == 0 and prod.metafields.custom.rating != blank
+    assign rating = prod.metafields.custom.rating | times: 1.0
+  endif
+
+  if rating_count == 0 and prod.metafields.custom.review_count != blank
+    assign rating_count = prod.metafields.custom.review_count | times: 1
   endif
 -%}
 

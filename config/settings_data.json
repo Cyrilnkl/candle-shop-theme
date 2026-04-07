@@ -65,7 +65,7 @@
     "show_product_card_chips": true,
     "product_listing_aspect_ratio": "square",
     "product_listing_media_fit": "cover",
-    "product_listing_show_rating": false,
+    "product_listing_show_rating": true,
     "product_listing_show_discount": false,
     "product_listing_discount_format": "sale_text",
     "product_listing_show_sale_badge": true,
@@ -90,29 +90,7 @@
     "social_tiktok_link": "https://www.tiktok.com/@vael.candle",
     "social_twitter_link": "",
     "favicon": "shopify://shop_images/Capture_d_ecran_2025-10-07_a_17.12.05.png",
-    "content_for_index": [],
-    "blocks": {
-      "1525695905981083756": {
-        "type": "shopify://apps/air-reviews-1/blocks/app-embed/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
-        "disabled": false,
-        "settings": {}
-      },
-      "4188547153274344210": {
-        "type": "shopify://apps/easy-bundle/blocks/app/491a753a-7e8b-4c89-a6fb-9028a1df000b",
-        "disabled": false,
-        "settings": {}
-      },
-      "13768625480086291342": {
-        "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
-        "disabled": false,
-        "settings": {}
-      },
-      "3991723993231535834": {
-        "type": "shopify://apps/trackbee-connect/blocks/trackbee/4ee1d514-671e-48bf-bd4e-9373f4af089a",
-        "disabled": false,
-        "settings": {}
-      }
-    }
+    "content_for_index": []
   },
   "presets": {
     "Vogue": {
