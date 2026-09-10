@@ -38,32 +38,16 @@
   <div class="slideshow__inner swiper">
     <div class="slideshow__carousel swiper-wrapper" data-slideshow>
       {%- for block in section.blocks -%}
-        {%-
-          render 'slideshow-slide' with
-          block: block,
-          index: forloop.index,
-          is_single_slide: is_single_slide
-        -%}
+        {%- render 'slideshow-slide' with block, block: block, index: forloop.index, is_single_slide: is_single_slide -%}
       {%- else -%}
         {%- for i in (1..2) -%}
-          {%-
-            render 'slideshow-slide' with
-            index: forloop.index,
-          -%}
+          {%- render 'slideshow-slide' with index, index: forloop.index -%}
         {%- endfor -%}
       {%- endfor -%}
     </div>
 
     {%- if section.blocks.size > 1 or section.blocks.size == 0 -%}
-      {%-
-        render 'slideshow-navigation' with
-        duration_autoplay: duration_autoplay,
-        navigation_alignment: section.settings.navigation_alignment,
-        navigation_color_foreground: section.settings.navigation_color_foreground,
-        navigation_color_background: section.settings.navigation_color_background,
-        navigation_background_opacity: section.settings.navigation_background_opacity,
-        enable_autoplay: enable_autoplay
-      -%}
+      {%- render 'slideshow-navigation' with duration_autoplay, duration_autoplay: duration_autoplay, navigation_alignment: section.settings.navigation_alignment, navigation_color_foreground: section.settings.navigation_color_foreground, navigation_color_background: section.settings.navigation_color_background, navigation_background_opacity: section.settings.navigation_background_opacity, enable_autoplay: enable_autoplay -%}
     {%- endif -%}
   </div>
 </div>
@@ -613,3 +597,43 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'slideshow-slide' with
+              block: block,
+              index: forloop.index,
+              is_single_slide: is_single_slide
+            -%}
+  to: "{%- render 'slideshow-slide' with block, block: block, index: forloop.index,
+    is_single_slide: is_single_slide -%}"
+  position: 1250..1363
+- from: |-
+    {%-
+                render 'slideshow-slide' with
+                index: forloop.index,
+              -%}
+  to: "{%- render 'slideshow-slide' with index, index: forloop.index -%}"
+  position: 1425..1490
+- from: |-
+    {%-
+            render 'slideshow-navigation' with
+            duration_autoplay: duration_autoplay,
+            navigation_alignment: section.settings.navigation_alignment,
+            navigation_color_foreground: section.settings.navigation_color_foreground,
+            navigation_color_background: section.settings.navigation_color_background,
+            navigation_background_opacity: section.settings.navigation_background_opacity,
+            enable_autoplay: enable_autoplay
+          -%}
+  to: "{%- render 'slideshow-navigation' with duration_autoplay, duration_autoplay:
+    duration_autoplay, navigation_alignment: section.settings.navigation_alignment,
+    navigation_color_foreground: section.settings.navigation_color_foreground, navigation_color_background:
+    section.settings.navigation_color_background, navigation_background_opacity: section.settings.navigation_background_opacity,
+    enable_autoplay: enable_autoplay -%}"
+  position: 1620..2042
+{% endcomment %}

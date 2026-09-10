@@ -7,7 +7,7 @@
 
 {%- capture meganav_primary -%}
   <div class="meganav__primary">
-    {% render 'meganav-nav' with meganav_settings: meganav_settings, link: link %}
+    {% render 'meganav-nav' with meganav_settings, meganav_settings: meganav_settings, link: link %}
   </div>
 {%- endcapture -%}
 
@@ -26,14 +26,7 @@
         {%- if meganav_settings.link != blank -%}
           <a href="{{ meganav_settings.link }}" class="meganav__promo-image-link">
         {%- endif -%}
-        {%- render 'image' with
-          wrapper_class: "meganav__promo-image",
-          image: meganav_settings.image,
-          sizes_px: meganav_settings.promo_width,
-          focal_point: meganav_settings.focal_point,
-          include_placeholder: true,
-          aspect_ratio: "externally_set"
-        -%}
+        {%- render 'image' with wrapper_class, wrapper_class: "meganav__promo-image", image: meganav_settings.image, sizes_px: meganav_settings.promo_width, focal_point: meganav_settings.focal_point, include_placeholder: true, aspect_ratio: "externally_set" -%}
         {%- if meganav_settings.link != blank -%}
           </a>
         {%- endif -%}
@@ -45,15 +38,7 @@
             <h3 class="ff-heading fs-heading-4-base meganav__secondary-promo-text-heading">{{ meganav_settings.promo_text }}</h3>
           {% endunless %}
           {% if meganav_settings.link and meganav_settings.link != blank %}
-            {%- render 'button-block' with
-              wrapper_class: "meganav__secondary-promo-text-button",
-              label: meganav_settings.link_text,
-              link: meganav_settings.link,
-              button_style: 'btn--secondary',
-              is_overlay: true,
-              is_x_small: true,
-              allow_linkless: true,
-            -%}
+            {%- render 'button-block' with wrapper_class, wrapper_class: "meganav__secondary-promo-text-button", label: meganav_settings.link_text, link: meganav_settings.link, button_style: 'btn--secondary', is_overlay: true, is_x_small: true, allow_linkless: true -%}
           {% endif %}
         </div>
       </div>
@@ -108,3 +93,43 @@
     {% endif %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'meganav-nav' with meganav_settings: meganav_settings, link: link
+    %}"
+  to: "{% render 'meganav-nav' with meganav_settings, meganav_settings: meganav_settings,
+    link: link %}"
+  position: 337..433
+- from: |-
+    {%- render 'image' with
+              wrapper_class: "meganav__promo-image",
+              image: meganav_settings.image,
+              sizes_px: meganav_settings.promo_width,
+              focal_point: meganav_settings.focal_point,
+              include_placeholder: true,
+              aspect_ratio: "externally_set"
+            -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "meganav__promo-image",
+    image: meganav_settings.image, sizes_px: meganav_settings.promo_width, focal_point:
+    meganav_settings.focal_point, include_placeholder: true, aspect_ratio: "externally_set"
+    -%}'
+  position: 1042..1295
+- from: |-
+    {%- render 'button-block' with
+                  wrapper_class: "meganav__secondary-promo-text-button",
+                  label: meganav_settings.link_text,
+                  link: meganav_settings.link,
+                  button_style: 'btn--secondary',
+                  is_overlay: true,
+                  is_x_small: true,
+                  allow_linkless: true,
+                -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "meganav__secondary-promo-text-button",
+    label: meganav_settings.link_text, link: meganav_settings.link, button_style:
+    ''btn--secondary'', is_overlay: true, is_x_small: true, allow_linkless: true -%}'
+  position: 1802..2059
+{% endcomment %}

@@ -50,7 +50,7 @@
           >
             <span class="navigation__submenu-child-link">
               <label>{{ link.title }}</label>
-              {% render 'icon' with icon: 'chevron-small', class: "navigation__submenu-icon" %}
+              {% render 'icon' with icon, icon: 'chevron-small', class: "navigation__submenu-icon" %}
             </span>
           </a>
 
@@ -73,3 +73,15 @@
     {%- endfor -%}
   </ul>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''icon'' with icon: ''chevron-small'', class: "navigation__submenu-icon"
+    %}'
+  to: '{% render ''icon'' with icon, icon: ''chevron-small'', class: "navigation__submenu-icon"
+    %}'
+  position: 1451..1538
+{% endcomment %}

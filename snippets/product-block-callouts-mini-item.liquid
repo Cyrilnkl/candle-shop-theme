@@ -1,15 +1,10 @@
 {% if text != blank and text != '' %}
   <div class="product__callouts-mini-item fs-body-75">
     {%- if custom_icon_image != blank -%}
-      {%-
-        render 'image' with
-        wrapper_class: "product__callouts-mini-item-icon",
-        image: custom_icon_image,
-        sizes: "30px",
-      -%}
+      {%- render 'image' with wrapper_class, wrapper_class: "product__callouts-mini-item-icon", image: custom_icon_image, sizes: "30px" -%}
     {%- else -%}
       {% if icon and icon != 'none' %}
-        {% render 'icon-editorial' with class: "product__callouts-item-icon", icon: icon %}
+        {% render 'icon-editorial' with class, class: "product__callouts-item-icon", icon: icon %}
       {% endif %}
     {% endif %}
     <div class="product__callouts-mini-item-text ">
@@ -17,3 +12,25 @@
     </div>
   </div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+            render 'image' with
+            wrapper_class: "product__callouts-mini-item-icon",
+            image: custom_icon_image,
+            sizes: "30px",
+          -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "product__callouts-mini-item-icon",
+    image: custom_icon_image, sizes: "30px" -%}'
+  position: 141..274
+- from: '{% render ''icon-editorial'' with class: "product__callouts-item-icon", icon:
+    icon %}'
+  to: '{% render ''icon-editorial'' with class, class: "product__callouts-item-icon",
+    icon: icon %}'
+  position: 339..429
+{% endcomment %}

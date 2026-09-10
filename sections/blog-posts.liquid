@@ -23,13 +23,7 @@
       </div>
     {%- endunless -%}
     {%- if section.settings.link_text -%}
-      {%-
-        render 'button-block' with
-        wrapper_class: "blog-posts__header-button section-introduction__button",
-        link: button_link,
-        label: section.settings.link_text,
-        button_style: "btn--callout"
-      -%}
+      {%- render 'button-block' with wrapper_class, wrapper_class: "blog-posts__header-button section-introduction__button", link: button_link, label: section.settings.link_text, button_style: "btn--callout" -%}
     {%- endif -%}
   </div>
 {%- endcapture -%}
@@ -55,33 +49,14 @@
     {%- if section.settings.display_type == 'selected' and section.blocks.size > 0 -%}
       {%- for block in section.blocks -%}
         {%- if block.settings.article != blank -%}
-          {%
-            render 'article-item' with
-            blog_article: block.settings.article,
-            aspect_ratio: section.settings.aspect_ratio,
-            show_author: section.settings.show_author,
-            show_date: section.settings.show_date,
-            show_tags: section.settings.show_tags,
-            show_excerpt: section.settings.show_excerpt,
-            show_featured_image: section.settings.show_featured_image
-          %}
+          {% render 'article-item' with blog_article, blog_article: block.settings.article, aspect_ratio: section.settings.aspect_ratio, show_author: section.settings.show_author, show_date: section.settings.show_date, show_tags: section.settings.show_tags, show_excerpt: section.settings.show_excerpt, show_featured_image: section.settings.show_featured_image %}
         {%- else -%}
-          {% render 'article-item' with aspect_ratio: section.settings.aspect_ratio %}
+          {% render 'article-item' with aspect_ratio, aspect_ratio: section.settings.aspect_ratio %}
         {%- endif -%}
       {%- endfor -%}
     {%- elsif section.settings.display_type == 'all' and blog != blank and blog.articles.size > 0 -%}
       {%- for blog_article in blog.articles limit: section.settings.max_articles -%}
-        {%
-          render 'article-item' with
-          blog_article: blog_article,
-          blog: blog,
-          aspect_ratio: section.settings.aspect_ratio,
-          show_author: section.settings.show_author,
-          show_date: section.settings.show_date,
-          show_tags: section.settings.show_tags,
-          show_excerpt: section.settings.show_excerpt,
-          show_featured_image: section.settings.show_featured_image
-        %}
+        {% render 'article-item' with blog_article, blog_article: blog_article, blog: blog, aspect_ratio: section.settings.aspect_ratio, show_author: section.settings.show_author, show_date: section.settings.show_date, show_tags: section.settings.show_tags, show_excerpt: section.settings.show_excerpt, show_featured_image: section.settings.show_featured_image %}
       {%- endfor -%}
     {%- elsif section.settings.display_type != 'selected' -%}
       {%- for i in (1..section.settings.max_articles) -%}
@@ -284,3 +259,62 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+            render 'button-block' with
+            wrapper_class: "blog-posts__header-button section-introduction__button",
+            link: button_link,
+            label: section.settings.link_text,
+            button_style: "btn--callout"
+          -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "blog-posts__header-button
+    section-introduction__button", link: button_link, label: section.settings.link_text,
+    button_style: "btn--callout" -%}'
+  position: 876..1081
+- from: |-
+    {%
+                render 'article-item' with
+                blog_article: block.settings.article,
+                aspect_ratio: section.settings.aspect_ratio,
+                show_author: section.settings.show_author,
+                show_date: section.settings.show_date,
+                show_tags: section.settings.show_tags,
+                show_excerpt: section.settings.show_excerpt,
+                show_featured_image: section.settings.show_featured_image
+              %}
+  to: "{% render 'article-item' with blog_article, blog_article: block.settings.article,
+    aspect_ratio: section.settings.aspect_ratio, show_author: section.settings.show_author,
+    show_date: section.settings.show_date, show_tags: section.settings.show_tags,
+    show_excerpt: section.settings.show_excerpt, show_featured_image: section.settings.show_featured_image
+    %}"
+  position: 1796..2149
+- from: "{% render 'article-item' with aspect_ratio: section.settings.aspect_ratio
+    %}"
+  to: "{% render 'article-item' with aspect_ratio, aspect_ratio: section.settings.aspect_ratio
+    %}"
+  position: 2181..2271
+- from: |-
+    {%
+              render 'article-item' with
+              blog_article: blog_article,
+              blog: blog,
+              aspect_ratio: section.settings.aspect_ratio,
+              show_author: section.settings.show_author,
+              show_date: section.settings.show_date,
+              show_tags: section.settings.show_tags,
+              show_excerpt: section.settings.show_excerpt,
+              show_featured_image: section.settings.show_featured_image
+            %}
+  to: "{% render 'article-item' with blog_article, blog_article: blog_article, blog:
+    blog, aspect_ratio: section.settings.aspect_ratio, show_author: section.settings.show_author,
+    show_date: section.settings.show_date, show_tags: section.settings.show_tags,
+    show_excerpt: section.settings.show_excerpt, show_featured_image: section.settings.show_featured_image
+    %}"
+  position: 2510..2865
+{% endcomment %}

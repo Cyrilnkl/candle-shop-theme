@@ -34,16 +34,10 @@
           </div>
         {%- endunless -%}
 
-        {%-
-          render 'button-block' with
-          wrapper_class: "collection-list-slider__button section-introduction__button",
-          link: section.settings.link,
-          label: section.settings.link_text,
-          button_style: "btn--callout"
-        -%}
+        {%- render 'button-block' with wrapper_class, wrapper_class: "collection-list-slider__button section-introduction__button", link: section.settings.link, label: section.settings.link_text, button_style: "btn--callout" -%}
       </div>
 
-      {%- render 'carousel-navigation' with wrapper_class: 'animation--controls' %}
+      {%- render 'carousel-navigation' with wrapper_class, wrapper_class: 'animation--controls' %}
     </div>
 
     <div
@@ -58,30 +52,12 @@
       <div class="collection-list-slider__collections carousel__wrapper swiper-wrapper">
         {%- for collection in section.settings.collection_list -%}
           <div class="collection-list-slider__collection carousel__slide swiper-slide">
-            {%
-              render 'collection-item' with
-              collection: collection,
-              aspect_ratio: section.settings.collection_listing_aspect_ratio,
-              label_style: section.settings.label_style,
-              overlay_text_color: section.settings.overlay_text_color,
-              overlay_title_background: section.settings.overlay_title_background,
-              overlay_title_background_style: section.settings.overlay_title_background_style
-              image_sizes: image_sizes,
-            %}
+            {% render 'collection-item' with collection, collection: collection, aspect_ratio: section.settings.collection_listing_aspect_ratio, label_style: section.settings.label_style, overlay_text_color: section.settings.overlay_text_color, overlay_title_background: section.settings.overlay_title_background, overlay_title_background_style: section.settings.overlay_title_background_style, image_sizes: image_sizes %}
           </div>
         {%- else -%}
           {%- for i in (1..8) -%}
             <div class="collection-list-slider__collection carousel__slide swiper-slide">
-              {%
-                render 'collection-item' with
-                aspect_ratio: section.settings.collection_listing_aspect_ratio,
-                label_style: section.settings.label_style,
-                overlay_text_color: section.settings.overlay_text_color,
-                overlay_title_background: section.settings.overlay_title_background,
-                overlay_title_background_style: section.settings.overlay_title_background_style,
-                placeholder: true,
-                image_sizes: image_sizes,
-              %}
+              {% render 'collection-item' with aspect_ratio, aspect_ratio: section.settings.collection_listing_aspect_ratio, label_style: section.settings.label_style, overlay_text_color: section.settings.overlay_text_color, overlay_title_background: section.settings.overlay_title_background, overlay_title_background_style: section.settings.overlay_title_background_style, placeholder: true, image_sizes: image_sizes %}
             </div>
           {%- endfor -%}
         {%- endfor -%}
@@ -330,3 +306,61 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'button-block' with
+              wrapper_class: "collection-list-slider__button section-introduction__button",
+              link: section.settings.link,
+              label: section.settings.link_text,
+              button_style: "btn--callout"
+            -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "collection-list-slider__button
+    section-introduction__button", link: section.settings.link, label: section.settings.link_text,
+    button_style: "btn--callout" -%}'
+  position: 1567..1787
+- from: "{%- render 'carousel-navigation' with wrapper_class: 'animation--controls'
+    %}"
+  to: "{%- render 'carousel-navigation' with wrapper_class, wrapper_class: 'animation--controls'
+    %}"
+  position: 1808..1900
+- from: |-
+    {%
+                  render 'collection-item' with
+                  collection: collection,
+                  aspect_ratio: section.settings.collection_listing_aspect_ratio,
+                  label_style: section.settings.label_style,
+                  overlay_text_color: section.settings.overlay_text_color,
+                  overlay_title_background: section.settings.overlay_title_background,
+                  overlay_title_background_style: section.settings.overlay_title_background_style
+                  image_sizes: image_sizes,
+                %}
+  to: "{% render 'collection-item' with collection, collection: collection, aspect_ratio:
+    section.settings.collection_listing_aspect_ratio, label_style: section.settings.label_style,
+    overlay_text_color: section.settings.overlay_text_color, overlay_title_background:
+    section.settings.overlay_title_background, overlay_title_background_style: section.settings.overlay_title_background_style,
+    image_sizes: image_sizes %}"
+  position: 2408..2818
+- from: |-
+    {%
+                    render 'collection-item' with
+                    aspect_ratio: section.settings.collection_listing_aspect_ratio,
+                    label_style: section.settings.label_style,
+                    overlay_text_color: section.settings.overlay_text_color,
+                    overlay_title_background: section.settings.overlay_title_background,
+                    overlay_title_background_style: section.settings.overlay_title_background_style,
+                    placeholder: true,
+                    image_sizes: image_sizes,
+                  %}
+  to: "{% render 'collection-item' with aspect_ratio, aspect_ratio: section.settings.collection_listing_aspect_ratio,
+    label_style: section.settings.label_style, overlay_text_color: section.settings.overlay_text_color,
+    overlay_title_background: section.settings.overlay_title_background, overlay_title_background_style:
+    section.settings.overlay_title_background_style, placeholder: true, image_sizes:
+    image_sizes %}"
+  position: 2995..3402
+{% endcomment %}

@@ -59,18 +59,7 @@
             data-media-type="{{ media.media_type }}"
             data-product-media-wrapper
           >
-            {%
-              render 'media' with
-              media: media,
-              fallback_alt: product.title,
-              featured_media: featured_media,
-              link: product_link,
-              enable_product_lightbox: section.settings.enable_product_lightbox,
-              loop_video: section.settings.enable_video_looping,
-              aspect_ratio: section.settings.image_aspect_ratio,
-              sizes: "300px",
-              within_carousel: false
-            %}
+            {% render 'media' with media, media: media, fallback_alt: product.title, featured_media: featured_media, link: product_link, enable_product_lightbox: section.settings.enable_product_lightbox, loop_video: section.settings.enable_video_looping, aspect_ratio: section.settings.image_aspect_ratio, sizes: "300px", within_carousel: false %}
           </div>
         {%- else -%}
           <div class="product__media-item placeholder-image">
@@ -83,28 +72,9 @@
       <div class="quick-product--right-viewport" data-scroll-lock-ignore>
         <div class="quick-product--right-inner animation animation--quick-view-items">
           <div class="quick-product--header-block-wrap">
-            {%-
-              render 'product-block-header' with
-              product: product,
-              block_settings: section.settings,
-              current_variant: current_variant,
-              is_quick: true,
-              featured_media: featured_media,
-              price_content_type: price_content_type,
-              custom_price_content: custom_price_content
-            -%}
+            {%- render 'product-block-header' with product, product: product, block_settings: section.settings, current_variant: current_variant, is_quick: true, featured_media: featured_media, price_content_type: price_content_type, custom_price_content: custom_price_content -%}
           </div>
-          {%-
-            render 'product-blocks' with
-            prod: product,
-            blocks: section.blocks,
-            is_quick: true,
-            is_featured: false,
-            current_variant: current_variant,
-            featured_media: featured_media,
-            price_content_type: price_content_type,
-            custom_price_content: custom_price_content
-          -%}
+          {%- render 'product-blocks' with prod, prod: product, blocks: section.blocks, is_quick: true, is_featured: false, current_variant: current_variant, featured_media: featured_media, price_content_type: price_content_type, custom_price_content: custom_price_content -%}
 
           {% if section.settings.enable_gift_card_recipient and product.gift_card? -%}
             {% render 'gift-card-recipient-form', source: 'product-display', product: product %}
@@ -115,22 +85,13 @@
         <div class="quick-product--right-viewport-fade"></div>
       </div>
       <div class="quick-product--right-viewport--footer">
-        {%-
-          render 'product-block-buy-buttons' with
-          prod: product,
-          block: block,
-          blocks: section.blocks,
-          current_variant: current_variant,
-          is_quick: true,
-          price_content_type: price_content_type,
-          custom_price_content: custom_price_content
-        -%}
+        {%- render 'product-block-buy-buttons' with prod, prod: product, block: block, blocks: section.blocks, current_variant: current_variant, is_quick: true, price_content_type: price_content_type, custom_price_content: custom_price_content -%}
       </div>
     </div>
   </div>
 {%- endcapture -%}
 
-{% render 'quick-view-modal-base' with content: rendered_content, open: true %}
+{% render 'quick-view-modal-base' with content, content: rendered_content, open: true %}
 
 {% schema %}
 {
@@ -499,3 +460,81 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                  render 'media' with
+                  media: media,
+                  fallback_alt: product.title,
+                  featured_media: featured_media,
+                  link: product_link,
+                  enable_product_lightbox: section.settings.enable_product_lightbox,
+                  loop_video: section.settings.enable_video_looping,
+                  aspect_ratio: section.settings.image_aspect_ratio,
+                  sizes: "300px",
+                  within_carousel: false
+                %}
+  to: '{% render ''media'' with media, media: media, fallback_alt: product.title,
+    featured_media: featured_media, link: product_link, enable_product_lightbox: section.settings.enable_product_lightbox,
+    loop_video: section.settings.enable_video_looping, aspect_ratio: section.settings.image_aspect_ratio,
+    sizes: "300px", within_carousel: false %}'
+  position: 2367..2702
+- from: |-
+    {%-
+                  render 'product-block-header' with
+                  product: product,
+                  block_settings: section.settings,
+                  current_variant: current_variant,
+                  is_quick: true,
+                  featured_media: featured_media,
+                  price_content_type: price_content_type,
+                  custom_price_content: custom_price_content
+                -%}
+  to: "{%- render 'product-block-header' with product, product: product, block_settings:
+    section.settings, current_variant: current_variant, is_quick: true, featured_media:
+    featured_media, price_content_type: price_content_type, custom_price_content:
+    custom_price_content -%}"
+  position: 3203..3471
+- from: |-
+    {%-
+                render 'product-blocks' with
+                prod: product,
+                blocks: section.blocks,
+                is_quick: true,
+                is_featured: false,
+                current_variant: current_variant,
+                featured_media: featured_media,
+                price_content_type: price_content_type,
+                custom_price_content: custom_price_content
+              -%}
+  to: "{%- render 'product-blocks' with prod, prod: product, blocks: section.blocks,
+    is_quick: true, is_featured: false, current_variant: current_variant, featured_media:
+    featured_media, price_content_type: price_content_type, custom_price_content:
+    custom_price_content -%}"
+  position: 3499..3765
+- from: |-
+    {%-
+              render 'product-block-buy-buttons' with
+              prod: product,
+              block: block,
+              blocks: section.blocks,
+              current_variant: current_variant,
+              is_quick: true,
+              price_content_type: price_content_type,
+              custom_price_content: custom_price_content
+            -%}
+  to: "{%- render 'product-block-buy-buttons' with prod, prod: product, block: block,
+    blocks: section.blocks, current_variant: current_variant, is_quick: true, price_content_type:
+    price_content_type, custom_price_content: custom_price_content -%}"
+  position: 4205..4444
+- from: "{% render 'quick-view-modal-base' with content: rendered_content, open: true
+    %}"
+  to: "{% render 'quick-view-modal-base' with content, content: rendered_content,
+    open: true %}"
+  position: 4498..4586
+{% endcomment %}

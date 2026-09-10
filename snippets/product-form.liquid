@@ -88,7 +88,7 @@
                     <option>{{ option }}</option>
                   {%- endfor -%}
                 </select>
-                {% render 'icon' with icon: 'chevron-small' %}
+                {% render 'icon' with icon, icon: 'chevron-small' %}
               </div>
           {%- endcase -%}
         </label>
@@ -209,3 +209,13 @@
     %}
   {%- endif -%}
 {%- endform -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 3283..3335
+{% endcomment %}

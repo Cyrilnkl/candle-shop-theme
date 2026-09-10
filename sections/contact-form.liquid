@@ -248,7 +248,7 @@
                       >
                       <div class="contact-form-checkbox__content-inner">
                         <div class="contact-form-checkbox__input">
-                          {% render 'icon' with icon: 'checkmark' %}
+                          {% render 'icon' with icon, icon: 'checkmark' %}
                         </div>
                       </div>
                     </div>
@@ -293,7 +293,7 @@
                         </option>
                       {%- endfor -%}
                     </select>
-                    {% render 'icon' with icon: 'chevron-small' %}
+                    {% render 'icon' with icon, icon: 'chevron-small' %}
                   </div>
                 </div>
               {%- when 'radio' -%}
@@ -1098,3 +1098,16 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'checkmark' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark' %}"
+  position: 9301..9349
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 11111..11163
+{% endcomment %}

@@ -36,7 +36,7 @@
         data-filter-drawer-target="__tags"
         data-tags-dropdown
       >
-        {% render 'icon' with icon: 'filter' %}
+        {% render 'icon' with icon, icon: 'filter' %}
 
         {{ 'filters.title' | t }}
 
@@ -50,10 +50,23 @@
   {%- if show_sort -%}
     <div class="mobile-filters__group" data-group="{{ heading }}">
       <button type="button" class="mobile-filters__button" data-filter-drawer-target="__sort" data-sort-dropdown>
-        {% render 'icon' with icon: 'sort' %}
+        {% render 'icon' with icon, icon: 'sort' %}
 
         {{ 'filters.sort_title' | t }}
       </button>
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'filter' %}"
+  to: "{% render 'icon' with icon, icon: 'filter' %}"
+  position: 1056..1101
+- from: "{% render 'icon' with icon: 'sort' %}"
+  to: "{% render 'icon' with icon, icon: 'sort' %}"
+  position: 1536..1579
+{% endcomment %}

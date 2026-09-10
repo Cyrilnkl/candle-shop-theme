@@ -121,11 +121,11 @@
       {% endif %}
     >
       {%- if logo != blank -%}
-        {%- render 'image' with image: logo, wrapper_class: 'regular-logo', sizes: logo_sizes, prioritize_loading: true -%}
+        {%- render 'image' with image, image: logo, wrapper_class: 'regular-logo', sizes: logo_sizes, prioritize_loading: true -%}
       {%- endif -%}
 
       {%- if logo_transparent != blank -%}
-        {%- render 'image' with image: logo_transparent, wrapper_class: 'transparent-logo', sizes: logo_sizes, prioritize_loading: true -%}
+        {%- render 'image' with image, image: logo_transparent, wrapper_class: 'transparent-logo', sizes: logo_sizes, prioritize_loading: true -%}
       {%- endif -%}
 
       {%- if logo == blank or logo_transparent == blank -%}
@@ -150,8 +150,8 @@
     aria-controls="MainQuickSearch"
     aria-expanded="false"
   >
-    {% render 'icon-button' with icon: 'header-search' %}
-    {% render 'icon-button' with icon: 'header-menu-close' %}
+    {% render 'icon-button' with icon, icon: 'header-search' %}
+    {% render 'icon-button' with icon, icon: 'header-menu-close' %}
   </a>
 {%- endcapture -%}
 
@@ -161,7 +161,7 @@
     href="{{ routes.account_url }}"
     aria-label="{{ 'general.accessibility.go_account' | t }}"
   >
-    {% render 'icon-button' with icon: 'header-account' %}
+    {% render 'icon-button' with icon, icon: 'header-account' %}
   </a>
 {%- endcapture -%}
 
@@ -193,7 +193,7 @@
       data-direction="backwards"
       title="{{ 'general.accessibility.previous' | t }}"
     >
-      {% render 'icon' with icon: 'chevron' %}
+      {% render 'icon' with icon, icon: 'chevron' %}
     </button>
     <div class="scroll-overflow-indicator-wrap" data-position="start">
       <div class="scroll-overflow-indicator"></div>
@@ -202,9 +202,9 @@
       <div class="scroll-sentinal scroll-sentinal--start" data-position="start"></div>
       <nav class="header__links header__links-primary" data-navigation>
         {%- if menu == blank and secondary_menu != blank -%}
-          {% render 'navigation' with menu: secondary_links, blocks: section.blocks %}
+          {% render 'navigation' with menu, menu: secondary_links, blocks: section.blocks %}
         {%- else -%}
-          {% render 'navigation' with menu: links, blocks: section.blocks %}
+          {% render 'navigation' with menu, menu: links, blocks: section.blocks %}
         {%- endif -%}
       </nav>
       <div class="scroll-sentinal scroll-sentinal--end" data-position="end"></div>
@@ -218,7 +218,7 @@
       data-direction="forwards"
       title="{{ 'general.accessibility.next' | t }}"
     >
-      {% render 'icon' with icon: 'chevron' %}
+      {% render 'icon' with icon, icon: 'chevron' %}
     </button>
   </div>
 {%- endcapture -%}
@@ -226,7 +226,7 @@
 {%- capture secondary_nav -%}
   {%- if secondary_menu_valid -%}
     <nav class="header__links header__links-secondary" data-secondary-navigation>
-      {% render 'navigation' with menu: secondary_links, no_children: true %}
+      {% render 'navigation' with menu, menu: secondary_links, no_children: true %}
     </nav>
   {%- endif -%}
 {%- endcapture -%}
@@ -240,8 +240,8 @@
     data-aria-label-opened="{{ 'general.accessibility.close_menu' | t }}"
     data-js-menu-button
   >
-    {% render 'icon-button' with icon: 'header-menu' %}
-    {% render 'icon-button' with icon: 'header-menu-close' %}
+    {% render 'icon-button' with icon, icon: 'header-menu' %}
+    {% render 'icon-button' with icon, icon: 'header-menu-close' %}
   </button>
 {%- endcapture -%}
 
@@ -250,13 +250,7 @@
 {%- capture localization_dropdowns -%}
   {%- if locale_selector or country_selector -%}
     <nav class="header__cross-border fs-body-50" data-secondary-navigation>
-      {%
-        render 'cross-border' with
-        show_locale: locale_selector,
-        show_country: country_selector,
-        id: 'header',
-        desktop_only: true
-      %}
+      {% render 'cross-border' with show_locale, show_locale: locale_selector, show_country: country_selector, id: 'header', desktop_only: true %}
     </nav>
   {%- endif -%}
 {%- endcapture -%}
@@ -433,7 +427,7 @@
   </div>
 
   <div class="no-js-menu no-js-menu--desktop">
-    {% render 'no-js-navmenu' with menu: menu, secondary_menu: secondary_menu %}
+    {% render 'no-js-navmenu' with menu, menu: menu, secondary_menu: secondary_menu %}
   </div>
 
   {% render 'drawer-menu',
@@ -1037,3 +1031,69 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'image' with image: logo, wrapper_class: 'regular-logo', sizes:
+    logo_sizes, prioritize_loading: true -%}"
+  to: "{%- render 'image' with image, image: logo, wrapper_class: 'regular-logo',
+    sizes: logo_sizes, prioritize_loading: true -%}"
+  position: 4033..4155
+- from: "{%- render 'image' with image: logo_transparent, wrapper_class: 'transparent-logo',
+    sizes: logo_sizes, prioritize_loading: true -%}"
+  to: "{%- render 'image' with image, image: logo_transparent, wrapper_class: 'transparent-logo',
+    sizes: logo_sizes, prioritize_loading: true -%}"
+  position: 4228..4366
+- from: "{% render 'icon-button' with icon: 'header-search' %}"
+  to: "{% render 'icon-button' with icon, icon: 'header-search' %}"
+  position: 5006..5065
+- from: "{% render 'icon-button' with icon: 'header-menu-close' %}"
+  to: "{% render 'icon-button' with icon, icon: 'header-menu-close' %}"
+  position: 5070..5133
+- from: "{% render 'icon-button' with icon: 'header-account' %}"
+  to: "{% render 'icon-button' with icon, icon: 'header-account' %}"
+  position: 5360..5420
+- from: "{% render 'icon' with icon: 'chevron' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron' %}"
+  position: 6423..6469
+- from: "{% render 'navigation' with menu: secondary_links, blocks: section.blocks
+    %}"
+  to: "{% render 'navigation' with menu, menu: secondary_links, blocks: section.blocks
+    %}"
+  position: 6889..6971
+- from: "{% render 'navigation' with menu: links, blocks: section.blocks %}"
+  to: "{% render 'navigation' with menu, menu: links, blocks: section.blocks %}"
+  position: 7003..7075
+- from: "{% render 'icon' with icon: 'chevron' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron' %}"
+  position: 7500..7546
+- from: "{% render 'navigation' with menu: secondary_links, no_children: true %}"
+  to: "{% render 'navigation' with menu, menu: secondary_links, no_children: true
+    %}"
+  position: 7742..7819
+- from: "{% render 'icon-button' with icon: 'header-menu' %}"
+  to: "{% render 'icon-button' with icon, icon: 'header-menu' %}"
+  position: 8236..8293
+- from: "{% render 'icon-button' with icon: 'header-menu-close' %}"
+  to: "{% render 'icon-button' with icon, icon: 'header-menu-close' %}"
+  position: 8298..8361
+- from: |-
+    {%
+            render 'cross-border' with
+            show_locale: locale_selector,
+            show_country: country_selector,
+            id: 'header',
+            desktop_only: true
+          %}
+  to: "{% render 'cross-border' with show_locale, show_locale: locale_selector, show_country:
+    country_selector, id: 'header', desktop_only: true %}"
+  position: 8640..8780
+- from: "{% render 'no-js-navmenu' with menu: menu, secondary_menu: secondary_menu
+    %}"
+  to: "{% render 'no-js-navmenu' with menu, menu: menu, secondary_menu: secondary_menu
+    %}"
+  position: 14451..14533
+{% endcomment %}

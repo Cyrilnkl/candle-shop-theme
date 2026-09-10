@@ -19,7 +19,7 @@
         class="testimonials__navigation-button testimonials__navigation-button--prev"
         aria-label="{{ 'general.accessibility.carousel_previous' | t }}"
       >
-        {%- render 'icon' with icon: 'chevron' -%}
+        {%- render 'icon' with icon, icon: 'chevron' -%}
       </button>
     </div>
   {%- endif -%}
@@ -33,7 +33,7 @@
         class="testimonials__navigation-button testimonials__navigation-button--next"
         aria-label="{{ 'general.accessibility.carousel_next' | t }}"
       >
-        {%- render 'icon' with icon: 'chevron' -%}
+        {%- render 'icon' with icon, icon: 'chevron' -%}
       </button>
     </div>
   {%- endif -%}
@@ -78,13 +78,7 @@
 
       <div class="testimonials__items-wrapper swiper-wrapper">
         {%- for block in section.blocks -%}
-          {%-
-            render 'testimonials-item' with
-            block: block,
-            forloop: forloop,
-            image_size: section.settings.image_size,
-            quote_font: section.settings.quote_font
-          -%}
+          {%- render 'testimonials-item' with block, block: block, forloop: forloop, image_size: section.settings.image_size, quote_font: section.settings.quote_font -%}
         {%- endfor -%}
       </div>
 
@@ -317,3 +311,28 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'chevron' -%}"
+  to: "{%- render 'icon' with icon, icon: 'chevron' -%}"
+  position: 746..794
+- from: "{%- render 'icon' with icon: 'chevron' -%}"
+  to: "{%- render 'icon' with icon, icon: 'chevron' -%}"
+  position: 1234..1282
+- from: |-
+    {%-
+                render 'testimonials-item' with
+                block: block,
+                forloop: forloop,
+                image_size: section.settings.image_size,
+                quote_font: section.settings.quote_font
+              -%}
+  to: "{%- render 'testimonials-item' with block, block: block, forloop: forloop,
+    image_size: section.settings.image_size, quote_font: section.settings.quote_font
+    -%}"
+  position: 2515..2674
+{% endcomment %}

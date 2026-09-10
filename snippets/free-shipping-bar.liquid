@@ -18,7 +18,7 @@
     data-free-shipping-pending-message="{{ free_shipping_pending_message }}"
   >
     <div class="inventory-counter__message-wrapper ff-body fs-body-75">
-      {%- render 'icon' with icon: 'package-closed' -%}
+      {%- render 'icon' with icon, icon: 'package-closed' -%}
       <h4 class="free-shipping-bar__message"></h4>
     </div>
     <div class="free-shipping-bar__bar">
@@ -26,3 +26,13 @@
     </div>
   </div>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'package-closed' -%}"
+  to: "{%- render 'icon' with icon, icon: 'package-closed' -%}"
+  position: 759..814
+{% endcomment %}

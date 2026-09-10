@@ -58,7 +58,7 @@
           >
           <input type="hidden" name="options[prefix]" value="last">
           <button type="submit" class="search-form__submit" aria-label="{{ 'search.search' | t }}">
-            {% render 'icon' with icon: 'search' %}
+            {% render 'icon' with icon, icon: 'search' %}
           </button>
         </div>
       </form>
@@ -93,27 +93,9 @@
         <div class="search__container">
           <div class="search__content">
             {%- if search.results_count > 0 -%}
-              {%
-                render 'filter-bar' with
-                results: search,
-                show_item_count: section.settings.show_item_count,
-                show_sort: section.settings.show_sort,
-                show_filters: section.settings.show_filters,
-                filter_location: section.settings.desktop_filter_location,
-                show_swatch_filters: section.settings.show_swatch_filters,
-                show_chip_filters: section.settings.show_chip_filters,
-                enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar,
-                collapse_filter_bar: section.settings.collapse_filter_bar,
-                chip_layout: section.settings.chip_layout
-              %}
+              {% render 'filter-bar' with results, results: search, show_item_count: section.settings.show_item_count, show_sort: section.settings.show_sort, show_filters: section.settings.show_filters, filter_location: section.settings.desktop_filter_location, show_swatch_filters: section.settings.show_swatch_filters, show_chip_filters: section.settings.show_chip_filters, enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar, collapse_filter_bar: section.settings.collapse_filter_bar, chip_layout: section.settings.chip_layout %}
 
-              {%
-                render 'mobile-filters' with
-                results: search,
-                show_sort: section.settings.show_sort,
-                show_filters: section.settings.show_filters,
-                enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar
-              %}
+              {% render 'mobile-filters' with results, results: search, show_sort: section.settings.show_sort, show_filters: section.settings.show_filters, enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar %}
             {%- endif -%}
 
             <div class="search__main-area">
@@ -150,23 +132,9 @@
                       {%- for item in search.results -%}
                         {%- case item.object_type -%}
                           {%- when 'product' -%}
-                            {%
-                              render 'product-item' with
-                              prod: item,
-                              product_columns_desktop: section.settings.columns_desktop,
-                              product_columns_mobile: section.settings.columns_mobile,
-                              aspect_ratio: settings.product_listing_aspect_ratio,
-                              has_grid_reveal: true
-                            %}
+                            {% render 'product-item' with prod, prod: item, product_columns_desktop: section.settings.columns_desktop, product_columns_mobile: section.settings.columns_mobile, aspect_ratio: settings.product_listing_aspect_ratio, has_grid_reveal: true %}
                           {%- else -%}
-                            {%
-                              render 'search-item' with
-                              item: item,
-                              columns_desktop: section.settings.columns_desktop,
-                              columns_mobile: section.settings.columns_mobile,
-                              forloop: forloop,
-                              has_grid_reveal: true
-                            %}
+                            {% render 'search-item' with item, item: item, columns_desktop: section.settings.columns_desktop, columns_mobile: section.settings.columns_mobile, forloop: forloop, has_grid_reveal: true %}
                         {%- endcase -%}
                       {% else %}
                         <div class="search__empty">
@@ -180,12 +148,7 @@
                     {%- if search.results_count > 0 -%}
                       {% unless paginated %}
                         <div>
-                          {%
-                            render 'pagination' with
-                            paginate: paginate,
-                            type: 'general.pagination.results',
-                            display_paginate_item_count_only: true
-                          %}
+                          {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.results', display_paginate_item_count_only: true %}
                           <div class="search__infinite-trigger">
                             {% if paginate.next %}
                               <a href="{{ paginate.next.url }}" class="btn btn--secondary no-transition">
@@ -199,19 +162,9 @@
                       {% if paginated %}
                         <div>
                           {% if paginate.pages > 1 %}
-                            {%
-                              render 'pagination' with
-                              paginate: paginate,
-                              type: 'general.pagination.results',
-                              show_item_count: true
-                            %}
+                            {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.results', show_item_count: true %}
                           {% else %}
-                            {%
-                              render 'pagination' with
-                              paginate: paginate,
-                              type: 'general.pagination.results',
-                              display_paginate_item_count_only: true
-                            %}
+                            {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.results', display_paginate_item_count_only: true %}
                           {% endif %}
                         </div>
                       {% endif %}
@@ -224,16 +177,7 @@
         </div>
       {% endpaginate %}
 
-      {%
-        render 'filter-drawer' with
-        results: search,
-        show_sort: section.settings.show_sort,
-        show_filters: section.settings.show_filters,
-        show_swatch_filters: section.settings.show_swatch_filters,
-        show_chip_filters: section.settings.show_chip_filters,
-        collapse_filter_groups: section.settings.collapse_filter_groups_mobile,
-        chip_layout: section.settings.chip_layout
-      %}
+      {% render 'filter-drawer' with results, results: search, show_sort: section.settings.show_sort, show_filters: section.settings.show_filters, show_swatch_filters: section.settings.show_swatch_filters, show_chip_filters: section.settings.show_chip_filters, collapse_filter_groups: section.settings.collapse_filter_groups_mobile, chip_layout: section.settings.chip_layout %}
     </div>
   </div>
 </div>
@@ -467,3 +411,120 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'search' %}"
+  to: "{% render 'icon' with icon, icon: 'search' %}"
+  position: 2113..2158
+- from: |-
+    {%
+                    render 'filter-bar' with
+                    results: search,
+                    show_item_count: section.settings.show_item_count,
+                    show_sort: section.settings.show_sort,
+                    show_filters: section.settings.show_filters,
+                    filter_location: section.settings.desktop_filter_location,
+                    show_swatch_filters: section.settings.show_swatch_filters,
+                    show_chip_filters: section.settings.show_chip_filters,
+                    enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar,
+                    collapse_filter_bar: section.settings.collapse_filter_bar,
+                    chip_layout: section.settings.chip_layout
+                  %}
+  to: "{% render 'filter-bar' with results, results: search, show_item_count: section.settings.show_item_count,
+    show_sort: section.settings.show_sort, show_filters: section.settings.show_filters,
+    filter_location: section.settings.desktop_filter_location, show_swatch_filters:
+    section.settings.show_swatch_filters, show_chip_filters: section.settings.show_chip_filters,
+    enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar, collapse_filter_bar:
+    section.settings.collapse_filter_bar, chip_layout: section.settings.chip_layout
+    %}"
+  position: 3164..3698
+- from: |-
+    {%
+                    render 'mobile-filters' with
+                    results: search,
+                    show_sort: section.settings.show_sort,
+                    show_filters: section.settings.show_filters,
+                    enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar
+                  %}
+  to: "{% render 'mobile-filters' with results, results: search, show_sort: section.settings.show_sort,
+    show_filters: section.settings.show_filters, enable_sticky_filter_bar: section.settings.enable_sticky_filter_bar
+    %}"
+  position: 3714..3926
+- from: |-
+    {%
+                                  render 'product-item' with
+                                  prod: item,
+                                  product_columns_desktop: section.settings.columns_desktop,
+                                  product_columns_mobile: section.settings.columns_mobile,
+                                  aspect_ratio: settings.product_listing_aspect_ratio,
+                                  has_grid_reveal: true
+                                %}
+  to: "{% render 'product-item' with prod, prod: item, product_columns_desktop: section.settings.columns_desktop,
+    product_columns_mobile: section.settings.columns_mobile, aspect_ratio: settings.product_listing_aspect_ratio,
+    has_grid_reveal: true %}"
+  position: 5381..5622
+- from: |-
+    {%
+                                  render 'search-item' with
+                                  item: item,
+                                  columns_desktop: section.settings.columns_desktop,
+                                  columns_mobile: section.settings.columns_mobile,
+                                  forloop: forloop,
+                                  has_grid_reveal: true
+                                %}
+  to: "{% render 'search-item' with item, item: item, columns_desktop: section.settings.columns_desktop,
+    columns_mobile: section.settings.columns_mobile, forloop: forloop, has_grid_reveal:
+    true %}"
+  position: 5690..5879
+- from: |-
+    {%
+                                render 'pagination' with
+                                paginate: paginate,
+                                type: 'general.pagination.results',
+                                display_paginate_item_count_only: true
+                              %}
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.results',
+    display_paginate_item_count_only: true %}"
+  position: 6403..6538
+- from: |-
+    {%
+                                  render 'pagination' with
+                                  paginate: paginate,
+                                  type: 'general.pagination.results',
+                                  show_item_count: true
+                                %}
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.results',
+    show_item_count: true %}"
+  position: 7167..7285
+- from: |-
+    {%
+                                  render 'pagination' with
+                                  paginate: paginate,
+                                  type: 'general.pagination.results',
+                                  display_paginate_item_count_only: true
+                                %}
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.results',
+    display_paginate_item_count_only: true %}"
+  position: 7351..7486
+- from: |-
+    {%
+            render 'filter-drawer' with
+            results: search,
+            show_sort: section.settings.show_sort,
+            show_filters: section.settings.show_filters,
+            show_swatch_filters: section.settings.show_swatch_filters,
+            show_chip_filters: section.settings.show_chip_filters,
+            collapse_filter_groups: section.settings.collapse_filter_groups_mobile,
+            chip_layout: section.settings.chip_layout
+          %}
+  to: "{% render 'filter-drawer' with results, results: search, show_sort: section.settings.show_sort,
+    show_filters: section.settings.show_filters, show_swatch_filters: section.settings.show_swatch_filters,
+    show_chip_filters: section.settings.show_chip_filters, collapse_filter_groups:
+    section.settings.collapse_filter_groups_mobile, chip_layout: section.settings.chip_layout
+    %}"
+  position: 7782..8153
+{% endcomment %}

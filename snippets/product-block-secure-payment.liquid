@@ -47,13 +47,7 @@
 {% endcapture %}
 
 {% if block_settings.display_as_collapsible_row %}
-  {%-
-    render 'product-block-accordion' with
-    block: block,
-    block_settings: block_settings,
-    heading: block_settings.collapsible_row_title,
-    content: content,
-  -%}
+  {%- render 'product-block-accordion' with block, block: block, block_settings: block_settings, heading: block_settings.collapsible_row_title, content: content -%}
 {% else %}
   <div
     class="product__block product__block--medium"
@@ -62,3 +56,22 @@
     {{ content }}
   </div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+        render 'product-block-accordion' with
+        block: block,
+        block_settings: block_settings,
+        heading: block_settings.collapsible_row_title,
+        content: content,
+      -%}
+  to: "{%- render 'product-block-accordion' with block, block: block, block_settings:
+    block_settings, heading: block_settings.collapsible_row_title, content: content
+    -%}"
+  position: 1679..1841
+{% endcomment %}

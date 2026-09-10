@@ -121,16 +121,7 @@
                 {{ block.shopify_attributes }}
               >
                 <div class="article__image-container">
-                  {%-
-                    render 'image' with
-                    wrapper_class: "article__image-inner",
-                    image: article.image,
-                    sizes: "100vw",
-                    focal_point: block.settings.focal_point,
-                    placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
-                    animate: true
-                    prioritize_loading: true
-                  -%}
+                  {%- render 'image' with wrapper_class, wrapper_class: "article__image-inner", image: article.image, sizes: "100vw", focal_point: block.settings.focal_point, placeholder_natural_fallback_ratio: placeholder_aspect_ratio, animate: true, prioritize_loading: true -%}
                 </div>
               </div>
             {%- endif -%}
@@ -450,3 +441,26 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                        render 'image' with
+                        wrapper_class: "article__image-inner",
+                        image: article.image,
+                        sizes: "100vw",
+                        focal_point: block.settings.focal_point,
+                        placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+                        animate: true
+                        prioritize_loading: true
+                      -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "article__image-inner",
+    image: article.image, sizes: "100vw", focal_point: block.settings.focal_point,
+    placeholder_natural_fallback_ratio: placeholder_aspect_ratio, animate: true, prioritize_loading:
+    true -%}'
+  position: 4542..4804
+{% endcomment %}

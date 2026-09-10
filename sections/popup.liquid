@@ -99,7 +99,7 @@
           --overlay-opacity: {{ overlay_opacity }};
           --color-text-input: {{ block.settings.input_color }};
           --color-background-input: {{ block.settings.input_background }};
-          {% render 'overlay-button-vars' with color_button_text: block.settings.button_text_color, color_button_background: block.settings.button_background_color %}
+          {% render 'overlay-button-vars' with color_button_text, color_button_text: block.settings.button_text_color, color_button_background: block.settings.button_background_color %}
         "
         data-popup
         data-id="{{ block.id }}"
@@ -1876,3 +1876,16 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'overlay-button-vars' with color_button_text: block.settings.button_text_color,
+    color_button_background: block.settings.button_background_color %}"
+  to: "{% render 'overlay-button-vars' with color_button_text, color_button_text:
+    block.settings.button_text_color, color_button_background: block.settings.button_background_color
+    %}"
+  position: 4011..4186
+{% endcomment %}

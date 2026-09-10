@@ -12,7 +12,17 @@
       data-close
       aria-label="{{ 'general.accessibility.close_modal' | t }}"
     >
-      {% render 'icon-button' with small: true, icon: 'close' %}
+      {% render 'icon-button' with small, small: true, icon: 'close' %}
     </button>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with small: true, icon: 'close' %}"
+  to: "{% render 'icon-button' with small, small: true, icon: 'close' %}"
+  position: 513..578
+{% endcomment %}

@@ -4,24 +4,24 @@
     <ol class="breadcrumbs__list">
       <li class="breadcrumbs__item">
         <a class="breadcrumbs__link" href="{{ routes.root_url }}">{{ 'general.navigation.home' | t }}</a>
-        <div class="breadcrumbs__icon">{% render 'icon' with icon: 'chevron-small' %}</div>
+        <div class="breadcrumbs__icon">{% render 'icon' with icon, icon: 'chevron-small' %}</div>
       </li>
       {%- case current_template -%}
         {%- when 'product' -%}
           {%- if collection.url -%}
             <li class="breadcrumbs__item">
               <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
-              <div class="breadcrumbs__icon">{% render 'icon' with icon: 'chevron-small' %}</div>
+              <div class="breadcrumbs__icon">{% render 'icon' with icon, icon: 'chevron-small' %}</div>
             </li>
           {%- endif -%}
           <li class="breadcrumbs__item">
             <span class="breadcrumbs__current" aria-current="page">{{ product.title }}</span>
           </li>
-        {%- when 'collection' and collection.handle -%}
+        {%- when 'collection' -%}
           {%- if current_tags -%}
             <li class="breadcrumbs__item">
               <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
-              <div class="breadcrumbs__icon">{% render 'icon' with icon: 'chevron-small' %}</div>
+              <div class="breadcrumbs__icon">{% render 'icon' with icon, icon: 'chevron-small' %}</div>
             </li>
             <li class="breadcrumbs__item">
               <span class="breadcrumbs__current" aria-current="page">{{- current_tags | join: ' + ' -}}</span>
@@ -50,3 +50,22 @@
     </ol>
   {%- endif -%}
 </nav>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 399..451
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 759..811
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 1019..1044
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 1265..1317
+{% endcomment %}

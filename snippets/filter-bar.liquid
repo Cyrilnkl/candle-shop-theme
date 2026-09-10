@@ -69,7 +69,7 @@
             aria-controls="filter-bar-filters"
           {%- endif %}
         >
-          {% render 'icon' with icon: 'filter' %}
+          {% render 'icon' with icon, icon: 'filter' %}
 
           <span class="filter-bar__button-text">
             {%- if collapse_filter_bar %}
@@ -84,7 +84,7 @@
           {%- endif -%}
 
           {%- unless filter_location == 'sidebar' -%}
-            {% render 'icon' with icon: 'chevron-small' %}
+            {% render 'icon' with icon, icon: 'chevron-small' %}
           {%- endunless -%}
         </button>
 
@@ -96,7 +96,7 @@
             aria-expanded="{% if collapse_filter_bar == false or active_filter_count > 0 %}true{% else %}false{% endif %}"
             aria-controls="filter-bar-filters"
           >
-            {% render 'icon' with icon: 'filter' %}
+            {% render 'icon' with icon, icon: 'filter' %}
             {{ 'filters.title' | t }}
 
             {%- if active_filter_count > 0 -%}
@@ -108,7 +108,7 @@
 
       {%- if show_item_count -%}
         <p class="filter-bar__results-count fs-body-75" data-results-count>
-          {% render 'results-count' with results_count: results_count %}
+          {% render 'results-count' with results_count, results_count: results_count %}
         </p>
       {%- endif -%}
 
@@ -132,7 +132,7 @@
             aria-controls="filter-bar-sort"
           >
             <span data-sort-label>{{ 'filters.sort_title' | t }}: {{ sort_by }}</span>
-            {% render 'icon' with icon: 'chevron-small' %}
+            {% render 'icon' with icon, icon: 'chevron-small' %}
           </button>
 
           <div
@@ -249,7 +249,7 @@
                   {%- endif -%}
                 {%- endif -%}
 
-                {% render 'icon' with icon: 'chevron-small' %}
+                {% render 'icon' with icon, icon: 'chevron-small' %}
               </button>
               <div
                 id="{{ filter.label | handle }}"
@@ -383,9 +383,40 @@
     {%- endif -%}
 
     <div class="filter-bar__active-filters">
-      {%- render 'active-filters' with results: results, show_swatch_filters: show_swatch_filters -%}
+      {%- render 'active-filters' with results, results: results, show_swatch_filters: show_swatch_filters -%}
     </div>
   {%- endif -%}
 </form>
 
 <div class="filter-bar__wash"></div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'filter' %}"
+  to: "{% render 'icon' with icon, icon: 'filter' %}"
+  position: 2455..2500
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 2993..3045
+- from: "{% render 'icon' with icon: 'filter' %}"
+  to: "{% render 'icon' with icon, icon: 'filter' %}"
+  position: 3493..3538
+- from: "{% render 'results-count' with results_count: results_count %}"
+  to: "{% render 'results-count' with results_count, results_count: results_count
+    %}"
+  position: 3944..4021
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 4818..4870
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 9435..9487
+- from: "{%- render 'active-filters' with results: results, show_swatch_filters: show_swatch_filters
+    -%}"
+  to: "{%- render 'active-filters' with results, results: results, show_swatch_filters:
+    show_swatch_filters -%}"
+  position: 16127..16231
+{% endcomment %}

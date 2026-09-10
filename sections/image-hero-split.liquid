@@ -25,35 +25,19 @@
       --overlay-background-gradient: {{ section.settings.color_overlay_gradient }};
     {% endif %}
     --overlay-opacity: {{ overlay_opacity }};
-    {% render 'overlay-button-vars' with color_button_text: section.settings.button_text_color, color_button_background: section.settings.button_background_color %}
+    {% render 'overlay-button-vars' with color_button_text, color_button_text: section.settings.button_text_color, color_button_background: section.settings.button_background_color %}
   "
 >
   <div class="image-hero-split__inner">
     {%- for block in section.blocks -%}
-      {%-
-        render 'image-hero-split-item' with
-        block: block,
-        index: forloop.index,
-        image_aspect: section.settings.image_aspect,
-        text_position: section.settings.text_position
-      -%}
+      {%- render 'image-hero-split-item' with block, block: block, index: forloop.index, image_aspect: section.settings.image_aspect, text_position: section.settings.text_position -%}
 
       {%- if section.blocks.size < 2 -%}
-        {%-
-          render 'image-hero-split-item' with
-          index: 2,
-          image_aspect: section.settings.image_aspect,
-          text_position: section.settings.text_position
-        -%}
+        {%- render 'image-hero-split-item' with index, index: 2, image_aspect: section.settings.image_aspect, text_position: section.settings.text_position -%}
       {%- endif -%}
     {%- else -%}
       {%- for i in (1..2) -%}
-        {%-
-          render 'image-hero-split-item' with
-          index: forloop.index,
-          image_aspect: section.settings.image_aspect,
-          text_position: section.settings.text_position
-        -%}
+        {%- render 'image-hero-split-item' with index, index: forloop.index, image_aspect: section.settings.image_aspect, text_position: section.settings.text_position -%}
       {%- endfor -%}
     {%- endfor -%}
 
@@ -310,3 +294,48 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'overlay-button-vars' with color_button_text: section.settings.button_text_color,
+    color_button_background: section.settings.button_background_color %}"
+  to: "{% render 'overlay-button-vars' with color_button_text, color_button_text:
+    section.settings.button_text_color, color_button_background: section.settings.button_background_color
+    %}"
+  position: 970..1149
+- from: |-
+    {%-
+            render 'image-hero-split-item' with
+            block: block,
+            index: forloop.index,
+            image_aspect: section.settings.image_aspect,
+            text_position: section.settings.text_position
+          -%}
+  to: "{%- render 'image-hero-split-item' with block, block: block, index: forloop.index,
+    image_aspect: section.settings.image_aspect, text_position: section.settings.text_position
+    -%}"
+  position: 1242..1419
+- from: |-
+    {%-
+              render 'image-hero-split-item' with
+              index: 2,
+              image_aspect: section.settings.image_aspect,
+              text_position: section.settings.text_position
+            -%}
+  to: "{%- render 'image-hero-split-item' with index, index: 2, image_aspect: section.settings.image_aspect,
+    text_position: section.settings.text_position -%}"
+  position: 1470..1621
+- from: |-
+    {%-
+              render 'image-hero-split-item' with
+              index: forloop.index,
+              image_aspect: section.settings.image_aspect,
+              text_position: section.settings.text_position
+            -%}
+  to: "{%- render 'image-hero-split-item' with index, index: forloop.index, image_aspect:
+    section.settings.image_aspect, text_position: section.settings.text_position -%}"
+  position: 1697..1860
+{% endcomment %}

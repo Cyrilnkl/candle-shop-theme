@@ -15,7 +15,7 @@
     class="btn btn--x-small share-icons__icon"
     href="//twitter.com/intent/tweet?text={{ title | url_param_escape }}&amp;url={{ url }}"
   >
-    {% render 'icon' with icon: 'twitter' %}
+    {% render 'icon' with icon, icon: 'twitter' %}
     <span class="share-icons__label">{{ 'general.social.alt_text.share_on_twitter' | t }}</span>
   </a>
   <a
@@ -24,7 +24,7 @@
     class="btn btn--x-small share-icons__icon"
     href="//www.facebook.com/sharer.php?u={{ url }}"
   >
-    {% render 'icon' with icon: 'facebook' %}
+    {% render 'icon' with icon, icon: 'facebook' %}
     <span class="share-icons__label">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
   </a>
   <a
@@ -33,7 +33,23 @@
     class="btn btn--x-small share-icons__icon"
     href="//pinterest.com/pin/create/button/?url={{ url }}&amp;media={{ image | image_url: width: 1024, height: 1024 }}&amp;description={{ title | url_param_escape }}"
   >
-    {% render 'icon' with icon: 'pinterest' %}
+    {% render 'icon' with icon, icon: 'pinterest' %}
     <span class="share-icons__label">{{ 'general.social.alt_text.share_on_pinterest' | t }}</span>
   </a>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'twitter' %}"
+  to: "{% render 'icon' with icon, icon: 'twitter' %}"
+  position: 481..527
+- from: "{% render 'icon' with icon: 'facebook' %}"
+  to: "{% render 'icon' with icon, icon: 'facebook' %}"
+  position: 784..831
+- from: "{% render 'icon' with icon: 'pinterest' %}"
+  to: "{% render 'icon' with icon, icon: 'pinterest' %}"
+  position: 1204..1252
+{% endcomment %}

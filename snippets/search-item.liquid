@@ -25,13 +25,7 @@
 >
   {%- if item.image != blank -%}
     <div class="search-item__image-wrapper">
-      {%
-        render 'image' with
-        image: item.image,
-        wrapper_class: 'search-item__image',
-        aspect_ratio: 'landscape_alt',
-        sizes: sizes
-      %}
+      {% render 'image' with image, image: item.image, wrapper_class: 'search-item__image', aspect_ratio: 'landscape_alt', sizes: sizes %}
     </div>
   {%- endif -%}
 
@@ -44,3 +38,21 @@
 
   <div class="search-item__type fs-body-75">{{ item.object_type | capitalize }}</div>
 </a>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+            render 'image' with
+            image: item.image,
+            wrapper_class: 'search-item__image',
+            aspect_ratio: 'landscape_alt',
+            sizes: sizes
+          %}
+  to: "{% render 'image' with image, image: item.image, wrapper_class: 'search-item__image',
+    aspect_ratio: 'landscape_alt', sizes: sizes %}"
+  position: 1025..1157
+{% endcomment %}

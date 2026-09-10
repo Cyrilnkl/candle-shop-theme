@@ -39,7 +39,7 @@
         {%- endunless -%}
       </div>
 
-      {%- render 'carousel-navigation' with wrapper_class: 'animation--controls' %}
+      {%- render 'carousel-navigation' with wrapper_class, wrapper_class: 'animation--controls' %}
     </div>
 
     <div class="recommended-products__content carousel swiper">
@@ -194,3 +194,15 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'carousel-navigation' with wrapper_class: 'animation--controls'
+    %}"
+  to: "{%- render 'carousel-navigation' with wrapper_class, wrapper_class: 'animation--controls'
+    %}"
+  position: 1532..1624
+{% endcomment %}

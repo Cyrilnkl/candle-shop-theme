@@ -12,7 +12,7 @@
   {%- if available_locations.size > 0 -%}
     <div class="store-availability">
       <div class="store-availability__icon">
-        {% render 'icon' with icon: 'checkmark' %}
+        {% render 'icon' with icon, icon: 'checkmark' %}
       </div>
       <div class="store-availability__information fs-body-100">
         <div class="store-availability__information-title">
@@ -46,9 +46,9 @@
           <div class="store-availability-list__item">
             <div class="store-availability-list__item-inner">
               {%- if availability.available -%}
-                {% render 'icon' with icon: 'checkmark' %}
+                {% render 'icon' with icon, icon: 'checkmark' %}
               {%- else -%}
-                {% render 'icon' with icon: 'close-small' %}
+                {% render 'icon' with icon, icon: 'close-small' %}
               {%- endif -%}
 
               <div class="store-availability-list__item-content">
@@ -80,3 +80,19 @@
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'checkmark' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark' %}"
+  position: 515..563
+- from: "{% render 'icon' with icon: 'checkmark' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark' %}"
+  position: 2134..2182
+- from: "{% render 'icon' with icon: 'close-small' %}"
+  to: "{% render 'icon' with icon, icon: 'close-small' %}"
+  position: 2226..2276
+{% endcomment %}

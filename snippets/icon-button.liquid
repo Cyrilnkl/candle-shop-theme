@@ -5,6 +5,16 @@
   {% endif %}
 >
   <span class="icon-button__icon">
-    {% render 'icon' with icon: icon %}
+    {% render 'icon' with icon, icon: icon %}
   </span>
 </span>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: icon %}"
+  to: "{% render 'icon' with icon, icon: icon %}"
+  position: 215..256
+{% endcomment %}

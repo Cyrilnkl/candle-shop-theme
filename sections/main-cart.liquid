@@ -18,14 +18,7 @@
             <div class="cart__form-item" data-input-item data-id="{{ item.id }}" data-key="{{ item.key }}">
               <div class="cart__form-item-image">
                 <a href="{{ item.url }}" class="cart__form-item-link">
-                  {%-
-                    render 'image' with
-                    image: item.image,
-                    sizes: "120px",
-                    prioritize_loading: true
-                    aspect_ratio: settings.cart_item_aspect_ratio,
-                    include_placeholder: true
-                  -%}
+                  {%- render 'image' with image, image: item.image, sizes: "120px", prioritize_loading: true, aspect_ratio: settings.cart_item_aspect_ratio, include_placeholder: true -%}
                 </a>
               </div>
               <div class="cart__form-item-details">
@@ -71,7 +64,7 @@
                       <ul class="cart__form-item-discounts">
                         {% for discount_allocation in item.line_level_discount_allocations %}
                           <li class="cart__form-item-discount fs-body-75">
-                            {%- render 'icon' with icon: 'discount-badge' -%}
+                            {%- render 'icon' with icon, icon: 'discount-badge' -%}
                             {{ discount_allocation.discount_application.title }} (-
                             {{- discount_allocation.amount | money -}}
                             )
@@ -157,7 +150,7 @@
                     {%- endif -%}
                   {%- endif -%}
 
-                  {% render 'quantity-input' with id: item.id, initial_value: item.quantity %}
+                  {% render 'quantity-input' with id, id: item.id, initial_value: item.quantity %}
 
                   <div class="cart__form-item-remove-wrapper">
                     <button
@@ -190,8 +183,8 @@
                     data-order-note-trigger
                   >
                     <div class="cart__footer-order-note-trigger-icons">
-                      {% render 'icon', with icon: 'plus-small' %}
-                      {% render 'icon', with icon: 'minus-small', class: 'hidden' %}
+                      {% render 'icon', icon: 'plus-small' %}
+                      {% render 'icon', icon: 'minus-small', class: 'hidden' %}
                     </div>
                     <span class="cart__footer-order-note-trigger-text" data-cart-not-trigger-text>
                       {{ 'cart.general.order_note_button_add' | t }}
@@ -220,7 +213,7 @@
                   <ul class="cart__item-discounts">
                     {% for discount_application in cart.cart_level_discount_applications %}
                       <li class="cart__item-discount fs-body-75">
-                        {%- render 'icon' with icon: 'discount-badge' -%}
+                        {%- render 'icon' with icon, icon: 'discount-badge' -%}
                         {{ discount_application.title }} (-{{ discount_application.total_allocated_amount | money }})
                       </li>
                     {% endfor %}
@@ -288,14 +281,7 @@
           <h1 class="cart__empty-message-heading ff-heading fs-heading-2-base">{{ 'cart.general.empty' | t }}</h1>
           <p class="cart__empty-message-text fs-body-100">{{ 'cart.general.empty_message' | t }}</p>
           {%- assign empty_label = 'cart.general.continue_shopping' | t -%}
-          {%-
-            render 'button-block' with
-            wrapper_class: "cart__empty-button",
-            link: routes.collections_url,
-            label: empty_label,
-            button_style: "btn--secondary",
-            button_alignment: 'center'
-          -%}
+          {%- render 'button-block' with wrapper_class, wrapper_class: "cart__empty-button", link: routes.collections_url, label: empty_label, button_style: "btn--secondary", button_alignment: 'center' -%}
         </div>
 
         {% comment %}
@@ -355,3 +341,53 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                        render 'image' with
+                        image: item.image,
+                        sizes: "120px",
+                        prioritize_loading: true
+                        aspect_ratio: settings.cart_item_aspect_ratio,
+                        include_placeholder: true
+                      -%}
+  to: '{%- render ''image'' with image, image: item.image, sizes: "120px", prioritize_loading:
+    true, aspect_ratio: settings.cart_item_aspect_ratio, include_placeholder: true
+    -%}'
+  position: 939..1107
+- from: "{%- render 'icon' with icon: 'discount-badge' -%}"
+  to: "{%- render 'icon' with icon, icon: 'discount-badge' -%}"
+  position: 3401..3456
+- from: "{% render 'quantity-input' with id: item.id, initial_value: item.quantity
+    %}"
+  to: "{% render 'quantity-input' with id, id: item.id, initial_value: item.quantity
+    %}"
+  position: 7363..7443
+- from: "{% render 'icon', with icon: 'plus-small' %}"
+  to: "{% render 'icon', icon: 'plus-small' %}"
+  position: 8754..8793
+- from: "{% render 'icon', with icon: 'minus-small', class: 'hidden' %}"
+  to: "{% render 'icon', icon: 'minus-small', class: 'hidden' %}"
+  position: 8816..8873
+- from: "{%- render 'icon' with icon: 'discount-badge' -%}"
+  to: "{%- render 'icon' with icon, icon: 'discount-badge' -%}"
+  position: 10365..10420
+- from: |-
+    {%-
+                render 'button-block' with
+                wrapper_class: "cart__empty-button",
+                link: routes.collections_url,
+                label: empty_label,
+                button_style: "btn--secondary",
+                button_alignment: 'center'
+              -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "cart__empty-button",
+    link: routes.collections_url, label: empty_label, button_style: "btn--secondary",
+    button_alignment: ''center'' -%}'
+  position: 13533..13728
+{% endcomment %}

@@ -13,16 +13,7 @@
             data-media-item-id="{{ media.id }}"
             data-product-media-wrapper
           >
-            {%
-              render 'media' with
-              media: media,
-              fallback_alt: product.title,
-              enable_product_lightbox: section.settings.enable_product_lightbox,
-              loop_video: section.settings.enable_video_looping,
-              aspect_ratio: section.settings.image_aspect_ratio,
-              sizes: "122px",
-              within_carousel: false
-            %}
+            {% render 'media' with media, media: media, fallback_alt: product.title, enable_product_lightbox: section.settings.enable_product_lightbox, loop_video: section.settings.enable_video_looping, aspect_ratio: section.settings.image_aspect_ratio, sizes: "122px", within_carousel: false %}
           </div>
         {%- else -%}
           <div class="product__media-item placeholder-image">
@@ -45,13 +36,7 @@
     %}
     {%- if product != blank -%}
       {%- if block_settings.show_sale_badge or block_settings.show_custom_badges -%}
-        {%-
-          render 'product-badges' with
-          prod: product,
-          show_sale_badge: block_settings.show_sale_badge,
-          show_custom_badges: block_settings.show_custom_badges,
-          show_sold_out_badge: false
-        -%}
+        {%- render 'product-badges' with prod, prod: product, show_sale_badge: block_settings.show_sale_badge, show_custom_badges: block_settings.show_custom_badges, show_sold_out_badge: false -%}
       {%- endif -%}
       <{{ product_title_tag_type }} class="product__title ff-heading fs-heading-4-base fs-heading-3-base-ns">
         {{- product.title -}}
@@ -112,12 +97,7 @@
 
           {%- if block_settings.show_discount -%}
             <span data-discount-display class="product__price-displayed-discount fs-body-50">
-              {%-
-                render "get-display-discount"
-                with product: product,
-                variant: current_variant,
-                format: block_settings.discount_format
-              -%}
+              {%- render "get-display-discount" with product, product: product, variant: current_variant, format: block_settings.discount_format -%}
             </span>
           {%- endif -%}
 
@@ -136,12 +116,7 @@
       {%- comment -%}weird hack but we need to be able to access these dynamically {%- endcomment -%}
       {%- for variant in product.variants -%}
         <div hidden class="visually-hidden" variant-discount-display variant-id="{{ variant.id }}">
-          {%-
-            render "get-display-discount" with
-            product: product,
-            variant: variant,
-            format: block_settings.discount_format
-          -%}
+          {%- render "get-display-discount" with product, product: product, variant: variant, format: block_settings.discount_format -%}
         </div>
       {%- endfor -%}
     {%- endif -%}
@@ -154,3 +129,58 @@
     {%- endif -%}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                  render 'media' with
+                  media: media,
+                  fallback_alt: product.title,
+                  enable_product_lightbox: section.settings.enable_product_lightbox,
+                  loop_video: section.settings.enable_video_looping,
+                  aspect_ratio: section.settings.image_aspect_ratio,
+                  sizes: "122px",
+                  within_carousel: false
+                %}
+  to: '{% render ''media'' with media, media: media, fallback_alt: product.title,
+    enable_product_lightbox: section.settings.enable_product_lightbox, loop_video:
+    section.settings.enable_video_looping, aspect_ratio: section.settings.image_aspect_ratio,
+    sizes: "122px", within_carousel: false %}'
+  position: 598..881
+- from: |-
+    {%-
+              render 'product-badges' with
+              prod: product,
+              show_sale_badge: block_settings.show_sale_badge,
+              show_custom_badges: block_settings.show_custom_badges,
+              show_sold_out_badge: false
+            -%}
+  to: "{%- render 'product-badges' with prod, prod: product, show_sale_badge: block_settings.show_sale_badge,
+    show_custom_badges: block_settings.show_custom_badges, show_sold_out_badge: false
+    -%}"
+  position: 1485..1673
+- from: |-
+    {%-
+                    render "get-display-discount"
+                    with product: product,
+                    variant: current_variant,
+                    format: block_settings.discount_format
+                  -%}
+  to: '{%- render "get-display-discount" with product, product: product, variant:
+    current_variant, format: block_settings.discount_format -%}'
+  position: 4383..4517
+- from: |-
+    {%-
+                render "get-display-discount" with
+                product: product,
+                variant: variant,
+                format: block_settings.discount_format
+              -%}
+  to: '{%- render "get-display-discount" with product, product: product, variant:
+    variant, format: block_settings.discount_format -%}'
+  position: 5202..5328
+{% endcomment %}

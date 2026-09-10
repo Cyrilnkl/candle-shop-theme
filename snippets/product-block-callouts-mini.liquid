@@ -7,41 +7,84 @@
     data-with-box="{{ block_settings.add_box }}"
     data-with-dividers="{{ block_settings.add_dividers }}"
   >
-    {%
-      render 'product-block-callouts-mini-item' with
-      text: block_settings.text_1,
-      icon: block_settings.icon_1,
-      custom_icon_image: block_settings.custom_icon_image_1
-    %}
-    {%
-      render 'product-block-callouts-mini-item' with
-      text: block_settings.text_2,
-      icon: block_settings.icon_2,
-      custom_icon_image: block_settings.custom_icon_image_2
-    %}
-    {%
-      render 'product-block-callouts-mini-item' with
-      text: block_settings.text_3,
-      icon: block_settings.icon_3,
-      custom_icon_image: block_settings.custom_icon_image_3
-    %}
-    {%
-      render 'product-block-callouts-mini-item' with
-      text: block_settings.text_4,
-      icon: block_settings.icon_4,
-      custom_icon_image: block_settings.custom_icon_image_4
-    %}
-    {%
-      render 'product-block-callouts-mini-item' with
-      text: block_settings.text_5,
-      icon: block_settings.icon_5,
-      custom_icon_image: block_settings.custom_icon_image_5
-    %}
-    {%
-      render 'product-block-callouts-mini-item' with
-      text: block_settings.text_6,
-      icon: block_settings.icon_6,
-      custom_icon_image: block_settings.custom_icon_image_6
-    %}
+    {% render 'product-block-callouts-mini-item' with text, text: block_settings.text_1, icon: block_settings.icon_1, custom_icon_image: block_settings.custom_icon_image_1 %}
+    {% render 'product-block-callouts-mini-item' with text, text: block_settings.text_2, icon: block_settings.icon_2, custom_icon_image: block_settings.custom_icon_image_2 %}
+    {% render 'product-block-callouts-mini-item' with text, text: block_settings.text_3, icon: block_settings.icon_3, custom_icon_image: block_settings.custom_icon_image_3 %}
+    {% render 'product-block-callouts-mini-item' with text, text: block_settings.text_4, icon: block_settings.icon_4, custom_icon_image: block_settings.custom_icon_image_4 %}
+    {% render 'product-block-callouts-mini-item' with text, text: block_settings.text_5, icon: block_settings.icon_5, custom_icon_image: block_settings.custom_icon_image_5 %}
+    {% render 'product-block-callouts-mini-item' with text, text: block_settings.text_6, icon: block_settings.icon_6, custom_icon_image: block_settings.custom_icon_image_6 %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+          render 'product-block-callouts-mini-item' with
+          text: block_settings.text_1,
+          icon: block_settings.icon_1,
+          custom_icon_image: block_settings.custom_icon_image_1
+        %}
+  to: "{% render 'product-block-callouts-mini-item' with text, text: block_settings.text_1,
+    icon: block_settings.icon_1, custom_icon_image: block_settings.custom_icon_image_1
+    %}"
+  position: 304..474
+- from: |-
+    {%
+          render 'product-block-callouts-mini-item' with
+          text: block_settings.text_2,
+          icon: block_settings.icon_2,
+          custom_icon_image: block_settings.custom_icon_image_2
+        %}
+  to: "{% render 'product-block-callouts-mini-item' with text, text: block_settings.text_2,
+    icon: block_settings.icon_2, custom_icon_image: block_settings.custom_icon_image_2
+    %}"
+  position: 479..649
+- from: |-
+    {%
+          render 'product-block-callouts-mini-item' with
+          text: block_settings.text_3,
+          icon: block_settings.icon_3,
+          custom_icon_image: block_settings.custom_icon_image_3
+        %}
+  to: "{% render 'product-block-callouts-mini-item' with text, text: block_settings.text_3,
+    icon: block_settings.icon_3, custom_icon_image: block_settings.custom_icon_image_3
+    %}"
+  position: 654..824
+- from: |-
+    {%
+          render 'product-block-callouts-mini-item' with
+          text: block_settings.text_4,
+          icon: block_settings.icon_4,
+          custom_icon_image: block_settings.custom_icon_image_4
+        %}
+  to: "{% render 'product-block-callouts-mini-item' with text, text: block_settings.text_4,
+    icon: block_settings.icon_4, custom_icon_image: block_settings.custom_icon_image_4
+    %}"
+  position: 829..999
+- from: |-
+    {%
+          render 'product-block-callouts-mini-item' with
+          text: block_settings.text_5,
+          icon: block_settings.icon_5,
+          custom_icon_image: block_settings.custom_icon_image_5
+        %}
+  to: "{% render 'product-block-callouts-mini-item' with text, text: block_settings.text_5,
+    icon: block_settings.icon_5, custom_icon_image: block_settings.custom_icon_image_5
+    %}"
+  position: 1004..1174
+- from: |-
+    {%
+          render 'product-block-callouts-mini-item' with
+          text: block_settings.text_6,
+          icon: block_settings.icon_6,
+          custom_icon_image: block_settings.custom_icon_image_6
+        %}
+  to: "{% render 'product-block-callouts-mini-item' with text, text: block_settings.text_6,
+    icon: block_settings.icon_6, custom_icon_image: block_settings.custom_icon_image_6
+    %}"
+  position: 1179..1349
+{% endcomment %}

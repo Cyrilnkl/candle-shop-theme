@@ -22,7 +22,7 @@
     {%- capture badges -%}
       {{ badges }}
       <div class="product-badge product-badge--sale">
-        {%- render "get-display-discount" with prod: prod, format: settings.sale_badge_format -%}
+        {%- render "get-display-discount" with prod, prod: prod, format: settings.sale_badge_format -%}
       </div>
       {{ badges }}
     {%- endcapture -%}
@@ -69,3 +69,15 @@
 >
   {{ badges }}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- render "get-display-discount" with prod: prod, format: settings.sale_badge_format
+    -%}'
+  to: '{%- render "get-display-discount" with prod, prod: prod, format: settings.sale_badge_format
+    -%}'
+  position: 1097..1192
+{% endcomment %}

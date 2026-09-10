@@ -22,7 +22,7 @@
       class="slideshow-navigation__navigation-button slideshow-navigation__navigation-button--previous"
       aria-label="{{ 'general.accessibility.carousel_previous' | t }}"
     >
-      {% render 'icon', with icon: 'chevron-small'  %}
+      {% render 'icon', icon: 'chevron-small' %}
     </button>
 
     <div class="slideshow-navigation__dots"></div>
@@ -32,7 +32,20 @@
       class="slideshow-navigation__navigation-button slideshow-navigation__navigation-button--next"
       aria-label="{{ 'general.accessibility.carousel_next' | t }}"
     >
-      {% render 'icon', with icon: 'chevron-small'  %}
+      {% render 'icon', icon: 'chevron-small' %}
     </button>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon', with icon: 'chevron-small'  %}"
+  to: "{% render 'icon', icon: 'chevron-small' %}"
+  position: 952..994
+- from: "{% render 'icon', with icon: 'chevron-small'  %}"
+  to: "{% render 'icon', icon: 'chevron-small' %}"
+  position: 1273..1315
+{% endcomment %}

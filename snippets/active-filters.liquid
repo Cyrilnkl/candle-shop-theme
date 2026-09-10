@@ -70,7 +70,7 @@
         {%- else -%}
           {{ value.label | escape }}
         {%- endif -%}
-        {%- render 'icon' with icon: 'close-small' -%}
+        {%- render 'icon' with icon, icon: 'close-small' -%}
       </a>
     {%- endfor -%}
 
@@ -88,7 +88,7 @@
           {%- else -%}
             {{ filter.range_max | money }}
           {%- endif -%}
-          {%- render 'icon' with icon: 'close-small' -%}
+          {%- render 'icon' with icon, icon: 'close-small' -%}
         </a>
       {%- endif -%}
     {% endif %}
@@ -102,3 +102,16 @@
     <span>{{ 'filters.clear_filters' | t }}</span>
   </a>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'close-small' -%}"
+  to: "{%- render 'icon' with icon, icon: 'close-small' -%}"
+  position: 2899..2951
+- from: "{%- render 'icon' with icon: 'close-small' -%}"
+  to: "{%- render 'icon' with icon, icon: 'close-small' -%}"
+  position: 3609..3661
+{% endcomment %}

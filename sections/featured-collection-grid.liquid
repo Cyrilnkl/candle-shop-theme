@@ -36,13 +36,7 @@
         </div>
       {%- endunless -%}
 
-      {%-
-        render 'button-block' with
-        wrapper_class: "featured-collection-grid__button section-introduction__button",
-        link: section.settings.link,
-        label: section.settings.link_text,
-        button_style: "btn--callout"
-      -%}
+      {%- render 'button-block' with wrapper_class, wrapper_class: "featured-collection-grid__button section-introduction__button", link: section.settings.link, label: section.settings.link_text, button_style: "btn--callout" -%}
     </div>
 
     <div
@@ -298,3 +292,22 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+            render 'button-block' with
+            wrapper_class: "featured-collection-grid__button section-introduction__button",
+            link: section.settings.link,
+            label: section.settings.link_text,
+            button_style: "btn--callout"
+          -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "featured-collection-grid__button
+    section-introduction__button", link: section.settings.link, label: section.settings.link_text,
+    button_style: "btn--callout" -%}'
+  position: 1508..1730
+{% endcomment %}

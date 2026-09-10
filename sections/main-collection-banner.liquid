@@ -96,17 +96,7 @@
   <div class="collection-banner__inner">
     {%- if collection_image != blank -%}
       <div class="collection-banner__image-container">
-        {%-
-          render 'image' with
-          wrapper_class: "collection-banner__image",
-          image: collection_image,
-          sizes: "100vw",
-          focal_point: section.settings.focal_point,
-          include_placeholder: false,
-          placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
-          animate: true,
-          prioritize_loading: true
-        -%}
+        {%- render 'image' with wrapper_class, wrapper_class: "collection-banner__image", image: collection_image, sizes: "100vw", focal_point: section.settings.focal_point, include_placeholder: false, placeholder_natural_fallback_ratio: placeholder_aspect_ratio, animate: true, prioritize_loading: true -%}
       </div>
       <div class="collection-banner__overlay"></div>
     {%- endif -%}
@@ -299,3 +289,27 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'image' with
+              wrapper_class: "collection-banner__image",
+              image: collection_image,
+              sizes: "100vw",
+              focal_point: section.settings.focal_point,
+              include_placeholder: false,
+              placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+              animate: true,
+              prioritize_loading: true
+            -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "collection-banner__image",
+    image: collection_image, sizes: "100vw", focal_point: section.settings.focal_point,
+    include_placeholder: false, placeholder_natural_fallback_ratio: placeholder_aspect_ratio,
+    animate: true, prioritize_loading: true -%}'
+  position: 3648..3947
+{% endcomment %}

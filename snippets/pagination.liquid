@@ -32,7 +32,7 @@
             "
             aria-label="{{ 'general.pagination.previous_page' | t: type: pagination_type }}"
           >
-            {% render 'icon', with icon: 'chevron' %}
+            {% render 'icon', icon: 'chevron' %}
           </a>
         </li>
       {%- else -%}
@@ -90,7 +90,7 @@
             "
             aria-label="{{ 'general.pagination.next_page' | t: type: pagination_type }}"
           >
-            {% render 'icon', with icon: 'chevron' %}
+            {% render 'icon', icon: 'chevron' %}
           </a>
         </li>
       {%- else -%}
@@ -115,3 +115,16 @@
     </p>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon', with icon: 'chevron' %}"
+  to: "{% render 'icon', icon: 'chevron' %}"
+  position: 1242..1278
+- from: "{% render 'icon', with icon: 'chevron' %}"
+  to: "{% render 'icon', icon: 'chevron' %}"
+  position: 3240..3276
+{% endcomment %}

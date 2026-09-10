@@ -32,30 +32,18 @@
     --overlay-opacity: {{ overlay_opacity }};
     --min-height: {{ min_height }}px;
     --min-height-mobile: {{ min_height_mobile }}px;
-    {% render 'overlay-button-vars' with color_button_text: section.settings.button_text_color, color_button_background: section.settings.button_background_color %}
+    {% render 'overlay-button-vars' with color_button_text, color_button_text: section.settings.button_text_color, color_button_background: section.settings.button_background_color %}
   "
   data-section-id="{{ section.id }}"
   data-section-type="promotion-bar"
 >
   <div class="sales-banner__inner">
     {%- if section.settings.mobile_image != blank -%}
-      {%-
-        render 'image' with
-        wrapper_class: "sales-banner__image sales-banner__image--mobile",
-        image: section.settings.mobile_image,
-        focal_point: section.settings.mobile_focal_point,
-        sizes: image_sizes
-      -%}
+      {%- render 'image' with wrapper_class, wrapper_class: "sales-banner__image sales-banner__image--mobile", image: section.settings.mobile_image, focal_point: section.settings.mobile_focal_point, sizes: image_sizes -%}
     {%- endif -%}
 
     {%- if section.settings.image != blank -%}
-      {%-
-        render 'image' with
-        wrapper_class: "sales-banner__image",
-        image: section.settings.image,
-        focal_point: section.settings.focal_point,
-        sizes: image_sizes
-      -%}
+      {%- render 'image' with wrapper_class, wrapper_class: "sales-banner__image", image: section.settings.image, focal_point: section.settings.focal_point, sizes: image_sizes -%}
     {%- endif -%}
     <div class="sales-banner__overlay"></div>
 
@@ -77,16 +65,7 @@
             {%- endif -%}
 
             {%- if section.settings.link_text -%}
-              {%-
-                render 'button-block' with
-                wrapper_class: "sales-banner__button",
-                link: section.settings.link,
-                label: section.settings.link_text,
-                is_overlay: true,
-                buttons_can_inline: true,
-                is_small: true,
-                button_style: section.settings.button_style
-              -%}
+              {%- render 'button-block' with wrapper_class, wrapper_class: "sales-banner__button", link: section.settings.link, label: section.settings.link_text, is_overlay: true, buttons_can_inline: true, is_small: true, button_style: section.settings.button_style -%}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -327,3 +306,56 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'overlay-button-vars' with color_button_text: section.settings.button_text_color,
+    color_button_background: section.settings.button_background_color %}"
+  to: "{% render 'overlay-button-vars' with color_button_text, color_button_text:
+    section.settings.button_text_color, color_button_background: section.settings.button_background_color
+    %}"
+  position: 1459..1638
+- from: |-
+    {%-
+            render 'image' with
+            wrapper_class: "sales-banner__image sales-banner__image--mobile",
+            image: section.settings.mobile_image,
+            focal_point: section.settings.mobile_focal_point,
+            sizes: image_sizes
+          -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "sales-banner__image
+    sales-banner__image--mobile", image: section.settings.mobile_image, focal_point:
+    section.settings.mobile_focal_point, sizes: image_sizes -%}'
+  position: 1814..2029
+- from: |-
+    {%-
+            render 'image' with
+            wrapper_class: "sales-banner__image",
+            image: section.settings.image,
+            focal_point: section.settings.focal_point,
+            sizes: image_sizes
+          -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "sales-banner__image",
+    image: section.settings.image, focal_point: section.settings.focal_point, sizes:
+    image_sizes -%}'
+  position: 2102..2275
+- from: |-
+    {%-
+                    render 'button-block' with
+                    wrapper_class: "sales-banner__button",
+                    link: section.settings.link,
+                    label: section.settings.link_text,
+                    is_overlay: true,
+                    buttons_can_inline: true,
+                    is_small: true,
+                    button_style: section.settings.button_style
+                  -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "sales-banner__button",
+    link: section.settings.link, label: section.settings.link_text, is_overlay: true,
+    buttons_can_inline: true, is_small: true, button_style: section.settings.button_style
+    -%}'
+  position: 3234..3490
+{% endcomment %}

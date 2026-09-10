@@ -97,18 +97,7 @@
               {% assign placeholder_name = 'collection-4' %}
               <div class="image-compare__image-after" {{ block.shopify_attributes }}>
             {%- endif -%}
-              {%
-                render 'image' with
-                image: block.settings.image,
-                wrapper_class: 'image-compare__image',
-                aspect_ratio: section.settings.aspect_ratio,
-                focal_point: block.settings.focal_point,
-                placeholder_name: placeholder_name,
-                include_placeholder: true,
-                placeholder_natural_fallback_ratio: 'landscape'
-                sizes: "(min-width: 960px) calc(100vw - calc(2 * 3.3vw)), calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw)))",
-                animate: true
-              %}
+              {% render 'image' with image, image: block.settings.image, wrapper_class: 'image-compare__image', aspect_ratio: section.settings.aspect_ratio, focal_point: block.settings.focal_point, placeholder_name: placeholder_name, include_placeholder: true, placeholder_natural_fallback_ratio: 'landscape', sizes: "(min-width: 960px) calc(100vw - calc(2 * 3.3vw)), calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw)))", animate: true %}
                 <div class="image-compare__overlay"></div>
                 {%- if block.settings.show_label -%}
                   <div class="image-compare__label-container-wrapper animation--label">
@@ -139,8 +128,8 @@
         <div class="image-compare__slider-line" aria-hidden="true"></div>
         <div class="image-compare__slider-button" aria-hidden="true">
           <div class="image-compare__slider-button-arrows">
-            <div class="image-compare__slider-button-arrow image-compare__slider-button-arrow-before">{% render 'icon' with icon: 'chevron-small' %}</div>
-            <div class="image-compare__slider-button-arrow image-compare__slider-button-arrow-after">{% render 'icon' with icon: 'chevron-small' %}</div>
+            <div class="image-compare__slider-button-arrow image-compare__slider-button-arrow-before">{% render 'icon' with icon, icon: 'chevron-small' %}</div>
+            <div class="image-compare__slider-button-arrow image-compare__slider-button-arrow-after">{% render 'icon' with icon, icon: 'chevron-small' %}</div>
           </div>
         </div>
       {%- endif -%}
@@ -570,3 +559,36 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                    render 'image' with
+                    image: block.settings.image,
+                    wrapper_class: 'image-compare__image',
+                    aspect_ratio: section.settings.aspect_ratio,
+                    focal_point: block.settings.focal_point,
+                    placeholder_name: placeholder_name,
+                    include_placeholder: true,
+                    placeholder_natural_fallback_ratio: 'landscape'
+                    sizes: "(min-width: 960px) calc(100vw - calc(2 * 3.3vw)), calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw)))",
+                    animate: true
+                  %}
+  to: '{% render ''image'' with image, image: block.settings.image, wrapper_class:
+    ''image-compare__image'', aspect_ratio: section.settings.aspect_ratio, focal_point:
+    block.settings.focal_point, placeholder_name: placeholder_name, include_placeholder:
+    true, placeholder_natural_fallback_ratio: ''landscape'', sizes: "(min-width: 960px)
+    calc(100vw - calc(2 * 3.3vw)), calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw)))",
+    animate: true %}'
+  position: 4335..4757
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 6295..6347
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 6455..6507
+{% endcomment %}

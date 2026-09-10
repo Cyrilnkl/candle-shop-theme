@@ -14,6 +14,16 @@
     </label>
   </div>
   <div class="product__item">
-    {% render 'quantity-input' with id: product.id, initial_value: '1' %}
+    {% render 'quantity-input' with id, id: product.id, initial_value: '1' %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'quantity-input' with id: product.id, initial_value: '1' %}"
+  to: "{% render 'quantity-input' with id, id: product.id, initial_value: '1' %}"
+  position: 645..718
+{% endcomment %}

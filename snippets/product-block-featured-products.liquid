@@ -27,12 +27,7 @@
     <div class="{{ product_grid_classes }}">
       {%- for product_item in block.settings.product_list limit: max_products -%}
         <div class="carousel__slide swiper-slide" data-slide>
-          {%
-            render 'product-item' with
-            prod: product_item,
-            aspect_ratio: settings.product_listing_aspect_ratio,
-            quick_view_is_beneath: true
-          %}
+          {% render 'product-item' with prod, prod: product_item, aspect_ratio: settings.product_listing_aspect_ratio, quick_view_is_beneath: true %}
         </div>
       {%- endfor -%}
     </div>
@@ -45,12 +40,7 @@
           {%- if recommendations.products_count > 0 -%}
             {%- for product_item in recommendations.products -%}
               <div class="carousel__slide swiper-slide" data-slide>
-                {%
-                  render 'product-item' with
-                  prod: product_item,
-                  aspect_ratio: settings.product_listing_aspect_ratio,
-                  quick_view_is_beneath: true
-                %}
+                {% render 'product-item' with prod, prod: product_item, aspect_ratio: settings.product_listing_aspect_ratio, quick_view_is_beneath: true %}
               </div>
             {%- endfor -%}
           {%- endif -%}
@@ -78,15 +68,7 @@
   {% endcapture %}
 
   {% if block.settings.display_as_collapsible_row %}
-    {%-
-      render 'product-block-accordion' with
-      block: block,
-      block_settings: block.settings,
-      classes: 'product__block-featured-products',
-      heading: block.settings.heading,
-      disable_rte: true,
-      content: content,
-    -%}
+    {%- render 'product-block-accordion' with block, block: block, block_settings: block.settings, classes: 'product__block-featured-products', heading: block.settings.heading, disable_rte: true, content: content -%}
   {% else %}
     <div
       class="product__block product__block-featured-products{% if block.settings.product_source == 'app-recommendations' %} hidden{% endif %} product__block--medium"
@@ -101,3 +83,44 @@
     </div>
   {% endif %}
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                render 'product-item' with
+                prod: product_item,
+                aspect_ratio: settings.product_listing_aspect_ratio,
+                quick_view_is_beneath: true
+              %}
+  to: "{% render 'product-item' with prod, prod: product_item, aspect_ratio: settings.product_listing_aspect_ratio,
+    quick_view_is_beneath: true %}"
+  position: 1105..1244
+- from: |-
+    {%
+                      render 'product-item' with
+                      prod: product_item,
+                      aspect_ratio: settings.product_listing_aspect_ratio,
+                      quick_view_is_beneath: true
+                    %}
+  to: "{% render 'product-item' with prod, prod: product_item, aspect_ratio: settings.product_listing_aspect_ratio,
+    quick_view_is_beneath: true %}"
+  position: 1730..1869
+- from: |-
+    {%-
+          render 'product-block-accordion' with
+          block: block,
+          block_settings: block.settings,
+          classes: 'product__block-featured-products',
+          heading: block.settings.heading,
+          disable_rte: true,
+          content: content,
+        -%}
+  to: "{%- render 'product-block-accordion' with block, block: block, block_settings:
+    block.settings, classes: 'product__block-featured-products', heading: block.settings.heading,
+    disable_rte: true, content: content -%}"
+  position: 2660..2872
+{% endcomment %}

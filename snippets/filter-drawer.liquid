@@ -82,7 +82,7 @@
               aria-label="{{ 'general.accessibility.close_modal' | t }}"
               data-close-icon
             >
-              {% render 'icon-button' with small: true, icon: 'close' %}
+              {% render 'icon-button' with small, small: true, icon: 'close' %}
             </button>
           </div>
 
@@ -102,7 +102,7 @@
 
         <div class="filter-drawer__footer animation--filter-drawer-item">
           <div class="filter-drawer__footer-active-filters" data-scroll-lock-ignore>
-            {%- render 'active-filters' with results: results, show_swatch_filters: show_swatch_filters -%}
+            {%- render 'active-filters' with results, results: results, show_swatch_filters: show_swatch_filters -%}
           </div>
 
           <div class="filter-drawer__footer-buttons">
@@ -115,7 +115,7 @@
             </button>
 
             <p class="filter-drawer__results-count fs-body-50 fc" data-results-count>
-              {% render 'results-count' with results_count: results_count %}
+              {% render 'results-count' with results_count, results_count: results_count %}
             </p>
 
             <button type="button" class="filter-drawer__button-apply btn btn--primary" data-button="close">
@@ -151,7 +151,7 @@
               aria-label="{{ 'general.accessibility.close_modal' | t }}"
               data-close-icon
             >
-              {% render 'icon-button' with small: true, icon: 'close' %}
+              {% render 'icon-button' with small, small: true, icon: 'close' %}
             </button>
           </div>
 
@@ -199,3 +199,25 @@
     {%- endif -%}
   </form>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with small: true, icon: 'close' %}"
+  to: "{% render 'icon-button' with small, small: true, icon: 'close' %}"
+  position: 2841..2906
+- from: "{%- render 'active-filters' with results: results, show_swatch_filters: show_swatch_filters
+    -%}"
+  to: "{%- render 'active-filters' with results, results: results, show_swatch_filters:
+    show_swatch_filters -%}"
+  position: 3621..3725
+- from: "{% render 'results-count' with results_count: results_count %}"
+  to: "{% render 'results-count' with results_count, results_count: results_count
+    %}"
+  position: 4145..4222
+- from: "{% render 'icon-button' with small: true, icon: 'close' %}"
+  to: "{% render 'icon-button' with small, small: true, icon: 'close' %}"
+  position: 5316..5381
+{% endcomment %}

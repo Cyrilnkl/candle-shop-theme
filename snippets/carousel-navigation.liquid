@@ -10,7 +10,7 @@
     data-prev
     aria-label="{{ 'general.accessibility.carousel_previous' | t }}"
   >
-    {%- render 'icon' with icon: 'arrow-long' -%}
+    {%- render 'icon' with icon, icon: 'arrow-long' -%}
   </button>
   <button
     type="button"
@@ -18,6 +18,19 @@
     data-next
     aria-label="{{ 'general.accessibility.carousel_next' | t }}"
   >
-    {%- render 'icon' with icon: 'arrow-long' -%}
+    {%- render 'icon' with icon, icon: 'arrow-long' -%}
   </button>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'arrow-long' -%}"
+  to: "{%- render 'icon' with icon, icon: 'arrow-long' -%}"
+  position: 324..375
+- from: "{%- render 'icon' with icon: 'arrow-long' -%}"
+  to: "{%- render 'icon' with icon, icon: 'arrow-long' -%}"
+  position: 580..631
+{% endcomment %}

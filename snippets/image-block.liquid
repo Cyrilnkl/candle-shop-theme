@@ -20,12 +20,24 @@
   {{ shopify_attributes }}
 >
   <div class="image-block__inner">
-    {%-
-      render 'image' with
-      image: image,
-      sizes: sizes,
-      include_placeholder: true,
-      placeholder_natural_fallback_ratio: 'landscape'
-    -%}
+    {%- render 'image' with image, image: image, sizes: sizes, include_placeholder: true, placeholder_natural_fallback_ratio: 'landscape' -%}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+          render 'image' with
+          image: image,
+          sizes: sizes,
+          include_placeholder: true,
+          placeholder_natural_fallback_ratio: 'landscape'
+        -%}
+  to: "{%- render 'image' with image, image: image, sizes: sizes, include_placeholder:
+    true, placeholder_natural_fallback_ratio: 'landscape' -%}"
+  position: 650..787
+{% endcomment %}

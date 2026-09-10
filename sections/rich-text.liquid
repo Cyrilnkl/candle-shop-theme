@@ -70,24 +70,9 @@
             full_width: full_width
           -%}
         {%- when 'button' -%}
-          {%-
-            render 'button-block' with
-            shopify_attributes: block.shopify_attributes,
-            wrapper_class: "rich-text__button section-blocks__button",
-            link: block.settings.link,
-            label: block.settings.link_text,
-            button_style: block.settings.button_style,
-            button_alignment: content_alignment,
-            buttons_can_inline: true,
-            forloop: forloop
-          -%}
+          {%- render 'button-block' with shopify_attributes, shopify_attributes: block.shopify_attributes, wrapper_class: "rich-text__button section-blocks__button", link: block.settings.link, label: block.settings.link_text, button_style: block.settings.button_style, button_alignment: content_alignment, buttons_can_inline: true, forloop: forloop -%}
         {%- when 'play-button' -%}
-          {%-
-            render 'play-button-block' with
-            wrapper_class: 'rich-text__play-button section-blocks__video-button',
-            block: block,
-            button_alignment: content_alignment
-          -%}
+          {%- render 'play-button-block' with wrapper_class, wrapper_class: 'rich-text__play-button section-blocks__video-button', block: block, button_alignment: content_alignment -%}
         {%- when 'border' -%}
           {%- render 'border-block' -%}
         {%- when 'spacer' -%}
@@ -589,3 +574,38 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                render 'button-block' with
+                shopify_attributes: block.shopify_attributes,
+                wrapper_class: "rich-text__button section-blocks__button",
+                link: block.settings.link,
+                label: block.settings.link_text,
+                button_style: block.settings.button_style,
+                button_alignment: content_alignment,
+                buttons_can_inline: true,
+                forloop: forloop
+              -%}
+  to: '{%- render ''button-block'' with shopify_attributes, shopify_attributes: block.shopify_attributes,
+    wrapper_class: "rich-text__button section-blocks__button", link: block.settings.link,
+    label: block.settings.link_text, button_style: block.settings.button_style, button_alignment:
+    content_alignment, buttons_can_inline: true, forloop: forloop -%}'
+  position: 2901..3243
+- from: |-
+    {%-
+                render 'play-button-block' with
+                wrapper_class: 'rich-text__play-button section-blocks__video-button',
+                block: block,
+                button_alignment: content_alignment
+              -%}
+  to: "{%- render 'play-button-block' with wrapper_class, wrapper_class: 'rich-text__play-button
+    section-blocks__video-button', block: block, button_alignment: content_alignment
+    -%}"
+  position: 3289..3463
+{% endcomment %}

@@ -28,23 +28,18 @@
       {% endif %}
     >
       {%- if block.settings.custom_icon_image != blank -%}
-        {%-
-          render 'image' with
-          wrapper_class: "collapsible-row-list-item__icon",
-          image: block.settings.custom_icon_image,
-          sizes: "25px",
-        -%}
+        {%- render 'image' with wrapper_class, wrapper_class: "collapsible-row-list-item__icon", image: block.settings.custom_icon_image, sizes: "25px" -%}
       {%- else -%}
         {% if block.settings.icon != 'none' %}
-          {% render 'icon-editorial' with class: "collapsible-row-list-item__icon", icon: block.settings.icon %}
+          {% render 'icon-editorial' with class, class: "collapsible-row-list-item__icon", icon: block.settings.icon %}
         {% endif %}
       {%- endif -%}
       <span class="collapsible-row-list-item__heading">
         {{ heading }}
       </span>
       <div class="accordion__label-icons">
-        {% render 'icon', with icon: 'plus' %}
-        {% render 'icon', with icon: 'minus' %}
+        {% render 'icon', icon: 'plus' %}
+        {% render 'icon', icon: 'minus' %}
       </div>
     </button>
   {%- endunless -%}
@@ -61,3 +56,31 @@
     </div>
   {%- endunless -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'image' with
+              wrapper_class: "collapsible-row-list-item__icon",
+              image: block.settings.custom_icon_image,
+              sizes: "25px",
+            -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "collapsible-row-list-item__icon",
+    image: block.settings.custom_icon_image, sizes: "25px" -%}'
+  position: 954..1101
+- from: '{% render ''icon-editorial'' with class: "collapsible-row-list-item__icon",
+    icon: block.settings.icon %}'
+  to: '{% render ''icon-editorial'' with class, class: "collapsible-row-list-item__icon",
+    icon: block.settings.icon %}'
+  position: 1178..1287
+- from: "{% render 'icon', with icon: 'plus' %}"
+  to: "{% render 'icon', icon: 'plus' %}"
+  position: 1471..1504
+- from: "{% render 'icon', with icon: 'minus' %}"
+  to: "{% render 'icon', icon: 'minus' %}"
+  position: 1513..1547
+{% endcomment %}

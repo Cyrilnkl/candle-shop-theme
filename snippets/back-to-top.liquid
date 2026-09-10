@@ -12,7 +12,17 @@
       aria-label="{{ 'general.accessibility.back_to_top' | t }}"
       data-back-to-top-button
     >
-      {% render 'icon' with icon: 'chevron' %}
+      {% render 'icon' with icon, icon: 'chevron' %}
     </button>
   </div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'chevron' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron' %}"
+  position: 333..379
+{% endcomment %}

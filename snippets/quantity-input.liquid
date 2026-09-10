@@ -5,7 +5,7 @@
     data-subtract-quantity
     aria-label="{{ 'general.accessibility.quantity_subtract' | t }}"
   >
-    {% render 'icon' with icon: 'minus-small' %}
+    {% render 'icon' with icon, icon: 'minus-small' %}
   </button>
   <label class="visually-hidden" for="Quantity-Input-{{ id }}">{{ 'products.product.quantity' | t }}</label>
   <input
@@ -25,6 +25,19 @@
     data-add-quantity
     aria-label="{{ 'general.accessibility.quantity_add' | t }}"
   >
-    {% render 'icon' with icon: 'plus-small' %}
+    {% render 'icon' with icon, icon: 'plus-small' %}
   </button>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'minus-small' %}"
+  to: "{% render 'icon' with icon, icon: 'minus-small' %}"
+  position: 228..278
+- from: "{% render 'icon' with icon: 'plus-small' %}"
+  to: "{% render 'icon' with icon, icon: 'plus-small' %}"
+  position: 852..901
+{% endcomment %}

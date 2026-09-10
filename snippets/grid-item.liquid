@@ -49,7 +49,7 @@
       --overlay-background-gradient: {{ block.settings.color_overlay_gradient }};
     {% endif %}
     --overlay-opacity: {{ overlay_opacity }};
-    {% render 'overlay-button-vars' with color_button_text: block.settings.button_text_color, color_button_background: block.settings.button_background_color %}
+    {% render 'overlay-button-vars' with color_button_text, color_button_text: block.settings.button_text_color, color_button_background: block.settings.button_background_color %}
   "
   {{ block.shopify_attributes }}
 >
@@ -139,3 +139,16 @@
     </div>
   </{{ wrapping_tag }}>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'overlay-button-vars' with color_button_text: block.settings.button_text_color,
+    color_button_background: block.settings.button_background_color %}"
+  to: "{% render 'overlay-button-vars' with color_button_text, color_button_text:
+    block.settings.button_text_color, color_button_background: block.settings.button_background_color
+    %}"
+  position: 1894..2069
+{% endcomment %}

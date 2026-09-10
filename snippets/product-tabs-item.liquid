@@ -49,12 +49,7 @@
                 (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
                 {{ block.settings.image_width_column_1 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
               {%- endcapture -%}
-              {%-
-                render 'image' with
-                wrapper_class: "product-tabs__tab-image",
-                image: block.settings.image_column_1,
-                sizes: image_sizes
-              -%}
+              {%- render 'image' with wrapper_class, wrapper_class: "product-tabs__tab-image", image: block.settings.image_column_1, sizes: image_sizes -%}
             </div>
           </figure>
         {%- endcapture -%}
@@ -108,13 +103,7 @@
                 (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
                 {{ block.settings.image_width_column_2 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
               {%- endcapture -%}
-              {%-
-                render 'image' with
-                wrapper_class: "product-tabs__tab-image",
-                image: block.settings.image_column_2,
-                sizes: image_sizes,
-                include_placeholder: true
-              -%}
+              {%- render 'image' with wrapper_class, wrapper_class: "product-tabs__tab-image", image: block.settings.image_column_2, sizes: image_sizes, include_placeholder: true -%}
             </div>
           </figure>
         {%- endcapture -%}
@@ -168,13 +157,7 @@
                 (min-width: 720px) calc(calc(100vw - calc(2 * clamp(18px, 3.3vw, 3.3vw))) / {{ desktop_columns }} *
                 {{ block.settings.image_width_column_3 | divided_by: 100.0 }}), calc(100vw - calc(2 * 3.3vw))
               {%- endcapture -%}
-              {%-
-                render 'image' with
-                wrapper_class: "product-tabs__tab-image",
-                image: block.settings.image_column_3,
-                sizes: image_sizes,
-                include_placeholder: true
-              -%}
+              {%- render 'image' with wrapper_class, wrapper_class: "product-tabs__tab-image", image: block.settings.image_column_3, sizes: image_sizes, include_placeholder: true -%}
             </div>
           </figure>
         {%- endcapture -%}
@@ -218,3 +201,44 @@
       </div>
   {%- endcase -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                    render 'image' with
+                    wrapper_class: "product-tabs__tab-image",
+                    image: block.settings.image_column_1,
+                    sizes: image_sizes
+                  -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "product-tabs__tab-image",
+    image: block.settings.image_column_1, sizes: image_sizes -%}'
+  position: 2076..2217
+- from: |-
+    {%-
+                    render 'image' with
+                    wrapper_class: "product-tabs__tab-image",
+                    image: block.settings.image_column_2,
+                    sizes: image_sizes,
+                    include_placeholder: true
+                  -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "product-tabs__tab-image",
+    image: block.settings.image_column_2, sizes: image_sizes, include_placeholder:
+    true -%}'
+  position: 4684..4852
+- from: |-
+    {%-
+                    render 'image' with
+                    wrapper_class: "product-tabs__tab-image",
+                    image: block.settings.image_column_3,
+                    sizes: image_sizes,
+                    include_placeholder: true
+                  -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "product-tabs__tab-image",
+    image: block.settings.image_column_3, sizes: image_sizes, include_placeholder:
+    true -%}'
+  position: 7301..7469
+{% endcomment %}

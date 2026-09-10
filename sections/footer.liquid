@@ -39,7 +39,7 @@
         {%- assign rendered_image = blank -%}
         {%- if block.settings.image != blank -%}
           {%- capture rendered_image -%}
-            {%- render 'image' with image: block.settings.image, wrapper_class: 'footer__image', sizes_px: block.settings.image_max_width -%}
+            {%- render 'image' with image, image: block.settings.image, wrapper_class: 'footer__image', sizes_px: block.settings.image_max_width -%}
           {%- endcapture -%}
         {%- endif -%}
         <div
@@ -549,3 +549,15 @@
   }
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'image' with image: block.settings.image, wrapper_class: 'footer__image',
+    sizes_px: block.settings.image_max_width -%}"
+  to: "{%- render 'image' with image, image: block.settings.image, wrapper_class:
+    'footer__image', sizes_px: block.settings.image_max_width -%}"
+  position: 1543..1679
+{% endcomment %}

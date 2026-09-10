@@ -84,21 +84,13 @@
             {{ link.title }}
           </span>
           <span class="header__links-icon">
-            {% render 'icon' with icon: 'chevron-small' %}
+            {% render 'icon' with icon, icon: 'chevron-small' %}
           </span>
         </{{ trigger_tag }}>
 
         {%- if has_children and can_show_children -%}
           {%- if show_meganav -%}
-            {%-
-              render 'meganav-standard-with-promo'
-              with menu: link.handle,
-              meganav_settings: meganav_settings,
-              link: link,
-              shopify_attributes: meganav_shopify_attributes,
-              meganav_type: meganav_type,
-              menu_id: sub_menu_id
-            -%}
+            {%- render 'meganav-standard-with-promo' with menu, menu: link.handle, meganav_settings: meganav_settings, link: link, shopify_attributes: meganav_shopify_attributes, meganav_type: meganav_type, menu_id: sub_menu_id -%}
           {%- else -%}
             {%- render 'navigation-submenu', menu: link.links, depth: 1, menu_id: sub_menu_id -%}
           {%- endif -%}
@@ -121,3 +113,27 @@
     </li>
   {% endfor %}
 </ul>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 2896..2948
+- from: |-
+    {%-
+                  render 'meganav-standard-with-promo'
+                  with menu: link.handle,
+                  meganav_settings: meganav_settings,
+                  link: link,
+                  shopify_attributes: meganav_shopify_attributes,
+                  meganav_type: meganav_type,
+                  menu_id: sub_menu_id
+                -%}
+  to: "{%- render 'meganav-standard-with-promo' with menu, menu: link.handle, meganav_settings:
+    meganav_settings, link: link, shopify_attributes: meganav_shopify_attributes,
+    meganav_type: meganav_type, menu_id: sub_menu_id -%}"
+  position: 3097..3316
+{% endcomment %}

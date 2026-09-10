@@ -5,14 +5,9 @@
   href="{{ popup_page.url }}"
 >
   {%- if custom_icon_image != blank -%}
-    {%-
-      render 'image' with
-      wrapper_class: "product__information-popup-custom-icon",
-      image: custom_icon_image,
-      sizes: "32px",
-    -%}
+    {%- render 'image' with wrapper_class, wrapper_class: "product__information-popup-custom-icon", image: custom_icon_image, sizes: "32px" -%}
   {%- else -%}
-    {%- if icon != 'none' -%}{% render 'icon-editorial' with icon: icon %}{%- endif -%}
+    {%- if icon != 'none' -%}{% render 'icon-editorial' with icon, icon: icon %}{%- endif -%}
   {%- endif -%}
   {{ text }}
 </a>
@@ -25,3 +20,23 @@
 
   {{ popup_page.content }}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+          render 'image' with
+          wrapper_class: "product__information-popup-custom-icon",
+          image: custom_icon_image,
+          sizes: "32px",
+        -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "product__information-popup-custom-icon",
+    image: custom_icon_image, sizes: "32px" -%}'
+  position: 257..396
+- from: "{% render 'icon-editorial' with icon: icon %}"
+  to: "{% render 'icon-editorial' with icon, icon: icon %}"
+  position: 441..492
+{% endcomment %}

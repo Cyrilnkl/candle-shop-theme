@@ -1,11 +1,23 @@
 {%- unless logo == blank -%}
   {%- assign imageHeight = 25 %}
   {%- assign image_width = logo.width | divided_by: logo.height | times: imageHeight %}
-  {%-
-    render 'image' with
-    image: logo,
-    wrapper_class: class,
-    disable_style: true,
-    sizes_px: image_width
-  -%}
+  {%- render 'image' with image, image: logo, wrapper_class: class, disable_style: true, sizes_px: image_width -%}
 {%- endunless -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+        render 'image' with
+        image: logo,
+        wrapper_class: class,
+        disable_style: true,
+        sizes_px: image_width
+      -%}
+  to: "{%- render 'image' with image, image: logo, wrapper_class: class, disable_style:
+    true, sizes_px: image_width -%}"
+  position: 152..264
+{% endcomment %}

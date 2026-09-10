@@ -34,7 +34,7 @@
           {%- endif -%}
         </span>
         <span class="collection-item__icon">
-          {%- render 'icon' with icon: 'arrow-short' -%}
+          {%- render 'icon' with icon, icon: 'arrow-short' -%}
         </span>
       {%- else -%}
         {%- if placeholder -%}
@@ -72,16 +72,7 @@
     {{ wrapping_attributes }}
     class="collection-item__image-wrapper hover"
   >
-    {%
-      render 'image' with
-      image: collection.featured_image,
-      wrapper_class: 'collection-item__image',
-      aspect_ratio: aspect_ratio,
-      placeholder_name: 'collection-1',
-      include_placeholder: true,
-      sizes: image_sizes,
-      src_set_type: "grid"
-    %}
+    {% render 'image' with image, image: collection.featured_image, wrapper_class: 'collection-item__image', aspect_ratio: aspect_ratio, placeholder_name: 'collection-1', include_placeholder: true, sizes: image_sizes, src_set_type: "grid" %}
 
     {%- if label_is_overlay -%}
       {{ collection_label }}
@@ -92,3 +83,28 @@
     {{ collection_label }}
   {%- endunless -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'arrow-short' -%}"
+  to: "{%- render 'icon' with icon, icon: 'arrow-short' -%}"
+  position: 1001..1053
+- from: |-
+    {%
+          render 'image' with
+          image: collection.featured_image,
+          wrapper_class: 'collection-item__image',
+          aspect_ratio: aspect_ratio,
+          placeholder_name: 'collection-1',
+          include_placeholder: true,
+          sizes: image_sizes,
+          src_set_type: "grid"
+        %}
+  to: '{% render ''image'' with image, image: collection.featured_image, wrapper_class:
+    ''collection-item__image'', aspect_ratio: aspect_ratio, placeholder_name: ''collection-1'',
+    include_placeholder: true, sizes: image_sizes, src_set_type: "grid" %}'
+  position: 2331..2568
+{% endcomment %}

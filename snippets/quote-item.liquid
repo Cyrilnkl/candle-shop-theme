@@ -16,7 +16,7 @@
   <div class="quote__item-inner">
     {%- unless pagination_style == "logos" and has_multiple_blocks -%}
       <div class="quote__item-logo-wrapper">
-        {%- render 'quote-item-logo' with logo: logo, class: "quote__item-logo" -%}
+        {%- render 'quote-item-logo' with logo, logo: logo, class: "quote__item-logo" -%}
       </div>
     {%- endunless -%}
 
@@ -33,3 +33,15 @@
     {%- endunless -%}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- render ''quote-item-logo'' with logo: logo, class: "quote__item-logo"
+    -%}'
+  to: '{%- render ''quote-item-logo'' with logo, logo: logo, class: "quote__item-logo"
+    -%}'
+  position: 577..658
+{% endcomment %}

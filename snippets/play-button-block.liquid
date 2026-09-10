@@ -73,7 +73,7 @@
           aspect_ratio: poster_aspect
         -%}
       {% endif %}
-      {% render 'icon' with icon: 'play-arrow' %}
+      {% render 'icon' with icon, icon: 'play-arrow' %}
     </div>
 
     {%- if label != blank -%}
@@ -112,3 +112,13 @@
     {%- endif -%}
   </button>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'play-arrow' %}"
+  to: "{% render 'icon' with icon, icon: 'play-arrow' %}"
+  position: 2089..2138
+{% endcomment %}

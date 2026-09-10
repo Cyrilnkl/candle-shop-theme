@@ -34,40 +34,16 @@
         </div>
       {%- endunless -%}
 
-      {%-
-        render 'button-block' with
-        wrapper_class: "collection-list-grid__button section-introduction__button",
-        link: section.settings.link,
-        label: section.settings.link_text,
-        button_style: 'btn--callout',
-      -%}
+      {%- render 'button-block' with wrapper_class, wrapper_class: "collection-list-grid__button section-introduction__button", link: section.settings.link, label: section.settings.link_text, button_style: 'btn--callout' -%}
     </div>
 
     <div class="collection-list-grid__collections section-blocks__content">
       {%- for collection in section.settings.collection_list -%}
-        {%
-          render 'collection-item' with
-          collection: collection,
-          aspect_ratio: section.settings.collection_listing_aspect_ratio,
-          label_style: section.settings.label_style,
-          overlay_text_color: section.settings.overlay_text_color,
-          overlay_title_background: section.settings.overlay_title_background,
-          overlay_title_background_style: section.settings.overlay_title_background_style,
-          image_sizes: image_sizes
-        %}
+        {% render 'collection-item' with collection, collection: collection, aspect_ratio: section.settings.collection_listing_aspect_ratio, label_style: section.settings.label_style, overlay_text_color: section.settings.overlay_text_color, overlay_title_background: section.settings.overlay_title_background, overlay_title_background_style: section.settings.overlay_title_background_style, image_sizes: image_sizes %}
       {%- else -%}
         {%- assign placeholder_items = section.settings.columns | times: 2 -%}
         {%- for i in (1..placeholder_items) -%}
-          {%
-            render 'collection-item' with
-            aspect_ratio: section.settings.collection_listing_aspect_ratio,
-            label_style: section.settings.label_style,
-            overlay_text_color: section.settings.overlay_text_color,
-            overlay_title_background: section.settings.overlay_title_background,
-            overlay_title_background_style: section.settings.overlay_title_background_style,
-            placeholder: true,
-            image_sizes: image_sizes
-          %}
+          {% render 'collection-item' with aspect_ratio, aspect_ratio: section.settings.collection_listing_aspect_ratio, label_style: section.settings.label_style, overlay_text_color: section.settings.overlay_text_color, overlay_title_background: section.settings.overlay_title_background, overlay_title_background_style: section.settings.overlay_title_background_style, placeholder: true, image_sizes: image_sizes %}
         {%- endfor -%}
       {%- endfor -%}
     </div>
@@ -314,3 +290,56 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+            render 'button-block' with
+            wrapper_class: "collection-list-grid__button section-introduction__button",
+            link: section.settings.link,
+            label: section.settings.link_text,
+            button_style: 'btn--callout',
+          -%}
+  to: '{%- render ''button-block'' with wrapper_class, wrapper_class: "collection-list-grid__button
+    section-introduction__button", link: section.settings.link, label: section.settings.link_text,
+    button_style: ''btn--callout'' -%}'
+  position: 1613..1831
+- from: |-
+    {%
+              render 'collection-item' with
+              collection: collection,
+              aspect_ratio: section.settings.collection_listing_aspect_ratio,
+              label_style: section.settings.label_style,
+              overlay_text_color: section.settings.overlay_text_color,
+              overlay_title_background: section.settings.overlay_title_background,
+              overlay_title_background_style: section.settings.overlay_title_background_style,
+              image_sizes: image_sizes
+            %}
+  to: "{% render 'collection-item' with collection, collection: collection, aspect_ratio:
+    section.settings.collection_listing_aspect_ratio, label_style: section.settings.label_style,
+    overlay_text_color: section.settings.overlay_text_color, overlay_title_background:
+    section.settings.overlay_title_background, overlay_title_background_style: section.settings.overlay_title_background_style,
+    image_sizes: image_sizes %}"
+  position: 1993..2403
+- from: |-
+    {%
+                render 'collection-item' with
+                aspect_ratio: section.settings.collection_listing_aspect_ratio,
+                label_style: section.settings.label_style,
+                overlay_text_color: section.settings.overlay_text_color,
+                overlay_title_background: section.settings.overlay_title_background,
+                overlay_title_background_style: section.settings.overlay_title_background_style,
+                placeholder: true,
+                image_sizes: image_sizes
+              %}
+  to: "{% render 'collection-item' with aspect_ratio, aspect_ratio: section.settings.collection_listing_aspect_ratio,
+    label_style: section.settings.label_style, overlay_text_color: section.settings.overlay_text_color,
+    overlay_title_background: section.settings.overlay_title_background, overlay_title_background_style:
+    section.settings.overlay_title_background_style, placeholder: true, image_sizes:
+    image_sizes %}"
+  position: 2560..2967
+{% endcomment %}

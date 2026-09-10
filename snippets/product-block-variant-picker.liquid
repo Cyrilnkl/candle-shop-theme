@@ -103,15 +103,7 @@
 
       {% if show_popup_trigger %}
         {% capture rendered_popup_trigger %}
-          {%
-            render 'product-block-information-popup' with
-            block: block,
-            popup_page_target: block_settings.variant_popup_page,
-            popup_page: variant_popup_page,
-            icon: block_settings.variant_popup_icon,
-            custom_icon_image: block_settings.custom_icon_image,
-            text: block_settings.variant_popup_text
-          %}
+          {% render 'product-block-information-popup' with block, block: block, popup_page_target: block_settings.variant_popup_page, popup_page: variant_popup_page, icon: block_settings.variant_popup_icon, custom_icon_image: block_settings.custom_icon_image, text: block_settings.variant_popup_text %}
         {% endcapture %}
       {% endif %}
 
@@ -230,7 +222,7 @@
           >
             {{ option_values }}
 
-            {% render 'icon' with icon: 'chevron-small' %}
+            {% render 'icon' with icon, icon: 'chevron-small' %}
           </div>
         {%- endif -%}
       {% endcapture %}
@@ -261,3 +253,28 @@
     {%- endif -%}
   </div>
 {% endunless %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                render 'product-block-information-popup' with
+                block: block,
+                popup_page_target: block_settings.variant_popup_page,
+                popup_page: variant_popup_page,
+                icon: block_settings.variant_popup_icon,
+                custom_icon_image: block_settings.custom_icon_image,
+                text: block_settings.variant_popup_text
+              %}
+  to: "{% render 'product-block-information-popup' with block, block: block, popup_page_target:
+    block_settings.variant_popup_page, popup_page: variant_popup_page, icon: block_settings.variant_popup_icon,
+    custom_icon_image: block_settings.custom_icon_image, text: block_settings.variant_popup_text
+    %}"
+  position: 3858..4150
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 8192..8244
+{% endcomment %}

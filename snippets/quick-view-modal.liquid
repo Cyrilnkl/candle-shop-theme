@@ -3,4 +3,15 @@
     {% render 'loader' %}
   </h3>
 {%- endcapture -%}
-{% render 'quick-view-modal-base' with content: content, open: false %}
+{% render 'quick-view-modal-base' with content, content: content, open: false %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'quick-view-modal-base' with content: content, open: false %}"
+  to: "{% render 'quick-view-modal-base' with content, content: content, open: false
+    %}"
+  position: 127..207
+{% endcomment %}

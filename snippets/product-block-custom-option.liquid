@@ -46,7 +46,7 @@
           >
           <div class="product__custom-option-content-inner">
             <div class="product__custom-option-input">
-              {% render 'icon' with icon: 'checkmark' %}
+              {% render 'icon' with icon, icon: 'checkmark' %}
             </div>
             <span class="product__custom-option-label fs-body-100">
               {{ block.settings.label }}
@@ -67,7 +67,7 @@
                 <option>{{ option }}</option>
               {%- endfor -%}
             </select>
-            {% render 'icon' with icon: 'chevron-small' %}
+            {% render 'icon' with icon, icon: 'chevron-small' %}
           </div>
         {%- elsif block.settings.list_style == 'radio' -%}
           {%- for option in list_options -%}
@@ -100,3 +100,16 @@
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'checkmark' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark' %}"
+  position: 1910..1958
+- from: "{% render 'icon' with icon: 'chevron-small' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron-small' %}"
+  position: 2731..2783
+{% endcomment %}

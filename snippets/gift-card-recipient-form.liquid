@@ -33,7 +33,7 @@
           >
           <div class="product__custom-option-content-inner">
             <div class="product__custom-option-input">
-              {% render 'icon' with icon: 'checkmark' %}
+              {% render 'icon' with icon, icon: 'checkmark' %}
             </div>
 
             <span class="product__custom-option-label fs-body-100">
@@ -215,3 +215,13 @@
     {%- endif %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'checkmark' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark' %}"
+  position: 1358..1406
+{% endcomment %}

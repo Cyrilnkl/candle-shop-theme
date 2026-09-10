@@ -74,28 +74,48 @@
       {%- if object_fit != blank and aspect_ratio != 'natural' -%}--object-fit: {{ object_fit }};{%- endif -%}
     "
   >
-    {%
-      render 'responsive-image' with
-      image: image,
-      sizes: sizes,
-      prioritize_loading: prioritize_loading,
-      aspect_ratio: aspect_ratio,
-      focal_point: focal_point,
-      focal_alignment: focal_alignment,
-      no_crop: no_crop,
-      object_fit: object_fit,
-      fallback_alt: fallback_alt,
-      src_set_type: src_set_type
-    %}
+    {% render 'responsive-image' with image, image: image, sizes: sizes, prioritize_loading: prioritize_loading, aspect_ratio: aspect_ratio, focal_point: focal_point, focal_alignment: focal_alignment, no_crop: no_crop, object_fit: object_fit, fallback_alt: fallback_alt, src_set_type: src_set_type %}
   </div>
 {%- elsif include_placeholder -%}
   {%- assign natural_fallback = placeholder_natural_fallback_ratio | default: 'square' -%}
 
-  {%-
-    render 'placeholder-image' with
-    wrapper_class: wrapper_class,
-    placeholder_name: placeholder_name,
-    aspect_ratio: aspect_ratio,
-    natural_fallback_ratio: natural_fallback
-  -%}
+  {%- render 'placeholder-image' with wrapper_class, wrapper_class: wrapper_class, placeholder_name: placeholder_name, aspect_ratio: aspect_ratio, natural_fallback_ratio: natural_fallback -%}
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+          render 'responsive-image' with
+          image: image,
+          sizes: sizes,
+          prioritize_loading: prioritize_loading,
+          aspect_ratio: aspect_ratio,
+          focal_point: focal_point,
+          focal_alignment: focal_alignment,
+          no_crop: no_crop,
+          object_fit: object_fit,
+          fallback_alt: fallback_alt,
+          src_set_type: src_set_type
+        %}
+  to: "{% render 'responsive-image' with image, image: image, sizes: sizes, prioritize_loading:
+    prioritize_loading, aspect_ratio: aspect_ratio, focal_point: focal_point, focal_alignment:
+    focal_alignment, no_crop: no_crop, object_fit: object_fit, fallback_alt: fallback_alt,
+    src_set_type: src_set_type %}"
+  position: 3219..3515
+- from: |-
+    {%-
+        render 'placeholder-image' with
+        wrapper_class: wrapper_class,
+        placeholder_name: placeholder_name,
+        aspect_ratio: aspect_ratio,
+        natural_fallback_ratio: natural_fallback
+      -%}
+  to: "{%- render 'placeholder-image' with wrapper_class, wrapper_class: wrapper_class,
+    placeholder_name: placeholder_name, aspect_ratio: aspect_ratio, natural_fallback_ratio:
+    natural_fallback -%}"
+  position: 3653..3842
+{% endcomment %}

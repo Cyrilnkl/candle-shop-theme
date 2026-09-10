@@ -13,7 +13,7 @@
       aria-label="{{ 'general.accessibility.close_modal' | t }}"
       data-close-icon
     >
-      {% render 'icon-button' with small: true, icon: 'close' %}
+      {% render 'icon-button' with small, small: true, icon: 'close' %}
     </button>
 
     <form
@@ -28,7 +28,7 @@
           <label for="search" class="visually-hidden" aria-label="{{ 'search.placeholder' | t }}"></label>
           <div class="quick-search__actions">
             <button class="quick-search__submit" type="submit" aria-label="{{ 'search.search' | t }}">
-              {% render 'icon' with icon: 'search' %}
+              {% render 'icon' with icon, icon: 'search' %}
             </button>
           </div>
           <input
@@ -66,3 +66,16 @@
     </form>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with small: true, icon: 'close' %}"
+  to: "{% render 'icon-button' with small, small: true, icon: 'close' %}"
+  position: 357..422
+- from: "{% render 'icon' with icon: 'search' %}"
+  to: "{% render 'icon' with icon, icon: 'search' %}"
+  position: 964..1009
+{% endcomment %}
